@@ -1,0 +1,62 @@
+{
+  "os4": {
+    "input_shape": [
+      2,
+      24,
+      128,
+      256
+    ],
+    "output_shape": [
+      2,
+      24,
+      128,
+      256
+    ],
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "passed": true,
+    "initialization": "identity weight + zero bias",
+    "channels": 24,
+    "initial_parameter_sha256": "44ea56dfd5004849d11c18d9283efdd41a5093f9bfabf17e9a79d38310b18fde"
+  },
+  "os8": {
+    "input_shape": [
+      2,
+      32,
+      64,
+      128
+    ],
+    "output_shape": [
+      2,
+      32,
+      64,
+      128
+    ],
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "passed": true,
+    "initialization": "identity weight + zero bias",
+    "channels": 32,
+    "initial_parameter_sha256": "bebe41de42a2dfb7994cce757d2f06489c75e260455f6c29aa5149d102dc3eab"
+  },
+  "os16": {
+    "input_shape": [
+      2,
+      320,
+      32,
+      64
+    ],
+    "output_shape": [
+      2,
+      320,
+      32,
+      64
+    ],
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "passed": true,
+    "initialization": "identity weight + zero bias",
+    "channels": 320,
+    "initial_parameter_sha256": "f171eedb70ad494735e50cbe33049098b1c5a8923a3df7214f8c57256c7c348a"
+  }
+}

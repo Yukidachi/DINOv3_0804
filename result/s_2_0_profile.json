@@ -1,0 +1,1437 @@
+{
+  "script": "/home/ubuntu/work/DINOv3_0804/profile_dino_s2_0.py",
+  "timestamp": "2026-08-06T19:18:50+0800",
+  "arguments": {
+    "dataset_root": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes",
+    "device": "cuda:0",
+    "seed": 42,
+    "batch_size": 2,
+    "accumulation_steps": 4,
+    "num_workers": 4,
+    "worker_sweep": "0,2,4,8",
+    "crop_height": 512,
+    "crop_width": 1024,
+    "scale_min": 0.5,
+    "scale_max": 2.0,
+    "head_channels": 256,
+    "dropout": 0.1,
+    "amp": true,
+    "deterministic": true,
+    "persistent_workers": false,
+    "pin_memory": null,
+    "warmup_batches": 5,
+    "profile_batches": 20,
+    "data_batches": 40,
+    "io_samples": 20,
+    "trace": null,
+    "trace_batches": 5,
+    "no_worker_sweep": false,
+    "no_io_profile": false,
+    "no_synthetic": false,
+    "no_pipeline": false,
+    "no_gpu_monitor": false,
+    "output": "s_2_0_profile.json"
+  },
+  "environment": {
+    "python": "3.10.19",
+    "platform": "Linux-5.15.0-128-generic-x86_64-with-glibc2.35",
+    "processor": "x86_64",
+    "cpu_count": 22,
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "2.0.1",
+    "pillow": "11.1.0",
+    "torch_cuda": "12.4",
+    "cudnn": 91700,
+    "cuda_available": true,
+    "cuda_visible_devices": null,
+    "device": "cuda:0",
+    "num_threads": 22,
+    "num_interop_threads": 22,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "cudnn_allow_tf32": false,
+    "matmul_allow_tf32": false,
+    "matmul_precision": "highest",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 4090",
+      "capability": [
+        8,
+        9
+      ],
+      "total_memory_mib": 24210.3125,
+      "multi_processor_count": 128,
+      "logical_index": 0,
+      "nvidia_smi_selector": "0"
+    }
+  },
+  "nvidia_smi_before": {
+    "available": true,
+    "fields": [
+      "index",
+      "uuid",
+      "name",
+      "driver_version",
+      "compute_mode",
+      "pstate",
+      "temperature.gpu",
+      "utilization.gpu",
+      "utilization.memory",
+      "memory.used",
+      "memory.total",
+      "power.draw",
+      "power.limit",
+      "clocks.current.sm",
+      "clocks.current.memory",
+      "pcie.link.gen.current",
+      "pcie.link.width.current"
+    ],
+    "gpus": [
+      {
+        "index": "0",
+        "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+        "name": "NVIDIA GeForce RTX 4090",
+        "driver_version": "550.142",
+        "compute_mode": "Default",
+        "pstate": "P8",
+        "temperature.gpu": "31",
+        "utilization.gpu": "0",
+        "utilization.memory": "0",
+        "memory.used": "4",
+        "memory.total": "24564",
+        "power.draw": "14.29",
+        "power.limit": "450.00",
+        "clocks.current.sm": "210",
+        "clocks.current.memory": "405",
+        "pcie.link.gen.current": "1",
+        "pcie.link.width.current": "16"
+      }
+    ]
+  },
+  "nvidia_compute_processes_before": {
+    "available": true,
+    "processes": []
+  },
+  "dataset": {
+    "root": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes",
+    "lock": {
+      "lock_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.lock.json",
+      "lock_sha256": "b3b4e2e8af470963983f3e2f8848caa7cab3d63ee4f37b218601f3a9d0048eb2",
+      "checksum_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.sha256",
+      "checksum_sha256": "a31cc5370ddee112d2ead5e99ad57857ed301285a6f0b953f261466ec87cfe50",
+      "lock_date": "2026-08-05",
+      "timezone": "Asia/Tokyo",
+      "combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+      "splits": {
+        "train_local": {
+          "source": "official train",
+          "count": 2530,
+          "cities": [
+            "aachen",
+            "bochum",
+            "bremen",
+            "cologne",
+            "dusseldorf",
+            "erfurt",
+            "hamburg",
+            "hanover",
+            "monchengladbach",
+            "strasbourg",
+            "stuttgart",
+            "tubingen",
+            "ulm",
+            "zurich"
+          ],
+          "manifest": "train_local.txt",
+          "sha256": "08fe1239484a1824469ac22d0b4780e9b1cf074e90829da952420f6d554076d7"
+        },
+        "dev_local": {
+          "source": "official train",
+          "count": 445,
+          "cities": [
+            "darmstadt",
+            "jena",
+            "krefeld",
+            "weimar"
+          ],
+          "manifest": "dev_local.txt",
+          "sha256": "778d455b9e01aecec7a0958a349eac8ac1655c6c13485af9b01d0ab779e51f70"
+        },
+        "test_local": {
+          "source": "official val",
+          "count": 500,
+          "cities": [
+            "frankfurt",
+            "lindau",
+            "munster"
+          ],
+          "manifest": "test_local.txt",
+          "sha256": "4eb84d274208c475931d4eb796fec932d567e19e31790f38a458942a447d766c"
+        }
+      }
+    },
+    "train_count": 2530
+  },
+  "effective": {
+    "device": "cuda:0",
+    "amp": true,
+    "pin_memory": true
+  },
+  "io_profile": {
+    "samples": 20,
+    "image_decode": {
+      "n": 20,
+      "mean_ms": 64.35074400069425,
+      "median_ms": 63.929979001841275,
+      "p90_ms": 66.11885849852115,
+      "min_ms": 61.9874509939109,
+      "max_ms": 70.47328400221886
+    },
+    "label_decode": {
+      "n": 20,
+      "mean_ms": 10.305017100108671,
+      "median_ms": 10.25379350176081,
+      "p90_ms": 10.596295104915043,
+      "min_ms": 9.981996998249087,
+      "max_ms": 10.995020995324012
+    },
+    "augmentation_and_tensor": {
+      "n": 20,
+      "mean_ms": 59.748640750331106,
+      "median_ms": 59.21968050097348,
+      "p90_ms": 85.05446979688715,
+      "min_ms": 25.59170499444008,
+      "max_ms": 107.20076099823928
+    },
+    "decode_plus_augmentation": {
+      "n": 20,
+      "mean_ms": 135.4397107512341,
+      "median_ms": 134.0916070039384,
+      "p90_ms": 157.62515510068624,
+      "min_ms": 106.57571800402366,
+      "max_ms": 174.98270400392357
+    }
+  },
+  "data_loader_sweep": [
+    {
+      "batches": 39,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 418.5507869988214,
+        "median_ms": 418.5507869988214,
+        "p90_ms": 418.5507869988214,
+        "min_ms": 418.5507869988214,
+        "max_ms": 418.5507869988214
+      },
+      "steady_next_batch": {
+        "n": 39,
+        "mean_ms": 269.78657287056706,
+        "median_ms": 261.5959830000065,
+        "p90_ms": 316.73089699907,
+        "min_ms": 211.7344319995027,
+        "max_ms": 352.84110799693735
+      },
+      "steady_batches_per_second": 3.706633689586029,
+      "batch_size": 2,
+      "samples_per_second": 7.413267379172058,
+      "num_workers": 0,
+      "pin_memory": true,
+      "persistent_workers": false
+    },
+    {
+      "batches": 39,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 752.7882529975614,
+        "median_ms": 752.7882529975614,
+        "p90_ms": 752.7882529975614,
+        "min_ms": 752.7882529975614,
+        "max_ms": 752.7882529975614
+      },
+      "steady_next_batch": {
+        "n": 39,
+        "mean_ms": 276.8057641026248,
+        "median_ms": 179.7610479989089,
+        "p90_ms": 568.2682650003699,
+        "min_ms": 0.04870099655818194,
+        "max_ms": 622.8449640038889
+      },
+      "steady_batches_per_second": 3.612641533104974,
+      "batch_size": 2,
+      "samples_per_second": 7.225283066209948,
+      "num_workers": 2,
+      "pin_memory": true,
+      "persistent_workers": false
+    },
+    {
+      "batches": 39,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 1050.9085969970329,
+        "median_ms": 1050.9085969970329,
+        "p90_ms": 1050.9085969970329,
+        "min_ms": 1050.9085969970329,
+        "max_ms": 1050.9085969970329
+      },
+      "steady_next_batch": {
+        "n": 39,
+        "mean_ms": 261.63446953805993,
+        "median_ms": 0.08248000085586682,
+        "p90_ms": 1068.1108539982235,
+        "min_ms": 0.04079999780515209,
+        "max_ms": 1229.5027890068013
+      },
+      "steady_batches_per_second": 3.822126349657189,
+      "batch_size": 2,
+      "samples_per_second": 7.644252699314378,
+      "num_workers": 4,
+      "pin_memory": true,
+      "persistent_workers": false
+    },
+    {
+      "batches": 39,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 2043.7939309995272,
+        "median_ms": 2043.7939309995272,
+        "p90_ms": 2043.7939309995272,
+        "min_ms": 2043.7939309995272,
+        "max_ms": 2043.7939309995272
+      },
+      "steady_next_batch": {
+        "n": 39,
+        "mean_ms": 265.93259694830823,
+        "median_ms": 0.24424099683528766,
+        "p90_ms": 701.843294200083,
+        "min_ms": 0.043189997086301446,
+        "max_ms": 1969.7937159944559
+      },
+      "steady_batches_per_second": 3.760351350212171,
+      "batch_size": 2,
+      "samples_per_second": 7.520702700424342,
+      "num_workers": 8,
+      "pin_memory": true,
+      "persistent_workers": false
+    }
+  ],
+  "synthetic": {
+    "batches": 20,
+    "batch_timing": {
+      "n": 20,
+      "mean_ms": 34.461343850853154,
+      "median_ms": 33.712109499902,
+      "p90_ms": 36.063222303346265,
+      "min_ms": 33.350917998177465,
+      "max_ms": 40.22190399700776
+    },
+    "batches_per_second": 29.018021012992016,
+    "note": "Synthetic train data removes image decode, augmentation, DataLoader, and H2D transfer."
+  },
+  "pipeline": {
+    "batches": 20,
+    "synchronized_stage_timings": {
+      "data_wait": {
+        "n": 20,
+        "mean_ms": 224.8074944000109,
+        "median_ms": 0.15696049740654416,
+        "p90_ms": 923.2028101047036,
+        "min_ms": 0.07773100514896214,
+        "max_ms": 990.9591149989865,
+        "share_of_synchronized_stage_sum": 0.7794798890538602
+      },
+      "host_to_device": {
+        "n": 20,
+        "mean_ms": 1.1627401010628091,
+        "median_ms": 1.1477444968477357,
+        "p90_ms": 1.2089630006812513,
+        "min_ms": 1.1022750040865503,
+        "max_ms": 1.2101739994250238,
+        "share_of_synchronized_stage_sum": 0.004031593908351788
+      },
+      "forward": {
+        "n": 20,
+        "mean_ms": 17.277650999676553,
+        "median_ms": 10.967497502861079,
+        "p90_ms": 11.657707096310332,
+        "min_ms": 10.751080997579265,
+        "max_ms": 133.53495299816132,
+        "share_of_synchronized_stage_sum": 0.059907173113969564
+      },
+      "loss_and_valid": {
+        "n": 20,
+        "mean_ms": 0.36251479941711295,
+        "median_ms": 0.36291099968366325,
+        "p90_ms": 0.36971800145693123,
+        "min_ms": 0.3519710007822141,
+        "max_ms": 0.3806710010394454,
+        "share_of_synchronized_stage_sum": 0.0012569554070436715
+      },
+      "backward": {
+        "n": 20,
+        "mean_ms": 42.55222475039773,
+        "median_ms": 32.448564503283706,
+        "p90_ms": 33.58418309726403,
+        "min_ms": 32.054923998657614,
+        "max_ms": 233.6447589987074,
+        "share_of_synchronized_stage_sum": 0.14754224949643555
+      },
+      "optimizer": {
+        "n": 20,
+        "mean_ms": 0.6778605995350517,
+        "median_ms": 0.0,
+        "p90_ms": 2.6535299977695104,
+        "min_ms": 0.0,
+        "max_ms": 3.0244020017562434,
+        "share_of_synchronized_stage_sum": 0.0023503607223138005
+      },
+      "metrics": {
+        "n": 20,
+        "mean_ms": 1.5665631486626808,
+        "median_ms": 1.182859999971697,
+        "p90_ms": 1.2956139973539396,
+        "min_ms": 1.0921049979515374,
+        "max_ms": 8.795803994871676,
+        "share_of_synchronized_stage_sum": 0.005431778298025429
+      }
+    },
+    "synchronized_stage_sum_mean_ms": 288.40704879876284,
+    "synchronized_pass_iteration": {
+      "n": 20,
+      "mean_ms": 288.6115745986899,
+      "median_ms": 46.70943949895445,
+      "p90_ms": 972.8586292963884,
+      "min_ms": 45.788536001055036,
+      "max_ms": 1040.6166549946647
+    },
+    "realistic_end_to_end": {
+      "batches": 20,
+      "data_wait": {
+        "n": 20,
+        "mean_ms": 235.64382334952825,
+        "median_ms": 0.16615599815850146,
+        "p90_ms": 875.931185601803,
+        "min_ms": 0.08199999865610152,
+        "max_ms": 934.2047000027378
+      },
+      "iteration": {
+        "n": 20,
+        "mean_ms": 271.87041394972766,
+        "median_ms": 35.92999849934131,
+        "p90_ms": 914.3808719003573,
+        "min_ms": 34.99215500050923,
+        "max_ms": 973.6037619950366
+      },
+      "batches_per_second": 3.678222964654451,
+      "note": "Matches the current S2-0 loop and its metric calls; only the final timing synchronization is added."
+    },
+    "end_to_end_batches_per_second": 3.678222964654451,
+    "note": "Synchronized stage timings are diagnostic only; realistic_end_to_end matches the current loop without per-stage synchronization."
+  },
+  "gpu_samples": [
+    {
+      "time": 1786015185.5836518,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "32",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "569",
+          "memory.total": "24564",
+          "power.draw": "27.39",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015186.100766,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "1",
+          "utilization.memory": "0",
+          "memory.used": "879",
+          "memory.total": "24564",
+          "power.draw": "38.35",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015186.6175706,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "1031",
+          "memory.total": "24564",
+          "power.draw": "58.28",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015187.1332693,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "1115",
+          "memory.total": "24564",
+          "power.draw": "58.04",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015187.649568,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "1479",
+          "memory.total": "24564",
+          "power.draw": "58.13",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015188.1676292,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "2017",
+          "memory.total": "24564",
+          "power.draw": "61.21",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015188.6851923,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "2017",
+          "memory.total": "24564",
+          "power.draw": "61.33",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015189.2024374,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "2017",
+          "memory.total": "24564",
+          "power.draw": "58.39",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015189.7201798,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "2017",
+          "memory.total": "24564",
+          "power.draw": "58.68",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015190.238555,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "2017",
+          "memory.total": "24564",
+          "power.draw": "58.74",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015190.7571228,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "1",
+          "utilization.memory": "0",
+          "memory.used": "2017",
+          "memory.total": "24564",
+          "power.draw": "58.88",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015191.27574,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "2017",
+          "memory.total": "24564",
+          "power.draw": "58.66",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015191.8011758,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "33",
+          "utilization.gpu": "2",
+          "utilization.memory": "1",
+          "memory.used": "2017",
+          "memory.total": "24564",
+          "power.draw": "58.69",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015192.3176615,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "39",
+          "utilization.gpu": "77",
+          "utilization.memory": "36",
+          "memory.used": "2105",
+          "memory.total": "24564",
+          "power.draw": "98.90",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015192.8351777,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "38",
+          "utilization.gpu": "80",
+          "utilization.memory": "35",
+          "memory.used": "671",
+          "memory.total": "24564",
+          "power.draw": "165.71",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015193.350896,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "671",
+          "memory.total": "24564",
+          "power.draw": "143.26",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015193.8658292,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "671",
+          "memory.total": "24564",
+          "power.draw": "81.67",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015194.3811474,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "36",
+          "utilization.gpu": "35",
+          "utilization.memory": "15",
+          "memory.used": "2107",
+          "memory.total": "24564",
+          "power.draw": "81.26",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015194.9002337,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "34",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "2107",
+          "memory.total": "24564",
+          "power.draw": "83.82",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015195.416719,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "2109",
+          "memory.total": "24564",
+          "power.draw": "70.99",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2565",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015195.9324849,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "54",
+          "utilization.memory": "22",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "82.35",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015196.448237,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "86.33",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015196.9633517,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "36",
+          "utilization.gpu": "41",
+          "utilization.memory": "17",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "101.81",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015197.4789555,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "96.26",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015197.9949892,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "36",
+          "utilization.gpu": "63",
+          "utilization.memory": "27",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "96.53",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015198.5115504,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "96.69",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015199.0424635,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "39",
+          "utilization.gpu": "32",
+          "utilization.memory": "15",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "93.88",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015199.5576131,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "96.91",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015200.0741565,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "40",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "95.89",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015200.5900521,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "96.75",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015201.1056802,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "38",
+          "utilization.gpu": "4",
+          "utilization.memory": "2",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "88.78",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015201.6214292,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "3133",
+          "memory.total": "24564",
+          "power.draw": "75.75",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015207.6832232,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "2301",
+          "memory.total": "24564",
+          "power.draw": "76.35",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2610",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015208.198813,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "36",
+          "utilization.gpu": "59",
+          "utilization.memory": "25",
+          "memory.used": "2301",
+          "memory.total": "24564",
+          "power.draw": "78.50",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015208.7142208,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "35",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "2301",
+          "memory.total": "24564",
+          "power.draw": "81.68",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015209.2309594,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "37",
+          "utilization.gpu": "16",
+          "utilization.memory": "7",
+          "memory.used": "2301",
+          "memory.total": "24564",
+          "power.draw": "85.10",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015209.7466908,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "36",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "2301",
+          "memory.total": "24564",
+          "power.draw": "85.78",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    },
+    {
+      "time": 1786015210.2624574,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+          "name": "NVIDIA GeForce RTX 4090",
+          "driver_version": "550.142",
+          "compute_mode": "Default",
+          "pstate": "P2",
+          "temperature.gpu": "36",
+          "utilization.gpu": "14",
+          "utilization.memory": "6",
+          "memory.used": "2301",
+          "memory.total": "24564",
+          "power.draw": "85.85",
+          "power.limit": "450.00",
+          "clocks.current.sm": "2700",
+          "clocks.current.memory": "10251",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "16"
+        }
+      ]
+    }
+  ],
+  "gpu_monitor_summary": {
+    "sample_count": 38,
+    "pstates": {
+      "P2": 38
+    },
+    "utilization.gpu": {
+      "mean": 12.605263157894736,
+      "min": 0.0,
+      "max": 80.0
+    },
+    "utilization.memory": {
+      "mean": 5.473684210526316,
+      "min": 0.0,
+      "max": 36.0
+    },
+    "temperature.gpu": {
+      "mean": 34.973684210526315,
+      "min": 32.0,
+      "max": 40.0
+    },
+    "power.draw": {
+      "mean": 80.04131578947369,
+      "min": 27.39,
+      "max": 165.71
+    },
+    "power.limit": {
+      "mean": 450.0,
+      "min": 450.0,
+      "max": 450.0
+    },
+    "clocks.current.sm": {
+      "mean": 2644.342105263158,
+      "min": 2565.0,
+      "max": 2700.0
+    },
+    "clocks.current.memory": {
+      "mean": 10251.0,
+      "min": 10251.0,
+      "max": 10251.0
+    }
+  },
+  "nvidia_smi_after": {
+    "available": true,
+    "fields": [
+      "index",
+      "uuid",
+      "name",
+      "driver_version",
+      "compute_mode",
+      "pstate",
+      "temperature.gpu",
+      "utilization.gpu",
+      "utilization.memory",
+      "memory.used",
+      "memory.total",
+      "power.draw",
+      "power.limit",
+      "clocks.current.sm",
+      "clocks.current.memory",
+      "pcie.link.gen.current",
+      "pcie.link.width.current"
+    ],
+    "gpus": [
+      {
+        "index": "0",
+        "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+        "name": "NVIDIA GeForce RTX 4090",
+        "driver_version": "550.142",
+        "compute_mode": "Default",
+        "pstate": "P2",
+        "temperature.gpu": "36",
+        "utilization.gpu": "0",
+        "utilization.memory": "0",
+        "memory.used": "703",
+        "memory.total": "24564",
+        "power.draw": "72.99",
+        "power.limit": "450.00",
+        "clocks.current.sm": "2700",
+        "clocks.current.memory": "10251",
+        "pcie.link.gen.current": "4",
+        "pcie.link.width.current": "16"
+      }
+    ]
+  },
+  "diagnosis": [
+    "Largest synchronized stage: data_wait (224.81 ms, 77.9% of stage sum).",
+    "Best worker count in this run: 4 (7.64 samples/s); current=7.64 samples/s (1.00x best/current).",
+    "Synthetic/e2e throughput ratio: 29.02/3.68 = 7.89x.",
+    "Synthetic throughput is at least 20% higher; host/data/metric work outside CUDA kernels is limiting end-to-end speed.",
+    "Data wait exceeds 20% of synchronized stages; inspect storage, JPEG/PNG decode, augmentation, and worker count.",
+    "Current mode is deterministic: cuDNN benchmark and TF32 are disabled. Run once with --no-deterministic as a speed A/B check if exact reproducibility is not required for diagnosis.",
+    "Average sampled GPU utilization was 12.6%; low utilization with high data_wait usually means the GPU is being starved by the host pipeline."
+  ]
+}

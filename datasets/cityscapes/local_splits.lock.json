@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "lock_date": "2026-08-05",
+  "timezone": "Asia/Tokyo",
+  "dataset_root": "datasets/cityscapes",
+  "official_test": "omitted from the local protocol",
+  "manifest_format": "UTF-8 without BOM, LF endings, one tab-separated image-relative-path and label-relative-path pair per line",
+  "sha256_scope": "Manifest file bytes. This locks split membership and image/label pairing, not PNG or JSON file contents.",
+  "rule_zh": {
+    "train_local": "官方 train 中除 darmstadt、jena、krefeld、weimar 外的 14 个城市",
+    "dev_local": "官方 train 中的 darmstadt、jena、krefeld、weimar",
+    "test_local": "官方 val 中的 frankfurt、lindau、munster",
+    "official_test": "暂不纳入本地协议，不生成清单"
+  },
+  "splits": {
+    "train_local": {
+      "source": "official train",
+      "count": 2530,
+      "cities": [
+        "aachen",
+        "bochum",
+        "bremen",
+        "cologne",
+        "dusseldorf",
+        "erfurt",
+        "hamburg",
+        "hanover",
+        "monchengladbach",
+        "strasbourg",
+        "stuttgart",
+        "tubingen",
+        "ulm",
+        "zurich"
+      ],
+      "manifest": "train_local.txt",
+      "sha256": "08fe1239484a1824469ac22d0b4780e9b1cf074e90829da952420f6d554076d7"
+    },
+    "dev_local": {
+      "source": "official train",
+      "count": 445,
+      "cities": [
+        "darmstadt",
+        "jena",
+        "krefeld",
+        "weimar"
+      ],
+      "manifest": "dev_local.txt",
+      "sha256": "778d455b9e01aecec7a0958a349eac8ac1655c6c13485af9b01d0ab779e51f70"
+    },
+    "test_local": {
+      "source": "official val",
+      "count": 500,
+      "cities": [
+        "frankfurt",
+        "lindau",
+        "munster"
+      ],
+      "manifest": "test_local.txt",
+      "sha256": "4eb84d274208c475931d4eb796fec932d567e19e31790f38a458942a447d766c"
+    }
+  },
+  "combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+  "generator": "scripts/lock_cityscapes_local_splits.py"
+}

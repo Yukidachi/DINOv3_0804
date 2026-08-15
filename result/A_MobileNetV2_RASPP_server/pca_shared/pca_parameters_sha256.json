@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "sampling_manifest_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/sampling_manifest.json",
+  "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+  "dataset_combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+  "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+  "fit_algorithm": "StandardScaler.partial_fit + IncrementalPCA.partial_fit (two passes)",
+  "standardizer_dtype": "float64 accumulation, float32 feature input",
+  "whiten": false,
+  "layers": {
+    "os4": {
+      "feature_input_sha256": "325b912f0f3b2057c6ae4d37d9a38f6ae2fdd30eed0e098ddc82fdf0e2bddc1c",
+      "scaler_sha256": "fe556db2fb6db6badf9d07857ee197a8e8f08a8a0123a2a165f3fa1f577234ff",
+      "pca_sha256": "439da5ba299e5ad7678ebdb8d978cf54fdb996ca61ca622f31563a440aef2d09",
+      "d_out": 24,
+      "n_tokens": 200000,
+      "explained_variance_ratio_sum": 0.6189103330507209,
+      "explained_variance_ratio_head": [
+        0.08764929742896402,
+        0.05653366050723076,
+        0.05173665006890454,
+        0.03607005433731676,
+        0.03288528456253555,
+        0.029905875561309775,
+        0.027496923368170372,
+        0.02460549807920356,
+        0.022317527343937906,
+        0.021664904166668986
+      ],
+      "scaler_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/scaler_os4.npz",
+      "pca_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/pca_os4.npz"
+    },
+    "os8": {
+      "feature_input_sha256": "3ef49742c5767e7c2df679748813204f5cbc1aa9a8f18d90a73fd6e678b70145",
+      "scaler_sha256": "4aaa45c461947e1c62788d851534b8d2e86245fdfb14080277fc4622cdeaba07",
+      "pca_sha256": "2faff846268b623caef484b342c4bfaa3c20d641b7ee9b910059e8ca192493f4",
+      "d_out": 32,
+      "n_tokens": 200000,
+      "explained_variance_ratio_sum": 0.4338250092981253,
+      "explained_variance_ratio_head": [
+        0.045356563059422546,
+        0.023949130273249852,
+        0.02179407194894662,
+        0.018575734164882386,
+        0.017392671741904012,
+        0.016131965979455088,
+        0.015802745135935464,
+        0.01529470613177839,
+        0.014178133262580038,
+        0.013684531191411433
+      ],
+      "scaler_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/scaler_os8.npz",
+      "pca_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/pca_os8.npz"
+    },
+    "os16": {
+      "feature_input_sha256": "e9f0115d50f62b03ee919b6e0ef3247f642f2df6d2945b7e34713511b2acc104",
+      "scaler_sha256": "b2ddcfa2847072e294c7d87057bb780b1465f48fa061cae909092c3db58d98f2",
+      "pca_sha256": "370704780111aec76c5dc700ff975e00736493086596c4dfcaf3ed9db5e36d00",
+      "d_out": 320,
+      "n_tokens": 200000,
+      "explained_variance_ratio_sum": 0.964547342722032,
+      "explained_variance_ratio_head": [
+        0.108239324233885,
+        0.07524539677934267,
+        0.06935104574076206,
+        0.06147989184886723,
+        0.05766968799762829,
+        0.053320674851758336,
+        0.04033368233315522,
+        0.030274642772751704,
+        0.02535956724269038,
+        0.02379015662849277
+      ],
+      "scaler_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/scaler_os16.npz",
+      "pca_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/pca_os16.npz"
+    }
+  }
+}

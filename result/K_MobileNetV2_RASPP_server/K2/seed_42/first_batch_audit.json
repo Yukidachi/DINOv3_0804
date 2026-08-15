@@ -1,0 +1,98 @@
+{
+  "experiment": "K2",
+  "seed": 42,
+  "student_init_state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+  "world_size": 2,
+  "per_rank": [
+    {
+      "rank": 0,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/erfurt/erfurt_000087_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/stuttgart/stuttgart_000140_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "80eb55d796d598920f31e0354b5be1790e85e49784d2be8691cbcdbc7b1e864c",
+      "target_tensor_sha256": "ac0a7e33a6753973c5f52a09755f04bc3efb0880326ef5837e61431da0d415ae",
+      "valid_pixels": 981546,
+      "student_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "teacher_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "ce_loss": 2.966360330581665,
+      "logit_loss": 21.47138023376465,
+      "total_loss": 2.9690442085266113,
+      "temperature": 4.0,
+      "lambda_logit": 0.5,
+      "warmup_weight": 0.00025,
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_sha256": null,
+      "pca_parameter_record_sha256": null
+    },
+    {
+      "rank": 1,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/zurich/zurich_000053_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/bremen/bremen_000011_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "4aadafc213958b214bbeaeebc29d3c1172ad33c9ce1f65eafc09c2ea86f8d253",
+      "target_tensor_sha256": "cc2c68b70c0f200c98c5e6dc71aaaf6b79ec23cc90c9ea260d1b2cd7518b874d",
+      "valid_pixels": 977105,
+      "student_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "teacher_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "ce_loss": 2.9630682468414307,
+      "logit_loss": 18.743545532226562,
+      "total_loss": 2.9654111862182617,
+      "temperature": 4.0,
+      "lambda_logit": 0.5,
+      "warmup_weight": 0.00025,
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_sha256": null,
+      "pca_parameter_record_sha256": null
+    }
+  ]
+}

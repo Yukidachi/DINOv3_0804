@@ -1,0 +1,54 @@
+{
+  "experiment": "K0",
+  "seed": 260805,
+  "student_init_state_sha256": "94348eb0aa233f6e10d222d6243dd799818c9b4ea67caafc32ff9dd20530bb46",
+  "world_size": 2,
+  "per_rank": [
+    {
+      "rank": 0,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/stuttgart/stuttgart_000153_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/bremen/bremen_000242_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "45a1d7418dc7c6aa9c915aa6d7ee4dcf36b513f5e4a484967f304a79a597566f",
+      "target_tensor_sha256": "55cb0898f11890692e91c8937551b85ee40c9067cd26a84a0f67eedf6e719e42",
+      "valid_pixels": 1004942
+    },
+    {
+      "rank": 1,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/cologne/cologne_000038_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/aachen/aachen_000126_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "59583d0c494409e9d5d7ef4371414d7a2fe7e3e2e2cf7d98eb858c374c9019e3",
+      "target_tensor_sha256": "af3d81ace8e88eb87a4b291abb6d0f8dc16d0b1a53d3be6acf21c32f5983d8bc",
+      "valid_pixels": 980659
+    }
+  ]
+}

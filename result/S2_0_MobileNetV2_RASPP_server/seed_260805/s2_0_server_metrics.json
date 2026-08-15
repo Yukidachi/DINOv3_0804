@@ -1,0 +1,801 @@
+{
+  "experiment": "S2-0-server-DDP",
+  "best_epoch": 253,
+  "best_optimizer_step": 80000,
+  "best_dev_metrics": {
+    "loss": 0.34383609370164975,
+    "mIoU": 0.5012256092025291,
+    "mAcc": 0.5827607464558149,
+    "pixel_accuracy": 0.888378612429494,
+    "small_object_mIoU": 0.40078131118237925,
+    "valid_pixels": 834196385,
+    "per_class": {
+      "road": {
+        "iou": 0.8750265931479524,
+        "accuracy": 0.8900592783214203,
+        "target_pixels": 303128354,
+        "predicted_pixels": 275009855
+      },
+      "sidewalk": {
+        "iou": 0.7296885176608662,
+        "accuracy": 0.8063991847049898,
+        "target_pixels": 54929810,
+        "predicted_pixels": 50070013
+      },
+      "building": {
+        "iou": 0.7987796522575696,
+        "accuracy": 0.9540051291933109,
+        "target_pixels": 210902560,
+        "predicted_pixels": 242186456
+      },
+      "wall": {
+        "iou": 0.3348501924539641,
+        "accuracy": 0.355428160409799,
+        "target_pixels": 8844921,
+        "predicted_pixels": 3687292
+      },
+      "fence": {
+        "iou": 0.34304661757613686,
+        "accuracy": 0.388204135659221,
+        "target_pixels": 8567969,
+        "predicted_pixels": 4453980
+      },
+      "pole": {
+        "iou": 0.33826632098886644,
+        "accuracy": 0.4182916026233794,
+        "target_pixels": 8335508,
+        "predicted_pixels": 5458644
+      },
+      "traffic light": {
+        "iou": 0.36237316780847517,
+        "accuracy": 0.4105726170016688,
+        "target_pixels": 1003725,
+        "predicted_pixels": 545608
+      },
+      "traffic sign": {
+        "iou": 0.49174725295389243,
+        "accuracy": 0.6466184972337942,
+        "target_pixels": 3963371,
+        "predicted_pixels": 3811016
+      },
+      "vegetation": {
+        "iou": 0.8156516584365231,
+        "accuracy": 0.9442610331975996,
+        "target_pixels": 127789631,
+        "predicted_pixels": 140816234
+      },
+      "terrain": {
+        "iou": 0.3863668087554016,
+        "accuracy": 0.4284458633064663,
+        "target_pixels": 4922881,
+        "predicted_pixels": 2645337
+      },
+      "sky": {
+        "iou": 0.8412393033493706,
+        "accuracy": 0.958900997539978,
+        "target_pixels": 30728994,
+        "predicted_pixels": 33764038
+      },
+      "person": {
+        "iou": 0.6554690282020703,
+        "accuracy": 0.7712360498687916,
+        "target_pixels": 9916663,
+        "predicted_pixels": 9399540
+      },
+      "rider": {
+        "iou": 0.3240942215886176,
+        "accuracy": 0.47727215831840647,
+        "target_pixels": 1158425,
+        "predicted_pixels": 1100395
+      },
+      "car": {
+        "iou": 0.8504674107704931,
+        "accuracy": 0.964626866728783,
+        "target_pixels": 51391772,
+        "predicted_pixels": 56472275
+      },
+      "truck": {
+        "iou": 0.13697348493562184,
+        "accuracy": 0.19621485027422333,
+        "target_pixels": 2397316,
+        "predicted_pixels": 1507234
+      },
+      "bus": {
+        "iou": 0.2445253291717674,
+        "accuracy": 0.27462772095483534,
+        "target_pixels": 1905627,
+        "predicted_pixels": 757931
+      },
+      "train": {
+        "iou": 0.19478830376993705,
+        "accuracy": 0.20452858243064687,
+        "target_pixels": 1872374,
+        "predicted_pixels": 476581
+      },
+      "motorcycle": {
+        "iou": 0.2656882296106447,
+        "accuracy": 0.316022018194424,
+        "target_pixels": 475970,
+        "predicted_pixels": 240588
+      },
+      "bicycle": {
+        "iou": 0.5342444814098818,
+        "accuracy": 0.6667394366987432,
+        "target_pixels": 1960514,
+        "predicted_pixels": 1793368
+      }
+    },
+    "confusion_matrix": [
+      [
+        269802204,
+        3579172,
+        16669325,
+        5657,
+        39321,
+        29567,
+        21,
+        65608,
+        8014097,
+        28739,
+        1816888,
+        350326,
+        27964,
+        2618754,
+        12607,
+        17930,
+        8297,
+        5294,
+        36583
+      ],
+      [
+        4378379,
+        44295354,
+        3529598,
+        70830,
+        67528,
+        159425,
+        0,
+        18724,
+        1025003,
+        261312,
+        352221,
+        151264,
+        2801,
+        548133,
+        4357,
+        3462,
+        1550,
+        2622,
+        57247
+      ],
+      [
+        100459,
+        507674,
+        201202124,
+        71626,
+        199348,
+        698598,
+        55075,
+        700828,
+        4205196,
+        9056,
+        1422867,
+        338647,
+        15772,
+        1069151,
+        227103,
+        9885,
+        4146,
+        3030,
+        61975
+      ],
+      [
+        12554,
+        428233,
+        3225965,
+        3143734,
+        459983,
+        88485,
+        158,
+        13358,
+        1273726,
+        30746,
+        3360,
+        24088,
+        1422,
+        126421,
+        693,
+        1694,
+        1,
+        94,
+        10206
+      ],
+      [
+        10635,
+        90373,
+        3354486,
+        274257,
+        3326121,
+        104639,
+        207,
+        10070,
+        1174181,
+        52989,
+        400,
+        35443,
+        2356,
+        100446,
+        470,
+        8254,
+        5219,
+        11,
+        17412
+      ],
+      [
+        18067,
+        153213,
+        3086826,
+        12247,
+        64144,
+        3486673,
+        30384,
+        91301,
+        1059226,
+        15469,
+        103041,
+        80650,
+        1124,
+        108434,
+        2608,
+        2859,
+        2644,
+        375,
+        16223
+      ],
+      [
+        0,
+        0,
+        336381,
+        0,
+        0,
+        43869,
+        412102,
+        17859,
+        171499,
+        0,
+        11874,
+        2248,
+        3828,
+        3737,
+        4,
+        324,
+        0,
+        0,
+        0
+      ],
+      [
+        1732,
+        5419,
+        1020590,
+        1883,
+        3102,
+        39876,
+        7729,
+        2562789,
+        254812,
+        521,
+        10945,
+        12634,
+        482,
+        27909,
+        7789,
+        3836,
+        982,
+        0,
+        341
+      ],
+      [
+        40993,
+        172366,
+        4920896,
+        53928,
+        194152,
+        556797,
+        24587,
+        107175,
+        120666769,
+        122981,
+        523441,
+        117431,
+        5795,
+        247142,
+        4310,
+        9448,
+        209,
+        1306,
+        19905
+      ],
+      [
+        99948,
+        592212,
+        101992,
+        46733,
+        51225,
+        39952,
+        4,
+        920,
+        1800173,
+        2109188,
+        0,
+        16046,
+        282,
+        55820,
+        152,
+        117,
+        0,
+        0,
+        8117
+      ],
+      [
+        640,
+        0,
+        648564,
+        0,
+        314,
+        65906,
+        10182,
+        29071,
+        504672,
+        0,
+        29466063,
+        125,
+        0,
+        3457,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        118615,
+        149862,
+        896597,
+        2564,
+        9047,
+        64019,
+        1411,
+        51215,
+        250089,
+        4911,
+        1023,
+        7648088,
+        352886,
+        272771,
+        5616,
+        1254,
+        382,
+        15232,
+        71081
+      ],
+      [
+        11878,
+        4080,
+        70519,
+        172,
+        3932,
+        1603,
+        971,
+        552,
+        26766,
+        579,
+        183,
+        246671,
+        552884,
+        103671,
+        143,
+        96,
+        0,
+        22200,
+        111525
+      ],
+      [
+        335733,
+        42317,
+        694741,
+        2967,
+        18410,
+        38569,
+        1458,
+        12564,
+        265491,
+        6269,
+        27377,
+        121310,
+        30839,
+        49573884,
+        131282,
+        43947,
+        3422,
+        16875,
+        24317
+      ],
+      [
+        7301,
+        2013,
+        732592,
+        0,
+        158,
+        16919,
+        82,
+        105750,
+        49423,
+        21,
+        17322,
+        120951,
+        2177,
+        821050,
+        470389,
+        34110,
+        13494,
+        1296,
+        2268
+      ],
+      [
+        20142,
+        5718,
+        494682,
+        70,
+        1409,
+        4474,
+        9,
+        13666,
+        34980,
+        244,
+        5927,
+        3718,
+        0,
+        358903,
+        385042,
+        523338,
+        53281,
+        0,
+        24
+      ],
+      [
+        9185,
+        1407,
+        956999,
+        0,
+        3865,
+        269,
+        381,
+        8080,
+        2115,
+        15,
+        909,
+        2954,
+        0,
+        151413,
+        254451,
+        97377,
+        382954,
+        0,
+        0
+      ],
+      [
+        14909,
+        2197,
+        29236,
+        66,
+        100,
+        493,
+        0,
+        1486,
+        7598,
+        19,
+        0,
+        21142,
+        34241,
+        165005,
+        69,
+        0,
+        0,
+        150417,
+        48992
+      ],
+      [
+        26481,
+        38403,
+        214343,
+        558,
+        11821,
+        18511,
+        847,
+        0,
+        30418,
+        2278,
+        197,
+        105804,
+        65542,
+        116174,
+        149,
+        0,
+        0,
+        21836,
+        1307152
+      ]
+    ],
+    "boundary_precision": 0.36999804399369246,
+    "boundary_recall": 0.40268429944874773,
+    "boundary_f1": 0.3856498195085416
+  },
+  "config": {
+    "experiment": "S2-0",
+    "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_s2_0_server.py",
+    "seed": 260805,
+    "world_size": 2,
+    "batch_size_per_gpu": 2,
+    "global_batch_size": 8,
+    "accumulation_steps_per_gpu": 2,
+    "max_optimizer_steps": 80000,
+    "eval_batch_size": 1,
+    "num_workers_per_gpu": 8,
+    "multiprocessing_context": "spawn",
+    "pin_memory": false,
+    "persistent_workers": true,
+    "prefetch_factor": 2,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "scheduler": "polynomial",
+    "poly_power": 0.9,
+    "min_lr_ratio": 0.01,
+    "eval_every_steps": 5000,
+    "amp": true,
+    "deterministic": true,
+    "crop_size": [
+      512,
+      1024
+    ],
+    "random_scale": [
+      0.5,
+      2.0
+    ],
+    "horizontal_flip_probability": 0.5,
+    "eval_resolution": [
+      1024,
+      2048
+    ],
+    "head_channels": 256,
+    "dropout": 0.1,
+    "num_classes": 19,
+    "ignore_index": 255,
+    "output_stride": 16,
+    "initialization": "weights=None",
+    "backbone_frozen": false,
+    "loss": "pixel_cross_entropy_only",
+    "knowledge_distillation": false,
+    "test_local_evaluated": false,
+    "distributed_backend": "nccl"
+  },
+  "shape_audit": {
+    "input_shape": [
+      1,
+      3,
+      512,
+      1024
+    ],
+    "feature_taps": {
+      "os4": {
+        "module": "backbone.3",
+        "index": 3,
+        "channels": 24,
+        "stride": 4
+      },
+      "os8": {
+        "module": "backbone.6",
+        "index": 6,
+        "channels": 32,
+        "stride": 8
+      },
+      "os16": {
+        "module": "backbone.17",
+        "index": 17,
+        "channels": 320,
+        "stride": 16
+      },
+      "raspp_input": {
+        "module": "backbone.18",
+        "index": 18,
+        "channels": 1280,
+        "stride": 16
+      }
+    },
+    "feature_shapes": {
+      "os4": [
+        1,
+        24,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        32,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        320,
+        32,
+        64
+      ],
+      "raspp_input": [
+        1,
+        1280,
+        32,
+        64
+      ]
+    },
+    "logit_shape": [
+      1,
+      19,
+      512,
+      1024
+    ],
+    "output_stride": 16,
+    "conversion": "features.14 depthwise stride 2->1; features.14-17 depthwise convolutions use dilation=2 and padding=2",
+    "depthwise_contract": {
+      "backbone.14": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.15": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.16": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.17": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      }
+    },
+    "align_corners": false
+  },
+  "dataset_lock": {
+    "lock_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.lock.json",
+    "lock_sha256": "b3b4e2e8af470963983f3e2f8848caa7cab3d63ee4f37b218601f3a9d0048eb2",
+    "checksum_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.sha256",
+    "checksum_sha256": "a31cc5370ddee112d2ead5e99ad57857ed301285a6f0b953f261466ec87cfe50",
+    "lock_date": "2026-08-05",
+    "timezone": "Asia/Tokyo",
+    "combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+    "splits": {
+      "train_local": {
+        "source": "official train",
+        "count": 2530,
+        "cities": [
+          "aachen",
+          "bochum",
+          "bremen",
+          "cologne",
+          "dusseldorf",
+          "erfurt",
+          "hamburg",
+          "hanover",
+          "monchengladbach",
+          "strasbourg",
+          "stuttgart",
+          "tubingen",
+          "ulm",
+          "zurich"
+        ],
+        "manifest": "train_local.txt",
+        "sha256": "08fe1239484a1824469ac22d0b4780e9b1cf074e90829da952420f6d554076d7"
+      },
+      "dev_local": {
+        "source": "official train",
+        "count": 445,
+        "cities": [
+          "darmstadt",
+          "jena",
+          "krefeld",
+          "weimar"
+        ],
+        "manifest": "dev_local.txt",
+        "sha256": "778d455b9e01aecec7a0958a349eac8ac1655c6c13485af9b01d0ab779e51f70"
+      },
+      "test_local": {
+        "source": "official val",
+        "count": 500,
+        "cities": [
+          "frankfurt",
+          "lindau",
+          "munster"
+        ],
+        "manifest": "test_local.txt",
+        "sha256": "4eb84d274208c475931d4eb796fec932d567e19e31790f38a458942a447d766c"
+      }
+    }
+  },
+  "model": {
+    "model_name": "mobilenet_v2",
+    "total_parameters": 2884883,
+    "backbone_parameters": 2223872,
+    "head_parameters": 661011,
+    "trainable_parameters": 2884883
+  },
+  "efficiency": null,
+  "hashes": {
+    "initial_model_state_sha256": "94348eb0aa233f6e10d222d6243dd799818c9b4ea67caafc32ff9dd20530bb46",
+    "training_script_sha256": "a6d469e0f623432c1f07ffd01f0ede17ee1da54fc2046a514ecc2c68b4d64033",
+    "selected_model_state_sha256": "830d93e118470108e34b323b0f19b9e7c17107b2eb54532b6f24410b837d45a0",
+    "checkpoint_sha256": "d35eae6c67d23bb8f6fb066dd42d5a1e057003bcd11c70f138c5551e2ff8802d"
+  },
+  "training": {
+    "elapsed_seconds": 9102.047402143478,
+    "optimizer_steps": 80000,
+    "epochs_completed": 253,
+    "steps_per_full_epoch": 317
+  },
+  "software": {
+    "python": "3.10.19",
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "2.0.1",
+    "pillow": "11.1.0",
+    "platform": "Linux-5.15.0-128-generic-x86_64-with-glibc2.35"
+  },
+  "artifacts": {
+    "best": "/home/ubuntu/work/DINOv3_0804/result/S2_0_MobileNetV2_RASPP_server/seed_260805/s2_0_server_mobilenetv2_raspp.pth",
+    "last": "/home/ubuntu/work/DINOv3_0804/result/S2_0_MobileNetV2_RASPP_server/seed_260805/s2_0_server_last_checkpoint.pth",
+    "history": "/home/ubuntu/work/DINOv3_0804/result/S2_0_MobileNetV2_RASPP_server/seed_260805/s2_0_server_training_history.json",
+    "metrics": "/home/ubuntu/work/DINOv3_0804/result/S2_0_MobileNetV2_RASPP_server/seed_260805/s2_0_server_metrics.json",
+    "per_image": "/home/ubuntu/work/DINOv3_0804/result/S2_0_MobileNetV2_RASPP_server/seed_260805/s2_0_server_dev_per_image_confusion.jsonl"
+  }
+}

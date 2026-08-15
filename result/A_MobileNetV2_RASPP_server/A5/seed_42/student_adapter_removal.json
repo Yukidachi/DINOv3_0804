@@ -1,0 +1,29 @@
+{
+  "experiment": "A5",
+  "pretrain_checkpoint": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/A5/seed_42/a5_pretrain_last.pth",
+  "pretrain_model_state_sha256": "4cdd370dd8a8ad7c6ed98f47b888a283f72c8216d3dbfc610dff05a9f32a1d02",
+  "adapter_state_key_count": 12,
+  "adapter_state_keys": [
+    "student_adapters.os16.bias",
+    "student_adapters.os16.bias_initial",
+    "student_adapters.os16.weight",
+    "student_adapters.os16.weight_initial",
+    "student_adapters.os4.bias",
+    "student_adapters.os4.bias_initial",
+    "student_adapters.os4.weight",
+    "student_adapters.os4.weight_initial",
+    "student_adapters.os8.bias",
+    "student_adapters.os8.bias_initial",
+    "student_adapters.os8.weight",
+    "student_adapters.os8.weight_initial"
+  ],
+  "student_adapter_parameter_sha256": {
+    "os4": "6ef20693b43bc7e508c0624899a99e3728a3820f29dc6526988f12f13cbebc04",
+    "os8": "ab8a9bef30750ffa729945d25c9388d766bd26613b7b200dc0710066f697a62d",
+    "os16": "a73f0123fe8303b27ff3b703ce2377daa08a4c79a08a802f06580708f7241d92"
+  },
+  "backbone_hash_before_adapter_removal": "8748d21c33caeb6f08f7129e1c3a19786c3d9fda91e892c31428713a6357a795",
+  "backbone_hash_after_adapter_removal": "8748d21c33caeb6f08f7129e1c3a19786c3d9fda91e892c31428713a6357a795",
+  "adapter_removed_before_probe": true,
+  "probe_load_policy": "load only keys prefixed with backbone.; discard student_adapters.*"
+}

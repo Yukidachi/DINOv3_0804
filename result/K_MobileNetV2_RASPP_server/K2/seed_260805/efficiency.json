@@ -1,0 +1,6 @@
+{
+  "enabled": false,
+  "training_time_teacher_or_projection_included": false,
+  "model": "MobileNetV2+R-ASPP student only",
+  "result": null
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "experiment": "A4",
+  "sampling_manifest_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared_A4_raw/sampling_manifest.json",
+  "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+  "dataset_combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+  "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+  "fit_algorithm": "IncrementalPCA.partial_fit (raw teacher tokens, no StandardScaler)",
+  "pca_fit_space": "raw_teacher_feature_space",
+  "standard_scaler_used": false,
+  "pca_dtype": "float64 fit from float32 feature input",
+  "whiten": false,
+  "layers": {
+    "os4": {
+      "feature_input_sha256": "325b912f0f3b2057c6ae4d37d9a38f6ae2fdd30eed0e098ddc82fdf0e2bddc1c",
+      "pca_sha256": "ec11194103fd82d9c15b6b9bd2dfe4d496d35fa39fe7e0d767e224931a5bf780",
+      "d_out": 24,
+      "teacher_channels": 96,
+      "n_tokens": 200000,
+      "explained_variance_ratio_sum": 0.7022055861381472,
+      "explained_variance_ratio_head": [
+        0.12798909615236698,
+        0.10472949127792627,
+        0.05988718266647775,
+        0.04598935221670462,
+        0.039631495299672415,
+        0.03223901351439824,
+        0.028627522117199315,
+        0.026159281652063247,
+        0.022994169796993282,
+        0.021689912412018342
+      ],
+      "pca_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared_A4_raw/pca_os4.npz"
+    },
+    "os8": {
+      "feature_input_sha256": "3ef49742c5767e7c2df679748813204f5cbc1aa9a8f18d90a73fd6e678b70145",
+      "pca_sha256": "ab88542ea772056677c5e95baff99e56edb665f6d77b40cb4682b1e8e33094d7",
+      "d_out": 32,
+      "teacher_channels": 192,
+      "n_tokens": 200000,
+      "explained_variance_ratio_sum": 0.6795503607079676,
+      "explained_variance_ratio_head": [
+        0.3387950521992626,
+        0.0771085507070161,
+        0.03569149949037718,
+        0.020774246986559074,
+        0.01507797494284059,
+        0.012094652506614184,
+        0.010803383039289906,
+        0.010047928104241677,
+        0.00977013004144645,
+        0.008993599387931562
+      ],
+      "pca_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared_A4_raw/pca_os8.npz"
+    },
+    "os16": {
+      "feature_input_sha256": "e9f0115d50f62b03ee919b6e0ef3247f642f2df6d2945b7e34713511b2acc104",
+      "pca_sha256": "9178d33db441dcd0fd33bb373e5a31781bc78f2a2e7b19f1d77c9ce6d9edcc83",
+      "d_out": 320,
+      "teacher_channels": 768,
+      "n_tokens": 200000,
+      "explained_variance_ratio_sum": 0.9667418695881447,
+      "explained_variance_ratio_head": [
+        0.12358140945622405,
+        0.07765924225503745,
+        0.07371266369829615,
+        0.06562490764467233,
+        0.05849851920433778,
+        0.05533040326472002,
+        0.039066109172907905,
+        0.029918808312442837,
+        0.02545000134086062,
+        0.023223943591093806
+      ],
+      "pca_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared_A4_raw/pca_os16.npz"
+    }
+  }
+}

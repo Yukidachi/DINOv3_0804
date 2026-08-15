@@ -1,0 +1,74 @@
+{
+  "experiment": "A3",
+  "seed_base": 42,
+  "layers": {
+    "os4": {
+      "layer": "os4",
+      "layer_index": 0,
+      "seed": 42,
+      "rng": "numpy.random.RandomState",
+      "gaussian_shape": [
+        96,
+        24
+      ],
+      "q_shape": [
+        24,
+        96
+      ],
+      "construction": "complete_qr(Q_full.T[:d_out])",
+      "orthogonality_error_frobenius": 2.1227194898621e-15,
+      "orthogonality_tolerance": 1e-05,
+      "random_matrix_sha256": "98317ba3e3d1f6ab26af055b747595b9c29d7435d53edf99c699a932e41b447c",
+      "projection_parameter_sha256": "f0db13e84b27fccc41c9be448017f99946fae43fc6304a30c9cdc306b2943f79",
+      "scaler_mean_sha256": "a2d47dd4d38338655fca9f08406235f0fc16e4ac88a635a857d50519013dc26d",
+      "scaler_scale_sha256": "4c2741d194116716572d47de2e679fd763275a1f7fe0e64ddc0580ca86544cc4"
+    },
+    "os8": {
+      "layer": "os8",
+      "layer_index": 1,
+      "seed": 43,
+      "rng": "numpy.random.RandomState",
+      "gaussian_shape": [
+        192,
+        32
+      ],
+      "q_shape": [
+        32,
+        192
+      ],
+      "construction": "complete_qr(Q_full.T[:d_out])",
+      "orthogonality_error_frobenius": 2.6558981478332637e-15,
+      "orthogonality_tolerance": 1e-05,
+      "random_matrix_sha256": "bbb32e11745fdb4b91e146cff8dfcad80d1abe27306be08002f8b068e056ffa7",
+      "projection_parameter_sha256": "51bde63e92635c10e17e8afcc0fa9ff237534079ed41afc4c72f2fa49df3b4a9",
+      "scaler_mean_sha256": "84d392cdaf8214f4fa6e7ea987848297a0749e50e79a4ea28d199b07ee3d38ee",
+      "scaler_scale_sha256": "7012e091d938a4e8d33ff7866d120b4382f43f64e3c185fe258f6acac993fa8f"
+    },
+    "os16": {
+      "layer": "os16",
+      "layer_index": 2,
+      "seed": 44,
+      "rng": "numpy.random.RandomState",
+      "gaussian_shape": [
+        768,
+        320
+      ],
+      "q_shape": [
+        320,
+        768
+      ],
+      "construction": "complete_qr(Q_full.T[:d_out])",
+      "orthogonality_error_frobenius": 1.1466513094715314e-14,
+      "orthogonality_tolerance": 1e-05,
+      "random_matrix_sha256": "c8b1f7105b8a11dc675b1d4340a0886b5714d4335703248aa0947f4472fbb127",
+      "projection_parameter_sha256": "5120592006147ae64c037219de4b9849d579bb2a39c511294df168788504e0e7",
+      "scaler_mean_sha256": "895973c2cd2b849fb273e975d0acce6552261a7115a820e9347cf870302827d3",
+      "scaler_scale_sha256": "25ea5dad10934aad3be3d05288420859f312bec9c9f576fc82f6b68b86124e67"
+    }
+  },
+  "artifacts": {
+    "os4": "D:\\ProjectVision\\DINOv3_0804\\result\\A_MobileNetV2_RASPP_server\\pca_shared\\a3_random_orthogonal_os4.npz",
+    "os8": "D:\\ProjectVision\\DINOv3_0804\\result\\A_MobileNetV2_RASPP_server\\pca_shared\\a3_random_orthogonal_os8.npz",
+    "os16": "D:\\ProjectVision\\DINOv3_0804\\result\\A_MobileNetV2_RASPP_server\\pca_shared\\a3_random_orthogonal_os16.npz"
+  }
+}

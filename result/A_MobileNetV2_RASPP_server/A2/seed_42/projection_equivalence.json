@@ -1,0 +1,170 @@
+{
+  "os4": {
+    "reference": "A0 explicit StandardScaler+PCA",
+    "candidate": "A2 trainable Conv2d(C_t,C_s,1), initialized from A1 fused PCA-Conv",
+    "random_input_scale": 0.05,
+    "random_tensor": {
+      "input_shape": [
+        2,
+        96,
+        32,
+        64
+      ],
+      "max_abs_error": 4.76837158203125e-06,
+      "mean_abs_error": 2.8363348292259616e-07,
+      "relative_l2_error": 1.8113978732114213e-07,
+      "mathematical_equivalence_passed": true,
+      "fp64_max_abs_error": 1.5987211554602254e-14,
+      "fp64_mean_abs_error": 8.065087115056723e-16,
+      "fp64_relative_l2_error": 5.453090301297027e-16,
+      "fp32_max_abs_error": 4.76837158203125e-06,
+      "fp32_mean_abs_error": 2.8363348292259616e-07,
+      "fp32_relative_l2_error": 1.8113978732114213e-07,
+      "passed": true,
+      "fp32_roundoff_within_configured_tolerance": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "FP64 is the mathematical equivalence gate; FP32 reports normal matmul-vs-conv accumulation round-off"
+    },
+    "real_teacher_feature": {
+      "input_shape": [
+        1,
+        96,
+        128,
+        256
+      ],
+      "max_abs_error": 8.58306884765625e-06,
+      "mean_abs_error": 3.497398495255766e-07,
+      "relative_l2_error": 3.4809072923000787e-07,
+      "mathematical_equivalence_passed": true,
+      "fp64_max_abs_error": 1.2434497875801753e-14,
+      "fp64_mean_abs_error": 6.561455069456712e-16,
+      "fp64_relative_l2_error": 6.119764133521385e-16,
+      "fp32_max_abs_error": 8.58306884765625e-06,
+      "fp32_mean_abs_error": 3.497398495255766e-07,
+      "fp32_relative_l2_error": 3.4809072923000787e-07,
+      "passed": true,
+      "fp32_roundoff_within_configured_tolerance": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "FP64 is the mathematical equivalence gate; FP32 reports normal matmul-vs-conv accumulation round-off"
+    },
+    "max_abs_error": 8.58306884765625e-06,
+    "passed": true,
+    "weight_sha256": "d3f28dc3b9b064bc992d2e8793a058546e5289f639aac55ddfadd0412b45eb72",
+    "trainable_after_preflight": true,
+    "adapter_initial_sha256": "d3f28dc3b9b064bc992d2e8793a058546e5289f639aac55ddfadd0412b45eb72"
+  },
+  "os8": {
+    "reference": "A0 explicit StandardScaler+PCA",
+    "candidate": "A2 trainable Conv2d(C_t,C_s,1), initialized from A1 fused PCA-Conv",
+    "random_input_scale": 0.05,
+    "random_tensor": {
+      "input_shape": [
+        2,
+        192,
+        32,
+        64
+      ],
+      "max_abs_error": 5.7220458984375e-06,
+      "mean_abs_error": 3.428018544582301e-07,
+      "relative_l2_error": 2.8431268840956573e-07,
+      "mathematical_equivalence_passed": true,
+      "fp64_max_abs_error": 2.3092638912203256e-14,
+      "fp64_mean_abs_error": 8.232304906304644e-16,
+      "fp64_relative_l2_error": 7.96025230375009e-16,
+      "fp32_max_abs_error": 5.7220458984375e-06,
+      "fp32_mean_abs_error": 3.428018544582301e-07,
+      "fp32_relative_l2_error": 2.8431268840956573e-07,
+      "passed": true,
+      "fp32_roundoff_within_configured_tolerance": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "FP64 is the mathematical equivalence gate; FP32 reports normal matmul-vs-conv accumulation round-off"
+    },
+    "real_teacher_feature": {
+      "input_shape": [
+        1,
+        192,
+        64,
+        128
+      ],
+      "max_abs_error": 1.0251998901367188e-05,
+      "mean_abs_error": 4.13577851077207e-07,
+      "relative_l2_error": 3.927050194119142e-07,
+      "mathematical_equivalence_passed": true,
+      "fp64_max_abs_error": 1.865174681370263e-14,
+      "fp64_mean_abs_error": 7.87715002359013e-16,
+      "fp64_relative_l2_error": 7.876084926745577e-16,
+      "fp32_max_abs_error": 1.0251998901367188e-05,
+      "fp32_mean_abs_error": 4.13577851077207e-07,
+      "fp32_relative_l2_error": 3.927050194119142e-07,
+      "passed": true,
+      "fp32_roundoff_within_configured_tolerance": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "FP64 is the mathematical equivalence gate; FP32 reports normal matmul-vs-conv accumulation round-off"
+    },
+    "max_abs_error": 1.0251998901367188e-05,
+    "passed": true,
+    "weight_sha256": "64cf287003d036012bdc4b94e04c7e82435e533fe97935e6aab82fcfab097402",
+    "trainable_after_preflight": true,
+    "adapter_initial_sha256": "64cf287003d036012bdc4b94e04c7e82435e533fe97935e6aab82fcfab097402"
+  },
+  "os16": {
+    "reference": "A0 explicit StandardScaler+PCA",
+    "candidate": "A2 trainable Conv2d(C_t,C_s,1), initialized from A1 fused PCA-Conv",
+    "random_input_scale": 0.05,
+    "random_tensor": {
+      "input_shape": [
+        2,
+        768,
+        32,
+        64
+      ],
+      "max_abs_error": 1.430511474609375e-06,
+      "mean_abs_error": 1.0643437065027683e-07,
+      "relative_l2_error": 2.901784299720936e-07,
+      "mathematical_equivalence_passed": true,
+      "fp64_max_abs_error": 1.7763568394002505e-14,
+      "fp64_mean_abs_error": 4.940744445339504e-16,
+      "fp64_relative_l2_error": 1.6814171537583662e-15,
+      "fp32_max_abs_error": 1.430511474609375e-06,
+      "fp32_mean_abs_error": 1.0643437065027683e-07,
+      "fp32_relative_l2_error": 2.901784299720936e-07,
+      "passed": true,
+      "fp32_roundoff_within_configured_tolerance": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "FP64 is the mathematical equivalence gate; FP32 reports normal matmul-vs-conv accumulation round-off"
+    },
+    "real_teacher_feature": {
+      "input_shape": [
+        1,
+        768,
+        32,
+        64
+      ],
+      "max_abs_error": 1.1444091796875e-05,
+      "mean_abs_error": 2.8596448942153074e-07,
+      "relative_l2_error": 2.7803690429620045e-07,
+      "mathematical_equivalence_passed": true,
+      "fp64_max_abs_error": 6.394884621840902e-14,
+      "fp64_mean_abs_error": 9.457926232321253e-16,
+      "fp64_relative_l2_error": 1.2229760634969264e-15,
+      "fp32_max_abs_error": 1.1444091796875e-05,
+      "fp32_mean_abs_error": 2.8596448942153074e-07,
+      "fp32_relative_l2_error": 2.7803690429620045e-07,
+      "passed": true,
+      "fp32_roundoff_within_configured_tolerance": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "FP64 is the mathematical equivalence gate; FP32 reports normal matmul-vs-conv accumulation round-off"
+    },
+    "max_abs_error": 1.1444091796875e-05,
+    "passed": true,
+    "weight_sha256": "91130a9d831bb6cc61249ed8052a82de9a37efab32a1d49ecc4b549a5684486a",
+    "trainable_after_preflight": true,
+    "adapter_initial_sha256": "91130a9d831bb6cc61249ed8052a82de9a37efab32a1d49ecc4b549a5684486a"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "crop_size": [
+    512,
+    1024
+  ],
+  "output_stride": 16,
+  "teacher_model": "DINOv3 ConvNeXt-T (T1, frozen)",
+  "student_model": "mobilenet_v2",
+  "layers": {
+    "os4": {
+      "teacher_module": "backbone.get_intermediate_layers[0]",
+      "teacher_channels": 96,
+      "teacher_shape": [
+        1,
+        96,
+        128,
+        256
+      ],
+      "student_module": "backbone.3",
+      "student_channels": 24,
+      "student_shape": [
+        1,
+        24,
+        128,
+        256
+      ],
+      "pca_output_dim": 24
+    },
+    "os8": {
+      "teacher_module": "backbone.get_intermediate_layers[1]",
+      "teacher_channels": 192,
+      "teacher_shape": [
+        1,
+        192,
+        64,
+        128
+      ],
+      "student_module": "backbone.6",
+      "student_channels": 32,
+      "student_shape": [
+        1,
+        32,
+        64,
+        128
+      ],
+      "pca_output_dim": 32
+    },
+    "os16": {
+      "teacher_module": "backbone.get_intermediate_layers[3]",
+      "teacher_channels": 768,
+      "teacher_shape": [
+        1,
+        768,
+        32,
+        64
+      ],
+      "student_module": "backbone.17",
+      "student_channels": 320,
+      "student_shape": [
+        1,
+        320,
+        32,
+        64
+      ],
+      "pca_output_dim": 320
+    }
+  }
+}

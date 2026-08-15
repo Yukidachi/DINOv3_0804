@@ -1,0 +1,2935 @@
+{
+  "script": "D:\\ProjectVision\\DINOv3_0804\\scripts\\profile_dino_s2_0.py",
+  "timestamp": "2026-08-06T19:12:17+0800",
+  "arguments": {
+    "dataset_root": "D:\\ProjectVision\\DINOv3_0804\\datasets\\cityscapes",
+    "device": "cuda:0",
+    "seed": 42,
+    "batch_size": 2,
+    "accumulation_steps": 4,
+    "num_workers": 4,
+    "worker_sweep": "0,2,4,8",
+    "crop_height": 512,
+    "crop_width": 1024,
+    "scale_min": 0.5,
+    "scale_max": 2.0,
+    "head_channels": 256,
+    "dropout": 0.1,
+    "amp": true,
+    "deterministic": true,
+    "persistent_workers": false,
+    "pin_memory": null,
+    "warmup_batches": 5,
+    "profile_batches": 20,
+    "data_batches": 40,
+    "io_samples": 20,
+    "trace": null,
+    "trace_batches": 5,
+    "no_worker_sweep": false,
+    "no_io_profile": false,
+    "no_synthetic": false,
+    "no_pipeline": false,
+    "no_gpu_monitor": false,
+    "output": "result\\s_2_0_profile.json"
+  },
+  "environment": {
+    "python": "3.10.16",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "cpu_count": 28,
+    "torch": "2.5.0",
+    "torchvision": "0.20.0",
+    "numpy": "2.0.1",
+    "pillow": "11.1.0",
+    "torch_cuda": "12.4",
+    "cudnn": 90100,
+    "cuda_available": true,
+    "cuda_visible_devices": null,
+    "device": "cuda:0",
+    "num_threads": 20,
+    "num_interop_threads": 20,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "cudnn_allow_tf32": false,
+    "matmul_allow_tf32": false,
+    "matmul_precision": "highest",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+      "capability": [
+        8,
+        9
+      ],
+      "total_memory_mib": 8187.5,
+      "multi_processor_count": 36,
+      "logical_index": 0,
+      "nvidia_smi_selector": "0"
+    }
+  },
+  "nvidia_smi_before": {
+    "available": true,
+    "fields": [
+      "index",
+      "uuid",
+      "name",
+      "driver_version",
+      "compute_mode",
+      "pstate",
+      "temperature.gpu",
+      "utilization.gpu",
+      "utilization.memory",
+      "memory.used",
+      "memory.total",
+      "power.draw",
+      "power.limit",
+      "clocks.current.sm",
+      "clocks.current.memory",
+      "pcie.link.gen.current",
+      "pcie.link.width.current"
+    ],
+    "gpus": [
+      {
+        "index": "0",
+        "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+        "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "driver_version": "596.49",
+        "compute_mode": "Default",
+        "pstate": "P8",
+        "temperature.gpu": "44",
+        "utilization.gpu": "0",
+        "utilization.memory": "0",
+        "memory.used": "3846",
+        "memory.total": "8188",
+        "power.draw": "1.92",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "210",
+        "clocks.current.memory": "405",
+        "pcie.link.gen.current": "1",
+        "pcie.link.width.current": "8"
+      }
+    ]
+  },
+  "nvidia_compute_processes_before": {
+    "available": true,
+    "processes": [
+      {
+        "pid": "2676",
+        "process_name": "[Insufficient Permissions]",
+        "used_gpu_memory": "[N/A]",
+        "gpu_uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120"
+      },
+      {
+        "pid": "5764",
+        "process_name": "[Insufficient Permissions]",
+        "used_gpu_memory": "[N/A]",
+        "gpu_uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120"
+      },
+      {
+        "pid": "25080",
+        "process_name": "[Insufficient Permissions]",
+        "used_gpu_memory": "[N/A]",
+        "gpu_uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120"
+      },
+      {
+        "pid": "14300",
+        "process_name": "C:\\Users\\24703\\anaconda3\\envs\\pytorch\\python.exe",
+        "used_gpu_memory": "[N/A]",
+        "gpu_uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120"
+      },
+      {
+        "pid": "33080",
+        "process_name": "D:\\soft\\QQ\\QQ.exe",
+        "used_gpu_memory": "[N/A]",
+        "gpu_uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120"
+      }
+    ]
+  },
+  "dataset": {
+    "root": "D:\\ProjectVision\\DINOv3_0804\\datasets\\cityscapes",
+    "lock": {
+      "lock_path": "D:\\ProjectVision\\DINOv3_0804\\datasets\\cityscapes\\local_splits.lock.json",
+      "lock_sha256": "b3b4e2e8af470963983f3e2f8848caa7cab3d63ee4f37b218601f3a9d0048eb2",
+      "checksum_path": "D:\\ProjectVision\\DINOv3_0804\\datasets\\cityscapes\\local_splits.sha256",
+      "checksum_sha256": "a31cc5370ddee112d2ead5e99ad57857ed301285a6f0b953f261466ec87cfe50",
+      "lock_date": "2026-08-05",
+      "timezone": "Asia/Tokyo",
+      "combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+      "splits": {
+        "train_local": {
+          "source": "official train",
+          "count": 2530,
+          "cities": [
+            "aachen",
+            "bochum",
+            "bremen",
+            "cologne",
+            "dusseldorf",
+            "erfurt",
+            "hamburg",
+            "hanover",
+            "monchengladbach",
+            "strasbourg",
+            "stuttgart",
+            "tubingen",
+            "ulm",
+            "zurich"
+          ],
+          "manifest": "train_local.txt",
+          "sha256": "08fe1239484a1824469ac22d0b4780e9b1cf074e90829da952420f6d554076d7"
+        },
+        "dev_local": {
+          "source": "official train",
+          "count": 445,
+          "cities": [
+            "darmstadt",
+            "jena",
+            "krefeld",
+            "weimar"
+          ],
+          "manifest": "dev_local.txt",
+          "sha256": "778d455b9e01aecec7a0958a349eac8ac1655c6c13485af9b01d0ab779e51f70"
+        },
+        "test_local": {
+          "source": "official val",
+          "count": 500,
+          "cities": [
+            "frankfurt",
+            "lindau",
+            "munster"
+          ],
+          "manifest": "test_local.txt",
+          "sha256": "4eb84d274208c475931d4eb796fec932d567e19e31790f38a458942a447d766c"
+        }
+      }
+    },
+    "train_count": 2530
+  },
+  "effective": {
+    "device": "cuda:0",
+    "amp": true,
+    "pin_memory": true
+  },
+  "io_profile": {
+    "samples": 20,
+    "image_decode": {
+      "n": 20,
+      "mean_ms": 70.53783499977726,
+      "median_ms": 69.95464999999967,
+      "p90_ms": 72.41306999894732,
+      "min_ms": 63.9521999983117,
+      "max_ms": 84.03790000011213
+    },
+    "label_decode": {
+      "n": 20,
+      "mean_ms": 6.9367999996757135,
+      "median_ms": 6.93525000133377,
+      "p90_ms": 7.657680000193068,
+      "min_ms": 5.9379000012995675,
+      "max_ms": 8.100799997919239
+    },
+    "augmentation_and_tensor": {
+      "n": 20,
+      "mean_ms": 53.53263999986666,
+      "median_ms": 53.40499999874737,
+      "p90_ms": 72.2632299999532,
+      "min_ms": 26.733499998954358,
+      "max_ms": 86.84569999968517
+    },
+    "decode_plus_augmentation": {
+      "n": 20,
+      "mean_ms": 131.56554000033793,
+      "median_ms": 132.21230000090145,
+      "p90_ms": 149.09623000094143,
+      "min_ms": 105.31410000112373,
+      "max_ms": 160.90499999700114
+    }
+  },
+  "data_loader_sweep": [
+    {
+      "batches": 39,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 563.507099999697,
+        "median_ms": 563.507099999697,
+        "p90_ms": 563.507099999697,
+        "min_ms": 563.507099999697,
+        "max_ms": 563.507099999697
+      },
+      "steady_next_batch": {
+        "n": 39,
+        "mean_ms": 268.8705948718192,
+        "median_ms": 268.6840000023949,
+        "p90_ms": 306.18086000031326,
+        "min_ms": 224.3559999988065,
+        "max_ms": 331.06629999747383
+      },
+      "steady_batches_per_second": 3.7192613066398645,
+      "batch_size": 2,
+      "samples_per_second": 7.438522613279729,
+      "num_workers": 0,
+      "pin_memory": true,
+      "persistent_workers": false
+    },
+    {
+      "batches": 39,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 271.96399999957066,
+        "median_ms": 271.96399999957066,
+        "p90_ms": 271.96399999957066,
+        "min_ms": 271.96399999957066,
+        "max_ms": 271.96399999957066
+      },
+      "steady_next_batch": {
+        "n": 39,
+        "mean_ms": 128.6005333333891,
+        "median_ms": 106.34489999938523,
+        "p90_ms": 266.2652600003639,
+        "min_ms": 0.0774000000092201,
+        "max_ms": 295.0806000008015
+      },
+      "steady_batches_per_second": 7.776017517808891,
+      "batch_size": 2,
+      "samples_per_second": 15.552035035617783,
+      "num_workers": 2,
+      "pin_memory": true,
+      "persistent_workers": false
+    },
+    {
+      "batches": 39,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 278.16149999853224,
+        "median_ms": 278.16149999853224,
+        "p90_ms": 278.16149999853224,
+        "min_ms": 278.16149999853224,
+        "max_ms": 278.16149999853224
+      },
+      "steady_next_batch": {
+        "n": 39,
+        "mean_ms": 61.46855897429468,
+        "median_ms": 0.27829999817186035,
+        "p90_ms": 241.50942000196667,
+        "min_ms": 0.047900000936351717,
+        "max_ms": 287.0674000005238
+      },
+      "steady_batches_per_second": 16.268479637178196,
+      "batch_size": 2,
+      "samples_per_second": 32.53695927435639,
+      "num_workers": 4,
+      "pin_memory": true,
+      "persistent_workers": false
+    },
+    {
+      "batches": 39,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 357.85930000201915,
+        "median_ms": 357.85930000201915,
+        "p90_ms": 357.85930000201915,
+        "min_ms": 357.85930000201915,
+        "max_ms": 357.85930000201915
+      },
+      "steady_next_batch": {
+        "n": 39,
+        "mean_ms": 39.26811794885091,
+        "median_ms": 0.333100000716513,
+        "p90_ms": 159.85822000147914,
+        "min_ms": 0.0929000016185455,
+        "max_ms": 272.98069999960717
+      },
+      "steady_batches_per_second": 25.465951826429784,
+      "batch_size": 2,
+      "samples_per_second": 50.93190365285957,
+      "num_workers": 8,
+      "pin_memory": true,
+      "persistent_workers": false
+    }
+  ],
+  "synthetic": {
+    "batches": 20,
+    "batch_timing": {
+      "n": 20,
+      "mean_ms": 90.73579000050813,
+      "median_ms": 89.2530999990413,
+      "p90_ms": 94.62768000012147,
+      "min_ms": 87.26209999804269,
+      "max_ms": 100.79010000117705
+    },
+    "batches_per_second": 11.021009460483011,
+    "note": "Synthetic train data removes image decode, augmentation, DataLoader, and H2D transfer."
+  },
+  "pipeline": {
+    "batches": 20,
+    "synchronized_stage_timings": {
+      "data_wait": {
+        "n": 20,
+        "mean_ms": 0.1816450001570047,
+        "median_ms": 0.17565000052854884,
+        "p90_ms": 0.20463999862840876,
+        "min_ms": 0.13270000272314064,
+        "max_ms": 0.35039999784203246,
+        "share_of_synchronized_stage_sum": 0.0013282928247541638
+      },
+      "host_to_device": {
+        "n": 20,
+        "mean_ms": 2.1327549999114126,
+        "median_ms": 2.1265499999572057,
+        "p90_ms": 2.1974699975544354,
+        "min_ms": 2.005599999392871,
+        "max_ms": 2.53060000250116,
+        "share_of_synchronized_stage_sum": 0.015595932510623812
+      },
+      "forward": {
+        "n": 20,
+        "mean_ms": 38.18478500015772,
+        "median_ms": 34.01050000138639,
+        "p90_ms": 34.69070999781252,
+        "min_ms": 33.61690000019735,
+        "max_ms": 115.71140000160085,
+        "share_of_synchronized_stage_sum": 0.27922913312587544
+      },
+      "loss_and_valid": {
+        "n": 20,
+        "mean_ms": 1.195960000040941,
+        "median_ms": 1.1904000020876992,
+        "p90_ms": 1.2947399995027808,
+        "min_ms": 1.0923999980150256,
+        "max_ms": 1.317800000833813,
+        "share_of_synchronized_stage_sum": 0.00874554810412772
+      },
+      "backward": {
+        "n": 20,
+        "mean_ms": 90.59413000031782,
+        "median_ms": 84.52195000063512,
+        "p90_ms": 85.38492999978189,
+        "min_ms": 83.87510000102338,
+        "max_ms": 204.97600000089733,
+        "share_of_synchronized_stage_sum": 0.6624764388794417
+      },
+      "optimizer": {
+        "n": 20,
+        "mean_ms": 1.1658800000077463,
+        "median_ms": 0.0,
+        "p90_ms": 4.721089999293326,
+        "min_ms": 0.0,
+        "max_ms": 4.87020000218763,
+        "share_of_synchronized_stage_sum": 0.00852558582507703
+      },
+      "metrics": {
+        "n": 20,
+        "mean_ms": 3.2955650001895265,
+        "median_ms": 2.490599999873666,
+        "p90_ms": 2.779569998892839,
+        "min_ms": 2.1539000008488074,
+        "max_ms": 18.37159999922733,
+        "share_of_synchronized_stage_sum": 0.02409906873010012
+      }
+    },
+    "synchronized_stage_sum_mean_ms": 136.75072000078217,
+    "synchronized_pass_iteration": {
+      "n": 20,
+      "mean_ms": 137.20883499991032,
+      "median_ms": 125.58239999998477,
+      "p90_ms": 130.22063999924285,
+      "min_ms": 123.9242000010563,
+      "max_ms": 342.71979999903124
+    },
+    "realistic_end_to_end": {
+      "batches": 20,
+      "data_wait": {
+        "n": 20,
+        "mean_ms": 0.23457499974028906,
+        "median_ms": 0.22295000053418335,
+        "p90_ms": 0.3646400000434369,
+        "min_ms": 0.139899999339832,
+        "max_ms": 0.5003999976906925
+      },
+      "iteration": {
+        "n": 20,
+        "mean_ms": 101.80908499969519,
+        "median_ms": 102.23539999969944,
+        "p90_ms": 108.07386999877053,
+        "min_ms": 93.84850000060396,
+        "max_ms": 112.35710000255494
+      },
+      "batches_per_second": 9.822306133121558,
+      "note": "Matches the current S2-0 loop and its metric calls; only the final timing synchronization is added."
+    },
+    "end_to_end_batches_per_second": 9.822306133121558,
+    "note": "Synchronized stage timings are diagnostic only; realistic_end_to_end matches the current loop without per-stage synchronization."
+  },
+  "gpu_samples": [
+    {
+      "time": 1786014842.7420204,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "25",
+          "utilization.memory": "22",
+          "memory.used": "4142",
+          "memory.total": "8188",
+          "power.draw": "3.59",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "285",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014843.3129256,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "31",
+          "utilization.memory": "43",
+          "memory.used": "5000",
+          "memory.total": "8188",
+          "power.draw": "3.73",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "285",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014843.9020684,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "5538",
+          "memory.total": "8188",
+          "power.draw": "8.33",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1290",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014844.4619918,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "53",
+          "utilization.gpu": "78",
+          "utilization.memory": "49",
+          "memory.used": "5628",
+          "memory.total": "8188",
+          "power.draw": "20.39",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1290",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014845.0375357,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "58",
+          "utilization.gpu": "91",
+          "utilization.memory": "69",
+          "memory.used": "5630",
+          "memory.total": "8188",
+          "power.draw": "44.62",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1290",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014845.6235657,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "57",
+          "utilization.gpu": "89",
+          "utilization.memory": "63",
+          "memory.used": "5630",
+          "memory.total": "8188",
+          "power.draw": "66.20",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1290",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014846.1894045,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "59",
+          "utilization.gpu": "86",
+          "utilization.memory": "61",
+          "memory.used": "5630",
+          "memory.total": "8188",
+          "power.draw": "68.46",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1290",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014846.7476993,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "53",
+          "utilization.gpu": "16",
+          "utilization.memory": "14",
+          "memory.used": "4198",
+          "memory.total": "8188",
+          "power.draw": "63.94",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1290",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014847.3090432,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "50",
+          "utilization.gpu": "1",
+          "utilization.memory": "1",
+          "memory.used": "4198",
+          "memory.total": "8188",
+          "power.draw": "41.81",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1290",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014847.8859909,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "50",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4198",
+          "memory.total": "8188",
+          "power.draw": "17.97",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014848.4601083,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4198",
+          "memory.total": "8188",
+          "power.draw": "14.62",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014849.021494,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4198",
+          "memory.total": "8188",
+          "power.draw": "9.71",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014849.5812933,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4198",
+          "memory.total": "8188",
+          "power.draw": "6.38",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014850.1431766,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4198",
+          "memory.total": "8188",
+          "power.draw": "6.29",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014850.70399,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "6.28",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014851.2768135,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "6.27",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014851.838393,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "6.30",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "300",
+          "clocks.current.memory": "6001",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014852.399588,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "6.31",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "300",
+          "clocks.current.memory": "6001",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014852.9754806,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "6.30",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "300",
+          "clocks.current.memory": "6001",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014853.5524528,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P5",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "11",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "5.78",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "300",
+          "clocks.current.memory": "6001",
+          "pcie.link.gen.current": "2",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014854.126135,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P5",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "11",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "4.74",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "300",
+          "clocks.current.memory": "6001",
+          "pcie.link.gen.current": "2",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014854.6987898,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P5",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "10",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "4.24",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "300",
+          "clocks.current.memory": "6001",
+          "pcie.link.gen.current": "2",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014855.2766707,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "5",
+          "utilization.memory": "10",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "4.23",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "300",
+          "clocks.current.memory": "6001",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014855.85213,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "10",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.86",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014856.4273612,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.68",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014857.0043232,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.67",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014857.576935,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.67",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014858.1522465,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.66",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014858.7275732,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.67",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014859.3015406,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.67",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014859.878957,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.66",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014860.4555485,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.67",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014861.032429,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.67",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014861.6090648,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.71",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014862.1848009,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.71",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014862.7610905,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.67",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014863.3369238,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.68",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014863.9119442,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "9",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.66",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014864.4934492,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "10",
+          "utilization.memory": "20",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.69",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014865.0681381,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "10",
+          "utilization.memory": "27",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.67",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014865.6428254,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "21",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.66",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014866.2162962,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "21",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.66",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014866.7950659,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "21",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.65",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014867.373275,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "21",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.65",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014867.9469147,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "21",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.66",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014868.5242074,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "21",
+          "memory.used": "4190",
+          "memory.total": "8188",
+          "power.draw": "2.66",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014869.3306525,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "21",
+          "memory.used": "5074",
+          "memory.total": "8188",
+          "power.draw": "2.66",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014869.8868725,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "57",
+          "utilization.gpu": "82",
+          "utilization.memory": "54",
+          "memory.used": "5784",
+          "memory.total": "8188",
+          "power.draw": "23.83",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014870.4462035,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "56",
+          "utilization.gpu": "97",
+          "utilization.memory": "65",
+          "memory.used": "6680",
+          "memory.total": "8188",
+          "power.draw": "43.38",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014871.0227282,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "58",
+          "utilization.gpu": "95",
+          "utilization.memory": "63",
+          "memory.used": "6680",
+          "memory.total": "8188",
+          "power.draw": "62.72",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014871.603075,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "60",
+          "utilization.gpu": "95",
+          "utilization.memory": "64",
+          "memory.used": "6680",
+          "memory.total": "8188",
+          "power.draw": "75.37",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014872.1592371,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "60",
+          "utilization.gpu": "95",
+          "utilization.memory": "65",
+          "memory.used": "6680",
+          "memory.total": "8188",
+          "power.draw": "75.62",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014872.7350023,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "60",
+          "utilization.gpu": "94",
+          "utilization.memory": "67",
+          "memory.used": "6680",
+          "memory.total": "8188",
+          "power.draw": "75.53",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014873.2959678,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "53",
+          "utilization.gpu": "3",
+          "utilization.memory": "0",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "65.21",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014873.872952,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "51",
+          "utilization.gpu": "1",
+          "utilization.memory": "1",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "17.62",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014874.4291067,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "51",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "17.83",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014874.989892,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "49",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "14.20",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014875.551112,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "49",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "9.02",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014876.1112459,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "49",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "6.40",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014876.6723506,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "49",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "6.29",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014877.2347894,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "49",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "6.28",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "3",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014877.8131437,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P4",
+          "temperature.gpu": "49",
+          "utilization.gpu": "0",
+          "utilization.memory": "1",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "6.27",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "2",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014878.389749,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P5",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "9",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "4.93",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "810",
+          "pcie.link.gen.current": "2",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014878.9675298,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P5",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "9",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "4.30",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "810",
+          "pcie.link.gen.current": "2",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014879.541689,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P5",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "9",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "4.24",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "810",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014880.118689,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "3.67",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "810",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014880.6961179,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.94",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "810",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014881.2717135,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "48",
+          "utilization.gpu": "4",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.62",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "810",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014881.8488255,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "48",
+          "utilization.gpu": "10",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.62",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "810",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014882.4237444,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "48",
+          "utilization.gpu": "10",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.64",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014882.9993122,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.63",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014883.5756733,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.63",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014884.1520474,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "25",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.62",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014884.7265558,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "21",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.62",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014885.3040988,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.61",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014885.8797536,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.60",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014886.453709,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.61",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014887.0286176,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.60",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014887.6056943,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "19",
+          "memory.used": "4118",
+          "memory.total": "8188",
+          "power.draw": "2.61",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014888.1805267,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "19",
+          "memory.used": "4135",
+          "memory.total": "8188",
+          "power.draw": "2.61",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014888.739307,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "98",
+          "utilization.memory": "22",
+          "memory.used": "4135",
+          "memory.total": "8188",
+          "power.draw": "2.86",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014889.3159833,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "48",
+          "utilization.gpu": "1",
+          "utilization.memory": "1",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "6.46",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014889.8917637,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "48",
+          "utilization.gpu": "1",
+          "utilization.memory": "1",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "10.14",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1605",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014890.4681385,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P5",
+          "temperature.gpu": "48",
+          "utilization.gpu": "21",
+          "utilization.memory": "10",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "9.18",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1605",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "2",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014891.0468836,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P5",
+          "temperature.gpu": "48",
+          "utilization.gpu": "0",
+          "utilization.memory": "2",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "6.99",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1605",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "2",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014891.6287174,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P5",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "2",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "5.26",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1605",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014892.2100658,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "5",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "4.07",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1605",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014892.790559,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "5",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "3.48",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1605",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014893.3747807,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "2.33",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "1605",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014893.9576943,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "2.18",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014894.5351741,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "2.18",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014895.1161401,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "1.84",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014895.6977947,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "4146",
+          "memory.total": "8188",
+          "power.draw": "1.84",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014896.4929175,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P8",
+          "temperature.gpu": "47",
+          "utilization.gpu": "0",
+          "utilization.memory": "0",
+          "memory.used": "4878",
+          "memory.total": "8188",
+          "power.draw": "1.82",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "210",
+          "clocks.current.memory": "405",
+          "pcie.link.gen.current": "1",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014897.0736883,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "54",
+          "utilization.gpu": "82",
+          "utilization.memory": "51",
+          "memory.used": "5838",
+          "memory.total": "8188",
+          "power.draw": "14.96",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014897.653375,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "56",
+          "utilization.gpu": "82",
+          "utilization.memory": "56",
+          "memory.used": "5844",
+          "memory.total": "8188",
+          "power.draw": "54.92",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014898.2357337,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "57",
+          "utilization.gpu": "83",
+          "utilization.memory": "56",
+          "memory.used": "5844",
+          "memory.total": "8188",
+          "power.draw": "64.65",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014898.8181858,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "57",
+          "utilization.gpu": "78",
+          "utilization.memory": "53",
+          "memory.used": "5844",
+          "memory.total": "8188",
+          "power.draw": "61.77",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    },
+    {
+      "time": 1786014899.3967628,
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+          "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+          "driver_version": "596.49",
+          "compute_mode": "Default",
+          "pstate": "P0",
+          "temperature.gpu": "53",
+          "utilization.gpu": "3",
+          "utilization.memory": "1",
+          "memory.used": "5844",
+          "memory.total": "8188",
+          "power.draw": "18.47",
+          "power.limit": "[N/A]",
+          "clocks.current.sm": "2640",
+          "clocks.current.memory": "8201",
+          "pcie.link.gen.current": "4",
+          "pcie.link.width.current": "8"
+        }
+      ]
+    }
+  ],
+  "gpu_monitor_summary": {
+    "sample_count": 99,
+    "pstates": {
+      "P8": 51,
+      "P0": 24,
+      "P4": 15,
+      "P5": 9
+    },
+    "utilization.gpu": {
+      "mean": 15.11111111111111,
+      "min": 0.0,
+      "max": 98.0
+    },
+    "utilization.memory": {
+      "mean": 18.585858585858585,
+      "min": 0.0,
+      "max": 69.0
+    },
+    "temperature.gpu": {
+      "mean": 49.121212121212125,
+      "min": 47.0,
+      "max": 60.0
+    },
+    "power.draw": {
+      "mean": 13.392222222222223,
+      "min": 1.82,
+      "max": 75.62
+    },
+    "power.limit": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "clocks.current.sm": {
+      "mean": 1055.6060606060605,
+      "min": 210.0,
+      "max": 2640.0
+    },
+    "clocks.current.memory": {
+      "mean": 4057.959595959596,
+      "min": 405.0,
+      "max": 8201.0
+    }
+  },
+  "nvidia_smi_after": {
+    "available": true,
+    "fields": [
+      "index",
+      "uuid",
+      "name",
+      "driver_version",
+      "compute_mode",
+      "pstate",
+      "temperature.gpu",
+      "utilization.gpu",
+      "utilization.memory",
+      "memory.used",
+      "memory.total",
+      "power.draw",
+      "power.limit",
+      "clocks.current.sm",
+      "clocks.current.memory",
+      "pcie.link.gen.current",
+      "pcie.link.width.current"
+    ],
+    "gpus": [
+      {
+        "index": "0",
+        "uuid": "GPU-edfd8f76-0125-75af-b131-3bb2b190d120",
+        "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "driver_version": "596.49",
+        "compute_mode": "Default",
+        "pstate": "P0",
+        "temperature.gpu": "51",
+        "utilization.gpu": "0",
+        "utilization.memory": "1",
+        "memory.used": "4246",
+        "memory.total": "8188",
+        "power.draw": "17.99",
+        "power.limit": "[N/A]",
+        "clocks.current.sm": "2640",
+        "clocks.current.memory": "8201",
+        "pcie.link.gen.current": "4",
+        "pcie.link.width.current": "8"
+      }
+    ]
+  },
+  "diagnosis": [
+    "Largest synchronized stage: backward (90.59 ms, 66.2% of stage sum).",
+    "Best worker count in this run: 8 (50.93 samples/s); current=32.54 samples/s (1.57x best/current).",
+    "The fastest DataLoader setting is 1.57x current, but current capacity (32.54 samples/s) exceeds measured training demand (19.64 samples/s); it is not limiting this run.",
+    "Synthetic/e2e throughput ratio: 11.02/9.82 = 1.12x.",
+    "Current mode is deterministic: cuDNN benchmark and TF32 are disabled. Run once with --no-deterministic as a speed A/B check if exact reproducibility is not required for diagnosis.",
+    "nvidia-smi reported 5 compute/display processes before profiling; shared GPU activity can explain unexpectedly low throughput.",
+    "Average sampled GPU utilization was 15.1%; low utilization with high data_wait usually means the GPU is being starved by the host pipeline."
+  ]
+}

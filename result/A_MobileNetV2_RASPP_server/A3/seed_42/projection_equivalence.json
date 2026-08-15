@@ -1,0 +1,212 @@
+{
+  "os4": {
+    "layer": "os4",
+    "layer_index": 0,
+    "seed": 42,
+    "rng": "numpy.random.RandomState",
+    "gaussian_shape": [
+      96,
+      24
+    ],
+    "q_shape": [
+      24,
+      96
+    ],
+    "construction": "complete_qr(Q_full.T[:d_out])",
+    "orthogonality_error_frobenius": 2.083357413410842e-15,
+    "orthogonality_tolerance": 1e-05,
+    "random_matrix_sha256": "98317ba3e3d1f6ab26af055b747595b9c29d7435d53edf99c699a932e41b447c",
+    "projection_parameter_sha256": "bd7443d81f97477a7181257497e474e9879d7438a58cadaedc8405009c767912",
+    "scaler_mean_sha256": "a2d47dd4d38338655fca9f08406235f0fc16e4ac88a635a857d50519013dc26d",
+    "scaler_scale_sha256": "4c2741d194116716572d47de2e679fd763275a1f7fe0e64ddc0580ca86544cc4",
+    "reference": "explicit StandardScaler + random row-orthogonal Q",
+    "candidate": "A3 fixed Conv2d(C_t,C_s,1)",
+    "random_input_scale": 0.05,
+    "random_tensor": {
+      "input_shape": [
+        2,
+        96,
+        32,
+        64
+      ],
+      "max_abs_error": 3.337860107421875e-06,
+      "mean_abs_error": 2.681675823623664e-07,
+      "relative_l2_error": 2.1701809569580757e-07,
+      "fp32_max_abs_error": 3.337860107421875e-06,
+      "fp32_mean_abs_error": 2.681675823623664e-07,
+      "fp32_relative_l2_error": 2.1701809569580757e-07,
+      "fp64_max_abs_error": 7.549516567451064e-15,
+      "fp64_mean_abs_error": 7.476870771702685e-16,
+      "fp64_relative_l2_error": 6.227586869662314e-16,
+      "mathematical_equivalence_passed": true,
+      "passed": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "The candidate is the fixed A3 1x1 Conv; the reference is the explicit StandardScaler + random row-orthogonal projection."
+    },
+    "real_teacher_feature": {
+      "input_shape": [
+        1,
+        96,
+        128,
+        256
+      ],
+      "max_abs_error": 3.5762786865234375e-06,
+      "mean_abs_error": 2.9540851187448425e-07,
+      "relative_l2_error": 4.215578927124335e-07,
+      "fp32_max_abs_error": 3.5762786865234375e-06,
+      "fp32_mean_abs_error": 2.9540851187448425e-07,
+      "fp32_relative_l2_error": 4.215578927124335e-07,
+      "fp64_max_abs_error": 7.993605777301127e-15,
+      "fp64_mean_abs_error": 6.064926071553338e-16,
+      "fp64_relative_l2_error": 8.567653864958033e-16,
+      "mathematical_equivalence_passed": true,
+      "passed": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "The candidate is the fixed A3 1x1 Conv; the reference is the explicit StandardScaler + random row-orthogonal projection."
+    },
+    "max_abs_error": 3.5762786865234375e-06,
+    "passed": true
+  },
+  "os8": {
+    "layer": "os8",
+    "layer_index": 1,
+    "seed": 43,
+    "rng": "numpy.random.RandomState",
+    "gaussian_shape": [
+      192,
+      32
+    ],
+    "q_shape": [
+      32,
+      192
+    ],
+    "construction": "complete_qr(Q_full.T[:d_out])",
+    "orthogonality_error_frobenius": 2.9204342572649696e-15,
+    "orthogonality_tolerance": 1e-05,
+    "random_matrix_sha256": "bbb32e11745fdb4b91e146cff8dfcad80d1abe27306be08002f8b068e056ffa7",
+    "projection_parameter_sha256": "18abca4a3290b3f9a0512740599c47aa97a66fdfe9f46cc8be9efbdfd5a0ad75",
+    "scaler_mean_sha256": "84d392cdaf8214f4fa6e7ea987848297a0749e50e79a4ea28d199b07ee3d38ee",
+    "scaler_scale_sha256": "7012e091d938a4e8d33ff7866d120b4382f43f64e3c185fe258f6acac993fa8f",
+    "reference": "explicit StandardScaler + random row-orthogonal Q",
+    "candidate": "A3 fixed Conv2d(C_t,C_s,1)",
+    "random_input_scale": 0.05,
+    "random_tensor": {
+      "input_shape": [
+        2,
+        192,
+        32,
+        64
+      ],
+      "max_abs_error": 3.814697265625e-06,
+      "mean_abs_error": 3.3697136814225814e-07,
+      "relative_l2_error": 3.4241236112690517e-07,
+      "fp32_max_abs_error": 3.814697265625e-06,
+      "fp32_mean_abs_error": 3.3697136814225814e-07,
+      "fp32_relative_l2_error": 3.4241236112690517e-07,
+      "fp64_max_abs_error": 9.769962616701378e-15,
+      "fp64_mean_abs_error": 7.534124000726266e-16,
+      "fp64_relative_l2_error": 7.764797760813017e-16,
+      "mathematical_equivalence_passed": true,
+      "passed": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "The candidate is the fixed A3 1x1 Conv; the reference is the explicit StandardScaler + random row-orthogonal projection."
+    },
+    "real_teacher_feature": {
+      "input_shape": [
+        1,
+        192,
+        64,
+        128
+      ],
+      "max_abs_error": 4.0531158447265625e-06,
+      "mean_abs_error": 3.313413685646083e-07,
+      "relative_l2_error": 4.5485247823480263e-07,
+      "fp32_max_abs_error": 4.0531158447265625e-06,
+      "fp32_mean_abs_error": 3.313413685646083e-07,
+      "fp32_relative_l2_error": 4.5485247823480263e-07,
+      "fp64_max_abs_error": 8.43769498715119e-15,
+      "fp64_mean_abs_error": 6.173683440202674e-16,
+      "fp64_relative_l2_error": 8.380386526905938e-16,
+      "mathematical_equivalence_passed": true,
+      "passed": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "The candidate is the fixed A3 1x1 Conv; the reference is the explicit StandardScaler + random row-orthogonal projection."
+    },
+    "max_abs_error": 4.0531158447265625e-06,
+    "passed": true
+  },
+  "os16": {
+    "layer": "os16",
+    "layer_index": 2,
+    "seed": 44,
+    "rng": "numpy.random.RandomState",
+    "gaussian_shape": [
+      768,
+      320
+    ],
+    "q_shape": [
+      320,
+      768
+    ],
+    "construction": "complete_qr(Q_full.T[:d_out])",
+    "orthogonality_error_frobenius": 2.2263924709275153e-14,
+    "orthogonality_tolerance": 1e-05,
+    "random_matrix_sha256": "c8b1f7105b8a11dc675b1d4340a0886b5714d4335703248aa0947f4472fbb127",
+    "projection_parameter_sha256": "c9280821ed4cc18aac465d40b073c6eaf170ce0090e28a905bd2237d72e233c3",
+    "scaler_mean_sha256": "895973c2cd2b849fb273e975d0acce6552261a7115a820e9347cf870302827d3",
+    "scaler_scale_sha256": "25ea5dad10934aad3be3d05288420859f312bec9c9f576fc82f6b68b86124e67",
+    "reference": "explicit StandardScaler + random row-orthogonal Q",
+    "candidate": "A3 fixed Conv2d(C_t,C_s,1)",
+    "random_input_scale": 0.05,
+    "random_tensor": {
+      "input_shape": [
+        2,
+        768,
+        32,
+        64
+      ],
+      "max_abs_error": 1.1324882507324219e-06,
+      "mean_abs_error": 1.1728481297268445e-07,
+      "relative_l2_error": 3.8441149026958734e-07,
+      "fp32_max_abs_error": 1.1324882507324219e-06,
+      "fp32_mean_abs_error": 1.1728481297268445e-07,
+      "fp32_relative_l2_error": 3.8441149026958734e-07,
+      "fp64_max_abs_error": 1.0436096431476471e-14,
+      "fp64_mean_abs_error": 4.904670014920087e-16,
+      "fp64_relative_l2_error": 1.793520475729866e-15,
+      "mathematical_equivalence_passed": true,
+      "passed": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "The candidate is the fixed A3 1x1 Conv; the reference is the explicit StandardScaler + random row-orthogonal projection."
+    },
+    "real_teacher_feature": {
+      "input_shape": [
+        1,
+        768,
+        32,
+        64
+      ],
+      "max_abs_error": 3.337860107421875e-06,
+      "mean_abs_error": 2.840637876033725e-07,
+      "relative_l2_error": 3.9007510424403293e-07,
+      "fp32_max_abs_error": 3.337860107421875e-06,
+      "fp32_mean_abs_error": 2.840637876033725e-07,
+      "fp32_relative_l2_error": 3.9007510424403293e-07,
+      "fp64_max_abs_error": 1.7763568394002505e-14,
+      "fp64_mean_abs_error": 9.29780373083368e-16,
+      "fp64_relative_l2_error": 1.372765179843532e-15,
+      "mathematical_equivalence_passed": true,
+      "passed": true,
+      "configured_max_abs_error": 1.5e-05,
+      "configured_relative_l2_error": 2e-06,
+      "note": "The candidate is the fixed A3 1x1 Conv; the reference is the explicit StandardScaler + random row-orthogonal projection."
+    },
+    "max_abs_error": 3.337860107421875e-06,
+    "passed": true
+  }
+}

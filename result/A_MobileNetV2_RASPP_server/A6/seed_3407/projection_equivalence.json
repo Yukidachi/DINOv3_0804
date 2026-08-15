@@ -1,0 +1,149 @@
+{
+  "os4": {
+    "reference": "explicit per-channel StandardScaler transform",
+    "candidate": "fixed A6 StandardScaler target with full teacher channels",
+    "pca_used": false,
+    "teacher_channels": 96,
+    "student_channels": 24,
+    "target_channels": 96,
+    "random_input_scale": 0.05,
+    "random_tensor": {
+      "input_shape": [
+        2,
+        96,
+        32,
+        64
+      ],
+      "output_shape": [
+        2,
+        96,
+        32,
+        64
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2_error": 0.0,
+      "passed": true
+    },
+    "real_teacher_feature": {
+      "input_shape": [
+        1,
+        96,
+        128,
+        256
+      ],
+      "output_shape": [
+        1,
+        96,
+        128,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2_error": 0.0,
+      "passed": true
+    },
+    "scaler_mean_sha256": "a2d47dd4d38338655fca9f08406235f0fc16e4ac88a635a857d50519013dc26d",
+    "scaler_scale_sha256": "4c2741d194116716572d47de2e679fd763275a1f7fe0e64ddc0580ca86544cc4",
+    "projection_parameter_sha256": "0c3935621d878dad4a68a830dd39f25700f8025cee5a8ac11f1107459acbd450",
+    "passed": true
+  },
+  "os8": {
+    "reference": "explicit per-channel StandardScaler transform",
+    "candidate": "fixed A6 StandardScaler target with full teacher channels",
+    "pca_used": false,
+    "teacher_channels": 192,
+    "student_channels": 32,
+    "target_channels": 192,
+    "random_input_scale": 0.05,
+    "random_tensor": {
+      "input_shape": [
+        2,
+        192,
+        32,
+        64
+      ],
+      "output_shape": [
+        2,
+        192,
+        32,
+        64
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2_error": 0.0,
+      "passed": true
+    },
+    "real_teacher_feature": {
+      "input_shape": [
+        1,
+        192,
+        64,
+        128
+      ],
+      "output_shape": [
+        1,
+        192,
+        64,
+        128
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2_error": 0.0,
+      "passed": true
+    },
+    "scaler_mean_sha256": "84d392cdaf8214f4fa6e7ea987848297a0749e50e79a4ea28d199b07ee3d38ee",
+    "scaler_scale_sha256": "7012e091d938a4e8d33ff7866d120b4382f43f64e3c185fe258f6acac993fa8f",
+    "projection_parameter_sha256": "c34b7cec58ccf1043ae5f97254ecbc7a0af99af2c4a89b832e7cf9b90df48e2d",
+    "passed": true
+  },
+  "os16": {
+    "reference": "explicit per-channel StandardScaler transform",
+    "candidate": "fixed A6 StandardScaler target with full teacher channels",
+    "pca_used": false,
+    "teacher_channels": 768,
+    "student_channels": 320,
+    "target_channels": 768,
+    "random_input_scale": 0.05,
+    "random_tensor": {
+      "input_shape": [
+        2,
+        768,
+        32,
+        64
+      ],
+      "output_shape": [
+        2,
+        768,
+        32,
+        64
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2_error": 0.0,
+      "passed": true
+    },
+    "real_teacher_feature": {
+      "input_shape": [
+        1,
+        768,
+        32,
+        64
+      ],
+      "output_shape": [
+        1,
+        768,
+        32,
+        64
+      ],
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2_error": 0.0,
+      "passed": true
+    },
+    "scaler_mean_sha256": "895973c2cd2b849fb273e975d0acce6552261a7115a820e9347cf870302827d3",
+    "scaler_scale_sha256": "25ea5dad10934aad3be3d05288420859f312bec9c9f576fc82f6b68b86124e67",
+    "projection_parameter_sha256": "d680b048b3e9827a6672eb86bbb95164361ea2b32e1a67726d8c6613bc4a9b5e",
+    "passed": true
+  }
+}

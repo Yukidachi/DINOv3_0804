@@ -1,0 +1,30 @@
+{
+  "experiment": "A6",
+  "pretrain_checkpoint": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/A6/seed_3407/a6_pretrain_last.pth",
+  "pretrain_model_state_sha256": "13ab1ba557c0d70e6c1073c2ce188499040789b44e74ab902c350612dfea81fa",
+  "adapter_state_key_count": 12,
+  "adapter_state_keys": [
+    "student_adapters.os16.bias",
+    "student_adapters.os16.bias_initial",
+    "student_adapters.os16.weight",
+    "student_adapters.os16.weight_initial",
+    "student_adapters.os4.bias",
+    "student_adapters.os4.bias_initial",
+    "student_adapters.os4.weight",
+    "student_adapters.os4.weight_initial",
+    "student_adapters.os8.bias",
+    "student_adapters.os8.bias_initial",
+    "student_adapters.os8.weight",
+    "student_adapters.os8.weight_initial"
+  ],
+  "student_adapter_parameter_sha256": {
+    "os4": "707a6c8964a7fae02bb4a30da30159002bb1ee598587fdfaeec0df7f6c0f4445",
+    "os8": "55fe29d4b8d1abe9b6a3bc8a19eb8f25a19039a9bbbecc4312639155a50a2a5d",
+    "os16": "c1f96754f675527b5fa9e4903fae1e7bb5cfc61241986310b1715fc3836b82fe"
+  },
+  "backbone_hash_before_adapter_removal": "ea904f1cd2f2120dc836a7fb592176a60d6210d3611d5f6e89aba3589349560b",
+  "backbone_hash_after_adapter_removal": "ea904f1cd2f2120dc836a7fb592176a60d6210d3611d5f6e89aba3589349560b",
+  "adapter_removed_before_probe": true,
+  "probe_load_policy": "load only keys prefixed with backbone.; discard student_adapters.*",
+  "deployment_model": "raw MobileNetV2 backbone + R-ASPP; no A6 adapter"
+}

@@ -1,0 +1,10 @@
+/datasets/*
+!/datasets/cityscapes/
+
+/datasets/cityscapes/*
+!/datasets/cityscapes/local_splits.lock.json
+!/datasets/cityscapes/local_splits.sha256
+!/datasets/cityscapes/test_local.txt
+!/datasets/cityscapes/train_local.txt
+
+/mobilenet论文/

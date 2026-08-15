@@ -1,0 +1,371 @@
+{
+  "script": "/home/ubuntu/work/DINOv3_0804/profile_dino_s2_0.py",
+  "timestamp": "2026-08-06T19:59:42+0800",
+  "arguments": {
+    "dataset_root": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes",
+    "device": "cuda:0",
+    "seed": 42,
+    "batch_size": 2,
+    "accumulation_steps": 4,
+    "num_workers": 4,
+    "worker_sweep": "0,2,4,8",
+    "crop_height": 512,
+    "crop_width": 1024,
+    "scale_min": 0.5,
+    "scale_max": 2.0,
+    "head_channels": 256,
+    "dropout": 0.1,
+    "amp": true,
+    "deterministic": true,
+    "persistent_workers": false,
+    "pin_memory": false,
+    "multiprocessing_context": "spawn",
+    "warmup_batches": 5,
+    "profile_batches": 20,
+    "data_batches": 100,
+    "io_samples": 20,
+    "trace": null,
+    "trace_batches": 5,
+    "no_worker_sweep": false,
+    "no_io_profile": true,
+    "no_synthetic": true,
+    "no_pipeline": true,
+    "no_gpu_monitor": false,
+    "output": "s_2_0_profile_spawn_no_pin.json"
+  },
+  "environment": {
+    "python": "3.10.19",
+    "platform": "Linux-5.15.0-128-generic-x86_64-with-glibc2.35",
+    "processor": "x86_64",
+    "cpu_count": 22,
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "2.0.1",
+    "pillow": "11.1.0",
+    "torch_cuda": "12.4",
+    "cudnn": 91700,
+    "cuda_available": true,
+    "cuda_visible_devices": null,
+    "device": "cuda:0",
+    "num_threads": 22,
+    "num_interop_threads": 22,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "cudnn_allow_tf32": false,
+    "matmul_allow_tf32": false,
+    "matmul_precision": "highest",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 4090",
+      "capability": [
+        8,
+        9
+      ],
+      "total_memory_mib": 24210.3125,
+      "multi_processor_count": 128,
+      "logical_index": 0,
+      "nvidia_smi_selector": "0"
+    }
+  },
+  "nvidia_smi_before": {
+    "available": true,
+    "fields": [
+      "index",
+      "uuid",
+      "name",
+      "driver_version",
+      "compute_mode",
+      "pstate",
+      "temperature.gpu",
+      "utilization.gpu",
+      "utilization.memory",
+      "memory.used",
+      "memory.total",
+      "power.draw",
+      "power.limit",
+      "clocks.current.sm",
+      "clocks.current.memory",
+      "pcie.link.gen.current",
+      "pcie.link.width.current"
+    ],
+    "gpus": [
+      {
+        "index": "0",
+        "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+        "name": "NVIDIA GeForce RTX 4090",
+        "driver_version": "550.142",
+        "compute_mode": "Default",
+        "pstate": "P8",
+        "temperature.gpu": "29",
+        "utilization.gpu": "0",
+        "utilization.memory": "0",
+        "memory.used": "4",
+        "memory.total": "24564",
+        "power.draw": "14.41",
+        "power.limit": "450.00",
+        "clocks.current.sm": "210",
+        "clocks.current.memory": "405",
+        "pcie.link.gen.current": "1",
+        "pcie.link.width.current": "16"
+      }
+    ]
+  },
+  "nvidia_compute_processes_before": {
+    "available": true,
+    "processes": []
+  },
+  "dataset": {
+    "root": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes",
+    "lock": {
+      "lock_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.lock.json",
+      "lock_sha256": "b3b4e2e8af470963983f3e2f8848caa7cab3d63ee4f37b218601f3a9d0048eb2",
+      "checksum_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.sha256",
+      "checksum_sha256": "a31cc5370ddee112d2ead5e99ad57857ed301285a6f0b953f261466ec87cfe50",
+      "lock_date": "2026-08-05",
+      "timezone": "Asia/Tokyo",
+      "combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+      "splits": {
+        "train_local": {
+          "source": "official train",
+          "count": 2530,
+          "cities": [
+            "aachen",
+            "bochum",
+            "bremen",
+            "cologne",
+            "dusseldorf",
+            "erfurt",
+            "hamburg",
+            "hanover",
+            "monchengladbach",
+            "strasbourg",
+            "stuttgart",
+            "tubingen",
+            "ulm",
+            "zurich"
+          ],
+          "manifest": "train_local.txt",
+          "sha256": "08fe1239484a1824469ac22d0b4780e9b1cf074e90829da952420f6d554076d7"
+        },
+        "dev_local": {
+          "source": "official train",
+          "count": 445,
+          "cities": [
+            "darmstadt",
+            "jena",
+            "krefeld",
+            "weimar"
+          ],
+          "manifest": "dev_local.txt",
+          "sha256": "778d455b9e01aecec7a0958a349eac8ac1655c6c13485af9b01d0ab779e51f70"
+        },
+        "test_local": {
+          "source": "official val",
+          "count": 500,
+          "cities": [
+            "frankfurt",
+            "lindau",
+            "munster"
+          ],
+          "manifest": "test_local.txt",
+          "sha256": "4eb84d274208c475931d4eb796fec932d567e19e31790f38a458942a447d766c"
+        }
+      }
+    },
+    "train_count": 2530
+  },
+  "effective": {
+    "device": "cuda:0",
+    "amp": true,
+    "pin_memory": false
+  },
+  "data_loader_sweep": [
+    {
+      "batches": 99,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 286.19985699992867,
+        "median_ms": 286.19985699992867,
+        "p90_ms": 286.19985699992867,
+        "min_ms": 286.19985699992867,
+        "max_ms": 286.19985699992867
+      },
+      "steady_next_batch": {
+        "n": 99,
+        "mean_ms": 264.9478629696963,
+        "median_ms": 265.24383299999954,
+        "p90_ms": 309.6583452000232,
+        "min_ms": 205.84566800005177,
+        "max_ms": 343.25979300001563
+      },
+      "steady_batches_per_second": 3.7743274800988895,
+      "batch_size": 2,
+      "samples_per_second": 7.548654960197779,
+      "num_workers": 0,
+      "pin_memory": false,
+      "persistent_workers": false
+    },
+    {
+      "batches": 99,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 251.3120109999818,
+        "median_ms": 251.3120109999818,
+        "p90_ms": 251.3120109999818,
+        "min_ms": 251.3120109999818,
+        "max_ms": 251.3120109999818
+      },
+      "steady_next_batch": {
+        "n": 99,
+        "mean_ms": 136.85881386868803,
+        "median_ms": 95.85932100003447,
+        "p90_ms": 293.8650820000248,
+        "min_ms": 1.500780999890594,
+        "max_ms": 361.97401999993417
+      },
+      "steady_batches_per_second": 7.306800137545181,
+      "batch_size": 2,
+      "samples_per_second": 14.613600275090363,
+      "num_workers": 2,
+      "pin_memory": false,
+      "persistent_workers": false
+    },
+    {
+      "batches": 99,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 263.36083900002905,
+        "median_ms": 263.36083900002905,
+        "p90_ms": 263.36083900002905,
+        "min_ms": 263.36083900002905,
+        "max_ms": 263.36083900002905
+      },
+      "steady_next_batch": {
+        "n": 99,
+        "mean_ms": 92.63181109090533,
+        "median_ms": 18.03107499995349,
+        "p90_ms": 298.3779476000336,
+        "min_ms": 1.5332340000213662,
+        "max_ms": 393.7951159999784
+      },
+      "steady_batches_per_second": 10.795427491087676,
+      "batch_size": 2,
+      "samples_per_second": 21.59085498217535,
+      "num_workers": 4,
+      "pin_memory": false,
+      "persistent_workers": false
+    },
+    {
+      "batches": 99,
+      "first_batch": {
+        "n": 1,
+        "mean_ms": 270.9473570000682,
+        "median_ms": 270.9473570000682,
+        "p90_ms": 270.9473570000682,
+        "min_ms": 270.9473570000682,
+        "max_ms": 270.9473570000682
+      },
+      "steady_next_batch": {
+        "n": 99,
+        "mean_ms": 44.901146111110485,
+        "median_ms": 2.025429000013901,
+        "p90_ms": 183.36474520001505,
+        "min_ms": 1.495908000038071,
+        "max_ms": 358.5382400000299
+      },
+      "steady_batches_per_second": 22.271146431884883,
+      "batch_size": 2,
+      "samples_per_second": 44.54229286376977,
+      "num_workers": 8,
+      "pin_memory": false,
+      "persistent_workers": false
+    }
+  ],
+  "gpu_samples": [],
+  "gpu_monitor_summary": {
+    "sample_count": 0,
+    "pstates": {},
+    "utilization.gpu": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "utilization.memory": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "temperature.gpu": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "power.draw": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "power.limit": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "clocks.current.sm": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "clocks.current.memory": {
+      "mean": null,
+      "min": null,
+      "max": null
+    }
+  },
+  "nvidia_smi_after": {
+    "available": true,
+    "fields": [
+      "index",
+      "uuid",
+      "name",
+      "driver_version",
+      "compute_mode",
+      "pstate",
+      "temperature.gpu",
+      "utilization.gpu",
+      "utilization.memory",
+      "memory.used",
+      "memory.total",
+      "power.draw",
+      "power.limit",
+      "clocks.current.sm",
+      "clocks.current.memory",
+      "pcie.link.gen.current",
+      "pcie.link.width.current"
+    ],
+    "gpus": [
+      {
+        "index": "0",
+        "uuid": "GPU-d41edd2d-b5bb-67fb-58e2-0176e8c4159b",
+        "name": "NVIDIA GeForce RTX 4090",
+        "driver_version": "550.142",
+        "compute_mode": "Default",
+        "pstate": "P8",
+        "temperature.gpu": "29",
+        "utilization.gpu": "0",
+        "utilization.memory": "0",
+        "memory.used": "4",
+        "memory.total": "24564",
+        "power.draw": "14.31",
+        "power.limit": "450.00",
+        "clocks.current.sm": "210",
+        "clocks.current.memory": "405",
+        "pcie.link.gen.current": "1",
+        "pcie.link.width.current": "16"
+      }
+    ]
+  },
+  "diagnosis": [
+    "Best worker count in this run: 8 (44.54 samples/s); current=21.59 samples/s (2.06x best/current).",
+    "The fastest DataLoader setting is 2.06x current, but current capacity (21.59 samples/s) exceeds measured training demand (0.00 samples/s); it is not limiting this run.",
+    "Current mode is deterministic: cuDNN benchmark and TF32 are disabled. Run once with --no-deterministic as a speed A/B check if exact reproducibility is not required for diagnosis."
+  ]
+}

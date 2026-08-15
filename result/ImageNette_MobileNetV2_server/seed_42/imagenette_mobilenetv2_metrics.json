@@ -1,0 +1,65 @@
+{
+  "experiment": "ImageNette-10-MobileNetV2-pretrain",
+  "best_epoch": 65,
+  "best_metrics": {
+    "loss": 0.4425734184611561,
+    "top1": 0.8827877507919747,
+    "samples": 947
+  },
+  "config": {
+    "experiment": "ImageNette-10-MobileNetV2-pretrain",
+    "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_s2_p_server.py",
+    "seed": 42,
+    "world_size": 2,
+    "dataset_root": "/home/ubuntu/work/DINOv3_0804/datasets/imagenette2-320",
+    "train_directory": "/home/ubuntu/work/DINOv3_0804/datasets/imagenette2-320/train",
+    "val_directory": "/home/ubuntu/work/DINOv3_0804/datasets/imagenette2-320/val",
+    "pretraining_dataset": "ImageNette-10",
+    "pretraining_artifact_type": "mobilenetv2_imagenette10_pretrain_server",
+    "num_classes": 10,
+    "class_count": 10,
+    "epochs": 90,
+    "batch_size_per_gpu": 128,
+    "global_batch_size": 256,
+    "accumulation_steps_per_gpu": 1,
+    "eval_batch_size": 256,
+    "num_workers_per_gpu": 8,
+    "multiprocessing_context": "spawn",
+    "pin_memory": false,
+    "persistent_workers": true,
+    "prefetch_factor": 2,
+    "image_size": 224,
+    "optimizer": "SGD",
+    "learning_rate": 0.1,
+    "momentum": 0.9,
+    "weight_decay": 4e-05,
+    "label_smoothing": 0.1,
+    "scheduler": "cosine_with_1_percent_floor",
+    "amp": true,
+    "deterministic": true
+  },
+  "hashes": {
+    "initial_model_state_sha256": "a02997901b24d6afa36f368724315797aa4ac0b3d712de6653e1f7c35110de16",
+    "training_script_sha256": "0c2634338927212d1e3e6bf321e60719aa532337861f3c25cbcdd8b870534dd9",
+    "checkpoint_sha256": "c0c2a987044338a24e20718f648f07065860b4405b3660e3ae130a5e9c299498"
+  },
+  "training": {
+    "elapsed_seconds": 490.13609051704407,
+    "epochs_completed": 90,
+    "optimizer_steps": 2970
+  },
+  "software": {
+    "python": "3.10.19",
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "2.0.1",
+    "pillow": "11.1.0",
+    "platform": "Linux-5.15.0-128-generic-x86_64-with-glibc2.35"
+  },
+  "artifacts": {
+    "best": "/home/ubuntu/work/DINOv3_0804/result/ImageNette_MobileNetV2_server/seed_42/imagenette_mobilenetv2_best.pth",
+    "last": "/home/ubuntu/work/DINOv3_0804/result/ImageNette_MobileNetV2_server/seed_42/imagenette_mobilenetv2_last_checkpoint.pth",
+    "history": "/home/ubuntu/work/DINOv3_0804/result/ImageNette_MobileNetV2_server/seed_42/imagenette_mobilenetv2_training_history.json",
+    "metrics": "/home/ubuntu/work/DINOv3_0804/result/ImageNette_MobileNetV2_server/seed_42/imagenette_mobilenetv2_metrics.json"
+  }
+}

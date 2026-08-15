@@ -1,0 +1,220 @@
+{
+  "experiment": "A3",
+  "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_a3_server.py",
+  "stage": "full",
+  "seed": 42,
+  "world_size": 2,
+  "batch_size_per_gpu": 2,
+  "global_batch_size": 8,
+  "accumulation_steps_per_gpu": 2,
+  "pretrain_max_optimizer_steps": 40000,
+  "probe_max_optimizer_steps": 40000,
+  "eval_batch_size": 1,
+  "num_workers_per_gpu": 8,
+  "multiprocessing_context": "spawn",
+  "pin_memory": false,
+  "persistent_workers": true,
+  "prefetch_factor": 2,
+  "optimizer": "SGD",
+  "learning_rate": 0.01,
+  "momentum": 0.9,
+  "weight_decay": 0.0001,
+  "scheduler": "polynomial",
+  "poly_power": 0.9,
+  "min_lr_ratio": 0.01,
+  "lambda_feat": 1.0,
+  "feature_warmup_ratio": 0.05,
+  "feature_warmup_steps": 2000,
+  "gradient_log_steps": 500,
+  "pretrain_snapshot_steps": 5000,
+  "eval_every_steps": 5000,
+  "amp": true,
+  "deterministic": true,
+  "crop_size": [
+    512,
+    1024
+  ],
+  "random_scale": [
+    0.5,
+    2.0
+  ],
+  "horizontal_flip_probability": 0.5,
+  "eval_resolution": [
+    1024,
+    2048
+  ],
+  "head_channels": 256,
+  "dropout": 0.1,
+  "num_classes": 19,
+  "ignore_index": 255,
+  "output_stride": 16,
+  "initialization": "weights=None",
+  "backbone_frozen": false,
+  "loss": "3-layer feature MSE (pretrain) + frozen-backbone pixel CE probe",
+  "knowledge_distillation": true,
+  "distillation_type": "label-free intermediate feature distillation",
+  "teacher_checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+  "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+  "pca_dir": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+  "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+  "pca_parameters_sha256_record": {
+    "schema_version": 1,
+    "sampling_manifest_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/sampling_manifest.json",
+    "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+    "dataset_combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+    "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "fit_algorithm": "StandardScaler.partial_fit + IncrementalPCA.partial_fit (two passes)",
+    "standardizer_dtype": "float64 accumulation, float32 feature input",
+    "whiten": false,
+    "layers": {
+      "os4": {
+        "feature_input_sha256": "325b912f0f3b2057c6ae4d37d9a38f6ae2fdd30eed0e098ddc82fdf0e2bddc1c",
+        "scaler_sha256": "fe556db2fb6db6badf9d07857ee197a8e8f08a8a0123a2a165f3fa1f577234ff",
+        "pca_sha256": "439da5ba299e5ad7678ebdb8d978cf54fdb996ca61ca622f31563a440aef2d09",
+        "d_out": 24,
+        "n_tokens": 200000,
+        "explained_variance_ratio_sum": 0.6189103330507209,
+        "explained_variance_ratio_head": [
+          0.08764929742896402,
+          0.05653366050723076,
+          0.05173665006890454,
+          0.03607005433731676,
+          0.03288528456253555,
+          0.029905875561309775,
+          0.027496923368170372,
+          0.02460549807920356,
+          0.022317527343937906,
+          0.021664904166668986
+        ],
+        "scaler_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/scaler_os4.npz",
+        "pca_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/pca_os4.npz"
+      },
+      "os8": {
+        "feature_input_sha256": "3ef49742c5767e7c2df679748813204f5cbc1aa9a8f18d90a73fd6e678b70145",
+        "scaler_sha256": "4aaa45c461947e1c62788d851534b8d2e86245fdfb14080277fc4622cdeaba07",
+        "pca_sha256": "2faff846268b623caef484b342c4bfaa3c20d641b7ee9b910059e8ca192493f4",
+        "d_out": 32,
+        "n_tokens": 200000,
+        "explained_variance_ratio_sum": 0.4338250092981253,
+        "explained_variance_ratio_head": [
+          0.045356563059422546,
+          0.023949130273249852,
+          0.02179407194894662,
+          0.018575734164882386,
+          0.017392671741904012,
+          0.016131965979455088,
+          0.015802745135935464,
+          0.01529470613177839,
+          0.014178133262580038,
+          0.013684531191411433
+        ],
+        "scaler_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/scaler_os8.npz",
+        "pca_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/pca_os8.npz"
+      },
+      "os16": {
+        "feature_input_sha256": "e9f0115d50f62b03ee919b6e0ef3247f642f2df6d2945b7e34713511b2acc104",
+        "scaler_sha256": "b2ddcfa2847072e294c7d87057bb780b1465f48fa061cae909092c3db58d98f2",
+        "pca_sha256": "370704780111aec76c5dc700ff975e00736493086596c4dfcaf3ed9db5e36d00",
+        "d_out": 320,
+        "n_tokens": 200000,
+        "explained_variance_ratio_sum": 0.964547342722032,
+        "explained_variance_ratio_head": [
+          0.108239324233885,
+          0.07524539677934267,
+          0.06935104574076206,
+          0.06147989184886723,
+          0.05766968799762829,
+          0.053320674851758336,
+          0.04033368233315522,
+          0.030274642772751704,
+          0.02535956724269038,
+          0.02379015662849277
+        ],
+        "scaler_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/scaler_os16.npz",
+        "pca_path": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared/pca_os16.npz"
+      }
+    }
+  },
+  "projection_parameter_sha256": {
+    "os4": "bd7443d81f97477a7181257497e474e9879d7438a58cadaedc8405009c767912",
+    "os8": "18abca4a3290b3f9a0512740599c47aa97a66fdfe9f46cc8be9efbdfd5a0ad75",
+    "os16": "c9280821ed4cc18aac465d40b073c6eaf170ce0090e28a905bd2237d72e233c3"
+  },
+  "test_local_evaluated": false,
+  "distributed_backend": "nccl",
+  "projection_implementation": "fixed 1x1 Conv2d fused from shared StandardScaler and fixed random row-orthogonal T-to-S matrix",
+  "projection_reference": "explicit StandardScaler + random Q",
+  "projection_trainable": false,
+  "random_projection_seed_base": 42,
+  "random_projection_rng": "numpy.random.RandomState",
+  "random_projection_construction": "Gaussian[C_t,d_l] -> complete QR -> Q_full.T[:d_l]",
+  "random_projection_orthogonality_tolerance": 1e-05,
+  "random_projection_layers": {
+    "os4": {
+      "layer": "os4",
+      "layer_index": 0,
+      "seed": 42,
+      "rng": "numpy.random.RandomState",
+      "gaussian_shape": [
+        96,
+        24
+      ],
+      "q_shape": [
+        24,
+        96
+      ],
+      "construction": "complete_qr(Q_full.T[:d_out])",
+      "orthogonality_error_frobenius": 2.083357413410842e-15,
+      "orthogonality_tolerance": 1e-05,
+      "random_matrix_sha256": "98317ba3e3d1f6ab26af055b747595b9c29d7435d53edf99c699a932e41b447c",
+      "projection_parameter_sha256": "bd7443d81f97477a7181257497e474e9879d7438a58cadaedc8405009c767912",
+      "scaler_mean_sha256": "a2d47dd4d38338655fca9f08406235f0fc16e4ac88a635a857d50519013dc26d",
+      "scaler_scale_sha256": "4c2741d194116716572d47de2e679fd763275a1f7fe0e64ddc0580ca86544cc4"
+    },
+    "os8": {
+      "layer": "os8",
+      "layer_index": 1,
+      "seed": 43,
+      "rng": "numpy.random.RandomState",
+      "gaussian_shape": [
+        192,
+        32
+      ],
+      "q_shape": [
+        32,
+        192
+      ],
+      "construction": "complete_qr(Q_full.T[:d_out])",
+      "orthogonality_error_frobenius": 2.9204342572649696e-15,
+      "orthogonality_tolerance": 1e-05,
+      "random_matrix_sha256": "bbb32e11745fdb4b91e146cff8dfcad80d1abe27306be08002f8b068e056ffa7",
+      "projection_parameter_sha256": "18abca4a3290b3f9a0512740599c47aa97a66fdfe9f46cc8be9efbdfd5a0ad75",
+      "scaler_mean_sha256": "84d392cdaf8214f4fa6e7ea987848297a0749e50e79a4ea28d199b07ee3d38ee",
+      "scaler_scale_sha256": "7012e091d938a4e8d33ff7866d120b4382f43f64e3c185fe258f6acac993fa8f"
+    },
+    "os16": {
+      "layer": "os16",
+      "layer_index": 2,
+      "seed": 44,
+      "rng": "numpy.random.RandomState",
+      "gaussian_shape": [
+        768,
+        320
+      ],
+      "q_shape": [
+        320,
+        768
+      ],
+      "construction": "complete_qr(Q_full.T[:d_out])",
+      "orthogonality_error_frobenius": 2.2263924709275153e-14,
+      "orthogonality_tolerance": 1e-05,
+      "random_matrix_sha256": "c8b1f7105b8a11dc675b1d4340a0886b5714d4335703248aa0947f4472fbb127",
+      "projection_parameter_sha256": "c9280821ed4cc18aac465d40b073c6eaf170ce0090e28a905bd2237d72e233c3",
+      "scaler_mean_sha256": "895973c2cd2b849fb273e975d0acce6552261a7115a820e9347cf870302827d3",
+      "scaler_scale_sha256": "25ea5dad10934aad3be3d05288420859f312bec9c9f576fc82f6b68b86124e67"
+    }
+  },
+  "pca_refit": false,
+  "pca_resampling": false,
+  "pca_components_used": false
+}

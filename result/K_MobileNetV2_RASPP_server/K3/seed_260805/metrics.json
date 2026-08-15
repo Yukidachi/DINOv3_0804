@@ -1,0 +1,1065 @@
+{
+  "experiment": "K3",
+  "protocol": "K3 controlled feature+logits KD run: shared scratch MobileNetV2+R-ASPP initialization, hard-label CE plus locked A0 fixed StandardScaler+PCA OS=4/8/16 feature MSE and frozen T1 full-resolution masked pixel-logit KL (T=4, lambda_feat=1.0, lambda_logit=0.5), shared 5% optimizer-step warm-up, one teacher backbone forward per batch, fixed 80k budget, dev_local selection, and no test_local evaluation.",
+  "best_epoch": 253,
+  "best_optimizer_step": 80000,
+  "best_dev_metrics": {
+    "loss": 0.2657202622935875,
+    "mIoU": 0.545967870910268,
+    "mAcc": 0.6183564423571759,
+    "pixel_accuracy": 0.9219628684916922,
+    "small_object_mIoU": 0.44395605957934436,
+    "valid_pixels": 834196385,
+    "per_class": {
+      "road": {
+        "iou": 0.9435475271586797,
+        "accuracy": 0.9602073681302673,
+        "target_pixels": 303128354,
+        "predicted_pixels": 296418295
+      },
+      "sidewalk": {
+        "iou": 0.7610331398702883,
+        "accuracy": 0.8316930460891818,
+        "target_pixels": 54929810,
+        "predicted_pixels": 50784828
+      },
+      "building": {
+        "iou": 0.8516247606140106,
+        "accuracy": 0.9583307476210815,
+        "target_pixels": 210902560,
+        "predicted_pixels": 228539856
+      },
+      "wall": {
+        "iou": 0.36227750243558454,
+        "accuracy": 0.38939375490182443,
+        "target_pixels": 8844921,
+        "predicted_pixels": 4106194
+      },
+      "fence": {
+        "iou": 0.4451244115804876,
+        "accuracy": 0.5147586318297837,
+        "target_pixels": 8567969,
+        "predicted_pixels": 5750789
+      },
+      "pole": {
+        "iou": 0.3750368562888693,
+        "accuracy": 0.46266802215293895,
+        "target_pixels": 8335508,
+        "predicted_pixels": 5804249
+      },
+      "traffic light": {
+        "iou": 0.35857368687372343,
+        "accuracy": 0.3868898353632718,
+        "target_pixels": 1003725,
+        "predicted_pixels": 467594
+      },
+      "traffic sign": {
+        "iou": 0.5365857216735386,
+        "accuracy": 0.7238605722250074,
+        "target_pixels": 3963371,
+        "predicted_pixels": 4252192
+      },
+      "vegetation": {
+        "iou": 0.8715574679363495,
+        "accuracy": 0.9512721419471036,
+        "target_pixels": 127789631,
+        "predicted_pixels": 133250653
+      },
+      "terrain": {
+        "iou": 0.4091781938486653,
+        "accuracy": 0.44327620350766145,
+        "target_pixels": 4922881,
+        "predicted_pixels": 2592434
+      },
+      "sky": {
+        "iou": 0.9072018023801415,
+        "accuracy": 0.9639197430283595,
+        "target_pixels": 30728994,
+        "predicted_pixels": 31541450
+      },
+      "person": {
+        "iou": 0.6996847536080334,
+        "accuracy": 0.8258726751125858,
+        "target_pixels": 9916663,
+        "predicted_pixels": 9978368
+      },
+      "rider": {
+        "iou": 0.40380324529537626,
+        "accuracy": 0.5024244124565682,
+        "target_pixels": 1158425,
+        "predicted_pixels": 864944
+      },
+      "car": {
+        "iou": 0.8905141166540185,
+        "accuracy": 0.9702067677292777,
+        "target_pixels": 51391772,
+        "predicted_pixels": 54459726
+      },
+      "truck": {
+        "iou": 0.2028418895892108,
+        "accuracy": 0.31203479224265807,
+        "target_pixels": 2397316,
+        "predicted_pixels": 2038558
+      },
+      "bus": {
+        "iou": 0.2500486801240165,
+        "accuracy": 0.29515429829657114,
+        "target_pixels": 1905627,
+        "predicted_pixels": 906205
+      },
+      "train": {
+        "iou": 0.2597193135635936,
+        "accuracy": 0.2630847255943524,
+        "target_pixels": 1872374,
+        "predicted_pixels": 516855
+      },
+      "motorcycle": {
+        "iou": 0.2913792036485222,
+        "accuracy": 0.32644914595457697,
+        "target_pixels": 475970,
+        "predicted_pixels": 212667
+      },
+      "bicycle": {
+        "iou": 0.5536572741519841,
+        "accuracy": 0.6672755206032703,
+        "target_pixels": 1960514,
+        "predicted_pixels": 1710528
+      }
+    },
+    "confusion_matrix": [
+      [
+        291066079,
+        3059996,
+        6093683,
+        45751,
+        11383,
+        37587,
+        1,
+        25963,
+        339677,
+        39898,
+        151796,
+        465312,
+        12815,
+        1698194,
+        24891,
+        13367,
+        2523,
+        2080,
+        37358
+      ],
+      [
+        4633831,
+        45684741,
+        2936747,
+        75928,
+        62759,
+        162307,
+        0,
+        4180,
+        606305,
+        215409,
+        0,
+        141483,
+        2965,
+        350944,
+        5630,
+        2036,
+        142,
+        818,
+        43585
+      ],
+      [
+        57161,
+        449771,
+        202114408,
+        104164,
+        336014,
+        661467,
+        28070,
+        801649,
+        4205717,
+        9814,
+        1075175,
+        318811,
+        12526,
+        580368,
+        89946,
+        7537,
+        2880,
+        2153,
+        44929
+      ],
+      [
+        6858,
+        352515,
+        2952137,
+        3444157,
+        481042,
+        70890,
+        87,
+        9836,
+        1357485,
+        22494,
+        0,
+        18489,
+        1932,
+        116774,
+        1155,
+        552,
+        0,
+        549,
+        7969
+      ],
+      [
+        6545,
+        83017,
+        2494329,
+        266226,
+        4410436,
+        101178,
+        6,
+        12572,
+        1002934,
+        20377,
+        690,
+        32514,
+        2239,
+        101574,
+        772,
+        10803,
+        1235,
+        279,
+        20243
+      ],
+      [
+        13448,
+        160471,
+        2759223,
+        22885,
+        75399,
+        3856573,
+        22485,
+        111103,
+        987225,
+        9680,
+        129935,
+        69478,
+        465,
+        96873,
+        1878,
+        1794,
+        2967,
+        62,
+        13564
+      ],
+      [
+        0,
+        0,
+        327188,
+        0,
+        53,
+        56521,
+        388331,
+        38063,
+        169926,
+        0,
+        18458,
+        877,
+        42,
+        2102,
+        1607,
+        557,
+        0,
+        0,
+        0
+      ],
+      [
+        2376,
+        4307,
+        781001,
+        3372,
+        4674,
+        42539,
+        2914,
+        2868928,
+        204276,
+        317,
+        7551,
+        7416,
+        283,
+        24240,
+        2517,
+        4254,
+        2336,
+        0,
+        70
+      ],
+      [
+        29163,
+        151655,
+        3989964,
+        74760,
+        268558,
+        572961,
+        13058,
+        142782,
+        121562716,
+        79450,
+        527172,
+        121046,
+        7914,
+        225105,
+        5126,
+        3940,
+        39,
+        618,
+        13604
+      ],
+      [
+        103843,
+        577398,
+        85159,
+        55317,
+        40652,
+        49915,
+        0,
+        600,
+        1763652,
+        2182196,
+        0,
+        13684,
+        498,
+        40974,
+        164,
+        70,
+        0,
+        176,
+        8583
+      ],
+      [
+        0,
+        0,
+        533554,
+        0,
+        27,
+        44682,
+        11614,
+        38004,
+        476744,
+        0,
+        29620284,
+        9,
+        0,
+        528,
+        3451,
+        68,
+        29,
+        0,
+        0
+      ],
+      [
+        108936,
+        152524,
+        708506,
+        11746,
+        15643,
+        51550,
+        61,
+        10114,
+        230896,
+        5351,
+        532,
+        8189901,
+        96990,
+        270047,
+        3430,
+        703,
+        237,
+        2077,
+        57419
+      ],
+      [
+        15160,
+        5217,
+        66780,
+        116,
+        3793,
+        5212,
+        47,
+        222,
+        28538,
+        373,
+        0,
+        231407,
+        582021,
+        92443,
+        0,
+        99,
+        0,
+        24855,
+        102142
+      ],
+      [
+        269660,
+        49645,
+        575139,
+        1309,
+        27029,
+        45057,
+        12,
+        5662,
+        197908,
+        5775,
+        2288,
+        91141,
+        12096,
+        49860645,
+        219158,
+        8560,
+        519,
+        5942,
+        14227
+      ],
+      [
+        6465,
+        745,
+        720385,
+        0,
+        446,
+        13268,
+        0,
+        155364,
+        37704,
+        0,
+        6629,
+        145489,
+        610,
+        531956,
+        748046,
+        28936,
+        0,
+        37,
+        1236
+      ],
+      [
+        14303,
+        5074,
+        418172,
+        23,
+        1119,
+        5419,
+        45,
+        10298,
+        32207,
+        42,
+        246,
+        2920,
+        0,
+        200011,
+        641939,
+        562454,
+        11355,
+        0,
+        0
+      ],
+      [
+        8242,
+        2163,
+        734623,
+        0,
+        0,
+        1135,
+        863,
+        16694,
+        2165,
+        172,
+        694,
+        1450,
+        0,
+        62972,
+        288133,
+        260475,
+        492593,
+        0,
+        0
+      ],
+      [
+        39438,
+        4104,
+        37023,
+        109,
+        0,
+        818,
+        0,
+        136,
+        4545,
+        44,
+        0,
+        16117,
+        41398,
+        138752,
+        710,
+        0,
+        0,
+        155380,
+        37396
+      ],
+      [
+        36787,
+        41485,
+        211835,
+        331,
+        11762,
+        25170,
+        0,
+        22,
+        40033,
+        1042,
+        0,
+        110824,
+        90150,
+        65224,
+        5,
+        0,
+        0,
+        17641,
+        1308203
+      ]
+    ],
+    "boundary_precision": 0.4663536671123001,
+    "boundary_recall": 0.41833251477074224,
+    "boundary_f1": 0.4410397863802909
+  },
+  "class_names": [
+    "road",
+    "sidewalk",
+    "building",
+    "wall",
+    "fence",
+    "pole",
+    "traffic light",
+    "traffic sign",
+    "vegetation",
+    "terrain",
+    "sky",
+    "person",
+    "rider",
+    "car",
+    "truck",
+    "bus",
+    "train",
+    "motorcycle",
+    "bicycle"
+  ],
+  "config": {
+    "experiment": "K3",
+    "experiment_group": "K_MobileNetV2_RASPP_server",
+    "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_k3_server.py",
+    "seed": 260805,
+    "formal_seeds": [
+      42,
+      3407,
+      260805
+    ],
+    "world_size": 2,
+    "batch_size_per_gpu": 2,
+    "global_batch_size": 8,
+    "accumulation_steps_per_gpu": 2,
+    "max_optimizer_steps": 80000,
+    "eval_batch_size": 1,
+    "num_workers_per_gpu": 8,
+    "multiprocessing_context": "spawn",
+    "pin_memory": false,
+    "persistent_workers": true,
+    "prefetch_factor": 2,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "scheduler": "polynomial",
+    "poly_power": 0.9,
+    "min_lr_ratio": 0.01,
+    "eval_every_steps": 5000,
+    "eval_policy": "first epoch boundary at or after each target step",
+    "amp": true,
+    "deterministic": true,
+    "crop_size": [
+      512,
+      1024
+    ],
+    "random_scale": [
+      0.5,
+      2.0
+    ],
+    "horizontal_flip_probability": 0.5,
+    "eval_resolution": [
+      1024,
+      2048
+    ],
+    "head_channels": 256,
+    "dropout": 0.1,
+    "num_classes": 19,
+    "ignore_index": 255,
+    "output_stride": 16,
+    "initialization": "shared scratch state; weights=None",
+    "backbone_frozen": false,
+    "loss": {
+      "hard_label_ce": true,
+      "feature_kd": true,
+      "feature_mechanism": "A0 fixed StandardScaler+PCA teacher-to-student",
+      "feature_layers": [
+        "os4",
+        "os8",
+        "os16"
+      ],
+      "feature_reduction": "mean per BCHW layer, then equal mean over 3 layers",
+      "logit_kd": true,
+      "logit_mechanism": "full-resolution masked pixel KL",
+      "logit_reduction": "mean over valid pixels after sum over 19 classes",
+      "lambda_feat": 1.0,
+      "lambda_logit": 0.5,
+      "temperature": 4.0,
+      "auxiliary_warmup_steps": 4000,
+      "auxiliary_warmup_ratio": 0.05,
+      "warmup_step_unit": "optimizer_step",
+      "shared_auxiliary_warmup": true,
+      "ignore_index_masked": true,
+      "teacher_logits_detached": true,
+      "temperature_squared_factor": true
+    },
+    "teacher": {
+      "enabled": true,
+      "type": "T1 DINOv3 ConvNeXt-T + R-ASPP, shared features and logits",
+      "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+      "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "frozen": true,
+      "wrapped_in_ddp": false,
+      "features_used_for_loss": [
+        "os4",
+        "os8",
+        "os16"
+      ],
+      "logits_used": true,
+      "logits_resolution": "full input resolution",
+      "single_backbone_forward_per_batch": true
+    },
+    "pca": {
+      "enabled": true,
+      "mechanism": "A0 fixed StandardScaler+PCA",
+      "directory": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+      "parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "trainable": false
+    },
+    "shared_init_state_sha256": "94348eb0aa233f6e10d222d6243dd799818c9b4ea67caafc32ff9dd20530bb46",
+    "shared_init_file_sha256": "d213a83d775b55f08edb55ff478f622d5fa6579e61ed07ea04a87b9e1f97cb85",
+    "test_local_evaluated": false,
+    "benchmark": false,
+    "benchmark_resolution": [
+      1024,
+      2048
+    ],
+    "distributed_backend": "nccl"
+  },
+  "shape_audit": {
+    "input_shape": [
+      1,
+      3,
+      512,
+      1024
+    ],
+    "feature_taps": {
+      "os4": {
+        "module": "backbone.3",
+        "index": 3,
+        "channels": 24,
+        "stride": 4
+      },
+      "os8": {
+        "module": "backbone.6",
+        "index": 6,
+        "channels": 32,
+        "stride": 8
+      },
+      "os16": {
+        "module": "backbone.17",
+        "index": 17,
+        "channels": 320,
+        "stride": 16
+      },
+      "raspp_input": {
+        "module": "backbone.18",
+        "index": 18,
+        "channels": 1280,
+        "stride": 16
+      }
+    },
+    "feature_shapes": {
+      "os4": [
+        1,
+        24,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        32,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        320,
+        32,
+        64
+      ],
+      "raspp_input": [
+        1,
+        1280,
+        32,
+        64
+      ]
+    },
+    "logit_shape": [
+      1,
+      19,
+      512,
+      1024
+    ],
+    "output_stride": 16,
+    "conversion": "features.14 depthwise stride 2->1; features.14-17 depthwise convolutions use dilation=2 and padding=2",
+    "depthwise_contract": {
+      "backbone.14": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.15": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.16": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.17": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      }
+    },
+    "align_corners": false,
+    "experiment": "K3",
+    "teacher_feature_shapes": {
+      "os4": [
+        1,
+        96,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        192,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        768,
+        32,
+        64
+      ]
+    },
+    "projected_teacher_feature_shapes": {
+      "os4": [
+        1,
+        24,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        32,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        320,
+        32,
+        64
+      ]
+    },
+    "teacher_logit_shape": [
+      1,
+      19,
+      512,
+      1024
+    ],
+    "teacher_logits_resolution": "full input resolution",
+    "teacher_logits_align_corners": false,
+    "teacher_forward_calls_per_training_batch": 1,
+    "teacher_shared_feature_head_path": true,
+    "teacher_shared_path_equivalence": {
+      "passed": true,
+      "dtype": "float32",
+      "input_shape": [
+        1,
+        3,
+        64,
+        128
+      ],
+      "rtol": 1e-05,
+      "atol": 1e-06,
+      "max_abs_error": 0.0
+    },
+    "projection": "fixed A0 StandardScaler+PCA, teacher to student channels",
+    "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    }
+  },
+  "dataset_lock": {
+    "lock_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.lock.json",
+    "lock_sha256": "b3b4e2e8af470963983f3e2f8848caa7cab3d63ee4f37b218601f3a9d0048eb2",
+    "checksum_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.sha256",
+    "checksum_sha256": "a31cc5370ddee112d2ead5e99ad57857ed301285a6f0b953f261466ec87cfe50",
+    "lock_date": "2026-08-05",
+    "timezone": "Asia/Tokyo",
+    "combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+    "splits": {
+      "train_local": {
+        "source": "official train",
+        "count": 2530,
+        "cities": [
+          "aachen",
+          "bochum",
+          "bremen",
+          "cologne",
+          "dusseldorf",
+          "erfurt",
+          "hamburg",
+          "hanover",
+          "monchengladbach",
+          "strasbourg",
+          "stuttgart",
+          "tubingen",
+          "ulm",
+          "zurich"
+        ],
+        "manifest": "train_local.txt",
+        "sha256": "08fe1239484a1824469ac22d0b4780e9b1cf074e90829da952420f6d554076d7"
+      },
+      "dev_local": {
+        "source": "official train",
+        "count": 445,
+        "cities": [
+          "darmstadt",
+          "jena",
+          "krefeld",
+          "weimar"
+        ],
+        "manifest": "dev_local.txt",
+        "sha256": "778d455b9e01aecec7a0958a349eac8ac1655c6c13485af9b01d0ab779e51f70"
+      },
+      "test_local": {
+        "source": "official val",
+        "count": 500,
+        "cities": [
+          "frankfurt",
+          "lindau",
+          "munster"
+        ],
+        "manifest": "test_local.txt",
+        "sha256": "4eb84d274208c475931d4eb796fec932d567e19e31790f38a458942a447d766c"
+      }
+    }
+  },
+  "model": {
+    "model_name": "mobilenet_v2",
+    "initialization": "shared scratch state; weights=None",
+    "head": "R-ASPP",
+    "feature_taps": {
+      "os4": {
+        "module": "backbone.3",
+        "index": 3,
+        "channels": 24,
+        "stride": 4
+      },
+      "os8": {
+        "module": "backbone.6",
+        "index": 6,
+        "channels": 32,
+        "stride": 8
+      },
+      "os16": {
+        "module": "backbone.17",
+        "index": 17,
+        "channels": 320,
+        "stride": 16
+      },
+      "raspp_input": {
+        "module": "backbone.18",
+        "index": 18,
+        "channels": 1280,
+        "stride": 16
+      }
+    },
+    "total_parameters": 2884883,
+    "backbone_parameters": 2223872,
+    "head_parameters": 661011,
+    "trainable_parameters": 2884883
+  },
+  "loss": {
+    "hard_label_ce": true,
+    "feature_kd": true,
+    "feature_mechanism": "A0 fixed StandardScaler+PCA",
+    "feature_layers": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "lambda_feat": 1.0,
+    "logit_kd": true,
+    "logit_mechanism": "full-resolution masked pixel KL",
+    "logit_reduction": "mean over valid pixels after sum over classes",
+    "lambda_logit": 0.5,
+    "temperature": 4.0,
+    "warmup_steps": 4000,
+    "warmup_ratio": 0.05,
+    "ignore_index_masked": true,
+    "temperature_squared_factor": true
+  },
+  "efficiency": null,
+  "hashes": {
+    "student_init_state_sha256": "94348eb0aa233f6e10d222d6243dd799818c9b4ea67caafc32ff9dd20530bb46",
+    "student_init_file_sha256": "d213a83d775b55f08edb55ff478f622d5fa6579e61ed07ea04a87b9e1f97cb85",
+    "student_init_path": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/shared_init/seed_260805/student_init.pth",
+    "training_script_sha256": "b36237696b8f9995dca841d3e5113919a3bf960e301663b711590223cf0d07c9",
+    "shared_student_module_sha256": "046cdc63a20240225a51a2ade74973f8632663b44443c7128fced770a230c959",
+    "common_module_sha256": "85fe7ee0e985ae4340fd20d382da81e0d81ada45336c5c750eb816bfc309549f",
+    "dataset_combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+    "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "pca_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "selected_model_state_sha256": "db232ed6832c9549a13bc5b3e7df03840ed1f0ede386f6c62dcab109dd72cc19",
+    "checkpoint_sha256": "ba07a752e1308d2d164905e5974d2fa3bceca29204bd9da38854cf7e0c915973",
+    "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+    "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+    "k1_feature_contract_source_sha256": "9b9d836bfe8befebfdbe2197d52e9c5864917a8a6ada0c72dcb506504bc9bff5",
+    "k2_masked_kl_source_sha256": "555cd0073d1baa71c4a690e1b1ee57b2625632a3eee4f88ff4ccc9be9f4e7b87"
+  },
+  "training": {
+    "elapsed_seconds": 12062.043892383575,
+    "optimizer_steps": 80000,
+    "epochs_completed": 253,
+    "steps_per_full_epoch": 317
+  },
+  "software": {
+    "python": "3.10.19",
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "2.0.1",
+    "pillow": "11.1.0",
+    "platform": "Linux-5.15.0-128-generic-x86_64-with-glibc2.35",
+    "cuda_available": true,
+    "cuda_version": "12.4",
+    "cudnn_version": 91700
+  },
+  "artifacts": {
+    "run_dir": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805",
+    "best": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/best_checkpoint.pth",
+    "last": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/last_checkpoint.pth",
+    "config": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/config.json",
+    "feature_taps": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/feature_taps.json",
+    "first_batch_audit": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/first_batch_audit.json",
+    "history": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/training_history.json",
+    "gradient_norms": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/gradient_norms.jsonl",
+    "dev_metrics": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/dev_metrics.json",
+    "dev_confusion": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/dev_confusion_matrix.json",
+    "per_image": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/dev_per_image_confusion.jsonl",
+    "efficiency": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/efficiency.json",
+    "software": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/software.json",
+    "metrics": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/metrics.json"
+  },
+  "test_local_evaluated": false,
+  "teacher": {
+    "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+    "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "features_used": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "logits_used": true,
+    "logits_resolution": "full input resolution",
+    "single_backbone_forward_per_batch": true,
+    "frozen": true
+  },
+  "pca": {
+    "enabled": true,
+    "directory": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+    "parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a"
+  }
+}
