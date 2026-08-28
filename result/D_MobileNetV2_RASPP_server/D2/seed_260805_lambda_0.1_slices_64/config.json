@@ -1,0 +1,188 @@
+{
+  "experiment": "D2",
+  "experiment_group": "D_MobileNetV2_RASPP_server",
+  "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_d2_server.py",
+  "seed": 260805,
+  "formal_seeds": [
+    42,
+    3407,
+    260805
+  ],
+  "world_size": 2,
+  "batch_size_per_gpu": 2,
+  "global_batch_size": 8,
+  "accumulation_steps_per_gpu": 2,
+  "max_optimizer_steps": 80000,
+  "eval_batch_size": 1,
+  "num_workers_per_gpu": 8,
+  "multiprocessing_context": "spawn",
+  "pin_memory": false,
+  "persistent_workers": true,
+  "prefetch_factor": 2,
+  "optimizer": "SGD",
+  "learning_rate": 0.01,
+  "momentum": 0.9,
+  "weight_decay": 0.0001,
+  "scheduler": "polynomial",
+  "poly_power": 0.9,
+  "min_lr_ratio": 0.01,
+  "eval_every_steps": 5000,
+  "eval_policy": "first epoch boundary at or after each target step",
+  "amp": true,
+  "deterministic": true,
+  "crop_size": [
+    512,
+    1024
+  ],
+  "random_scale": [
+    0.5,
+    2.0
+  ],
+  "horizontal_flip_probability": 0.5,
+  "eval_resolution": [
+    1024,
+    2048
+  ],
+  "head_channels": 256,
+  "dropout": 0.1,
+  "num_classes": 19,
+  "ignore_index": 255,
+  "output_stride": 16,
+  "initialization": "shared scratch state; weights=None",
+  "backbone_frozen": false,
+  "loss": {
+    "hard_label_ce": true,
+    "feature_kd": true,
+    "feature_mechanism": "A0 fixed StandardScaler+PCA teacher-to-student",
+    "feature_layers": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "feature_reduction": "mean per BCHW layer, then equal mean over 3 layers",
+    "distribution_kd": true,
+    "distribution_type": "SWD",
+    "distribution_reduction": "64 fixed slices; mean L1 paired quantile distance; equal mean over OS=4/8/16; teacher-batch normalized",
+    "lambda_feat": 1.0,
+    "lambda_swd": 0.1,
+    "auxiliary_warmup_steps": 4000,
+    "warmup_step_unit": "optimizer_step",
+    "logit_kd": false
+  },
+  "teacher": {
+    "enabled": true,
+    "type": "T1 DINOv3 ConvNeXt-T + R-ASPP, feature extraction only",
+    "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+    "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "frozen": true,
+    "wrapped_in_ddp": false,
+    "logits_used": false
+  },
+  "pca": {
+    "enabled": true,
+    "mechanism": "A0 fixed StandardScaler+PCA",
+    "directory": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+    "parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+    "parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+    "trainable": false
+  },
+  "shared_init_state_sha256": "94348eb0aa233f6e10d222d6243dd799818c9b4ea67caafc32ff9dd20530bb46",
+  "shared_init_file_sha256": "d213a83d775b55f08edb55ff478f622d5fa6579e61ed07ea04a87b9e1f97cb85",
+  "test_local_evaluated": false,
+  "benchmark": false,
+  "benchmark_resolution": [
+    1024,
+    2048
+  ],
+  "distributed_backend": "nccl",
+  "artifact_type": "mobilenetv2_cityscapes19_raspp_d2_swd",
+  "shared_initialization": {
+    "source_group": "K_MobileNetV2_RASPP_server",
+    "path": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/shared_init/seed_260805/student_init.pth",
+    "state_sha256": "94348eb0aa233f6e10d222d6243dd799818c9b4ea67caafc32ff9dd20530bb46",
+    "file_sha256": "d213a83d775b55f08edb55ff478f622d5fa6579e61ed07ea04a87b9e1f97cb85",
+    "d_specific_initialization_created": false
+  },
+  "distribution": {
+    "spec_version": 1,
+    "enabled": true,
+    "type": "SWD",
+    "active_terms": [
+      "swd"
+    ],
+    "teacher_source": "A0 fixed projected teacher features, detached",
+    "student_source": "native student OS=4/8/16 taps",
+    "mask_policy": "resize targets != 255 with nearest-neighbor; ignore excluded",
+    "token_cap_per_layer": 256,
+    "token_cap_scope": "physical global micro-batch",
+    "local_token_cap": 128,
+    "token_sampling": "deterministic without replacement",
+    "sampling_seed_formula": "seed*1000003 + optimizer_step*9176 + layer_index",
+    "statistics": "teacher-batch mean/std normalization; global token matrix",
+    "normalization_formula": "(x - teacher_mean) / (teacher_std + 1e-6)",
+    "normalization_epsilon": 1e-06,
+    "layers": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "layer_reduction": "equal mean over OS=4/8/16",
+    "swd_reduction": "FP32 sort per slice; mean absolute paired quantile difference over K*N",
+    "ddp_gradient_policy": "global-token loss scaled by world_size for DDP averaging",
+    "warmup_steps": 4000,
+    "lambda_feat": 1.0,
+    "lambda_swd": 0.1,
+    "physical_distribution_batch_size": 4,
+    "effective_optimizer_batch_size": 8,
+    "directions": {
+      "generator": "torch.randn CPU float32 with an explicit per-layer generator",
+      "normalization": "L2 per direction over channel dimension",
+      "seed_formula": "20260821 + layer_index",
+      "num_slices": 64,
+      "layers": {
+        "os4": {
+          "channels": 24,
+          "num_slices": 64,
+          "seed": 20260821,
+          "shape": [
+            24,
+            64
+          ],
+          "sha256": "4437f50b84a27f83f56201150f1f7380788038112819375d3292cf61eb4d7a55",
+          "max_unit_norm_error": 1.1920928955078125e-07
+        },
+        "os8": {
+          "channels": 32,
+          "num_slices": 64,
+          "seed": 20260822,
+          "shape": [
+            32,
+            64
+          ],
+          "sha256": "dd611d323747a22d6ad4662d66e75c8ee08302fbb6e7a67599bd7aa3fb94b1a8",
+          "max_unit_norm_error": 1.7881393432617188e-07
+        },
+        "os16": {
+          "channels": 320,
+          "num_slices": 64,
+          "seed": 20260823,
+          "shape": [
+            320,
+            64
+          ],
+          "sha256": "310442b7f1ee6f4ea31084fba6d81450f60485a77580795d8579d0d8d0df812e",
+          "max_unit_norm_error": 4.172325134277344e-07
+        }
+      },
+      "combined_sha256": "97a0f9ddcccb2b799a5d9f2ec3e47b6de1630903b3113cae319e28669985d3b0"
+    },
+    "coral": null,
+    "discriminator": null
+  },
+  "distribution_spec_sha256": "0ffd128f80297c0583b5c946d2b417b84a3090cc65af24a82c2fdb12270780cd"
+}

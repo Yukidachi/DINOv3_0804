@@ -1,0 +1,550 @@
+{
+  "experiment": "H0",
+  "experiment_group": "H_MobileNetV2_RASPP_server",
+  "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_h0_server.py",
+  "seed": 260805,
+  "formal_seeds": [
+    42,
+    3407,
+    260805
+  ],
+  "world_size": 2,
+  "batch_size_per_gpu": 2,
+  "global_batch_size": 8,
+  "accumulation_steps_per_gpu": 2,
+  "max_optimizer_steps": 80000,
+  "eval_batch_size": 1,
+  "num_workers_per_gpu": 8,
+  "multiprocessing_context": "spawn",
+  "pin_memory": false,
+  "persistent_workers": true,
+  "prefetch_factor": 2,
+  "optimizer": "SGD",
+  "learning_rate": 0.01,
+  "momentum": 0.9,
+  "weight_decay": 0.0001,
+  "scheduler": "polynomial",
+  "poly_power": 0.9,
+  "min_lr_ratio": 0.01,
+  "eval_every_steps": 5000,
+  "eval_policy": "first epoch boundary at or after each target step",
+  "amp": true,
+  "deterministic": true,
+  "crop_size": [
+    512,
+    1024
+  ],
+  "random_scale": [
+    0.5,
+    2.0
+  ],
+  "horizontal_flip_probability": 0.5,
+  "eval_resolution": [
+    1024,
+    2048
+  ],
+  "head_channels": 256,
+  "dropout": 0.1,
+  "num_classes": 19,
+  "ignore_index": 255,
+  "output_stride": 16,
+  "initialization": "shared scratch state; weights=None",
+  "backbone_frozen": false,
+  "loss": {
+    "hard_label_ce": true,
+    "feature_kd": true,
+    "feature_mechanism": "A0 fixed StandardScaler+PCA teacher-to-student",
+    "feature_layers": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "feature_reduction": "mean per BCHW layer, then equal mean over 3 layers",
+    "logit_kd": true,
+    "logit_mechanism": "full-resolution masked pixel KL",
+    "logit_reduction": "mean over valid pixels after sum over 19 classes",
+    "lambda_feat": 1.0,
+    "lambda_logit": 0.5,
+    "temperature": 4.0,
+    "auxiliary_warmup_steps": 4000,
+    "auxiliary_warmup_ratio": 0.05,
+    "warmup_step_unit": "optimizer_step",
+    "shared_auxiliary_warmup": true,
+    "ignore_index_masked": true,
+    "teacher_logits_detached": true,
+    "temperature_squared_factor": true,
+    "relation_kd": true,
+    "relation_r1": false,
+    "relation_r2": true,
+    "lambda_r2": 0.3,
+    "total": "CE + warmup * (1.0*feature + 0.3*R2 + 0.5*logit_KL_T2)",
+    "warmup_steps": 4000,
+    "warmup_ratio": 0.05
+  },
+  "teacher": {
+    "enabled": true,
+    "type": "T1 DINOv3 ConvNeXt-T + R-ASPP, shared features and logits",
+    "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+    "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "frozen": true,
+    "wrapped_in_ddp": false,
+    "features_used_for_loss": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "logits_used": true,
+    "logits_resolution": "full input resolution",
+    "single_backbone_forward_per_batch": true
+  },
+  "pca": {
+    "enabled": true,
+    "mechanism": "A0 fixed StandardScaler+PCA",
+    "directory": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+    "parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+    "parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+    "trainable": false
+  },
+  "shared_init_state_sha256": "94348eb0aa233f6e10d222d6243dd799818c9b4ea67caafc32ff9dd20530bb46",
+  "shared_init_file_sha256": "d213a83d775b55f08edb55ff478f622d5fa6579e61ed07ea04a87b9e1f97cb85",
+  "test_local_evaluated": false,
+  "benchmark": false,
+  "benchmark_resolution": [
+    1024,
+    2048
+  ],
+  "distributed_backend": "nccl",
+  "artifact_type": "mobilenetv2_cityscapes19_raspp_h0_relu6_r5_anchor",
+  "screening_seed": 42,
+  "screening_or_confirmation": "confirmation",
+  "shared_initialization": {
+    "source_group": "K_MobileNetV2_RASPP_server",
+    "path": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/shared_init/seed_260805/student_init.pth",
+    "state_sha256": "94348eb0aa233f6e10d222d6243dd799818c9b4ea67caafc32ff9dd20530bb46",
+    "file_sha256": "d213a83d775b55f08edb55ff478f622d5fa6579e61ed07ea04a87b9e1f97cb85",
+    "r_specific_initialization_created": false
+  },
+  "relation": {
+    "enabled": true,
+    "active_relation_types": [
+      "R2_within_image_spatial"
+    ],
+    "relation_feature_source": {
+      "teacher": "native OS=4/8/16 features",
+      "student": "native OS=4/8/16 features",
+      "a0_projected_features_used_for_relation": false
+    },
+    "epsilon": 1e-06,
+    "pool_size": [
+      8,
+      16
+    ],
+    "num_tokens": 128,
+    "nominal_physical_relation_batch_size": 4,
+    "physical_relation_batch_size": 4,
+    "effective_optimizer_batch_size": 8,
+    "accumulated_batches_used_for_relation": false,
+    "tail_batch_policy": "use the actual synchronized micro-batch; never cache, pad, or combine samples across optimizer steps",
+    "mask_policy": "nearest-resized valid mask, adaptive-average valid fraction, valid fraction > 0",
+    "pooling": "adaptive_avg_pool2d(mask * feature) / adaptive_avg_pool2d(mask)",
+    "token_order": "8x16 row-major",
+    "layer_aggregation": "equal mean over native OS=4/8/16 relation losses",
+    "matrix_dtype": "float32",
+    "normalization": "token-row L2 / (norm + epsilon)",
+    "r1": {
+      "enabled": false,
+      "lambda": 0.0
+    },
+    "r2": {
+      "enabled": true,
+      "representation": "per-image 128x128 signed token cosine matrix",
+      "diagonal_policy": "keep for valid tokens",
+      "reduction": "sum over valid token pairs divided by valid-pair count",
+      "lambda": 0.3,
+      "distributed_reduction": "global numerator/global valid-pair denominator"
+    },
+    "relation_warmup_steps": 4000,
+    "relation_warmup_shared_with_feature_kd": true,
+    "estimated_relation_matrix_bytes_per_rank": 786432,
+    "relation_gradient_gate": {
+      "target_relation_to_feature_effective_ratio": [
+        0.05,
+        0.2
+      ],
+      "stop_if_relation_to_ce_exceeds": 2.0,
+      "consecutive_records_before_stop": 3,
+      "lambda_is_fixed_during_formal_training": true
+    },
+    "relation_warmup_shared_with_logit_kd": true,
+    "r5_logit_kd_enabled": true
+  },
+  "relation_spec_sha256": "a6f6f7202f0e8b4fa1f754f91e1e72e13340440e2e8d9e286483f2858ce9714d",
+  "relation_reference_tests": {
+    "passed": true,
+    "local": {
+      "passed": true,
+      "token_shape": [
+        2,
+        128,
+        3
+      ],
+      "matrix_shape": [
+        2,
+        128,
+        128
+      ],
+      "pool_size": [
+        8,
+        16
+      ],
+      "valid_pair_count": 25345,
+      "valid_token_count": 223,
+      "valid_fraction_min": 0.0,
+      "valid_fraction_max": 1.0,
+      "ignore_invariance": true,
+      "valid_pixel_sensitivity": true,
+      "diagonal_kept": true,
+      "teacher_detached": true,
+      "finite_zero_norm": true,
+      "token_norm_min": 0.0
+    },
+    "distributed": {
+      "passed": true,
+      "world_size": 2,
+      "global_valid_pair_count": 51200,
+      "same_scalar_on_all_ranks": true,
+      "student_gradient_finite": true
+    },
+    "formal_definition": {
+      "pool_size": [
+        8,
+        16
+      ],
+      "matrix_shape": [
+        128,
+        128
+      ],
+      "diagonal": "kept for valid tokens",
+      "reduction": "valid-pair masked sum / valid-pair count",
+      "epsilon": 1e-06,
+      "teacher_target_detached": true
+    }
+  },
+  "launch_gate": {
+    "status": "matched_k3_r2_first_batch_loaded",
+    "comparison_seed": 260805,
+    "K3_first_batch_audit": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_260805/first_batch_audit.json",
+    "R2_first_batch_audit": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_260805_lambda_0.3/first_batch_audit.json",
+    "K3_first_batch_present": true,
+    "R2_first_batch_present": true,
+    "r5_expansion_gate": "not used by H0"
+  },
+  "gradient_audit": {
+    "tap": "student native os16",
+    "interval_optimizer_steps": 500,
+    "fixed_steps": [
+      1,
+      4000,
+      20000,
+      40000,
+      60000,
+      80000
+    ],
+    "raw_components": [
+      "CE",
+      "feature",
+      "R2",
+      "logit"
+    ],
+    "effective_auxiliary_components": [
+      "feature",
+      "R2",
+      "logit"
+    ],
+    "auxiliary_pairwise_cosines": [
+      "feature_R2",
+      "feature_logit",
+      "R2_logit"
+    ],
+    "stop_if_total_auxiliary_to_ce_exceeds": 2.0,
+    "consecutive_records_before_stop": 3
+  },
+  "activation": {
+    "name": "ReLU6",
+    "implementation": "torch.nn.ReLU6(inplace=True)",
+    "formula": "relu6(x)=min(max(x, 0), 6)",
+    "placement_scope": "original MobileNetV2 ReLU6; no replacement",
+    "eligible_blocks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "eligible_paths": [
+      {
+        "path": "backbone.1.conv.0.2",
+        "block_index": 1,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.2.conv.0.2",
+        "block_index": 2,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.2.conv.1.2",
+        "block_index": 2,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.3.conv.0.2",
+        "block_index": 3,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.3.conv.1.2",
+        "block_index": 3,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.4.conv.0.2",
+        "block_index": 4,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.4.conv.1.2",
+        "block_index": 4,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.5.conv.0.2",
+        "block_index": 5,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.5.conv.1.2",
+        "block_index": 5,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.6.conv.0.2",
+        "block_index": 6,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.6.conv.1.2",
+        "block_index": 6,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.7.conv.0.2",
+        "block_index": 7,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.7.conv.1.2",
+        "block_index": 7,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.8.conv.0.2",
+        "block_index": 8,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.8.conv.1.2",
+        "block_index": 8,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.9.conv.0.2",
+        "block_index": 9,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.9.conv.1.2",
+        "block_index": 9,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.10.conv.0.2",
+        "block_index": 10,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.10.conv.1.2",
+        "block_index": 10,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.11.conv.0.2",
+        "block_index": 11,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.11.conv.1.2",
+        "block_index": 11,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.12.conv.0.2",
+        "block_index": 12,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.12.conv.1.2",
+        "block_index": 12,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.13.conv.0.2",
+        "block_index": 13,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.13.conv.1.2",
+        "block_index": 13,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.14.conv.0.2",
+        "block_index": 14,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.14.conv.1.2",
+        "block_index": 14,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.15.conv.0.2",
+        "block_index": 15,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.15.conv.1.2",
+        "block_index": 15,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.16.conv.0.2",
+        "block_index": 16,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.16.conv.1.2",
+        "block_index": 16,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.17.conv.0.2",
+        "block_index": 17,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.17.conv.1.2",
+        "block_index": 17,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      }
+    ],
+    "replaced_module_paths": [],
+    "replacement_count": 0,
+    "stem_path": "backbone.0.2",
+    "final_path": "backbone.18.2",
+    "head_path": "head.project.2",
+    "linear_bottleneck_activation": false
+  },
+  "activation_name": "ReLU6",
+  "activation_formula": "min(max(x, 0), 6)",
+  "activation_spec_sha256": "3eeb7a6b4fa0a2514976bc3f6bb09b644bb176eb614cbbce73f24cef376460df",
+  "activation_replacement": {
+    "name": "ReLU6",
+    "replacement_count": 0,
+    "replacement_paths": [],
+    "scope": "none; original MobileNetV2 activations"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "alignment": {
+    "class_count": 19,
+    "image_count": 445,
+    "image_name_sha256": "0794b7b949aa447937a1a7983893504583756c1f43fdbcb0cd513b63d706f459",
+    "image_set_equal": true,
+    "order_equal": true,
+    "paired": true,
+    "seed": 3407,
+    "valid_pixels_equal": true
+  },
+  "bootstrap_batch_size": 4096,
+  "bootstrap_ci_95": [
+    -0.007420051873970876,
+    0.009566478891823445
+  ],
+  "bootstrap_ci_excludes_zero": false,
+  "bootstrap_delta_distribution": "seed_3407_bootstrap_deltas.npy",
+  "bootstrap_delta_max": 0.023577385685174646,
+  "bootstrap_delta_mean": 0.0011179923753466322,
+  "bootstrap_delta_min": -0.019539922995704062,
+  "bootstrap_delta_percentile_2_5": -0.007420051873970876,
+  "bootstrap_delta_percentile_97_5": 0.009566478891823445,
+  "bootstrap_delta_std": 0.004326645962343157,
+  "bootstrap_random_seed": 260820,
+  "bootstrap_repetitions": 100000,
+  "checkpoint_miou_delta": 0.001137964388045698,
+  "d1_input": {
+    "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\D_MobileNetV2_RASPP_server\\D1\\seed_3407_lambda_0.1\\metrics.json",
+    "metrics_sha256": "e6de957915c710899a6b70f1b3822b9580a028dd459aa6f0a1bc7a6133c79ce8",
+    "path": "D:\\ProjectVision\\DINOv3_0804\\result\\D_MobileNetV2_RASPP_server\\D1\\seed_3407_lambda_0.1\\dev_per_image_confusion.jsonl",
+    "sha256": "c04fa8eafff2c03a986b57930477411cf54886e2b1ca03ba9f4a658710bfa6fe",
+    "size_bytes": 626646
+  },
+  "d1_miou": 0.5209338996237771,
+  "d1_per_image_aggregate_miou": 0.5209338996237771,
+  "elapsed_seconds": 13.844088000001648,
+  "experiment": "D1-PB",
+  "k1_input": {
+    "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\K_MobileNetV2_RASPP_server\\K1\\seed_3407\\metrics.json",
+    "metrics_sha256": "74ed26c5a9a3263a5909aab9caacd0d313f4966b059b2f74e632039d3dc61da2",
+    "path": "D:\\ProjectVision\\DINOv3_0804\\result\\K_MobileNetV2_RASPP_server\\K1\\seed_3407\\dev_per_image_confusion.jsonl",
+    "sha256": "69f1f7a79f33c42d82ba3200f1c0bad9442328012c2641411e83215131cb88c8",
+    "size_bytes": 626678
+  },
+  "k1_miou": 0.5197959352357314,
+  "k1_per_image_aggregate_miou": 0.5197959352357314,
+  "method": "paired image-level bootstrap of aggregated 19x19 confusion matrices",
+  "num_classes": 19,
+  "num_images": 445,
+  "rng": "numpy.default_rng(PCG64).integers; paired indices shared by D1/K1",
+  "seed": 3407,
+  "test_local_evaluated": false
+}

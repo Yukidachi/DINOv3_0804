@@ -1,0 +1,11 @@
+{
+  "python": "3.10.19",
+  "torch": "2.5.1",
+  "torchvision": "0.20.1",
+  "numpy": "2.0.1",
+  "pillow": "11.1.0",
+  "platform": "Linux-5.15.0-128-generic-x86_64-with-glibc2.35",
+  "cuda_available": true,
+  "cuda_version": "12.4",
+  "cudnn_version": 91700
+}

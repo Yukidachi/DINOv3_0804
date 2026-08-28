@@ -1,0 +1,12 @@
+{
+  "enabled": false,
+  "training_time_teacher_or_projection_included": false,
+  "model": "MobileNetV2+R-ASPP student only",
+  "result": null,
+  "activation": {
+    "name": "Hardswish",
+    "replacement_count": 8,
+    "operator_fusion_candidate": "Hardswish in inverted residual blocks 14..17",
+    "activation_spec_sha256": "8ee7fc2ecc41356a778682a34c35b00f0c0024004431f6f11a758ccf269d56cf"
+  }
+}

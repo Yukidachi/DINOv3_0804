@@ -1,0 +1,420 @@
+{
+  "experiment": "D2",
+  "seed": 42,
+  "student_init_state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+  "world_size": 2,
+  "per_rank": [
+    {
+      "experiment": "D2",
+      "rank": 0,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/erfurt/erfurt_000087_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/stuttgart/stuttgart_000140_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "80eb55d796d598920f31e0354b5be1790e85e49784d2be8691cbcdbc7b1e864c",
+      "target_tensor_sha256": "ac0a7e33a6753973c5f52a09755f04bc3efb0880326ef5837e61431da0d415ae",
+      "valid_pixels": 981546,
+      "student_feature_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "teacher_feature_shapes": {
+        "os4": [
+          2,
+          96,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          192,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          768,
+          32,
+          64
+        ]
+      },
+      "projected_teacher_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "feature_loss_by_layer": {
+        "os4": 4.128093242645264,
+        "os8": 5.570873260498047,
+        "os16": 3.517019271850586
+      },
+      "swd_loss_by_layer": {
+        "os4": 0.2529296875,
+        "os8": 0.229248046875,
+        "os16": 0.46435546875
+      },
+      "swd_token_audit": {
+        "os4": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "be215727b1a69b8ddbc5570a17274803b7fb9cc1d86e3f9ae2c33d265f5a14ce",
+          "teacher_token_hash": "0db1716ebcc5c0f5196bd231e023b8b0cc92da7148bc8f030accfa72dcba1e27",
+          "global_student_token_hash": "9b2b80695c50614f5e671865400c5209bfb01bdbe9e680e15e21c5eb33137fbb",
+          "global_teacher_token_hash": "216130c45a84cec74dce363192319d4bcad8e2b4879fe6e971b7f31b129e0517",
+          "num_slices": 64,
+          "direction_seed": 20260821,
+          "direction_sha256": "4437f50b84a27f83f56201150f1f7380788038112819375d3292cf61eb4d7a55",
+          "slice_l1_mean": 0.2529296875,
+          "slice_l1_min": 0.09075927734375,
+          "slice_l1_max": 0.437255859375
+        },
+        "os8": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "a017571609ff179b58ecf3ba775ac4a4fbe73bb9865a0664dbdc8e26f8547b26",
+          "teacher_token_hash": "9fc4c1760053196f8df79b539337007e97449b87ac1645dd5176eba4267ab64b",
+          "global_student_token_hash": "9c97b9869ec149967651b4695a94c3e00bb12575b6203ae4e4e86471d5c936ac",
+          "global_teacher_token_hash": "9b3cd6d4df0f963ec1fbb2d93ea40b62726f61749a3acbcafcbc596a83ac1170",
+          "num_slices": 64,
+          "direction_seed": 20260822,
+          "direction_sha256": "dd611d323747a22d6ad4662d66e75c8ee08302fbb6e7a67599bd7aa3fb94b1a8",
+          "slice_l1_mean": 0.229248046875,
+          "slice_l1_min": 0.08367919921875,
+          "slice_l1_max": 0.54345703125
+        },
+        "os16": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "f6591d249c747df450cd0f8b82924ff293fce020f7567e73096726cb8f5cbca1",
+          "teacher_token_hash": "715254f7187aa64c5f3b67b0ba85789da49c7dffbc463d78939c443c90223e23",
+          "global_student_token_hash": "eda323dd81d4eebfa41ea06a87dea677c98d608cd13fbe29ed6ac8fb437a1d23",
+          "global_teacher_token_hash": "662d613852ae3eeb50cfada74d58cab0237a96c9d3994015ea9f476d81bc3ec9",
+          "num_slices": 64,
+          "direction_seed": 20260823,
+          "direction_sha256": "310442b7f1ee6f4ea31084fba6d81450f60485a77580795d8579d0d8d0df812e",
+          "slice_l1_mean": 0.46435546875,
+          "slice_l1_min": 0.299560546875,
+          "slice_l1_max": 0.65869140625
+        }
+      },
+      "swd_directions": {
+        "generator": "torch.randn CPU float32 with an explicit per-layer generator",
+        "normalization": "L2 per direction over channel dimension",
+        "seed_formula": "20260821 + layer_index",
+        "num_slices": 64,
+        "layers": {
+          "os4": {
+            "channels": 24,
+            "num_slices": 64,
+            "seed": 20260821,
+            "shape": [
+              24,
+              64
+            ],
+            "sha256": "4437f50b84a27f83f56201150f1f7380788038112819375d3292cf61eb4d7a55",
+            "max_unit_norm_error": 1.1920928955078125e-07
+          },
+          "os8": {
+            "channels": 32,
+            "num_slices": 64,
+            "seed": 20260822,
+            "shape": [
+              32,
+              64
+            ],
+            "sha256": "dd611d323747a22d6ad4662d66e75c8ee08302fbb6e7a67599bd7aa3fb94b1a8",
+            "max_unit_norm_error": 1.7881393432617188e-07
+          },
+          "os16": {
+            "channels": 320,
+            "num_slices": 64,
+            "seed": 20260823,
+            "shape": [
+              320,
+              64
+            ],
+            "sha256": "310442b7f1ee6f4ea31084fba6d81450f60485a77580795d8579d0d8d0df812e",
+            "max_unit_norm_error": 4.172325134277344e-07
+          }
+        },
+        "combined_sha256": "97a0f9ddcccb2b799a5d9f2ec3e47b6de1630903b3113cae319e28669985d3b0"
+      },
+      "feature_loss": 4.405328750610352,
+      "swd_loss": 0.3154296875,
+      "ce_loss": 2.966360330581665,
+      "total_loss": 2.9674694538116455,
+      "warmup_weight": 0.00025,
+      "distribution_spec_sha256": "0ffd128f80297c0583b5c946d2b417b84a3090cc65af24a82c2fdb12270780cd",
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "pca_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "projection_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "swd_direction_sha256": {
+        "os4": "4437f50b84a27f83f56201150f1f7380788038112819375d3292cf61eb4d7a55",
+        "os8": "dd611d323747a22d6ad4662d66e75c8ee08302fbb6e7a67599bd7aa3fb94b1a8",
+        "os16": "310442b7f1ee6f4ea31084fba6d81450f60485a77580795d8579d0d8d0df812e"
+      },
+      "swd_direction_combined_sha256": "97a0f9ddcccb2b799a5d9f2ec3e47b6de1630903b3113cae319e28669985d3b0"
+    },
+    {
+      "experiment": "D2",
+      "rank": 1,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/zurich/zurich_000053_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/bremen/bremen_000011_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "4aadafc213958b214bbeaeebc29d3c1172ad33c9ce1f65eafc09c2ea86f8d253",
+      "target_tensor_sha256": "cc2c68b70c0f200c98c5e6dc71aaaf6b79ec23cc90c9ea260d1b2cd7518b874d",
+      "valid_pixels": 977105,
+      "student_feature_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "teacher_feature_shapes": {
+        "os4": [
+          2,
+          96,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          192,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          768,
+          32,
+          64
+        ]
+      },
+      "projected_teacher_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "feature_loss_by_layer": {
+        "os4": 4.0785627365112305,
+        "os8": 5.419608116149902,
+        "os16": 3.936023473739624
+      },
+      "swd_loss_by_layer": {
+        "os4": 0.2529296875,
+        "os8": 0.229248046875,
+        "os16": 0.46435546875
+      },
+      "swd_token_audit": {
+        "os4": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "c8e07859968dcd1b977fb041d834cb33bf4b90071e00a870733bf02f825cd733",
+          "teacher_token_hash": "94468fab9d3b36698eada782fe92dc5f80e513ec11ba00906cc1e56c8fa0e538",
+          "global_student_token_hash": "9b2b80695c50614f5e671865400c5209bfb01bdbe9e680e15e21c5eb33137fbb",
+          "global_teacher_token_hash": "216130c45a84cec74dce363192319d4bcad8e2b4879fe6e971b7f31b129e0517",
+          "num_slices": 64,
+          "direction_seed": 20260821,
+          "direction_sha256": "4437f50b84a27f83f56201150f1f7380788038112819375d3292cf61eb4d7a55",
+          "slice_l1_mean": 0.2529296875,
+          "slice_l1_min": 0.09075927734375,
+          "slice_l1_max": 0.437255859375
+        },
+        "os8": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "542714e35e0901e5899cfffa1c1b98518f8b654027da6ba05aeb4fd7e89f2c1c",
+          "teacher_token_hash": "e48562473d8f5c6d5a002dc347248812626d0e3dd10ac29c1d77d55ecc9802ab",
+          "global_student_token_hash": "9c97b9869ec149967651b4695a94c3e00bb12575b6203ae4e4e86471d5c936ac",
+          "global_teacher_token_hash": "9b3cd6d4df0f963ec1fbb2d93ea40b62726f61749a3acbcafcbc596a83ac1170",
+          "num_slices": 64,
+          "direction_seed": 20260822,
+          "direction_sha256": "dd611d323747a22d6ad4662d66e75c8ee08302fbb6e7a67599bd7aa3fb94b1a8",
+          "slice_l1_mean": 0.229248046875,
+          "slice_l1_min": 0.08367919921875,
+          "slice_l1_max": 0.54345703125
+        },
+        "os16": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "699f0d963442cd11ba176fcb4928217b85e469d43813bdb671e6581b17e1d891",
+          "teacher_token_hash": "8f2136dae117507a6af9bfb05c769a87ad1c58f06fe72a4640f3fc632f48a957",
+          "global_student_token_hash": "eda323dd81d4eebfa41ea06a87dea677c98d608cd13fbe29ed6ac8fb437a1d23",
+          "global_teacher_token_hash": "662d613852ae3eeb50cfada74d58cab0237a96c9d3994015ea9f476d81bc3ec9",
+          "num_slices": 64,
+          "direction_seed": 20260823,
+          "direction_sha256": "310442b7f1ee6f4ea31084fba6d81450f60485a77580795d8579d0d8d0df812e",
+          "slice_l1_mean": 0.46435546875,
+          "slice_l1_min": 0.299560546875,
+          "slice_l1_max": 0.65869140625
+        }
+      },
+      "swd_directions": {
+        "generator": "torch.randn CPU float32 with an explicit per-layer generator",
+        "normalization": "L2 per direction over channel dimension",
+        "seed_formula": "20260821 + layer_index",
+        "num_slices": 64,
+        "layers": {
+          "os4": {
+            "channels": 24,
+            "num_slices": 64,
+            "seed": 20260821,
+            "shape": [
+              24,
+              64
+            ],
+            "sha256": "4437f50b84a27f83f56201150f1f7380788038112819375d3292cf61eb4d7a55",
+            "max_unit_norm_error": 1.1920928955078125e-07
+          },
+          "os8": {
+            "channels": 32,
+            "num_slices": 64,
+            "seed": 20260822,
+            "shape": [
+              32,
+              64
+            ],
+            "sha256": "dd611d323747a22d6ad4662d66e75c8ee08302fbb6e7a67599bd7aa3fb94b1a8",
+            "max_unit_norm_error": 1.7881393432617188e-07
+          },
+          "os16": {
+            "channels": 320,
+            "num_slices": 64,
+            "seed": 20260823,
+            "shape": [
+              320,
+              64
+            ],
+            "sha256": "310442b7f1ee6f4ea31084fba6d81450f60485a77580795d8579d0d8d0df812e",
+            "max_unit_norm_error": 4.172325134277344e-07
+          }
+        },
+        "combined_sha256": "97a0f9ddcccb2b799a5d9f2ec3e47b6de1630903b3113cae319e28669985d3b0"
+      },
+      "feature_loss": 4.478065013885498,
+      "swd_loss": 0.3154296875,
+      "ce_loss": 2.9630682468414307,
+      "total_loss": 2.964195728302002,
+      "warmup_weight": 0.00025,
+      "distribution_spec_sha256": "0ffd128f80297c0583b5c946d2b417b84a3090cc65af24a82c2fdb12270780cd",
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "pca_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "projection_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "swd_direction_sha256": {
+        "os4": "4437f50b84a27f83f56201150f1f7380788038112819375d3292cf61eb4d7a55",
+        "os8": "dd611d323747a22d6ad4662d66e75c8ee08302fbb6e7a67599bd7aa3fb94b1a8",
+        "os16": "310442b7f1ee6f4ea31084fba6d81450f60485a77580795d8579d0d8d0df812e"
+      },
+      "swd_direction_combined_sha256": "97a0f9ddcccb2b799a5d9f2ec3e47b6de1630903b3113cae319e28669985d3b0"
+    }
+  ]
+}

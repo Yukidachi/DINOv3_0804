@@ -1,0 +1,300 @@
+{
+  "experiment": "D1",
+  "seed": 3407,
+  "student_init_state_sha256": "49f314ec99f5496ea5664c0b27e87fd34054234f4eb53277140ab3eed9d74d43",
+  "world_size": 2,
+  "per_rank": [
+    {
+      "experiment": "D1",
+      "rank": 0,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/ulm/ulm_000005_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/bremen/bremen_000130_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "5abe3d1482cd8769376406e135229091a64c78e6d0e7e7d2629a4b4b390c2d93",
+      "target_tensor_sha256": "a5d95cdbbd1e69bdefb872686cd0efc09500d869b8aa41484b8a927220f5d33c",
+      "valid_pixels": 939880,
+      "student_feature_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "teacher_feature_shapes": {
+        "os4": [
+          2,
+          96,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          192,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          768,
+          32,
+          64
+        ]
+      },
+      "projected_teacher_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "feature_loss_by_layer": {
+        "os4": 4.204701900482178,
+        "os8": 5.401092529296875,
+        "os16": 3.385960817337036
+      },
+      "coral_loss_by_layer": {
+        "os4": 0.07713092863559723,
+        "os8": 0.07843460142612457,
+        "os16": 0.1372787207365036
+      },
+      "coral_token_audit": {
+        "os4": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "0fd09fca8b3b452aaff03ad1acb4009b2a887babf94d5bf1dc29ae596e197a0b",
+          "teacher_token_hash": "91dff2b265b5a8b2d10195cfd6077d370ee94e97a8707c056187572f220d5e6c",
+          "global_student_token_hash": "a3b7151637db5182869a5aa296a49a92d9faa2bc84c7fbb9a93dafc80fc9e9f2",
+          "global_teacher_token_hash": "632b6438c7637bc7471e6d901b362e7db88510ba144ac01a4efe6e20aa5c21fe",
+          "mean_loss": 0.03701086714863777,
+          "covariance_loss": 0.04012005776166916
+        },
+        "os8": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "bb2cd01a9dcf5f684b0ceab25b717cc7fa3246593c256fe2df3a8f3cd2bfc979",
+          "teacher_token_hash": "0bfbd60cf5931bee315f1340b486c68ba4497e445f29ea34aed869c1fe385667",
+          "global_student_token_hash": "24ee2b94a13e7d60e5c5dabf86232e06eb201526cd1832afd8ec9835701a26bf",
+          "global_teacher_token_hash": "8f2aca2be072ccc0ff2f05af4cba88b37575b2b188b4a3d82c0e40208c58dc52",
+          "mean_loss": 0.030456658452749252,
+          "covariance_loss": 0.04797794669866562
+        },
+        "os16": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "7751aea890ed12453e54eb0f74dd07e1ec11ff057666f7b23f8110323f0b1bcd",
+          "teacher_token_hash": "08c8c0d33063034faa52c901886552b018af637f76a284c76d787a56051df2d1",
+          "global_student_token_hash": "e43db21580f39d71eeb7da6f5e46a92d31a891f626dcd47189282e67ba61a933",
+          "global_teacher_token_hash": "907e2165e9ed3e030579389dbc8814bc2f2c352fa362e0875f5c709444c15010",
+          "mean_loss": 0.039705533534288406,
+          "covariance_loss": 0.0975731909275055
+        }
+      },
+      "feature_loss": 4.330585479736328,
+      "coral_loss": 0.09761475026607513,
+      "ce_loss": 2.930938482284546,
+      "total_loss": 2.932023525238037,
+      "warmup_weight": 0.00025,
+      "distribution_spec_sha256": "f7f62e88967bc77b8b2118f7279711e1ef0c6d752c436835170fc85629e2fe2d",
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "pca_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "projection_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a"
+    },
+    {
+      "experiment": "D1",
+      "rank": 1,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/dusseldorf/dusseldorf_000057_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/tubingen/tubingen_000032_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "179d81336cd3caa0bf44af3c16c5c017945ece8d3770be854b4072bc5ae1d0dc",
+      "target_tensor_sha256": "eed0e3643902ec4fa0d121d91c467310b4b4b381358e37eaf3eca8429279de9a",
+      "valid_pixels": 1018275,
+      "student_feature_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "teacher_feature_shapes": {
+        "os4": [
+          2,
+          96,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          192,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          768,
+          32,
+          64
+        ]
+      },
+      "projected_teacher_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "feature_loss_by_layer": {
+        "os4": 4.001710414886475,
+        "os8": 5.224839210510254,
+        "os16": 3.3748695850372314
+      },
+      "coral_loss_by_layer": {
+        "os4": 0.07713092863559723,
+        "os8": 0.07843460142612457,
+        "os16": 0.1372787207365036
+      },
+      "coral_token_audit": {
+        "os4": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "4b1d2ef75e1b5d98f9b8bd5a82f523b492a0a300f4f2d7f8c15455b9e99500af",
+          "teacher_token_hash": "126a72549e712ecb1b952c3c113c4658f0f3157c50bfde2cdd1ac85c116fb80a",
+          "global_student_token_hash": "a3b7151637db5182869a5aa296a49a92d9faa2bc84c7fbb9a93dafc80fc9e9f2",
+          "global_teacher_token_hash": "632b6438c7637bc7471e6d901b362e7db88510ba144ac01a4efe6e20aa5c21fe",
+          "mean_loss": 0.03701086714863777,
+          "covariance_loss": 0.04012005776166916
+        },
+        "os8": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "32bc43f0104b7ac5d867ed5d2d5db4e1a7ee15f860f7e5310050b3c178b2eddb",
+          "teacher_token_hash": "a23b623a7012d9c801baf9d356b3b5cc53a2ad0a32eceb2e5e933326c20f21c1",
+          "global_student_token_hash": "24ee2b94a13e7d60e5c5dabf86232e06eb201526cd1832afd8ec9835701a26bf",
+          "global_teacher_token_hash": "8f2aca2be072ccc0ff2f05af4cba88b37575b2b188b4a3d82c0e40208c58dc52",
+          "mean_loss": 0.030456658452749252,
+          "covariance_loss": 0.04797794669866562
+        },
+        "os16": {
+          "local_token_count": 128,
+          "global_token_count": 256,
+          "student_token_hash": "da7d062657d64026cc2374b8c5702a5c3d3b1d51fccca59c41c4e2580fcbdd8d",
+          "teacher_token_hash": "bfc7a6332e172fae03cb8d33b22b7d256424e8745c06f7348f431858abcbf97d",
+          "global_student_token_hash": "e43db21580f39d71eeb7da6f5e46a92d31a891f626dcd47189282e67ba61a933",
+          "global_teacher_token_hash": "907e2165e9ed3e030579389dbc8814bc2f2c352fa362e0875f5c709444c15010",
+          "mean_loss": 0.039705533534288406,
+          "covariance_loss": 0.0975731909275055
+        }
+      },
+      "feature_loss": 4.200472831726074,
+      "coral_loss": 0.09761475026607513,
+      "ce_loss": 2.9293923377990723,
+      "total_loss": 2.9304449558258057,
+      "warmup_weight": 0.00025,
+      "distribution_spec_sha256": "f7f62e88967bc77b8b2118f7279711e1ef0c6d752c436835170fc85629e2fe2d",
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "pca_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "projection_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "experiment": "R5",
+  "screening_seed": 42,
+  "passed": false,
+  "r5_metrics": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R5/seed_42/metrics.json",
+  "r5_metrics_sha256": "7f000fa396295238cca057b81e31fb18c1b463bd413068c6100c33ec1c4449b0",
+  "best_reference": "K3",
+  "best_reference_mIoU": 0.5539856421820232,
+  "miou_gain_threshold": 0.00425,
+  "miou_gain_over_best_reference": 0.01966728777415705,
+  "paired_bootstrap_repetitions": 100000,
+  "paired_bootstrap_ci_lower": null,
+  "gradient_gate_passed": true,
+  "instructions": "After the paired bootstrap, set paired_bootstrap_ci_lower and set passed=true only if the mIoU gain exceeds the threshold, the CI lower bound is >0, and gradient_gate_passed is true."
+}

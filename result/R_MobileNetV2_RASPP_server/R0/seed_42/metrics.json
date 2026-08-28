@@ -1,0 +1,1177 @@
+{
+  "experiment": "R0",
+  "protocol": "R0 controlled reproduction of K1: existing K shared scratch MobileNetV2+R-ASPP initialization, hard-label CE plus locked A0 fixed StandardScaler+PCA OS=4/8/16 feature MSE, 4000-step auxiliary warm-up, no logits KD, no R1/R2 relation term, fixed 80k budget, dev_local selection, and no test_local evaluation.",
+  "best_epoch": 237,
+  "best_optimizer_step": 75129,
+  "best_dev_metrics": {
+    "loss": 0.26089525310974887,
+    "mIoU": 0.522120045088882,
+    "mAcc": 0.5892878873834878,
+    "pixel_accuracy": 0.9189583361716438,
+    "small_object_mIoU": 0.4083309165187131,
+    "valid_pixels": 834196385,
+    "per_class": {
+      "road": {
+        "iou": 0.942394218557013,
+        "accuracy": 0.9637870596559238,
+        "target_pixels": 303128354,
+        "predicted_pixels": 299032357
+      },
+      "sidewalk": {
+        "iou": 0.7512824530680899,
+        "accuracy": 0.8257959384895014,
+        "target_pixels": 54929810,
+        "predicted_pixels": 50808847
+      },
+      "building": {
+        "iou": 0.8534221999165937,
+        "accuracy": 0.9562463490248767,
+        "target_pixels": 210902560,
+        "predicted_pixels": 227085293
+      },
+      "wall": {
+        "iou": 0.3027240425869745,
+        "accuracy": 0.32290056632501296,
+        "target_pixels": 8844921,
+        "predicted_pixels": 3445543
+      },
+      "fence": {
+        "iou": 0.3650360585055727,
+        "accuracy": 0.3973121284635834,
+        "target_pixels": 8567969,
+        "predicted_pixels": 4161728
+      },
+      "pole": {
+        "iou": 0.3704428660921904,
+        "accuracy": 0.45281967217834834,
+        "target_pixels": 8335508,
+        "predicted_pixels": 5628081
+      },
+      "traffic light": {
+        "iou": 0.38861440281618453,
+        "accuracy": 0.45489750678721763,
+        "target_pixels": 1003725,
+        "predicted_pixels": 627790
+      },
+      "traffic sign": {
+        "iou": 0.5566909909619493,
+        "accuracy": 0.6622887435973064,
+        "target_pixels": 3963371,
+        "predicted_pixels": 3376701
+      },
+      "vegetation": {
+        "iou": 0.8763289486034105,
+        "accuracy": 0.9520047835493006,
+        "target_pixels": 127789631,
+        "predicted_pixels": 132691679
+      },
+      "terrain": {
+        "iou": 0.4192885447093721,
+        "accuracy": 0.47017793036232236,
+        "target_pixels": 4922881,
+        "predicted_pixels": 2912124
+      },
+      "sky": {
+        "iou": 0.827408798721701,
+        "accuracy": 0.9600769553341056,
+        "target_pixels": 30728994,
+        "predicted_pixels": 34429339
+      },
+      "person": {
+        "iou": 0.6786355221122102,
+        "accuracy": 0.757508145633264,
+        "target_pixels": 9916663,
+        "predicted_pixels": 8664491
+      },
+      "rider": {
+        "iou": 0.36647795320597415,
+        "accuracy": 0.4820760946975419,
+        "target_pixels": 1158425,
+        "predicted_pixels": 923851
+      },
+      "car": {
+        "iou": 0.8702480369784197,
+        "accuracy": 0.9742560929792419,
+        "target_pixels": 51391772,
+        "predicted_pixels": 56210856
+      },
+      "truck": {
+        "iou": 0.12019770674825392,
+        "accuracy": 0.15876380085061795,
+        "target_pixels": 2397316,
+        "predicted_pixels": 1149799
+      },
+      "bus": {
+        "iou": 0.23909626691163002,
+        "accuracy": 0.2651111681352122,
+        "target_pixels": 1905627,
+        "predicted_pixels": 712545
+      },
+      "train": {
+        "iou": 0.21280775531099314,
+        "accuracy": 0.22667693527041072,
+        "target_pixels": 1872374,
+        "predicted_pixels": 546451
+      },
+      "motorcycle": {
+        "iou": 0.2451744464145067,
+        "accuracy": 0.2864508267327773,
+        "target_pixels": 475970,
+        "predicted_pixels": 216474
+      },
+      "bicycle": {
+        "iou": 0.5340096444677176,
+        "accuracy": 0.6273191622197036,
+        "target_pixels": 1960514,
+        "predicted_pixels": 1572436
+      }
+    },
+    "confusion_matrix": [
+      [
+        292151185,
+        2819215,
+        4134605,
+        3255,
+        6436,
+        26981,
+        222,
+        4555,
+        179316,
+        33831,
+        2101391,
+        155333,
+        5560,
+        1475496,
+        6190,
+        3207,
+        1120,
+        2359,
+        18097
+      ],
+      [
+        5889811,
+        45360814,
+        2073981,
+        76353,
+        48011,
+        131236,
+        0,
+        3887,
+        269509,
+        211630,
+        270164,
+        104692,
+        2772,
+        446494,
+        9742,
+        201,
+        137,
+        815,
+        29561
+      ],
+      [
+        78153,
+        583004,
+        201674803,
+        65630,
+        116513,
+        636929,
+        63014,
+        409982,
+        4205135,
+        16884,
+        1889690,
+        243981,
+        11992,
+        741030,
+        124779,
+        7392,
+        3821,
+        1837,
+        27991
+      ],
+      [
+        43830,
+        498250,
+        3487096,
+        2856030,
+        269972,
+        75006,
+        109,
+        9369,
+        1344446,
+        38999,
+        59,
+        18941,
+        1761,
+        191879,
+        154,
+        1133,
+        255,
+        140,
+        7492
+      ],
+      [
+        6638,
+        98194,
+        3387680,
+        303385,
+        3404158,
+        84681,
+        96,
+        10627,
+        1051354,
+        55297,
+        406,
+        30243,
+        2228,
+        95385,
+        894,
+        14461,
+        4864,
+        82,
+        17296
+      ],
+      [
+        27893,
+        195132,
+        2795011,
+        19096,
+        54225,
+        3774482,
+        40388,
+        64371,
+        1017767,
+        20656,
+        136930,
+        50676,
+        442,
+        122728,
+        2223,
+        1107,
+        1950,
+        5,
+        10426
+      ],
+      [
+        0,
+        0,
+        291171,
+        0,
+        592,
+        49532,
+        456592,
+        16344,
+        167798,
+        0,
+        16462,
+        388,
+        296,
+        3762,
+        632,
+        156,
+        0,
+        0,
+        0
+      ],
+      [
+        3002,
+        6299,
+        943976,
+        86,
+        2784,
+        47403,
+        11350,
+        2624896,
+        247880,
+        330,
+        24449,
+        9462,
+        696,
+        29946,
+        3419,
+        5679,
+        1402,
+        0,
+        312
+      ],
+      [
+        35320,
+        185850,
+        3985387,
+        64047,
+        186479,
+        557809,
+        26936,
+        84218,
+        121656340,
+        197717,
+        423602,
+        85973,
+        9255,
+        270113,
+        1724,
+        2321,
+        0,
+        501,
+        16039
+      ],
+      [
+        131552,
+        735434,
+        105762,
+        49156,
+        30425,
+        37657,
+        0,
+        388,
+        1449085,
+        2314630,
+        85,
+        11883,
+        789,
+        50291,
+        52,
+        117,
+        0,
+        0,
+        5575
+      ],
+      [
+        12404,
+        0,
+        541292,
+        13,
+        44,
+        44173,
+        14317,
+        20103,
+        565130,
+        0,
+        29502199,
+        36,
+        0,
+        29283,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        195435,
+        197741,
+        930001,
+        5912,
+        12883,
+        76933,
+        3794,
+        21656,
+        222422,
+        12671,
+        16600,
+        7511953,
+        230339,
+        389811,
+        2853,
+        488,
+        258,
+        11504,
+        73409
+      ],
+      [
+        22369,
+        5733,
+        67982,
+        215,
+        2666,
+        3544,
+        2900,
+        460,
+        24660,
+        887,
+        1221,
+        208404,
+        558449,
+        124299,
+        1967,
+        188,
+        0,
+        33982,
+        98499
+      ],
+      [
+        291778,
+        45094,
+        546022,
+        1313,
+        13707,
+        33693,
+        1402,
+        4525,
+        175454,
+        5877,
+        17136,
+        73089,
+        5969,
+        50068747,
+        75735,
+        16987,
+        2207,
+        3058,
+        9979
+      ],
+      [
+        13061,
+        2740,
+        623942,
+        21,
+        340,
+        10781,
+        647,
+        84360,
+        38093,
+        0,
+        26322,
+        50591,
+        2363,
+        1124193,
+        380607,
+        37809,
+        19,
+        75,
+        1352
+      ],
+      [
+        26762,
+        5584,
+        414012,
+        83,
+        924,
+        9015,
+        2552,
+        7052,
+        35144,
+        0,
+        1669,
+        3497,
+        0,
+        428571,
+        359565,
+        505203,
+        105994,
+        0,
+        0
+      ],
+      [
+        18636,
+        9647,
+        817505,
+        3,
+        0,
+        1611,
+        1583,
+        9784,
+        5267,
+        0,
+        887,
+        1352,
+        0,
+        286316,
+        179263,
+        116096,
+        424424,
+        0,
+        0
+      ],
+      [
+        33973,
+        3694,
+        33889,
+        120,
+        0,
+        826,
+        0,
+        0,
+        373,
+        18,
+        0,
+        19217,
+        28355,
+        192623,
+        0,
+        0,
+        0,
+        136342,
+        26540
+      ],
+      [
+        50555,
+        56422,
+        231176,
+        825,
+        11569,
+        25789,
+        1888,
+        124,
+        36506,
+        2697,
+        67,
+        84780,
+        62585,
+        139889,
+        0,
+        0,
+        0,
+        25774,
+        1229868
+      ]
+    ],
+    "boundary_precision": 0.4593771676788101,
+    "boundary_recall": 0.4257000662986878,
+    "boundary_f1": 0.4418979117972538
+  },
+  "class_names": [
+    "road",
+    "sidewalk",
+    "building",
+    "wall",
+    "fence",
+    "pole",
+    "traffic light",
+    "traffic sign",
+    "vegetation",
+    "terrain",
+    "sky",
+    "person",
+    "rider",
+    "car",
+    "truck",
+    "bus",
+    "train",
+    "motorcycle",
+    "bicycle"
+  ],
+  "config": {
+    "experiment": "R0",
+    "experiment_group": "R_MobileNetV2_RASPP_server",
+    "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_r0_server.py",
+    "seed": 42,
+    "formal_seeds": [
+      42
+    ],
+    "world_size": 2,
+    "batch_size_per_gpu": 2,
+    "global_batch_size": 8,
+    "accumulation_steps_per_gpu": 2,
+    "max_optimizer_steps": 80000,
+    "eval_batch_size": 1,
+    "num_workers_per_gpu": 8,
+    "multiprocessing_context": "spawn",
+    "pin_memory": false,
+    "persistent_workers": true,
+    "prefetch_factor": 2,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "scheduler": "polynomial",
+    "poly_power": 0.9,
+    "min_lr_ratio": 0.01,
+    "eval_every_steps": 5000,
+    "eval_policy": "first epoch boundary at or after each target step",
+    "amp": true,
+    "deterministic": true,
+    "crop_size": [
+      512,
+      1024
+    ],
+    "random_scale": [
+      0.5,
+      2.0
+    ],
+    "horizontal_flip_probability": 0.5,
+    "eval_resolution": [
+      1024,
+      2048
+    ],
+    "head_channels": 256,
+    "dropout": 0.1,
+    "num_classes": 19,
+    "ignore_index": 255,
+    "output_stride": 16,
+    "initialization": "shared scratch state; weights=None",
+    "backbone_frozen": false,
+    "loss": {
+      "hard_label_ce": true,
+      "feature_kd": true,
+      "feature_mechanism": "A0 fixed StandardScaler+PCA teacher-to-student",
+      "feature_layers": [
+        "os4",
+        "os8",
+        "os16"
+      ],
+      "feature_reduction": "mean per BCHW layer, then equal mean over 3 layers",
+      "logit_kd": false,
+      "lambda_feat": 1.0,
+      "lambda_logit": null,
+      "temperature": null,
+      "auxiliary_warmup_steps": 4000,
+      "auxiliary_warmup_ratio": 0.05,
+      "warmup_step_unit": "optimizer_step"
+    },
+    "teacher": {
+      "enabled": true,
+      "type": "T1 DINOv3 ConvNeXt-T + R-ASPP, feature extraction only",
+      "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+      "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "frozen": true,
+      "wrapped_in_ddp": false,
+      "logits_used": false
+    },
+    "pca": {
+      "enabled": true,
+      "mechanism": "A0 fixed StandardScaler+PCA",
+      "directory": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+      "parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "trainable": false
+    },
+    "shared_init_state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+    "shared_init_file_sha256": "4e4e8eac1cee8aa5f26efdd5e4abfc7bc022eab8ce3cd794a7a80c5b6c02aa13",
+    "test_local_evaluated": false,
+    "benchmark": false,
+    "benchmark_resolution": [
+      1024,
+      2048
+    ],
+    "distributed_backend": "nccl",
+    "artifact_type": "mobilenetv2_cityscapes19_raspp_r0_k1_reproduction",
+    "shared_initialization": {
+      "source_group": "K_MobileNetV2_RASPP_server",
+      "path": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/shared_init/seed_42/student_init.pth",
+      "state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+      "file_sha256": "4e4e8eac1cee8aa5f26efdd5e4abfc7bc022eab8ce3cd794a7a80c5b6c02aa13",
+      "r_specific_initialization_created": false
+    },
+    "relation": {
+      "enabled": false,
+      "active_relation_types": [],
+      "relation_feature_source": {
+        "teacher": "native OS=4/8/16 features (reserved; unused by R0)",
+        "student": "native OS=4/8/16 features (reserved; unused by R0)",
+        "a0_projected_features_used_for_relation": false
+      },
+      "epsilon": 1e-06,
+      "physical_relation_batch_size": 4,
+      "effective_optimizer_batch_size": 8,
+      "mask_policy": "targets != 255; inactive because R0 has no relation loss",
+      "r1": {
+        "enabled": false,
+        "representation": "masked GAP then BxB signed cosine matrix",
+        "diagonal_policy": "keep",
+        "reduction": "mean over all B^2 entries",
+        "lambda": 0.0
+      },
+      "r2": {
+        "enabled": false,
+        "pool_size": [
+          8,
+          16
+        ],
+        "representation": "per-image 128x128 signed token cosine matrix",
+        "diagonal_policy": "keep for valid tokens",
+        "reduction": "sum squared error divided by valid-pair count",
+        "lambda": 0.0
+      },
+      "relation_warmup_steps": 4000,
+      "relation_gradient_gate": null,
+      "reason": "R0 is the CE+A0-feature-KD anchor and contains no relation term"
+    },
+    "relation_spec_sha256": "29249e0db5f0952432f5f1e651cec8f24651f9012ff2b4b3928083ced1e8c1a9",
+    "r0_k1_equivalence": {
+      "reference_directory": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K1/seed_42",
+      "reference_mIoU": 0.522120045088882,
+      "final_mIoU_abs_tolerance": 0.00219,
+      "first_batch_abs_tolerance": 1e-06,
+      "first_batch_rel_tolerance": 1e-06,
+      "required_before_relational_candidates": true
+    }
+  },
+  "shape_audit": {
+    "input_shape": [
+      1,
+      3,
+      512,
+      1024
+    ],
+    "feature_taps": {
+      "os4": {
+        "module": "backbone.3",
+        "index": 3,
+        "channels": 24,
+        "stride": 4
+      },
+      "os8": {
+        "module": "backbone.6",
+        "index": 6,
+        "channels": 32,
+        "stride": 8
+      },
+      "os16": {
+        "module": "backbone.17",
+        "index": 17,
+        "channels": 320,
+        "stride": 16
+      },
+      "raspp_input": {
+        "module": "backbone.18",
+        "index": 18,
+        "channels": 1280,
+        "stride": 16
+      }
+    },
+    "feature_shapes": {
+      "os4": [
+        1,
+        24,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        32,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        320,
+        32,
+        64
+      ],
+      "raspp_input": [
+        1,
+        1280,
+        32,
+        64
+      ]
+    },
+    "logit_shape": [
+      1,
+      19,
+      512,
+      1024
+    ],
+    "output_stride": 16,
+    "conversion": "features.14 depthwise stride 2->1; features.14-17 depthwise convolutions use dilation=2 and padding=2",
+    "depthwise_contract": {
+      "backbone.14": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.15": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.16": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.17": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      }
+    },
+    "align_corners": false,
+    "experiment": "R0",
+    "teacher_feature_shapes": {
+      "os4": [
+        1,
+        96,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        192,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        768,
+        32,
+        64
+      ]
+    },
+    "projected_teacher_feature_shapes": {
+      "os4": [
+        1,
+        24,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        32,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        320,
+        32,
+        64
+      ]
+    },
+    "projection": "fixed A0 StandardScaler+PCA, teacher to student channels",
+    "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "relation": {
+      "enabled": false,
+      "native_teacher_student_taps_reserved": [
+        "os4",
+        "os8",
+        "os16"
+      ],
+      "a0_projection_used_only_by_pointwise_feature_anchor": true
+    }
+  },
+  "dataset_lock": {
+    "lock_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.lock.json",
+    "lock_sha256": "b3b4e2e8af470963983f3e2f8848caa7cab3d63ee4f37b218601f3a9d0048eb2",
+    "checksum_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.sha256",
+    "checksum_sha256": "a31cc5370ddee112d2ead5e99ad57857ed301285a6f0b953f261466ec87cfe50",
+    "lock_date": "2026-08-05",
+    "timezone": "Asia/Tokyo",
+    "combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+    "splits": {
+      "train_local": {
+        "source": "official train",
+        "count": 2530,
+        "cities": [
+          "aachen",
+          "bochum",
+          "bremen",
+          "cologne",
+          "dusseldorf",
+          "erfurt",
+          "hamburg",
+          "hanover",
+          "monchengladbach",
+          "strasbourg",
+          "stuttgart",
+          "tubingen",
+          "ulm",
+          "zurich"
+        ],
+        "manifest": "train_local.txt",
+        "sha256": "08fe1239484a1824469ac22d0b4780e9b1cf074e90829da952420f6d554076d7"
+      },
+      "dev_local": {
+        "source": "official train",
+        "count": 445,
+        "cities": [
+          "darmstadt",
+          "jena",
+          "krefeld",
+          "weimar"
+        ],
+        "manifest": "dev_local.txt",
+        "sha256": "778d455b9e01aecec7a0958a349eac8ac1655c6c13485af9b01d0ab779e51f70"
+      },
+      "test_local": {
+        "source": "official val",
+        "count": 500,
+        "cities": [
+          "frankfurt",
+          "lindau",
+          "munster"
+        ],
+        "manifest": "test_local.txt",
+        "sha256": "4eb84d274208c475931d4eb796fec932d567e19e31790f38a458942a447d766c"
+      }
+    }
+  },
+  "model": {
+    "model_name": "mobilenet_v2",
+    "initialization": "shared scratch state; weights=None",
+    "head": "R-ASPP",
+    "feature_taps": {
+      "os4": {
+        "module": "backbone.3",
+        "index": 3,
+        "channels": 24,
+        "stride": 4
+      },
+      "os8": {
+        "module": "backbone.6",
+        "index": 6,
+        "channels": 32,
+        "stride": 8
+      },
+      "os16": {
+        "module": "backbone.17",
+        "index": 17,
+        "channels": 320,
+        "stride": 16
+      },
+      "raspp_input": {
+        "module": "backbone.18",
+        "index": 18,
+        "channels": 1280,
+        "stride": 16
+      }
+    },
+    "total_parameters": 2884883,
+    "backbone_parameters": 2223872,
+    "head_parameters": 661011,
+    "trainable_parameters": 2884883
+  },
+  "loss": {
+    "hard_label_ce": true,
+    "feature_kd": true,
+    "feature_mechanism": "A0 fixed StandardScaler+PCA",
+    "feature_layers": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "lambda_feat": 1.0,
+    "logit_kd": false,
+    "lambda_logit": null,
+    "temperature": null,
+    "warmup_steps": 4000,
+    "warmup_ratio": 0.05,
+    "relation_kd": false,
+    "relation_r1": false,
+    "relation_r2": false,
+    "lambda_r1": 0.0,
+    "lambda_r2": 0.0
+  },
+  "efficiency": null,
+  "hashes": {
+    "student_init_state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+    "student_init_file_sha256": "4e4e8eac1cee8aa5f26efdd5e4abfc7bc022eab8ce3cd794a7a80c5b6c02aa13",
+    "student_init_path": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/shared_init/seed_42/student_init.pth",
+    "training_script_sha256": "419c2b2c0e324e05c66bf83d4d9205cc948d17060486845de835182fe0e3f5a9",
+    "shared_student_module_sha256": "046cdc63a20240225a51a2ade74973f8632663b44443c7128fced770a230c959",
+    "common_module_sha256": "85fe7ee0e985ae4340fd20d382da81e0d81ada45336c5c750eb816bfc309549f",
+    "dataset_combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+    "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "pca_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "selected_model_state_sha256": "b263af6d629bd61e1f60b8037c50b0df3df80849de9005c394675b8346ddf48e",
+    "checkpoint_sha256": "3272b86278a051a037c217caf9e929e714f6773650e8c4e4b5006643794d145e",
+    "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+    "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+    "relation_spec_sha256": "29249e0db5f0952432f5f1e651cec8f24651f9012ff2b4b3928083ced1e8c1a9",
+    "k1_reference_metrics_sha256": "4d323ea1801dce6381e8c7081ef36c8c23a2d2bc4b0678773bf7f45cef031c56",
+    "k1_reference_first_batch_sha256": "a8dcc7ba1576b7a47114bda4be45e8593b6509a426f67105cb8dafafb540c98e",
+    "r0_training_script_sha256": "419c2b2c0e324e05c66bf83d4d9205cc948d17060486845de835182fe0e3f5a9"
+  },
+  "training": {
+    "elapsed_seconds": 10617.280899524689,
+    "optimizer_steps": 80000,
+    "epochs_completed": 253,
+    "steps_per_full_epoch": 317
+  },
+  "software": {
+    "python": "3.10.19",
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "2.0.1",
+    "pillow": "11.1.0",
+    "platform": "Linux-5.15.0-128-generic-x86_64-with-glibc2.35",
+    "cuda_available": true,
+    "cuda_version": "12.4",
+    "cudnn_version": 91700
+  },
+  "artifacts": {
+    "run_dir": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42",
+    "best": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/best_checkpoint.pth",
+    "last": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/last_checkpoint.pth",
+    "config": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/config.json",
+    "feature_taps": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/feature_taps.json",
+    "first_batch_audit": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/first_batch_audit.json",
+    "history": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/training_history.json",
+    "gradient_norms": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/gradient_norms.jsonl",
+    "dev_metrics": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/dev_metrics.json",
+    "dev_confusion": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/dev_confusion_matrix.json",
+    "per_image": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/dev_per_image_confusion.jsonl",
+    "efficiency": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/efficiency.json",
+    "software": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/software.json",
+    "metrics": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/metrics.json"
+  },
+  "test_local_evaluated": false,
+  "teacher": {
+    "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+    "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "features_used": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "logits_used": false,
+    "frozen": true
+  },
+  "pca": {
+    "directory": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+    "parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a"
+  },
+  "experiment_group": "R_MobileNetV2_RASPP_server",
+  "artifact_type": "mobilenetv2_cityscapes19_raspp_r0_k1_reproduction",
+  "relation": {
+    "enabled": false,
+    "active_relation_types": [],
+    "relation_feature_source": {
+      "teacher": "native OS=4/8/16 features (reserved; unused by R0)",
+      "student": "native OS=4/8/16 features (reserved; unused by R0)",
+      "a0_projected_features_used_for_relation": false
+    },
+    "epsilon": 1e-06,
+    "physical_relation_batch_size": 4,
+    "effective_optimizer_batch_size": 8,
+    "mask_policy": "targets != 255; inactive because R0 has no relation loss",
+    "r1": {
+      "enabled": false,
+      "representation": "masked GAP then BxB signed cosine matrix",
+      "diagonal_policy": "keep",
+      "reduction": "mean over all B^2 entries",
+      "lambda": 0.0
+    },
+    "r2": {
+      "enabled": false,
+      "pool_size": [
+        8,
+        16
+      ],
+      "representation": "per-image 128x128 signed token cosine matrix",
+      "diagonal_policy": "keep for valid tokens",
+      "reduction": "sum squared error divided by valid-pair count",
+      "lambda": 0.0
+    },
+    "relation_warmup_steps": 4000,
+    "relation_gradient_gate": null,
+    "reason": "R0 is the CE+A0-feature-KD anchor and contains no relation term"
+  },
+  "relation_spec_sha256": "29249e0db5f0952432f5f1e651cec8f24651f9012ff2b4b3928083ced1e8c1a9",
+  "physical_relation_batch_size": 4,
+  "effective_optimizer_batch_size": 8,
+  "r0_k1_equivalence": {
+    "passed": true,
+    "reference_validation": {
+      "passed": true,
+      "failures": [],
+      "reference_directory": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K1/seed_42",
+      "reference_metrics_sha256": "4d323ea1801dce6381e8c7081ef36c8c23a2d2bc4b0678773bf7f45cef031c56",
+      "reference_first_batch_sha256": "a8dcc7ba1576b7a47114bda4be45e8593b6509a426f67105cb8dafafb540c98e",
+      "reference_mIoU": 0.522120045088882,
+      "mIoU_tolerance": 0.00219,
+      "local_k1_runner_sha256": "9b9d836bfe8befebfdbe2197d52e9c5864917a8a6ada0c72dcb506504bc9bff5",
+      "local_k0_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc"
+    },
+    "first_batch": {
+      "passed": true,
+      "world_size": 2,
+      "comparison": "R0 first formal batch versus locked K1 seed=42",
+      "per_rank": [
+        {
+          "rank": 0,
+          "passed": true,
+          "reference": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K1/seed_42/first_batch_audit.json",
+          "absolute_tolerance": 1e-06,
+          "relative_tolerance": 1e-06,
+          "exact_mismatches": {},
+          "scalar_mismatches": {},
+          "feature_layer_mismatches": {}
+        },
+        {
+          "rank": 1,
+          "passed": true,
+          "reference": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K1/seed_42/first_batch_audit.json",
+          "absolute_tolerance": 1e-06,
+          "relative_tolerance": 1e-06,
+          "exact_mismatches": {},
+          "scalar_mismatches": {},
+          "feature_layer_mismatches": {}
+        }
+      ]
+    },
+    "final_dev": {
+      "passed": true,
+      "R0_mIoU": 0.522120045088882,
+      "K1_mIoU": 0.522120045088882,
+      "delta_R0_minus_K1": 0.0,
+      "absolute_tolerance": 0.00219,
+      "R0_selected_model_state_sha256": "b263af6d629bd61e1f60b8037c50b0df3df80849de9005c394675b8346ddf48e",
+      "K1_selected_model_state_sha256": "b263af6d629bd61e1f60b8037c50b0df3df80849de9005c394675b8346ddf48e"
+    },
+    "interpretation": "R1/R2 may proceed only when this R0 equivalence acceptance passes."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "experiment": "A0-FT",
+  "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_a0_ft_server.py",
+  "source_experiment": "A0",
+  "source_probe_checkpoint": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/A0/seed_260805/a0_probe_mobilenetv2_raspp_best.pth",
+  "source_probe_artifact_type": "a0_probe_mobilenetv2_raspp_fixed_pca",
+  "seed": 260805,
+  "world_size": 2,
+  "batch_size_per_gpu": 2,
+  "global_batch_size": 8,
+  "accumulation_steps_per_gpu": 2,
+  "finetune_max_optimizer_steps": 80000,
+  "eval_batch_size": 1,
+  "num_workers_per_gpu": 8,
+  "multiprocessing_context": "spawn",
+  "pin_memory": false,
+  "persistent_workers": true,
+  "prefetch_factor": 2,
+  "optimizer": "SGD",
+  "learning_rate": 0.01,
+  "momentum": 0.9,
+  "weight_decay": 0.0001,
+  "scheduler": "polynomial",
+  "poly_power": 0.9,
+  "min_lr_ratio": 0.01,
+  "eval_every_steps": 5000,
+  "amp": true,
+  "deterministic": true,
+  "crop_size": [
+    512,
+    1024
+  ],
+  "random_scale": [
+    0.5,
+    2.0
+  ],
+  "horizontal_flip_probability": 0.5,
+  "eval_resolution": [
+    1024,
+    2048
+  ],
+  "head_channels": 256,
+  "dropout": 0.1,
+  "num_classes": 19,
+  "ignore_index": 255,
+  "output_stride": 16,
+  "initialization": "A-group probe fine-tune (source=A0)",
+  "backbone_frozen": false,
+  "loss": "pixel_cross_entropy_only",
+  "knowledge_distillation": false,
+  "test_local_evaluated": false,
+  "distributed_backend": "nccl"
+}

@@ -1,0 +1,2036 @@
+{
+  "experiment": "H0",
+  "protocol": "H0 matched ReLU6 anchor: K-group shared scratch MobileNetV2+R-ASPP, hard-label CE plus locked A0 feature MSE, native masked 8x16 R2 relation MSE, and frozen T1 full-resolution masked pixel KL (T=4); weights 1.0/0.3/0.5, shared 4000-step warm-up, 80k optimizer steps, dev_local selection, and no test_local evaluation.",
+  "best_epoch": 237,
+  "best_optimizer_step": 75129,
+  "best_dev_metrics": {
+    "loss": 0.24464118701272602,
+    "mIoU": 0.5630931550800847,
+    "mAcc": 0.6379024044397551,
+    "pixel_accuracy": 0.9281360983121498,
+    "small_object_mIoU": 0.4657120892740194,
+    "valid_pixels": 834196385,
+    "per_class": {
+      "road": {
+        "iou": 0.9562731891511115,
+        "accuracy": 0.9761154213901085,
+        "target_pixels": 303128354,
+        "predicted_pixels": 302178036
+      },
+      "sidewalk": {
+        "iou": 0.7662077940546028,
+        "accuracy": 0.8217992561780206,
+        "target_pixels": 54929810,
+        "predicted_pixels": 49126656
+      },
+      "building": {
+        "iou": 0.8677004489614777,
+        "accuracy": 0.9565219407483722,
+        "target_pixels": 210902560,
+        "predicted_pixels": 223321805
+      },
+      "wall": {
+        "iou": 0.40804993266954587,
+        "accuracy": 0.46503501840208633,
+        "target_pixels": 8844921,
+        "predicted_pixels": 5348411
+      },
+      "fence": {
+        "iou": 0.42676881928934834,
+        "accuracy": 0.49794542907426487,
+        "target_pixels": 8567969,
+        "predicted_pixels": 5695349
+      },
+      "pole": {
+        "iou": 0.37665210174026315,
+        "accuracy": 0.462787391002444,
+        "target_pixels": 8335508,
+        "predicted_pixels": 5763787
+      },
+      "traffic light": {
+        "iou": 0.3891463156666229,
+        "accuracy": 0.4252130812722608,
+        "target_pixels": 1003725,
+        "predicted_pixels": 519824
+      },
+      "traffic sign": {
+        "iou": 0.5561541374164508,
+        "accuracy": 0.6930171311239851,
+        "target_pixels": 3963371,
+        "predicted_pixels": 3722023
+      },
+      "vegetation": {
+        "iou": 0.873757958721137,
+        "accuracy": 0.9514235939847107,
+        "target_pixels": 127789631,
+        "predicted_pixels": 132940894
+      },
+      "terrain": {
+        "iou": 0.4557133686450918,
+        "accuracy": 0.5036987487611421,
+        "target_pixels": 4922881,
+        "predicted_pixels": 2998015
+      },
+      "sky": {
+        "iou": 0.8966491660138022,
+        "accuracy": 0.9687095841796839,
+        "target_pixels": 30728994,
+        "predicted_pixels": 32237048
+      },
+      "person": {
+        "iou": 0.6933766941723838,
+        "accuracy": 0.8262784567752277,
+        "target_pixels": 9916663,
+        "predicted_pixels": 10094684
+      },
+      "rider": {
+        "iou": 0.36465925035888325,
+        "accuracy": 0.4278222586701772,
+        "target_pixels": 1158425,
+        "predicted_pixels": 696252
+      },
+      "car": {
+        "iou": 0.8983788084657929,
+        "accuracy": 0.9652903386946844,
+        "target_pixels": 51391772,
+        "predicted_pixels": 53435656
+      },
+      "truck": {
+        "iou": 0.1920089891128101,
+        "accuracy": 0.2559675069953231,
+        "target_pixels": 2397316,
+        "predicted_pixels": 1412185
+      },
+      "bus": {
+        "iou": 0.343692503245453,
+        "accuracy": 0.37288881822098446,
+        "target_pixels": 1905627,
+        "predicted_pixels": 872468
+      },
+      "train": {
+        "iou": 0.4714965003691031,
+        "accuracy": 0.6801947687801689,
+        "target_pixels": 1872374,
+        "predicted_pixels": 2102347
+      },
+      "motorcycle": {
+        "iou": 0.22966070002728955,
+        "accuracy": 0.23869571611656196,
+        "target_pixels": 475970,
+        "predicted_pixels": 132337
+      },
+      "bicycle": {
+        "iou": 0.5324232684404393,
+        "accuracy": 0.6307412239851385,
+        "target_pixels": 1960514,
+        "predicted_pixels": 1598608
+      }
+    },
+    "confusion_matrix": [
+      [
+        295888261,
+        2318142,
+        2181010,
+        89139,
+        12222,
+        34799,
+        0,
+        4698,
+        252205,
+        46877,
+        295523,
+        430992,
+        7014,
+        1278711,
+        44131,
+        11728,
+        202186,
+        879,
+        29837
+      ],
+      [
+        5497324,
+        45141277,
+        2639357,
+        172026,
+        75878,
+        174586,
+        0,
+        5038,
+        429427,
+        270043,
+        11104,
+        144987,
+        1910,
+        301811,
+        4296,
+        2080,
+        17112,
+        766,
+        40788
+      ],
+      [
+        25866,
+        405038,
+        201732926,
+        231811,
+        323702,
+        662485,
+        35705,
+        561223,
+        4327251,
+        14182,
+        1411392,
+        262611,
+        7546,
+        510549,
+        95030,
+        1654,
+        259316,
+        591,
+        33682
+      ],
+      [
+        10644,
+        208492,
+        2453877,
+        4113198,
+        443697,
+        55080,
+        37,
+        8912,
+        1387739,
+        34732,
+        4848,
+        16924,
+        947,
+        96265,
+        1506,
+        401,
+        446,
+        155,
+        7021
+      ],
+      [
+        6133,
+        67136,
+        2546763,
+        484367,
+        4266381,
+        89026,
+        309,
+        6651,
+        947968,
+        19283,
+        405,
+        29061,
+        1418,
+        72313,
+        599,
+        8706,
+        3130,
+        142,
+        18178
+      ],
+      [
+        18076,
+        133660,
+        2710113,
+        24653,
+        101225,
+        3857568,
+        26111,
+        80879,
+        1030289,
+        14387,
+        140825,
+        72970,
+        374,
+        98159,
+        1158,
+        527,
+        13602,
+        75,
+        10857
+      ],
+      [
+        0,
+        0,
+        292039,
+        0,
+        75,
+        61310,
+        426797,
+        17878,
+        175254,
+        0,
+        21127,
+        1819,
+        0,
+        1667,
+        133,
+        69,
+        5557,
+        0,
+        0
+      ],
+      [
+        3007,
+        4196,
+        859523,
+        3405,
+        6000,
+        43124,
+        3643,
+        2746684,
+        237271,
+        544,
+        17948,
+        9874,
+        737,
+        21745,
+        253,
+        290,
+        4771,
+        1,
+        355
+      ],
+      [
+        23161,
+        151675,
+        3929844,
+        125530,
+        293625,
+        557116,
+        15320,
+        97763,
+        121582070,
+        102729,
+        561110,
+        96736,
+        4146,
+        222622,
+        3445,
+        3178,
+        5603,
+        145,
+        13813
+      ],
+      [
+        102647,
+        464666,
+        100316,
+        76414,
+        55916,
+        42248,
+        0,
+        312,
+        1547493,
+        2479649,
+        0,
+        14449,
+        502,
+        32137,
+        26,
+        0,
+        102,
+        0,
+        6004
+      ],
+      [
+        0,
+        0,
+        389957,
+        0,
+        272,
+        39145,
+        10577,
+        30664,
+        471742,
+        0,
+        29767471,
+        65,
+        0,
+        551,
+        0,
+        0,
+        18550,
+        0,
+        0
+      ],
+      [
+        139750,
+        140013,
+        838854,
+        14575,
+        33169,
+        51650,
+        172,
+        7621,
+        198223,
+        6637,
+        581,
+        8193925,
+        45150,
+        182973,
+        3234,
+        2416,
+        353,
+        261,
+        57106
+      ],
+      [
+        16304,
+        4244,
+        91283,
+        135,
+        4961,
+        2862,
+        68,
+        785,
+        31474,
+        263,
+        116,
+        329359,
+        495600,
+        81162,
+        0,
+        244,
+        0,
+        11320,
+        88245
+      ],
+      [
+        329549,
+        42903,
+        626441,
+        10959,
+        52627,
+        45847,
+        19,
+        6555,
+        206592,
+        7160,
+        1465,
+        100158,
+        8520,
+        49607981,
+        268734,
+        33102,
+        28069,
+        775,
+        14316
+      ],
+      [
+        23046,
+        869,
+        859014,
+        6,
+        493,
+        12544,
+        0,
+        133384,
+        36711,
+        0,
+        2272,
+        209449,
+        37,
+        469444,
+        613635,
+        30579,
+        5788,
+        0,
+        45
+      ],
+      [
+        21158,
+        2517,
+        374273,
+        181,
+        5037,
+        5371,
+        99,
+        5014,
+        32883,
+        0,
+        246,
+        2175,
+        0,
+        201633,
+        280270,
+        710587,
+        264183,
+        0,
+        0
+      ],
+      [
+        5585,
+        545,
+        405585,
+        0,
+        5284,
+        2062,
+        967,
+        7962,
+        804,
+        0,
+        615,
+        241,
+        0,
+        6503,
+        95735,
+        66907,
+        1273579,
+        0,
+        0
+      ],
+      [
+        20458,
+        3618,
+        39297,
+        126,
+        5,
+        907,
+        0,
+        0,
+        1407,
+        14,
+        0,
+        25857,
+        44644,
+        184241,
+        0,
+        0,
+        0,
+        113612,
+        41784
+      ],
+      [
+        47067,
+        37665,
+        251333,
+        1886,
+        14780,
+        26057,
+        0,
+        0,
+        44091,
+        1515,
+        0,
+        153032,
+        77707,
+        65189,
+        0,
+        0,
+        0,
+        3615,
+        1236577
+      ]
+    ],
+    "boundary_precision": 0.4789507376108172,
+    "boundary_recall": 0.42219139458004157,
+    "boundary_f1": 0.44878354395757697
+  },
+  "class_names": [
+    "road",
+    "sidewalk",
+    "building",
+    "wall",
+    "fence",
+    "pole",
+    "traffic light",
+    "traffic sign",
+    "vegetation",
+    "terrain",
+    "sky",
+    "person",
+    "rider",
+    "car",
+    "truck",
+    "bus",
+    "train",
+    "motorcycle",
+    "bicycle"
+  ],
+  "config": {
+    "experiment": "H0",
+    "experiment_group": "H_MobileNetV2_RASPP_server",
+    "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_h0_server.py",
+    "seed": 42,
+    "formal_seeds": [
+      42,
+      3407,
+      260805
+    ],
+    "world_size": 2,
+    "batch_size_per_gpu": 2,
+    "global_batch_size": 8,
+    "accumulation_steps_per_gpu": 2,
+    "max_optimizer_steps": 80000,
+    "eval_batch_size": 1,
+    "num_workers_per_gpu": 8,
+    "multiprocessing_context": "spawn",
+    "pin_memory": false,
+    "persistent_workers": true,
+    "prefetch_factor": 2,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "scheduler": "polynomial",
+    "poly_power": 0.9,
+    "min_lr_ratio": 0.01,
+    "eval_every_steps": 5000,
+    "eval_policy": "first epoch boundary at or after each target step",
+    "amp": true,
+    "deterministic": true,
+    "crop_size": [
+      512,
+      1024
+    ],
+    "random_scale": [
+      0.5,
+      2.0
+    ],
+    "horizontal_flip_probability": 0.5,
+    "eval_resolution": [
+      1024,
+      2048
+    ],
+    "head_channels": 256,
+    "dropout": 0.1,
+    "num_classes": 19,
+    "ignore_index": 255,
+    "output_stride": 16,
+    "initialization": "shared scratch state; weights=None",
+    "backbone_frozen": false,
+    "loss": {
+      "hard_label_ce": true,
+      "feature_kd": true,
+      "feature_mechanism": "A0 fixed StandardScaler+PCA teacher-to-student",
+      "feature_layers": [
+        "os4",
+        "os8",
+        "os16"
+      ],
+      "feature_reduction": "mean per BCHW layer, then equal mean over 3 layers",
+      "logit_kd": true,
+      "logit_mechanism": "full-resolution masked pixel KL",
+      "logit_reduction": "mean over valid pixels after sum over 19 classes",
+      "lambda_feat": 1.0,
+      "lambda_logit": 0.5,
+      "temperature": 4.0,
+      "auxiliary_warmup_steps": 4000,
+      "auxiliary_warmup_ratio": 0.05,
+      "warmup_step_unit": "optimizer_step",
+      "shared_auxiliary_warmup": true,
+      "ignore_index_masked": true,
+      "teacher_logits_detached": true,
+      "temperature_squared_factor": true,
+      "relation_kd": true,
+      "relation_r1": false,
+      "relation_r2": true,
+      "lambda_r2": 0.3,
+      "total": "CE + warmup * (1.0*feature + 0.3*R2 + 0.5*logit_KL_T2)",
+      "warmup_steps": 4000,
+      "warmup_ratio": 0.05
+    },
+    "teacher": {
+      "enabled": true,
+      "type": "T1 DINOv3 ConvNeXt-T + R-ASPP, shared features and logits",
+      "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+      "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "frozen": true,
+      "wrapped_in_ddp": false,
+      "features_used_for_loss": [
+        "os4",
+        "os8",
+        "os16"
+      ],
+      "logits_used": true,
+      "logits_resolution": "full input resolution",
+      "single_backbone_forward_per_batch": true
+    },
+    "pca": {
+      "enabled": true,
+      "mechanism": "A0 fixed StandardScaler+PCA",
+      "directory": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+      "parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "trainable": false
+    },
+    "shared_init_state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+    "shared_init_file_sha256": "4e4e8eac1cee8aa5f26efdd5e4abfc7bc022eab8ce3cd794a7a80c5b6c02aa13",
+    "test_local_evaluated": false,
+    "benchmark": false,
+    "benchmark_resolution": [
+      1024,
+      2048
+    ],
+    "distributed_backend": "nccl",
+    "artifact_type": "mobilenetv2_cityscapes19_raspp_h0_relu6_r5_anchor",
+    "screening_seed": 42,
+    "screening_or_confirmation": "screening",
+    "shared_initialization": {
+      "source_group": "K_MobileNetV2_RASPP_server",
+      "path": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/shared_init/seed_42/student_init.pth",
+      "state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+      "file_sha256": "4e4e8eac1cee8aa5f26efdd5e4abfc7bc022eab8ce3cd794a7a80c5b6c02aa13",
+      "r_specific_initialization_created": false
+    },
+    "relation": {
+      "enabled": true,
+      "active_relation_types": [
+        "R2_within_image_spatial"
+      ],
+      "relation_feature_source": {
+        "teacher": "native OS=4/8/16 features",
+        "student": "native OS=4/8/16 features",
+        "a0_projected_features_used_for_relation": false
+      },
+      "epsilon": 1e-06,
+      "pool_size": [
+        8,
+        16
+      ],
+      "num_tokens": 128,
+      "nominal_physical_relation_batch_size": 4,
+      "physical_relation_batch_size": 4,
+      "effective_optimizer_batch_size": 8,
+      "accumulated_batches_used_for_relation": false,
+      "tail_batch_policy": "use the actual synchronized micro-batch; never cache, pad, or combine samples across optimizer steps",
+      "mask_policy": "nearest-resized valid mask, adaptive-average valid fraction, valid fraction > 0",
+      "pooling": "adaptive_avg_pool2d(mask * feature) / adaptive_avg_pool2d(mask)",
+      "token_order": "8x16 row-major",
+      "layer_aggregation": "equal mean over native OS=4/8/16 relation losses",
+      "matrix_dtype": "float32",
+      "normalization": "token-row L2 / (norm + epsilon)",
+      "r1": {
+        "enabled": false,
+        "lambda": 0.0
+      },
+      "r2": {
+        "enabled": true,
+        "representation": "per-image 128x128 signed token cosine matrix",
+        "diagonal_policy": "keep for valid tokens",
+        "reduction": "sum over valid token pairs divided by valid-pair count",
+        "lambda": 0.3,
+        "distributed_reduction": "global numerator/global valid-pair denominator"
+      },
+      "relation_warmup_steps": 4000,
+      "relation_warmup_shared_with_feature_kd": true,
+      "estimated_relation_matrix_bytes_per_rank": 786432,
+      "relation_gradient_gate": {
+        "target_relation_to_feature_effective_ratio": [
+          0.05,
+          0.2
+        ],
+        "stop_if_relation_to_ce_exceeds": 2.0,
+        "consecutive_records_before_stop": 3,
+        "lambda_is_fixed_during_formal_training": true
+      },
+      "relation_warmup_shared_with_logit_kd": true,
+      "r5_logit_kd_enabled": true
+    },
+    "relation_spec_sha256": "a6f6f7202f0e8b4fa1f754f91e1e72e13340440e2e8d9e286483f2858ce9714d",
+    "relation_reference_tests": {
+      "passed": true,
+      "local": {
+        "passed": true,
+        "token_shape": [
+          2,
+          128,
+          3
+        ],
+        "matrix_shape": [
+          2,
+          128,
+          128
+        ],
+        "pool_size": [
+          8,
+          16
+        ],
+        "valid_pair_count": 25345,
+        "valid_token_count": 223,
+        "valid_fraction_min": 0.0,
+        "valid_fraction_max": 1.0,
+        "ignore_invariance": true,
+        "valid_pixel_sensitivity": true,
+        "diagonal_kept": true,
+        "teacher_detached": true,
+        "finite_zero_norm": true,
+        "token_norm_min": 0.0
+      },
+      "distributed": {
+        "passed": true,
+        "world_size": 2,
+        "global_valid_pair_count": 51200,
+        "same_scalar_on_all_ranks": true,
+        "student_gradient_finite": true
+      },
+      "formal_definition": {
+        "pool_size": [
+          8,
+          16
+        ],
+        "matrix_shape": [
+          128,
+          128
+        ],
+        "diagonal": "kept for valid tokens",
+        "reduction": "valid-pair masked sum / valid-pair count",
+        "epsilon": 1e-06,
+        "teacher_target_detached": true
+      }
+    },
+    "launch_gate": {
+      "status": "matched_k3_r2_first_batch_loaded",
+      "comparison_seed": 42,
+      "K3_first_batch_audit": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_42/first_batch_audit.json",
+      "R2_first_batch_audit": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/first_batch_audit.json",
+      "K3_first_batch_present": true,
+      "R2_first_batch_present": true,
+      "r5_expansion_gate": "not used by H0"
+    },
+    "gradient_audit": {
+      "tap": "student native os16",
+      "interval_optimizer_steps": 500,
+      "fixed_steps": [
+        1,
+        4000,
+        20000,
+        40000,
+        60000,
+        80000
+      ],
+      "raw_components": [
+        "CE",
+        "feature",
+        "R2",
+        "logit"
+      ],
+      "effective_auxiliary_components": [
+        "feature",
+        "R2",
+        "logit"
+      ],
+      "auxiliary_pairwise_cosines": [
+        "feature_R2",
+        "feature_logit",
+        "R2_logit"
+      ],
+      "stop_if_total_auxiliary_to_ce_exceeds": 2.0,
+      "consecutive_records_before_stop": 3
+    },
+    "activation": {
+      "name": "ReLU6",
+      "implementation": "torch.nn.ReLU6(inplace=True)",
+      "formula": "relu6(x)=min(max(x, 0), 6)",
+      "placement_scope": "original MobileNetV2 ReLU6; no replacement",
+      "eligible_blocks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "eligible_paths": [
+        {
+          "path": "backbone.1.conv.0.2",
+          "block_index": 1,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.2.conv.0.2",
+          "block_index": 2,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.2.conv.1.2",
+          "block_index": 2,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.3.conv.0.2",
+          "block_index": 3,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.3.conv.1.2",
+          "block_index": 3,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.4.conv.0.2",
+          "block_index": 4,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.4.conv.1.2",
+          "block_index": 4,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.5.conv.0.2",
+          "block_index": 5,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.5.conv.1.2",
+          "block_index": 5,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.6.conv.0.2",
+          "block_index": 6,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.6.conv.1.2",
+          "block_index": 6,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.7.conv.0.2",
+          "block_index": 7,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.7.conv.1.2",
+          "block_index": 7,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.8.conv.0.2",
+          "block_index": 8,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.8.conv.1.2",
+          "block_index": 8,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.9.conv.0.2",
+          "block_index": 9,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.9.conv.1.2",
+          "block_index": 9,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.10.conv.0.2",
+          "block_index": 10,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.10.conv.1.2",
+          "block_index": 10,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.11.conv.0.2",
+          "block_index": 11,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.11.conv.1.2",
+          "block_index": 11,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.12.conv.0.2",
+          "block_index": 12,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.12.conv.1.2",
+          "block_index": 12,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.13.conv.0.2",
+          "block_index": 13,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.13.conv.1.2",
+          "block_index": 13,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.14.conv.0.2",
+          "block_index": 14,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.14.conv.1.2",
+          "block_index": 14,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.15.conv.0.2",
+          "block_index": 15,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.15.conv.1.2",
+          "block_index": 15,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.16.conv.0.2",
+          "block_index": 16,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.16.conv.1.2",
+          "block_index": 16,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.17.conv.0.2",
+          "block_index": 17,
+          "path_type": "expansion",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        },
+        {
+          "path": "backbone.17.conv.1.2",
+          "block_index": 17,
+          "path_type": "depthwise",
+          "exists_when_built": true,
+          "activation": "ReLU6"
+        }
+      ],
+      "replaced_module_paths": [],
+      "replacement_count": 0,
+      "stem_path": "backbone.0.2",
+      "final_path": "backbone.18.2",
+      "head_path": "head.project.2",
+      "linear_bottleneck_activation": false
+    },
+    "activation_name": "ReLU6",
+    "activation_formula": "min(max(x, 0), 6)",
+    "activation_spec_sha256": "3eeb7a6b4fa0a2514976bc3f6bb09b644bb176eb614cbbce73f24cef376460df",
+    "activation_replacement": {
+      "name": "ReLU6",
+      "replacement_count": 0,
+      "replacement_paths": [],
+      "scope": "none; original MobileNetV2 activations"
+    }
+  },
+  "shape_audit": {
+    "input_shape": [
+      1,
+      3,
+      512,
+      1024
+    ],
+    "feature_taps": {
+      "os4": {
+        "module": "backbone.3",
+        "index": 3,
+        "channels": 24,
+        "stride": 4
+      },
+      "os8": {
+        "module": "backbone.6",
+        "index": 6,
+        "channels": 32,
+        "stride": 8
+      },
+      "os16": {
+        "module": "backbone.17",
+        "index": 17,
+        "channels": 320,
+        "stride": 16
+      },
+      "raspp_input": {
+        "module": "backbone.18",
+        "index": 18,
+        "channels": 1280,
+        "stride": 16
+      }
+    },
+    "feature_shapes": {
+      "os4": [
+        1,
+        24,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        32,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        320,
+        32,
+        64
+      ],
+      "raspp_input": [
+        1,
+        1280,
+        32,
+        64
+      ]
+    },
+    "logit_shape": [
+      1,
+      19,
+      512,
+      1024
+    ],
+    "output_stride": 16,
+    "conversion": "features.14 depthwise stride 2->1; features.14-17 depthwise convolutions use dilation=2 and padding=2",
+    "depthwise_contract": {
+      "backbone.14": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.15": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.16": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.17": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      }
+    },
+    "align_corners": false,
+    "experiment": "H0",
+    "teacher_feature_shapes": {
+      "os4": [
+        1,
+        96,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        192,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        768,
+        32,
+        64
+      ]
+    },
+    "projected_teacher_feature_shapes": {
+      "os4": [
+        1,
+        24,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        32,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        320,
+        32,
+        64
+      ]
+    },
+    "teacher_logit_shape": [
+      1,
+      19,
+      512,
+      1024
+    ],
+    "teacher_logits_resolution": "full input resolution",
+    "teacher_logits_align_corners": false,
+    "teacher_forward_calls_per_training_batch": 1,
+    "teacher_shared_feature_head_path": true,
+    "teacher_shared_path_equivalence": {
+      "passed": true,
+      "dtype": "float32",
+      "input_shape": [
+        1,
+        3,
+        64,
+        128
+      ],
+      "rtol": 1e-05,
+      "atol": 1e-06,
+      "max_abs_error": 0.0
+    },
+    "projection": "fixed A0 StandardScaler+PCA, teacher to student channels",
+    "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "relation": {
+      "enabled": true,
+      "type": "R2_within_image_spatial",
+      "native_teacher_student_taps": [
+        "os4",
+        "os8",
+        "os16"
+      ],
+      "pool_size": [
+        8,
+        16
+      ],
+      "token_count": 128,
+      "matrix_shape": [
+        128,
+        128
+      ],
+      "matrix_dtype": "float32",
+      "a0_projection_used_only_by_pointwise_feature_anchor": true
+    },
+    "teacher_forward_shared_by_feature_relation_logit": true,
+    "activation": {
+      "experiment": "H0",
+      "activation_name": "ReLU6",
+      "activation_formula": "min(max(x, 0), 6)",
+      "eligible_module_count": 33,
+      "eligible_module_paths": [
+        {
+          "path": "backbone.1.conv.0.2",
+          "block_index": 1,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.2.conv.0.2",
+          "block_index": 2,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.2.conv.1.2",
+          "block_index": 2,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.3.conv.0.2",
+          "block_index": 3,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.3.conv.1.2",
+          "block_index": 3,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.4.conv.0.2",
+          "block_index": 4,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.4.conv.1.2",
+          "block_index": 4,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.5.conv.0.2",
+          "block_index": 5,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.5.conv.1.2",
+          "block_index": 5,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.6.conv.0.2",
+          "block_index": 6,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.6.conv.1.2",
+          "block_index": 6,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.7.conv.0.2",
+          "block_index": 7,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.7.conv.1.2",
+          "block_index": 7,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.8.conv.0.2",
+          "block_index": 8,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.8.conv.1.2",
+          "block_index": 8,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.9.conv.0.2",
+          "block_index": 9,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.9.conv.1.2",
+          "block_index": 9,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.10.conv.0.2",
+          "block_index": 10,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.10.conv.1.2",
+          "block_index": 10,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.11.conv.0.2",
+          "block_index": 11,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.11.conv.1.2",
+          "block_index": 11,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.12.conv.0.2",
+          "block_index": 12,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.12.conv.1.2",
+          "block_index": 12,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.13.conv.0.2",
+          "block_index": 13,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.13.conv.1.2",
+          "block_index": 13,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.14.conv.0.2",
+          "block_index": 14,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.14.conv.1.2",
+          "block_index": 14,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.15.conv.0.2",
+          "block_index": 15,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.15.conv.1.2",
+          "block_index": 15,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.16.conv.0.2",
+          "block_index": 16,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.16.conv.1.2",
+          "block_index": 16,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.17.conv.0.2",
+          "block_index": 17,
+          "path_type": "expansion",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        },
+        {
+          "path": "backbone.17.conv.1.2",
+          "block_index": 17,
+          "path_type": "depthwise",
+          "module_type": "torch.nn.modules.activation.ReLU6"
+        }
+      ],
+      "missing_logical_paths": [],
+      "fixed_paths": {
+        "backbone.0.2": "torch.nn.modules.activation.ReLU6",
+        "backbone.18.2": "torch.nn.modules.activation.ReLU6",
+        "head.project.2": "torch.nn.modules.activation.ReLU6"
+      },
+      "linear_bottleneck_activation": false,
+      "replacement_count": 0,
+      "reference_test": {
+        "max_abs_error": 0.0,
+        "tolerance": 1e-07,
+        "passed": true
+      },
+      "activation_spec_sha256": "3eeb7a6b4fa0a2514976bc3f6bb09b644bb176eb614cbbce73f24cef376460df",
+      "activation_audit_sha256": "c61e4e043f556885f5d4771ab50408fff5249b36062f0cea084646f59af5035b"
+    },
+    "activation_spec_sha256": "3eeb7a6b4fa0a2514976bc3f6bb09b644bb176eb614cbbce73f24cef376460df",
+    "r5_compatible_loss": true
+  },
+  "dataset_lock": {
+    "lock_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.lock.json",
+    "lock_sha256": "b3b4e2e8af470963983f3e2f8848caa7cab3d63ee4f37b218601f3a9d0048eb2",
+    "checksum_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.sha256",
+    "checksum_sha256": "a31cc5370ddee112d2ead5e99ad57857ed301285a6f0b953f261466ec87cfe50",
+    "lock_date": "2026-08-05",
+    "timezone": "Asia/Tokyo",
+    "combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+    "splits": {
+      "train_local": {
+        "source": "official train",
+        "count": 2530,
+        "cities": [
+          "aachen",
+          "bochum",
+          "bremen",
+          "cologne",
+          "dusseldorf",
+          "erfurt",
+          "hamburg",
+          "hanover",
+          "monchengladbach",
+          "strasbourg",
+          "stuttgart",
+          "tubingen",
+          "ulm",
+          "zurich"
+        ],
+        "manifest": "train_local.txt",
+        "sha256": "08fe1239484a1824469ac22d0b4780e9b1cf074e90829da952420f6d554076d7"
+      },
+      "dev_local": {
+        "source": "official train",
+        "count": 445,
+        "cities": [
+          "darmstadt",
+          "jena",
+          "krefeld",
+          "weimar"
+        ],
+        "manifest": "dev_local.txt",
+        "sha256": "778d455b9e01aecec7a0958a349eac8ac1655c6c13485af9b01d0ab779e51f70"
+      },
+      "test_local": {
+        "source": "official val",
+        "count": 500,
+        "cities": [
+          "frankfurt",
+          "lindau",
+          "munster"
+        ],
+        "manifest": "test_local.txt",
+        "sha256": "4eb84d274208c475931d4eb796fec932d567e19e31790f38a458942a447d766c"
+      }
+    }
+  },
+  "model": {
+    "model_name": "mobilenet_v2",
+    "initialization": "shared scratch state; weights=None",
+    "head": "R-ASPP",
+    "feature_taps": {
+      "os4": {
+        "module": "backbone.3",
+        "index": 3,
+        "channels": 24,
+        "stride": 4
+      },
+      "os8": {
+        "module": "backbone.6",
+        "index": 6,
+        "channels": 32,
+        "stride": 8
+      },
+      "os16": {
+        "module": "backbone.17",
+        "index": 17,
+        "channels": 320,
+        "stride": 16
+      },
+      "raspp_input": {
+        "module": "backbone.18",
+        "index": 18,
+        "channels": 1280,
+        "stride": 16
+      }
+    },
+    "total_parameters": 2884883,
+    "backbone_parameters": 2223872,
+    "head_parameters": 661011,
+    "trainable_parameters": 2884883
+  },
+  "loss": {
+    "hard_label_ce": true,
+    "feature_kd": true,
+    "feature_mechanism": "A0 fixed StandardScaler+PCA",
+    "relation_kd": true,
+    "relation_r1": false,
+    "relation_r2": true,
+    "lambda_feat": 1.0,
+    "lambda_r2": 0.3,
+    "relation_pool_size": [
+      8,
+      16
+    ],
+    "logit_kd": true,
+    "logit_mechanism": "full-resolution masked pixel KL",
+    "lambda_logit": 0.5,
+    "temperature": 4.0,
+    "temperature_squared_factor": true,
+    "warmup_steps": 4000,
+    "warmup_ratio": 0.05,
+    "shared_auxiliary_warmup": true,
+    "total": "CE + warmup * (1.0*feature + 0.3*R2 + 0.5*logit_KL_T2)"
+  },
+  "efficiency": null,
+  "hashes": {
+    "student_init_state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+    "student_init_file_sha256": "4e4e8eac1cee8aa5f26efdd5e4abfc7bc022eab8ce3cd794a7a80c5b6c02aa13",
+    "student_init_path": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/shared_init/seed_42/student_init.pth",
+    "training_script_sha256": "956b4688d93ebd6341af916ab73bf2e637df37929e04bf96fd08166005fb1962",
+    "shared_student_module_sha256": "046cdc63a20240225a51a2ade74973f8632663b44443c7128fced770a230c959",
+    "common_module_sha256": "85fe7ee0e985ae4340fd20d382da81e0d81ada45336c5c750eb816bfc309549f",
+    "dataset_combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+    "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "pca_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "selected_model_state_sha256": "a938827540bcf883c33e03772972ea99a380f7881003b0181c0bc58a822eb585",
+    "checkpoint_sha256": "293a5551f875d02a07b815e278ba056e2ccaad8082913bd4fd346677e6c7832a",
+    "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+    "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+    "k1_feature_contract_source_sha256": "9b9d836bfe8befebfdbe2197d52e9c5864917a8a6ada0c72dcb506504bc9bff5",
+    "k2_masked_kl_source_sha256": "555cd0073d1baa71c4a690e1b1ee57b2625632a3eee4f88ff4ccc9be9f4e7b87",
+    "r2_relation_source_sha256": "3fb44f34c24e5e6a499005085d40de7719bd9b6cf8c67be3ecdc07c2f3f306c5",
+    "h0_training_script_sha256": "d16b0702ca81be7134b6909f2a08aad1fc29e31411ce53bce5a30d67b94765cb",
+    "relation_spec_sha256": "a6f6f7202f0e8b4fa1f754f91e1e72e13340440e2e8d9e286483f2858ce9714d",
+    "activation_spec_sha256": "3eeb7a6b4fa0a2514976bc3f6bb09b644bb176eb614cbbce73f24cef376460df"
+  },
+  "training": {
+    "elapsed_seconds": 13809.81399154663,
+    "optimizer_steps": 80000,
+    "epochs_completed": 253,
+    "steps_per_full_epoch": 317
+  },
+  "software": {
+    "python": "3.10.19",
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "2.0.1",
+    "pillow": "11.1.0",
+    "platform": "Linux-5.15.0-128-generic-x86_64-with-glibc2.35",
+    "cuda_available": true,
+    "cuda_version": "12.4",
+    "cudnn_version": 91700
+  },
+  "artifacts": {
+    "run_dir": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42",
+    "best": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/best_checkpoint.pth",
+    "last": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/last_checkpoint.pth",
+    "config": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/config.json",
+    "feature_taps": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/feature_taps.json",
+    "first_batch_audit": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/first_batch_audit.json",
+    "history": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/training_history.json",
+    "gradient_norms": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/gradient_norms.jsonl",
+    "dev_metrics": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/dev_metrics.json",
+    "dev_confusion": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/dev_confusion_matrix.json",
+    "per_image": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/dev_per_image_confusion.jsonl",
+    "efficiency": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/efficiency.json",
+    "software": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/software.json",
+    "metrics": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/metrics.json",
+    "activation_replacement": "/home/ubuntu/work/DINOv3_0804/result/H_MobileNetV2_RASPP_server/H0/seed_42/activation_replacement.json"
+  },
+  "test_local_evaluated": false,
+  "teacher": {
+    "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+    "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "features_used": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "logits_used": true,
+    "logits_resolution": "full input resolution",
+    "single_backbone_forward_per_batch": true,
+    "frozen": true
+  },
+  "pca": {
+    "enabled": true,
+    "directory": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+    "parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a"
+  },
+  "experiment_group": "H_MobileNetV2_RASPP_server",
+  "artifact_type": "mobilenetv2_cityscapes19_raspp_h0_relu6_r5_anchor",
+  "activation": {
+    "name": "ReLU6",
+    "implementation": "torch.nn.ReLU6(inplace=True)",
+    "formula": "relu6(x)=min(max(x, 0), 6)",
+    "placement_scope": "original MobileNetV2 ReLU6; no replacement",
+    "eligible_blocks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "eligible_paths": [
+      {
+        "path": "backbone.1.conv.0.2",
+        "block_index": 1,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.2.conv.0.2",
+        "block_index": 2,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.2.conv.1.2",
+        "block_index": 2,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.3.conv.0.2",
+        "block_index": 3,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.3.conv.1.2",
+        "block_index": 3,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.4.conv.0.2",
+        "block_index": 4,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.4.conv.1.2",
+        "block_index": 4,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.5.conv.0.2",
+        "block_index": 5,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.5.conv.1.2",
+        "block_index": 5,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.6.conv.0.2",
+        "block_index": 6,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.6.conv.1.2",
+        "block_index": 6,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.7.conv.0.2",
+        "block_index": 7,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.7.conv.1.2",
+        "block_index": 7,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.8.conv.0.2",
+        "block_index": 8,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.8.conv.1.2",
+        "block_index": 8,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.9.conv.0.2",
+        "block_index": 9,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.9.conv.1.2",
+        "block_index": 9,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.10.conv.0.2",
+        "block_index": 10,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.10.conv.1.2",
+        "block_index": 10,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.11.conv.0.2",
+        "block_index": 11,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.11.conv.1.2",
+        "block_index": 11,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.12.conv.0.2",
+        "block_index": 12,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.12.conv.1.2",
+        "block_index": 12,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.13.conv.0.2",
+        "block_index": 13,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.13.conv.1.2",
+        "block_index": 13,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.14.conv.0.2",
+        "block_index": 14,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.14.conv.1.2",
+        "block_index": 14,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.15.conv.0.2",
+        "block_index": 15,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.15.conv.1.2",
+        "block_index": 15,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.16.conv.0.2",
+        "block_index": 16,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.16.conv.1.2",
+        "block_index": 16,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.17.conv.0.2",
+        "block_index": 17,
+        "path_type": "expansion",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      },
+      {
+        "path": "backbone.17.conv.1.2",
+        "block_index": 17,
+        "path_type": "depthwise",
+        "exists_when_built": true,
+        "activation": "ReLU6"
+      }
+    ],
+    "replaced_module_paths": [],
+    "replacement_count": 0,
+    "stem_path": "backbone.0.2",
+    "final_path": "backbone.18.2",
+    "head_path": "head.project.2",
+    "linear_bottleneck_activation": false
+  },
+  "activation_name": "ReLU6",
+  "activation_formula": "min(max(x, 0), 6)",
+  "activation_spec_sha256": "3eeb7a6b4fa0a2514976bc3f6bb09b644bb176eb614cbbce73f24cef376460df",
+  "activation_replacement": {
+    "name": "ReLU6",
+    "replacement_count": 0,
+    "replacement_paths": [],
+    "scope": "none; original MobileNetV2 activations"
+  },
+  "launch_gate": {
+    "status": "matched_k3_r2_first_batch_loaded",
+    "comparison_seed": 42,
+    "K3_first_batch_audit": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K3/seed_42/first_batch_audit.json",
+    "R2_first_batch_audit": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/first_batch_audit.json",
+    "K3_first_batch_present": true,
+    "R2_first_batch_present": true,
+    "r5_expansion_gate": "not used by H0"
+  }
+}

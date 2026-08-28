@@ -1,0 +1,752 @@
+{
+  "experiment": "R1",
+  "seed": 42,
+  "student_init_state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+  "world_size": 2,
+  "per_rank": [
+    {
+      "rank": 0,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/erfurt/erfurt_000087_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/stuttgart/stuttgart_000140_000019_leftImg8bit.png"
+      ],
+      "relation_global_path_order_by_rank": [
+        [
+          "leftImg8bit/train_local/erfurt/erfurt_000087_000019_leftImg8bit.png",
+          "leftImg8bit/train_local/stuttgart/stuttgart_000140_000019_leftImg8bit.png"
+        ],
+        [
+          "leftImg8bit/train_local/zurich/zurich_000053_000019_leftImg8bit.png",
+          "leftImg8bit/train_local/bremen/bremen_000011_000019_leftImg8bit.png"
+        ]
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "80eb55d796d598920f31e0354b5be1790e85e49784d2be8691cbcdbc7b1e864c",
+      "target_tensor_sha256": "ac0a7e33a6753973c5f52a09755f04bc3efb0880326ef5837e61431da0d415ae",
+      "valid_pixels": 981546,
+      "student_feature_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "teacher_feature_shapes": {
+        "os4": [
+          2,
+          96,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          192,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          768,
+          32,
+          64
+        ]
+      },
+      "projected_teacher_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "feature_loss_by_layer": {
+        "os4": 4.128093242645264,
+        "os8": 5.570873260498047,
+        "os16": 3.517019271850586
+      },
+      "feature_loss": 4.405328750610352,
+      "ce_loss": 2.966360569000244,
+      "relation_r1_loss_by_layer": {
+        "os4": 1.760306715965271,
+        "os8": 1.801105260848999,
+        "os16": 1.2087767124176025
+      },
+      "relation_r1_loss": 1.5900628566741943,
+      "relation_loss_weighted": 1.1925470971618779e-05,
+      "relation": {
+        "physical_batch_size": 4,
+        "per_rank_batch_sizes": [
+          2,
+          2
+        ],
+        "valid_token_count": 4,
+        "valid_pair_count": 16,
+        "layers": {
+          "os4": {
+            "student_gap_shape": [
+              2,
+              24
+            ],
+            "teacher_gap_shape": [
+              2,
+              96
+            ],
+            "student_valid_locations_local": [
+              30959,
+              30499
+            ],
+            "teacher_valid_locations_local": [
+              30959,
+              30499
+            ],
+            "matrix_shape": [
+              4,
+              4
+            ],
+            "student_matrix": [
+              [
+                0.9999973773956299,
+                -0.9927358031272888,
+                0.73265141248703,
+                -0.7974588871002197
+              ],
+              [
+                -0.9927358031272888,
+                0.9999973773956299,
+                -0.7315649390220642,
+                0.7951716184616089
+              ],
+              [
+                0.73265141248703,
+                -0.7315649390220642,
+                0.9999986886978149,
+                -0.9915461540222168
+              ],
+              [
+                -0.7974588871002197,
+                0.7951716184616089,
+                -0.9915461540222168,
+                0.9999985098838806
+              ]
+            ],
+            "teacher_matrix": [
+              [
+                0.9999985694885254,
+                0.9942895174026489,
+                0.990726113319397,
+                0.9869889616966248
+              ],
+              [
+                0.9942895174026489,
+                0.9999986290931702,
+                0.9899866580963135,
+                0.9927814602851868
+              ],
+              [
+                0.990726113319397,
+                0.9899866580963135,
+                0.9999986886978149,
+                0.9783618450164795
+              ],
+              [
+                0.9869889616966248,
+                0.9927814602851868,
+                0.9783618450164795,
+                0.9999985098838806
+              ]
+            ],
+            "loss": 1.760306715965271
+          },
+          "os8": {
+            "student_gap_shape": [
+              2,
+              32
+            ],
+            "teacher_gap_shape": [
+              2,
+              192
+            ],
+            "student_valid_locations_local": [
+              7744,
+              7658
+            ],
+            "teacher_valid_locations_local": [
+              7744,
+              7658
+            ],
+            "matrix_shape": [
+              4,
+              4
+            ],
+            "student_matrix": [
+              [
+                0.9999973177909851,
+                -0.9767147898674011,
+                0.8150896430015564,
+                -0.8430983424186707
+              ],
+              [
+                -0.9767147898674011,
+                0.9999975562095642,
+                -0.7659833431243896,
+                0.7941570281982422
+              ],
+              [
+                0.8150896430015564,
+                -0.7659833431243896,
+                0.999998927116394,
+                -0.9944161772727966
+              ],
+              [
+                -0.8430983424186707,
+                0.7941570281982422,
+                -0.9944161772727966,
+                0.9999988675117493
+              ]
+            ],
+            "teacher_matrix": [
+              [
+                0.9999989867210388,
+                0.9988876581192017,
+                0.9977704286575317,
+                0.9953129291534424
+              ],
+              [
+                0.9988876581192017,
+                0.9999989867210388,
+                0.9971985220909119,
+                0.995809018611908
+              ],
+              [
+                0.9977704286575317,
+                0.9971985220909119,
+                0.9999989867210388,
+                0.9913418889045715
+              ],
+              [
+                0.9953129291534424,
+                0.995809018611908,
+                0.9913418889045715,
+                0.9999988675117493
+              ]
+            ],
+            "loss": 1.801105260848999
+          },
+          "os16": {
+            "student_gap_shape": [
+              2,
+              320
+            ],
+            "teacher_gap_shape": [
+              2,
+              768
+            ],
+            "student_valid_locations_local": [
+              1928,
+              1933
+            ],
+            "teacher_valid_locations_local": [
+              1928,
+              1933
+            ],
+            "matrix_shape": [
+              4,
+              4
+            ],
+            "student_matrix": [
+              [
+                0.9999986290931702,
+                -0.9867380857467651,
+                0.9332207441329956,
+                -0.9373998045921326
+              ],
+              [
+                -0.9867380857467651,
+                0.9999988675117493,
+                -0.9291468262672424,
+                0.9383945465087891
+              ],
+              [
+                0.9332207441329956,
+                -0.9291468262672424,
+                0.9999993443489075,
+                -0.9960646629333496
+              ],
+              [
+                -0.9373998045921326,
+                0.9383945465087891,
+                -0.9960646629333496,
+                0.9999992251396179
+              ]
+            ],
+            "teacher_matrix": [
+              [
+                0.9999998807907104,
+                0.7245554327964783,
+                0.6748535633087158,
+                0.42592471837997437
+              ],
+              [
+                0.7245554327964783,
+                0.9999998807907104,
+                0.7829442620277405,
+                0.39134353399276733
+              ],
+              [
+                0.6748535633087158,
+                0.7829442620277405,
+                0.9999997615814209,
+                0.2632049322128296
+              ],
+              [
+                0.42592471837997437,
+                0.39134353399276733,
+                0.2632049322128296,
+                0.9999998807907104
+              ]
+            ],
+            "loss": 1.2087767124176025
+          }
+        }
+      },
+      "warmup_weight": 0.00025,
+      "lambda_r1": 0.03,
+      "total_loss": 2.9674737453460693,
+      "relation_spec_sha256": "41ff6a844e15fc493b81ce3c33a942a7f93740ecaaaf9e4463bc2827650f5e7b",
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "pca_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "projection_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "r1_base_k1_equivalence": {
+        "rank": 0,
+        "passed": true,
+        "comparison": "R1 CE+feature base fields versus locked K1 seed=42",
+        "reference": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K1/seed_42/first_batch_audit.json",
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-06,
+        "exact_mismatches": {},
+        "scalar_mismatches": {},
+        "feature_layer_mismatches": {}
+      }
+    },
+    {
+      "rank": 1,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/zurich/zurich_000053_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/bremen/bremen_000011_000019_leftImg8bit.png"
+      ],
+      "relation_global_path_order_by_rank": [
+        [
+          "leftImg8bit/train_local/erfurt/erfurt_000087_000019_leftImg8bit.png",
+          "leftImg8bit/train_local/stuttgart/stuttgart_000140_000019_leftImg8bit.png"
+        ],
+        [
+          "leftImg8bit/train_local/zurich/zurich_000053_000019_leftImg8bit.png",
+          "leftImg8bit/train_local/bremen/bremen_000011_000019_leftImg8bit.png"
+        ]
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "4aadafc213958b214bbeaeebc29d3c1172ad33c9ce1f65eafc09c2ea86f8d253",
+      "target_tensor_sha256": "cc2c68b70c0f200c98c5e6dc71aaaf6b79ec23cc90c9ea260d1b2cd7518b874d",
+      "valid_pixels": 977105,
+      "student_feature_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "teacher_feature_shapes": {
+        "os4": [
+          2,
+          96,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          192,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          768,
+          32,
+          64
+        ]
+      },
+      "projected_teacher_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "feature_loss_by_layer": {
+        "os4": 4.0785627365112305,
+        "os8": 5.419608116149902,
+        "os16": 3.936023473739624
+      },
+      "feature_loss": 4.478065013885498,
+      "ce_loss": 2.9630682468414307,
+      "relation_r1_loss_by_layer": {
+        "os4": 1.760306715965271,
+        "os8": 1.801105260848999,
+        "os16": 1.2087767124176025
+      },
+      "relation_r1_loss": 1.5900628566741943,
+      "relation_loss_weighted": 1.1925470971618779e-05,
+      "relation": {
+        "physical_batch_size": 4,
+        "per_rank_batch_sizes": [
+          2,
+          2
+        ],
+        "valid_token_count": 4,
+        "valid_pair_count": 16,
+        "layers": {
+          "os4": {
+            "student_gap_shape": [
+              2,
+              24
+            ],
+            "teacher_gap_shape": [
+              2,
+              96
+            ],
+            "student_valid_locations_local": [
+              32343,
+              28741
+            ],
+            "teacher_valid_locations_local": [
+              32343,
+              28741
+            ],
+            "matrix_shape": [
+              4,
+              4
+            ],
+            "student_matrix": [
+              [
+                0.9999973773956299,
+                -0.9927358031272888,
+                0.73265141248703,
+                -0.7974588871002197
+              ],
+              [
+                -0.9927358031272888,
+                0.9999973773956299,
+                -0.7315649390220642,
+                0.7951716184616089
+              ],
+              [
+                0.73265141248703,
+                -0.7315649390220642,
+                0.9999986886978149,
+                -0.9915461540222168
+              ],
+              [
+                -0.7974588871002197,
+                0.7951716184616089,
+                -0.9915461540222168,
+                0.9999985098838806
+              ]
+            ],
+            "teacher_matrix": [
+              [
+                0.9999985694885254,
+                0.9942895174026489,
+                0.990726113319397,
+                0.9869889616966248
+              ],
+              [
+                0.9942895174026489,
+                0.9999986290931702,
+                0.9899866580963135,
+                0.9927814602851868
+              ],
+              [
+                0.990726113319397,
+                0.9899866580963135,
+                0.9999986886978149,
+                0.9783618450164795
+              ],
+              [
+                0.9869889616966248,
+                0.9927814602851868,
+                0.9783618450164795,
+                0.9999985098838806
+              ]
+            ],
+            "loss": 1.760306715965271
+          },
+          "os8": {
+            "student_gap_shape": [
+              2,
+              32
+            ],
+            "teacher_gap_shape": [
+              2,
+              192
+            ],
+            "student_valid_locations_local": [
+              8087,
+              7199
+            ],
+            "teacher_valid_locations_local": [
+              8087,
+              7199
+            ],
+            "matrix_shape": [
+              4,
+              4
+            ],
+            "student_matrix": [
+              [
+                0.9999973177909851,
+                -0.9767147898674011,
+                0.8150896430015564,
+                -0.8430983424186707
+              ],
+              [
+                -0.9767147898674011,
+                0.9999975562095642,
+                -0.7659833431243896,
+                0.7941570281982422
+              ],
+              [
+                0.8150896430015564,
+                -0.7659833431243896,
+                0.999998927116394,
+                -0.9944161772727966
+              ],
+              [
+                -0.8430983424186707,
+                0.7941570281982422,
+                -0.9944161772727966,
+                0.9999988675117493
+              ]
+            ],
+            "teacher_matrix": [
+              [
+                0.9999989867210388,
+                0.9988876581192017,
+                0.9977704286575317,
+                0.9953129291534424
+              ],
+              [
+                0.9988876581192017,
+                0.9999989867210388,
+                0.9971985220909119,
+                0.995809018611908
+              ],
+              [
+                0.9977704286575317,
+                0.9971985220909119,
+                0.9999989867210388,
+                0.9913418889045715
+              ],
+              [
+                0.9953129291534424,
+                0.995809018611908,
+                0.9913418889045715,
+                0.9999988675117493
+              ]
+            ],
+            "loss": 1.801105260848999
+          },
+          "os16": {
+            "student_gap_shape": [
+              2,
+              320
+            ],
+            "teacher_gap_shape": [
+              2,
+              768
+            ],
+            "student_valid_locations_local": [
+              2018,
+              1796
+            ],
+            "teacher_valid_locations_local": [
+              2018,
+              1796
+            ],
+            "matrix_shape": [
+              4,
+              4
+            ],
+            "student_matrix": [
+              [
+                0.9999986290931702,
+                -0.9867380857467651,
+                0.9332207441329956,
+                -0.9373998045921326
+              ],
+              [
+                -0.9867380857467651,
+                0.9999988675117493,
+                -0.9291468262672424,
+                0.9383945465087891
+              ],
+              [
+                0.9332207441329956,
+                -0.9291468262672424,
+                0.9999993443489075,
+                -0.9960646629333496
+              ],
+              [
+                -0.9373998045921326,
+                0.9383945465087891,
+                -0.9960646629333496,
+                0.9999992251396179
+              ]
+            ],
+            "teacher_matrix": [
+              [
+                0.9999998807907104,
+                0.7245554327964783,
+                0.6748535633087158,
+                0.42592471837997437
+              ],
+              [
+                0.7245554327964783,
+                0.9999998807907104,
+                0.7829442620277405,
+                0.39134353399276733
+              ],
+              [
+                0.6748535633087158,
+                0.7829442620277405,
+                0.9999997615814209,
+                0.2632049322128296
+              ],
+              [
+                0.42592471837997437,
+                0.39134353399276733,
+                0.2632049322128296,
+                0.9999998807907104
+              ]
+            ],
+            "loss": 1.2087767124176025
+          }
+        }
+      },
+      "warmup_weight": 0.00025,
+      "lambda_r1": 0.03,
+      "total_loss": 2.9641997814178467,
+      "relation_spec_sha256": "41ff6a844e15fc493b81ce3c33a942a7f93740ecaaaf9e4463bc2827650f5e7b",
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "pca_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "projection_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "r1_base_k1_equivalence": {
+        "rank": 1,
+        "passed": true,
+        "comparison": "R1 CE+feature base fields versus locked K1 seed=42",
+        "reference": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K1/seed_42/first_batch_audit.json",
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-06,
+        "exact_mismatches": {},
+        "scalar_mismatches": {},
+        "feature_layer_mismatches": {}
+      }
+    }
+  ]
+}

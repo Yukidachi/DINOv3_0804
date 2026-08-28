@@ -1,0 +1,150 @@
+{
+  "experiment": "R4",
+  "experiment_group": "R_MobileNetV2_RASPP_server",
+  "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_r4_server.py",
+  "seed": 42,
+  "formal_seeds": [
+    42
+  ],
+  "world_size": 2,
+  "batch_size_per_gpu": 2,
+  "global_batch_size": 8,
+  "accumulation_steps_per_gpu": 2,
+  "max_optimizer_steps": 80000,
+  "eval_batch_size": 1,
+  "num_workers_per_gpu": 8,
+  "multiprocessing_context": "spawn",
+  "pin_memory": false,
+  "persistent_workers": true,
+  "prefetch_factor": 2,
+  "optimizer": "SGD",
+  "learning_rate": 0.01,
+  "momentum": 0.9,
+  "weight_decay": 0.0001,
+  "scheduler": "polynomial",
+  "poly_power": 0.9,
+  "min_lr_ratio": 0.01,
+  "eval_every_steps": 5000,
+  "eval_policy": "first epoch boundary at or after each target step",
+  "amp": true,
+  "deterministic": true,
+  "crop_size": [
+    512,
+    1024
+  ],
+  "random_scale": [
+    0.5,
+    2.0
+  ],
+  "horizontal_flip_probability": 0.5,
+  "eval_resolution": [
+    1024,
+    2048
+  ],
+  "head_channels": 256,
+  "dropout": 0.1,
+  "num_classes": 19,
+  "ignore_index": 255,
+  "output_stride": 16,
+  "initialization": "shared scratch state; weights=None",
+  "backbone_frozen": false,
+  "loss": {
+    "hard_label_ce": true,
+    "feature_kd": false,
+    "logit_kd": false,
+    "relation_kd": true,
+    "relation_r1": false,
+    "relation_r2": true,
+    "lambda_feat": 0.0,
+    "lambda_rel": 0.3,
+    "warmup_steps": 4000,
+    "total": "CE + warmup * lambda_rel * selected_relation"
+  },
+  "teacher": {
+    "enabled": true,
+    "type": "T1 DINOv3 ConvNeXt-T + R-ASPP, feature extraction only",
+    "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+    "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "frozen": true,
+    "wrapped_in_ddp": false,
+    "logits_used": false
+  },
+  "pca": {
+    "enabled": false,
+    "used_in_loss": false,
+    "reason": "R4 relation-only ablation; PCA is loaded only by the shared K1 bootstrap"
+  },
+  "shared_init_state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+  "shared_init_file_sha256": "4e4e8eac1cee8aa5f26efdd5e4abfc7bc022eab8ce3cd794a7a80c5b6c02aa13",
+  "test_local_evaluated": false,
+  "benchmark": false,
+  "benchmark_resolution": [
+    1024,
+    2048
+  ],
+  "distributed_backend": "nccl",
+  "artifact_type": "mobilenetv2_cityscapes19_raspp_r4_relation_only",
+  "relation": {
+    "enabled": true,
+    "experiment": "R4",
+    "active_relation_types": [
+      "R2_within_image_spatial"
+    ],
+    "relation_only": true,
+    "feature_kd_enabled": false,
+    "logit_kd_enabled": false,
+    "relation_feature_source": {
+      "teacher": "native OS=4/8/16 features",
+      "student": "native OS=4/8/16 features",
+      "a0_projected_features_used_for_relation": false
+    },
+    "epsilon": 1e-06,
+    "physical_relation_batch_size": 4,
+    "nominal_physical_relation_batch_size": 4,
+    "effective_optimizer_batch_size": 8,
+    "accumulated_batches_used_for_relation": false,
+    "relation_warmup_steps": 4000,
+    "warmup_step_unit": "optimizer_step",
+    "lambda_rel": 0.3,
+    "lambda_feat": 0.0,
+    "diagonal_policy": "keep for valid tokens",
+    "matrix_dtype": "float32",
+    "gradient_gate": {
+      "relation_to_ce_stop_ratio": 2.0,
+      "consecutive_records_before_stop": 3,
+      "relation_to_feature_ratio": "not_applicable_feature_kd_removed"
+    },
+    "relation_representation": "masked adaptive 8x16 tokens then per-image 128x128 signed cosine matrix",
+    "mask_policy": "nearest-resized valid mask; adaptive-average valid fraction > 0",
+    "reduction": "global valid-pair masked sum divided by global valid-pair count",
+    "pool_size": [
+      8,
+      16
+    ],
+    "num_tokens": 128,
+    "token_order": "8x16 row-major"
+  },
+  "relation_spec_sha256": "c6141116843b977dde8f778cf241c477f92d654f55f4a721d223b59f2674949c",
+  "r0_gate": {
+    "required_for_formal_run": true,
+    "checked": true,
+    "passed": true,
+    "failures": [],
+    "metrics_path": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/metrics.json",
+    "metrics_sha256": "119b1dffe9598668e64928cfe2efe27666bd5e4618307248e7efe5fc0f804788",
+    "r0_training_script_sha256": "419c2b2c0e324e05c66bf83d4d9205cc948d17060486845de835182fe0e3f5a9",
+    "r0_best_dev_mIoU": 0.522120045088882,
+    "r0_selected_model_state_sha256": "b263af6d629bd61e1f60b8037c50b0df3df80849de9005c394675b8346ddf48e"
+  },
+  "selected_relation_gate": {
+    "required_for_formal_run": true,
+    "checked": true,
+    "passed": true,
+    "failures": [],
+    "relation": "R2",
+    "lambda": 0.3,
+    "metrics_path": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/metrics.json",
+    "metrics_sha256": "b94fa8ea05b43f013424f5203cac912a0430e05ab8ad3ce46dc6d44701b4b87e",
+    "selected_mIoU": 0.5396890362838399
+  }
+}

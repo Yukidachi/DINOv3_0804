@@ -1,0 +1,157 @@
+{
+  "experiment": "D1",
+  "experiment_group": "D_MobileNetV2_RASPP_server",
+  "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_d1_server.py",
+  "seed": 3407,
+  "formal_seeds": [
+    42,
+    3407,
+    260805
+  ],
+  "world_size": 2,
+  "batch_size_per_gpu": 2,
+  "global_batch_size": 8,
+  "accumulation_steps_per_gpu": 2,
+  "max_optimizer_steps": 80000,
+  "eval_batch_size": 1,
+  "num_workers_per_gpu": 8,
+  "multiprocessing_context": "spawn",
+  "pin_memory": false,
+  "persistent_workers": true,
+  "prefetch_factor": 2,
+  "optimizer": "SGD",
+  "learning_rate": 0.01,
+  "momentum": 0.9,
+  "weight_decay": 0.0001,
+  "scheduler": "polynomial",
+  "poly_power": 0.9,
+  "min_lr_ratio": 0.01,
+  "eval_every_steps": 5000,
+  "eval_policy": "first epoch boundary at or after each target step",
+  "amp": true,
+  "deterministic": true,
+  "crop_size": [
+    512,
+    1024
+  ],
+  "random_scale": [
+    0.5,
+    2.0
+  ],
+  "horizontal_flip_probability": 0.5,
+  "eval_resolution": [
+    1024,
+    2048
+  ],
+  "head_channels": 256,
+  "dropout": 0.1,
+  "num_classes": 19,
+  "ignore_index": 255,
+  "output_stride": 16,
+  "initialization": "shared scratch state; weights=None",
+  "backbone_frozen": false,
+  "loss": {
+    "hard_label_ce": true,
+    "feature_kd": true,
+    "feature_mechanism": "A0 fixed StandardScaler+PCA teacher-to-student",
+    "feature_layers": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "feature_reduction": "mean per BCHW layer, then equal mean over 3 layers",
+    "distribution_kd": true,
+    "distribution_type": "CORAL",
+    "distribution_reduction": "equal mean over OS=4/8/16; teacher-batch normalized",
+    "lambda_feat": 1.0,
+    "lambda_coral": 0.1,
+    "auxiliary_warmup_steps": 4000,
+    "warmup_step_unit": "optimizer_step",
+    "logit_kd": false
+  },
+  "teacher": {
+    "enabled": true,
+    "type": "T1 DINOv3 ConvNeXt-T + R-ASPP, feature extraction only",
+    "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+    "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "frozen": true,
+    "wrapped_in_ddp": false,
+    "logits_used": false
+  },
+  "pca": {
+    "enabled": true,
+    "mechanism": "A0 fixed StandardScaler+PCA",
+    "directory": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+    "parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+    "parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+    "trainable": false
+  },
+  "shared_init_state_sha256": "49f314ec99f5496ea5664c0b27e87fd34054234f4eb53277140ab3eed9d74d43",
+  "shared_init_file_sha256": "bba84366b3def894329b97994ed24963937a4e4d505777d7ecd72b252946cd5b",
+  "test_local_evaluated": false,
+  "benchmark": false,
+  "benchmark_resolution": [
+    1024,
+    2048
+  ],
+  "distributed_backend": "nccl",
+  "artifact_type": "mobilenetv2_cityscapes19_raspp_d1_coral",
+  "shared_initialization": {
+    "source_group": "K_MobileNetV2_RASPP_server",
+    "path": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/shared_init/seed_3407/student_init.pth",
+    "state_sha256": "49f314ec99f5496ea5664c0b27e87fd34054234f4eb53277140ab3eed9d74d43",
+    "file_sha256": "bba84366b3def894329b97994ed24963937a4e4d505777d7ecd72b252946cd5b",
+    "d_specific_initialization_created": false
+  },
+  "distribution": {
+    "spec_version": 1,
+    "enabled": true,
+    "type": "CORAL",
+    "active_terms": [
+      "coral"
+    ],
+    "teacher_source": "A0 fixed projected teacher features, detached",
+    "student_source": "native student OS=4/8/16 taps",
+    "mask_policy": "resize targets != 255 with nearest-neighbor; ignore excluded",
+    "token_cap_per_layer": 256,
+    "token_cap_scope": "physical global micro-batch",
+    "local_token_cap": 128,
+    "token_sampling": "deterministic without replacement",
+    "sampling_seed_formula": "seed*1000003 + optimizer_step*9176 + layer_index",
+    "statistics": "teacher-batch mean/std normalization; global token matrix",
+    "normalization_epsilon": 1e-06,
+    "layers": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "layer_reduction": "equal mean over OS=4/8/16",
+    "covariance_denominator": "max(N-1, 1)",
+    "coral_reduction": "covariance Frobenius/C^2 plus mean L2/C",
+    "ddp_gradient_policy": "global-token loss scaled by world_size for DDP averaging",
+    "warmup_steps": 4000,
+    "lambda_feat": 1.0,
+    "lambda_coral": 0.1,
+    "physical_distribution_batch_size": 4,
+    "effective_optimizer_batch_size": 8,
+    "swd": null,
+    "discriminator": null
+  },
+  "distribution_spec_sha256": "f7f62e88967bc77b8b2118f7279711e1ef0c6d752c436835170fc85629e2fe2d",
+  "seed_expansion": {
+    "baseline_seed": 42,
+    "run_seed": 3407,
+    "is_expanded_seed": true,
+    "registered_seed_set": [
+      42,
+      3407,
+      260805
+    ],
+    "shared_initialization_source": "K_MobileNetV2_RASPP_server/shared_init"
+  }
+}

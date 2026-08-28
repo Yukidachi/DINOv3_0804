@@ -1,0 +1,1396 @@
+{
+  "experiment": "R2",
+  "protocol": "R2 controlled relation-KD run: accepted R0/K1 shared scratch initialization, hard-label CE, locked A0 feature MSE, and native teacher/student 8x16 masked within-image token cosine relation MSE; no R1 or logits term, 4000-step auxiliary warm-up, fixed 80k budget, dev_local selection, and no test_local evaluation.",
+  "best_epoch": 237,
+  "best_optimizer_step": 75129,
+  "best_dev_metrics": {
+    "loss": 0.26556608117935865,
+    "mIoU": 0.5396890362838399,
+    "mAcc": 0.607588480113678,
+    "pixel_accuracy": 0.9178641178120186,
+    "small_object_mIoU": 0.44010952842778517,
+    "valid_pixels": 834196385,
+    "per_class": {
+      "road": {
+        "iou": 0.9336377431081899,
+        "accuracy": 0.9544089102268539,
+        "target_pixels": 303128354,
+        "predicted_pixels": 296052270
+      },
+      "sidewalk": {
+        "iou": 0.755536158287291,
+        "accuracy": 0.8279434427317335,
+        "target_pixels": 54929810,
+        "predicted_pixels": 50743009
+      },
+      "building": {
+        "iou": 0.8452558842071345,
+        "accuracy": 0.9581080381385603,
+        "target_pixels": 210902560,
+        "predicted_pixels": 230225548
+      },
+      "wall": {
+        "iou": 0.3195762728303482,
+        "accuracy": 0.3389944353375231,
+        "target_pixels": 8844921,
+        "predicted_pixels": 3535816
+      },
+      "fence": {
+        "iou": 0.3593669365180196,
+        "accuracy": 0.4026369609880708,
+        "target_pixels": 8567969,
+        "predicted_pixels": 4481418
+      },
+      "pole": {
+        "iou": 0.37066727463078736,
+        "accuracy": 0.4532930686408075,
+        "target_pixels": 8335508,
+        "predicted_pixels": 5636504
+      },
+      "traffic light": {
+        "iou": 0.4037222426289353,
+        "accuracy": 0.4610037609903111,
+        "target_pixels": 1003725,
+        "predicted_pixels": 605133
+      },
+      "traffic sign": {
+        "iou": 0.5429680781204469,
+        "accuracy": 0.6953323319971811,
+        "target_pixels": 3963371,
+        "predicted_pixels": 3868036
+      },
+      "vegetation": {
+        "iou": 0.8676177665841169,
+        "accuracy": 0.9543192592832512,
+        "target_pixels": 127789631,
+        "predicted_pixels": 134722190
+      },
+      "terrain": {
+        "iou": 0.4491269977186676,
+        "accuracy": 0.5140831151514733,
+        "target_pixels": 4922881,
+        "predicted_pixels": 3242754
+      },
+      "sky": {
+        "iou": 0.8857401073367387,
+        "accuracy": 0.9526361975924106,
+        "target_pixels": 30728994,
+        "predicted_pixels": 31594379
+      },
+      "person": {
+        "iou": 0.7086364023507368,
+        "accuracy": 0.8054419112558328,
+        "target_pixels": 9916663,
+        "predicted_pixels": 9341993
+      },
+      "rider": {
+        "iou": 0.38843150594726716,
+        "accuracy": 0.49138442281546063,
+        "target_pixels": 1158425,
+        "predicted_pixels": 876270
+      },
+      "car": {
+        "iou": 0.8884716929288431,
+        "accuracy": 0.9726576464419245,
+        "target_pixels": 51391772,
+        "predicted_pixels": 54856159
+      },
+      "truck": {
+        "iou": 0.1503680223050992,
+        "accuracy": 0.18024240442227893,
+        "target_pixels": 2397316,
+        "predicted_pixels": 908385
+      },
+      "bus": {
+        "iou": 0.28087356731232105,
+        "accuracy": 0.31781508133543446,
+        "target_pixels": 1905627,
+        "predicted_pixels": 856272
+      },
+      "train": {
+        "iou": 0.2977304074622894,
+        "accuracy": 0.3256833303602806,
+        "target_pixels": 1872374,
+        "predicted_pixels": 785592
+      },
+      "motorcycle": {
+        "iou": 0.253462187190053,
+        "accuracy": 0.2743576275815703,
+        "target_pixels": 475970,
+        "predicted_pixels": 169825
+      },
+      "bicycle": {
+        "iou": 0.5529024419256716,
+        "accuracy": 0.6638391768689231,
+        "target_pixels": 1960514,
+        "predicted_pixels": 1694832
+      }
+    },
+    "confusion_matrix": [
+      [
+        289308402,
+        2977378,
+        7154699,
+        7306,
+        10869,
+        29343,
+        0,
+        30448,
+        1282651,
+        45926,
+        673920,
+        176672,
+        8043,
+        1359253,
+        28648,
+        2359,
+        1650,
+        2123,
+        28664
+      ],
+      [
+        5857976,
+        45478776,
+        2040050,
+        58286,
+        50159,
+        130631,
+        0,
+        6905,
+        362184,
+        298607,
+        127986,
+        131837,
+        1746,
+        342112,
+        1352,
+        512,
+        106,
+        1140,
+        39445
+      ],
+      [
+        35188,
+        603843,
+        202067438,
+        65597,
+        188959,
+        668797,
+        58612,
+        665646,
+        4463540,
+        16936,
+        975046,
+        278176,
+        9630,
+        650944,
+        108510,
+        5414,
+        3220,
+        1230,
+        35834
+      ],
+      [
+        26288,
+        373766,
+        3147887,
+        2998379,
+        365828,
+        74010,
+        216,
+        8482,
+        1605769,
+        50224,
+        0,
+        20333,
+        1353,
+        161825,
+        251,
+        2338,
+        146,
+        90,
+        7736
+      ],
+      [
+        11549,
+        98066,
+        3423187,
+        260849,
+        3449781,
+        85033,
+        120,
+        17253,
+        1018625,
+        55107,
+        252,
+        35266,
+        1338,
+        83471,
+        673,
+        9669,
+        3016,
+        39,
+        14675
+      ],
+      [
+        20874,
+        184755,
+        2786456,
+        19351,
+        67649,
+        3778428,
+        25506,
+        80233,
+        1047505,
+        20808,
+        112871,
+        65716,
+        490,
+        105619,
+        1753,
+        1150,
+        2315,
+        0,
+        14029
+      ],
+      [
+        0,
+        0,
+        278469,
+        0,
+        402,
+        48092,
+        462721,
+        20541,
+        171535,
+        0,
+        14463,
+        2104,
+        525,
+        4421,
+        126,
+        326,
+        0,
+        0,
+        0
+      ],
+      [
+        4476,
+        4908,
+        849882,
+        1822,
+        5360,
+        41679,
+        12054,
+        2755860,
+        234886,
+        356,
+        4659,
+        11586,
+        796,
+        24099,
+        3298,
+        3410,
+        4112,
+        0,
+        128
+      ],
+      [
+        29467,
+        186989,
+        3725741,
+        54725,
+        226562,
+        527970,
+        25312,
+        92953,
+        121952106,
+        197484,
+        401911,
+        101898,
+        5840,
+        230595,
+        1477,
+        7577,
+        46,
+        176,
+        20802
+      ],
+      [
+        108046,
+        554943,
+        81559,
+        53024,
+        35739,
+        37874,
+        0,
+        588,
+        1462288,
+        2530770,
+        5,
+        15093,
+        616,
+        35755,
+        6,
+        225,
+        0,
+        0,
+        6350
+      ],
+      [
+        14,
+        0,
+        743442,
+        0,
+        547,
+        54878,
+        14520,
+        34526,
+        593041,
+        0,
+        29273552,
+        69,
+        0,
+        14080,
+        283,
+        42,
+        0,
+        0,
+        0
+      ],
+      [
+        181993,
+        166538,
+        811427,
+        10526,
+        8181,
+        66591,
+        883,
+        24105,
+        207097,
+        10701,
+        878,
+        7987296,
+        134978,
+        243747,
+        530,
+        1634,
+        98,
+        3531,
+        55929
+      ],
+      [
+        18660,
+        6077,
+        63388,
+        628,
+        2305,
+        2607,
+        5,
+        813,
+        26930,
+        1435,
+        4,
+        239896,
+        569232,
+        101573,
+        44,
+        363,
+        0,
+        15872,
+        108593
+      ],
+      [
+        306031,
+        45771,
+        554619,
+        2339,
+        23629,
+        39750,
+        1738,
+        5325,
+        187551,
+        8214,
+        3781,
+        83457,
+        25987,
+        49986600,
+        69755,
+        26352,
+        3424,
+        4473,
+        12976
+      ],
+      [
+        12869,
+        1532,
+        851170,
+        0,
+        1442,
+        16439,
+        35,
+        108850,
+        40179,
+        13,
+        3913,
+        59221,
+        504,
+        793826,
+        432098,
+        67763,
+        4856,
+        22,
+        2584
+      ],
+      [
+        25979,
+        3980,
+        549364,
+        441,
+        5703,
+        6002,
+        1097,
+        6057,
+        31829,
+        243,
+        542,
+        2622,
+        0,
+        324846,
+        188451,
+        605637,
+        152802,
+        0,
+        32
+      ],
+      [
+        24402,
+        2066,
+        855331,
+        0,
+        16310,
+        3280,
+        2199,
+        8731,
+        2345,
+        62,
+        416,
+        1719,
+        0,
+        159237,
+        65041,
+        121434,
+        609801,
+        0,
+        0
+      ],
+      [
+        43079,
+        3086,
+        30492,
+        239,
+        251,
+        1240,
+        0,
+        590,
+        4605,
+        19,
+        0,
+        25781,
+        42822,
+        141502,
+        6089,
+        0,
+        0,
+        130586,
+        45589
+      ],
+      [
+        36977,
+        50535,
+        210947,
+        2304,
+        21742,
+        23860,
+        115,
+        130,
+        27524,
+        5849,
+        180,
+        103251,
+        72370,
+        92654,
+        0,
+        67,
+        0,
+        10543,
+        1301466
+      ]
+    ],
+    "boundary_precision": 0.4536864461063662,
+    "boundary_recall": 0.4295059755069148,
+    "boundary_f1": 0.44126519847903084
+  },
+  "class_names": [
+    "road",
+    "sidewalk",
+    "building",
+    "wall",
+    "fence",
+    "pole",
+    "traffic light",
+    "traffic sign",
+    "vegetation",
+    "terrain",
+    "sky",
+    "person",
+    "rider",
+    "car",
+    "truck",
+    "bus",
+    "train",
+    "motorcycle",
+    "bicycle"
+  ],
+  "config": {
+    "experiment": "R2",
+    "experiment_group": "R_MobileNetV2_RASPP_server",
+    "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_r2_server.py",
+    "seed": 42,
+    "formal_seeds": [
+      42
+    ],
+    "world_size": 2,
+    "batch_size_per_gpu": 2,
+    "global_batch_size": 8,
+    "accumulation_steps_per_gpu": 2,
+    "max_optimizer_steps": 80000,
+    "eval_batch_size": 1,
+    "num_workers_per_gpu": 8,
+    "multiprocessing_context": "spawn",
+    "pin_memory": false,
+    "persistent_workers": true,
+    "prefetch_factor": 2,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "scheduler": "polynomial",
+    "poly_power": 0.9,
+    "min_lr_ratio": 0.01,
+    "eval_every_steps": 5000,
+    "eval_policy": "first epoch boundary at or after each target step",
+    "amp": true,
+    "deterministic": true,
+    "crop_size": [
+      512,
+      1024
+    ],
+    "random_scale": [
+      0.5,
+      2.0
+    ],
+    "horizontal_flip_probability": 0.5,
+    "eval_resolution": [
+      1024,
+      2048
+    ],
+    "head_channels": 256,
+    "dropout": 0.1,
+    "num_classes": 19,
+    "ignore_index": 255,
+    "output_stride": 16,
+    "initialization": "shared scratch state; weights=None",
+    "backbone_frozen": false,
+    "loss": {
+      "hard_label_ce": true,
+      "feature_kd": true,
+      "feature_mechanism": "A0 fixed StandardScaler+PCA teacher-to-student",
+      "feature_layers": [
+        "os4",
+        "os8",
+        "os16"
+      ],
+      "feature_reduction": "mean per BCHW layer, then equal mean over 3 layers",
+      "logit_kd": false,
+      "lambda_feat": 1.0,
+      "lambda_logit": null,
+      "temperature": null,
+      "auxiliary_warmup_steps": 4000,
+      "auxiliary_warmup_ratio": 0.05,
+      "warmup_step_unit": "optimizer_step",
+      "relation_kd": true,
+      "relation_r1": false,
+      "relation_r2": true,
+      "lambda_r1": 0.0,
+      "lambda_r2": 0.3,
+      "total": "CE + warmup * (lambda_feat * feature + lambda_r2 * R2)"
+    },
+    "teacher": {
+      "enabled": true,
+      "type": "T1 DINOv3 ConvNeXt-T + R-ASPP, feature extraction only",
+      "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+      "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "frozen": true,
+      "wrapped_in_ddp": false,
+      "logits_used": false
+    },
+    "pca": {
+      "enabled": true,
+      "mechanism": "A0 fixed StandardScaler+PCA",
+      "directory": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+      "parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "trainable": false
+    },
+    "shared_init_state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+    "shared_init_file_sha256": "4e4e8eac1cee8aa5f26efdd5e4abfc7bc022eab8ce3cd794a7a80c5b6c02aa13",
+    "test_local_evaluated": false,
+    "benchmark": false,
+    "benchmark_resolution": [
+      1024,
+      2048
+    ],
+    "distributed_backend": "nccl",
+    "artifact_type": "mobilenetv2_cityscapes19_raspp_r2_spatial_relation_kd",
+    "run_directory_name": "seed_42_lambda_0.3",
+    "lambda_directory_component": "0.3",
+    "shared_initialization": {
+      "source_group": "K_MobileNetV2_RASPP_server",
+      "path": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/shared_init/seed_42/student_init.pth",
+      "state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+      "file_sha256": "4e4e8eac1cee8aa5f26efdd5e4abfc7bc022eab8ce3cd794a7a80c5b6c02aa13",
+      "r_specific_initialization_created": false
+    },
+    "relation": {
+      "enabled": true,
+      "active_relation_types": [
+        "R2_within_image_spatial"
+      ],
+      "relation_feature_source": {
+        "teacher": "native OS=4/8/16 features",
+        "student": "native OS=4/8/16 features",
+        "a0_projected_features_used_for_relation": false
+      },
+      "epsilon": 1e-06,
+      "pool_size": [
+        8,
+        16
+      ],
+      "num_tokens": 128,
+      "nominal_physical_relation_batch_size": 4,
+      "physical_relation_batch_size": 4,
+      "effective_optimizer_batch_size": 8,
+      "accumulated_batches_used_for_relation": false,
+      "tail_batch_policy": "use the actual synchronized micro-batch; never cache, pad, or combine samples across optimizer steps",
+      "mask_policy": "nearest-resized valid mask, adaptive-average valid fraction, valid fraction > 0",
+      "pooling": "adaptive_avg_pool2d(mask * feature) / adaptive_avg_pool2d(mask)",
+      "token_order": "8x16 row-major",
+      "layer_aggregation": "equal mean over native OS=4/8/16 relation losses",
+      "matrix_dtype": "float32",
+      "normalization": "token-row L2 / (norm + epsilon)",
+      "r1": {
+        "enabled": false,
+        "lambda": 0.0
+      },
+      "r2": {
+        "enabled": true,
+        "representation": "per-image 128x128 signed token cosine matrix",
+        "diagonal_policy": "keep for valid tokens",
+        "reduction": "sum over valid token pairs divided by valid-pair count",
+        "lambda": 0.3,
+        "distributed_reduction": "global numerator/global valid-pair denominator"
+      },
+      "relation_warmup_steps": 4000,
+      "relation_warmup_shared_with_feature_kd": true,
+      "estimated_relation_matrix_bytes_per_rank": 786432,
+      "relation_gradient_gate": {
+        "target_relation_to_feature_effective_ratio": [
+          0.05,
+          0.2
+        ],
+        "stop_if_relation_to_ce_exceeds": 2.0,
+        "consecutive_records_before_stop": 3,
+        "lambda_is_fixed_during_formal_training": true
+      }
+    },
+    "relation_spec_sha256": "e690f10f5225a4b5902b5d4a808e1c42e94442b2c4ddec8001a00bda0bf2bc3b",
+    "relation_reference_tests": {
+      "passed": true,
+      "local": {
+        "passed": true,
+        "token_shape": [
+          2,
+          128,
+          3
+        ],
+        "matrix_shape": [
+          2,
+          128,
+          128
+        ],
+        "pool_size": [
+          8,
+          16
+        ],
+        "valid_pair_count": 25345,
+        "valid_token_count": 223,
+        "valid_fraction_min": 0.0,
+        "valid_fraction_max": 1.0,
+        "ignore_invariance": true,
+        "valid_pixel_sensitivity": true,
+        "diagonal_kept": true,
+        "teacher_detached": true,
+        "finite_zero_norm": true,
+        "token_norm_min": 0.0
+      },
+      "distributed": {
+        "passed": true,
+        "world_size": 2,
+        "global_valid_pair_count": 51200,
+        "same_scalar_on_all_ranks": true,
+        "student_gradient_finite": true
+      },
+      "formal_definition": {
+        "pool_size": [
+          8,
+          16
+        ],
+        "matrix_shape": [
+          128,
+          128
+        ],
+        "diagonal": "kept for valid tokens",
+        "reduction": "valid-pair masked sum / valid-pair count",
+        "epsilon": 1e-06,
+        "teacher_target_detached": true
+      }
+    },
+    "r0_gate": {
+      "required_for_formal_run": true,
+      "checked": true,
+      "passed": true,
+      "failures": [],
+      "metrics_path": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/metrics.json",
+      "metrics_sha256": "119b1dffe9598668e64928cfe2efe27666bd5e4618307248e7efe5fc0f804788",
+      "r0_training_script_sha256": "419c2b2c0e324e05c66bf83d4d9205cc948d17060486845de835182fe0e3f5a9",
+      "r0_best_dev_mIoU": 0.522120045088882,
+      "r0_selected_model_state_sha256": "b263af6d629bd61e1f60b8037c50b0df3df80849de9005c394675b8346ddf48e"
+    },
+    "r1_gate": {
+      "required_for_formal_run": true,
+      "checked": true,
+      "passed": true,
+      "failures": [],
+      "metrics_path": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R1/seed_42/metrics.json",
+      "metrics_sha256": "1ed8e9122993c1615c7626801da470a3213efaa6b75dfac662c4e4c4451b83b2",
+      "r1_best_dev_mIoU": 0.5289685477985632,
+      "effect_gate_passed": true,
+      "r1_training_script_sha256": "b98200b7490aeae971fef42ab0ca2778f75fb3a9f10058a13494c05f5ca8b35b"
+    },
+    "k1_reference_validation": {
+      "passed": true,
+      "failures": [],
+      "reference_directory": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K1/seed_42",
+      "reference_metrics_sha256": "4d323ea1801dce6381e8c7081ef36c8c23a2d2bc4b0678773bf7f45cef031c56",
+      "reference_first_batch_sha256": "a8dcc7ba1576b7a47114bda4be45e8593b6509a426f67105cb8dafafb540c98e",
+      "reference_mIoU": 0.522120045088882,
+      "mIoU_tolerance": 0.00219,
+      "local_k1_runner_sha256": "9b9d836bfe8befebfdbe2197d52e9c5864917a8a6ada0c72dcb506504bc9bff5",
+      "local_k0_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc"
+    }
+  },
+  "shape_audit": {
+    "input_shape": [
+      1,
+      3,
+      512,
+      1024
+    ],
+    "feature_taps": {
+      "os4": {
+        "module": "backbone.3",
+        "index": 3,
+        "channels": 24,
+        "stride": 4
+      },
+      "os8": {
+        "module": "backbone.6",
+        "index": 6,
+        "channels": 32,
+        "stride": 8
+      },
+      "os16": {
+        "module": "backbone.17",
+        "index": 17,
+        "channels": 320,
+        "stride": 16
+      },
+      "raspp_input": {
+        "module": "backbone.18",
+        "index": 18,
+        "channels": 1280,
+        "stride": 16
+      }
+    },
+    "feature_shapes": {
+      "os4": [
+        1,
+        24,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        32,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        320,
+        32,
+        64
+      ],
+      "raspp_input": [
+        1,
+        1280,
+        32,
+        64
+      ]
+    },
+    "logit_shape": [
+      1,
+      19,
+      512,
+      1024
+    ],
+    "output_stride": 16,
+    "conversion": "features.14 depthwise stride 2->1; features.14-17 depthwise convolutions use dilation=2 and padding=2",
+    "depthwise_contract": {
+      "backbone.14": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.15": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.16": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      },
+      "backbone.17": {
+        "stride": [
+          1,
+          1
+        ],
+        "dilation": [
+          2,
+          2
+        ],
+        "padding": [
+          2,
+          2
+        ]
+      }
+    },
+    "align_corners": false,
+    "experiment": "R2",
+    "teacher_feature_shapes": {
+      "os4": [
+        1,
+        96,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        192,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        768,
+        32,
+        64
+      ]
+    },
+    "projected_teacher_feature_shapes": {
+      "os4": [
+        1,
+        24,
+        128,
+        256
+      ],
+      "os8": [
+        1,
+        32,
+        64,
+        128
+      ],
+      "os16": [
+        1,
+        320,
+        32,
+        64
+      ]
+    },
+    "projection": "fixed A0 StandardScaler+PCA, teacher to student channels",
+    "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "relation": {
+      "enabled": true,
+      "type": "R2_within_image_spatial",
+      "native_teacher_student_taps": [
+        "os4",
+        "os8",
+        "os16"
+      ],
+      "a0_projection_used_only_by_pointwise_feature_anchor": true,
+      "pool_size": [
+        8,
+        16
+      ],
+      "token_count": 128,
+      "matrix_shape": [
+        128,
+        128
+      ],
+      "matrix_dtype": "float32"
+    }
+  },
+  "dataset_lock": {
+    "lock_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.lock.json",
+    "lock_sha256": "b3b4e2e8af470963983f3e2f8848caa7cab3d63ee4f37b218601f3a9d0048eb2",
+    "checksum_path": "/home/ubuntu/work/DINOv3_0804/datasets/cityscapes/local_splits.sha256",
+    "checksum_sha256": "a31cc5370ddee112d2ead5e99ad57857ed301285a6f0b953f261466ec87cfe50",
+    "lock_date": "2026-08-05",
+    "timezone": "Asia/Tokyo",
+    "combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+    "splits": {
+      "train_local": {
+        "source": "official train",
+        "count": 2530,
+        "cities": [
+          "aachen",
+          "bochum",
+          "bremen",
+          "cologne",
+          "dusseldorf",
+          "erfurt",
+          "hamburg",
+          "hanover",
+          "monchengladbach",
+          "strasbourg",
+          "stuttgart",
+          "tubingen",
+          "ulm",
+          "zurich"
+        ],
+        "manifest": "train_local.txt",
+        "sha256": "08fe1239484a1824469ac22d0b4780e9b1cf074e90829da952420f6d554076d7"
+      },
+      "dev_local": {
+        "source": "official train",
+        "count": 445,
+        "cities": [
+          "darmstadt",
+          "jena",
+          "krefeld",
+          "weimar"
+        ],
+        "manifest": "dev_local.txt",
+        "sha256": "778d455b9e01aecec7a0958a349eac8ac1655c6c13485af9b01d0ab779e51f70"
+      },
+      "test_local": {
+        "source": "official val",
+        "count": 500,
+        "cities": [
+          "frankfurt",
+          "lindau",
+          "munster"
+        ],
+        "manifest": "test_local.txt",
+        "sha256": "4eb84d274208c475931d4eb796fec932d567e19e31790f38a458942a447d766c"
+      }
+    }
+  },
+  "model": {
+    "model_name": "mobilenet_v2",
+    "initialization": "shared scratch state; weights=None",
+    "head": "R-ASPP",
+    "feature_taps": {
+      "os4": {
+        "module": "backbone.3",
+        "index": 3,
+        "channels": 24,
+        "stride": 4
+      },
+      "os8": {
+        "module": "backbone.6",
+        "index": 6,
+        "channels": 32,
+        "stride": 8
+      },
+      "os16": {
+        "module": "backbone.17",
+        "index": 17,
+        "channels": 320,
+        "stride": 16
+      },
+      "raspp_input": {
+        "module": "backbone.18",
+        "index": 18,
+        "channels": 1280,
+        "stride": 16
+      }
+    },
+    "total_parameters": 2884883,
+    "backbone_parameters": 2223872,
+    "head_parameters": 661011,
+    "trainable_parameters": 2884883
+  },
+  "loss": {
+    "hard_label_ce": true,
+    "feature_kd": true,
+    "feature_mechanism": "A0 fixed StandardScaler+PCA",
+    "feature_layers": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "lambda_feat": 1.0,
+    "logit_kd": false,
+    "lambda_logit": null,
+    "temperature": null,
+    "warmup_steps": 4000,
+    "warmup_ratio": 0.05,
+    "relation_kd": true,
+    "relation_r1": false,
+    "relation_r2": true,
+    "lambda_r1": 0.0,
+    "lambda_r2": 0.3
+  },
+  "efficiency": null,
+  "hashes": {
+    "student_init_state_sha256": "262c283ee987c402d4e34e3fada682e8addd914c112e6923b25df7fe0bd58c0d",
+    "student_init_file_sha256": "4e4e8eac1cee8aa5f26efdd5e4abfc7bc022eab8ce3cd794a7a80c5b6c02aa13",
+    "student_init_path": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/shared_init/seed_42/student_init.pth",
+    "training_script_sha256": "fa272742ec74ced115d7634d63e454e6c0e05b4462210458d249793f3a4a8f4c",
+    "shared_student_module_sha256": "046cdc63a20240225a51a2ade74973f8632663b44443c7128fced770a230c959",
+    "common_module_sha256": "85fe7ee0e985ae4340fd20d382da81e0d81ada45336c5c750eb816bfc309549f",
+    "dataset_combined_manifest_sha256": "033161572be28a6de295e0c5dfb62d83cd4d0a18b6039321347c58ab28b9d3c2",
+    "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "pca_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "selected_model_state_sha256": "9d17f03e6cfbaf004b7c828d9a188a4f1b37b434293b28e92319a610c08d96fc",
+    "checkpoint_sha256": "61744cef3588ffd753d427633c48949db0ee48c2b599fa1fb980f2e2e0c126fa",
+    "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+    "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+    "relation_spec_sha256": "e690f10f5225a4b5902b5d4a808e1c42e94442b2c4ddec8001a00bda0bf2bc3b",
+    "r1_gate_metrics_sha256": "1ed8e9122993c1615c7626801da470a3213efaa6b75dfac662c4e4c4451b83b2",
+    "r2_training_script_sha256": "fa272742ec74ced115d7634d63e454e6c0e05b4462210458d249793f3a4a8f4c"
+  },
+  "training": {
+    "elapsed_seconds": 13502.546632528305,
+    "optimizer_steps": 80000,
+    "epochs_completed": 253,
+    "steps_per_full_epoch": 317
+  },
+  "software": {
+    "python": "3.10.19",
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "2.0.1",
+    "pillow": "11.1.0",
+    "platform": "Linux-5.15.0-128-generic-x86_64-with-glibc2.35",
+    "cuda_available": true,
+    "cuda_version": "12.4",
+    "cudnn_version": 91700
+  },
+  "artifacts": {
+    "run_dir": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3",
+    "best": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/best_checkpoint.pth",
+    "last": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/last_checkpoint.pth",
+    "config": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/config.json",
+    "feature_taps": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/feature_taps.json",
+    "first_batch_audit": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/first_batch_audit.json",
+    "history": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/training_history.json",
+    "gradient_norms": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/gradient_norms.jsonl",
+    "dev_metrics": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/dev_metrics.json",
+    "dev_confusion": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/dev_confusion_matrix.json",
+    "per_image": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/dev_per_image_confusion.jsonl",
+    "efficiency": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/efficiency.json",
+    "software": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/software.json",
+    "metrics": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R2/seed_42_lambda_0.3/metrics.json"
+  },
+  "test_local_evaluated": false,
+  "teacher": {
+    "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+    "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "features_used": [
+      "os4",
+      "os8",
+      "os16"
+    ],
+    "logits_used": false,
+    "frozen": true
+  },
+  "pca": {
+    "directory": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/pca_shared",
+    "parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+    "projection_parameter_sha256": {
+      "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+      "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+      "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+    },
+    "sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a"
+  },
+  "experiment_group": "R_MobileNetV2_RASPP_server",
+  "artifact_type": "mobilenetv2_cityscapes19_raspp_r2_spatial_relation_kd",
+  "relation": {
+    "enabled": true,
+    "active_relation_types": [
+      "R2_within_image_spatial"
+    ],
+    "relation_feature_source": {
+      "teacher": "native OS=4/8/16 features",
+      "student": "native OS=4/8/16 features",
+      "a0_projected_features_used_for_relation": false
+    },
+    "epsilon": 1e-06,
+    "pool_size": [
+      8,
+      16
+    ],
+    "num_tokens": 128,
+    "nominal_physical_relation_batch_size": 4,
+    "physical_relation_batch_size": 4,
+    "effective_optimizer_batch_size": 8,
+    "accumulated_batches_used_for_relation": false,
+    "tail_batch_policy": "use the actual synchronized micro-batch; never cache, pad, or combine samples across optimizer steps",
+    "mask_policy": "nearest-resized valid mask, adaptive-average valid fraction, valid fraction > 0",
+    "pooling": "adaptive_avg_pool2d(mask * feature) / adaptive_avg_pool2d(mask)",
+    "token_order": "8x16 row-major",
+    "layer_aggregation": "equal mean over native OS=4/8/16 relation losses",
+    "matrix_dtype": "float32",
+    "normalization": "token-row L2 / (norm + epsilon)",
+    "r1": {
+      "enabled": false,
+      "lambda": 0.0
+    },
+    "r2": {
+      "enabled": true,
+      "representation": "per-image 128x128 signed token cosine matrix",
+      "diagonal_policy": "keep for valid tokens",
+      "reduction": "sum over valid token pairs divided by valid-pair count",
+      "lambda": 0.3,
+      "distributed_reduction": "global numerator/global valid-pair denominator"
+    },
+    "relation_warmup_steps": 4000,
+    "relation_warmup_shared_with_feature_kd": true,
+    "estimated_relation_matrix_bytes_per_rank": 786432,
+    "relation_gradient_gate": {
+      "target_relation_to_feature_effective_ratio": [
+        0.05,
+        0.2
+      ],
+      "stop_if_relation_to_ce_exceeds": 2.0,
+      "consecutive_records_before_stop": 3,
+      "lambda_is_fixed_during_formal_training": true
+    }
+  },
+  "relation_spec_sha256": "e690f10f5225a4b5902b5d4a808e1c42e94442b2c4ddec8001a00bda0bf2bc3b",
+  "relation_reference_tests": {
+    "passed": true,
+    "local": {
+      "passed": true,
+      "token_shape": [
+        2,
+        128,
+        3
+      ],
+      "matrix_shape": [
+        2,
+        128,
+        128
+      ],
+      "pool_size": [
+        8,
+        16
+      ],
+      "valid_pair_count": 25345,
+      "valid_token_count": 223,
+      "valid_fraction_min": 0.0,
+      "valid_fraction_max": 1.0,
+      "ignore_invariance": true,
+      "valid_pixel_sensitivity": true,
+      "diagonal_kept": true,
+      "teacher_detached": true,
+      "finite_zero_norm": true,
+      "token_norm_min": 0.0
+    },
+    "distributed": {
+      "passed": true,
+      "world_size": 2,
+      "global_valid_pair_count": 51200,
+      "same_scalar_on_all_ranks": true,
+      "student_gradient_finite": true
+    },
+    "formal_definition": {
+      "pool_size": [
+        8,
+        16
+      ],
+      "matrix_shape": [
+        128,
+        128
+      ],
+      "diagonal": "kept for valid tokens",
+      "reduction": "valid-pair masked sum / valid-pair count",
+      "epsilon": 1e-06,
+      "teacher_target_detached": true
+    }
+  },
+  "r0_gate": {
+    "required_for_formal_run": true,
+    "checked": true,
+    "passed": true,
+    "failures": [],
+    "metrics_path": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R0/seed_42/metrics.json",
+    "metrics_sha256": "119b1dffe9598668e64928cfe2efe27666bd5e4618307248e7efe5fc0f804788",
+    "r0_training_script_sha256": "419c2b2c0e324e05c66bf83d4d9205cc948d17060486845de835182fe0e3f5a9",
+    "r0_best_dev_mIoU": 0.522120045088882,
+    "r0_selected_model_state_sha256": "b263af6d629bd61e1f60b8037c50b0df3df80849de9005c394675b8346ddf48e"
+  },
+  "r1_gate": {
+    "required_for_formal_run": true,
+    "checked": true,
+    "passed": true,
+    "failures": [],
+    "metrics_path": "/home/ubuntu/work/DINOv3_0804/result/R_MobileNetV2_RASPP_server/R1/seed_42/metrics.json",
+    "metrics_sha256": "1ed8e9122993c1615c7626801da470a3213efaa6b75dfac662c4e4c4451b83b2",
+    "r1_best_dev_mIoU": 0.5289685477985632,
+    "effect_gate_passed": true,
+    "r1_training_script_sha256": "b98200b7490aeae971fef42ab0ca2778f75fb3a9f10058a13494c05f5ca8b35b"
+  },
+  "r2_first_batch_base_equivalence": {
+    "passed": true,
+    "world_size": 2,
+    "comparison": "R1 CE+feature base versus locked K1 seed=42",
+    "per_rank": [
+      {
+        "rank": 0,
+        "passed": true,
+        "comparison": "R1 CE+feature base fields versus locked K1 seed=42",
+        "reference": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K1/seed_42/first_batch_audit.json",
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-06,
+        "exact_mismatches": {},
+        "scalar_mismatches": {},
+        "feature_layer_mismatches": {}
+      },
+      {
+        "rank": 1,
+        "passed": true,
+        "comparison": "R1 CE+feature base fields versus locked K1 seed=42",
+        "reference": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K1/seed_42/first_batch_audit.json",
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-06,
+        "exact_mismatches": {},
+        "scalar_mismatches": {},
+        "feature_layer_mismatches": {}
+      }
+    ]
+  },
+  "r2_vs_r0": {
+    "R2_mIoU": 0.5396890362838399,
+    "R0_mIoU": 0.522120045088882,
+    "delta_R2_minus_R0": 0.017568991194957917
+  },
+  "r2_vs_r1": {
+    "R2_mIoU": 0.5396890362838399,
+    "R1_mIoU": 0.5289685477985632,
+    "delta_R2_minus_R1": 0.010720488485276736
+  },
+  "physical_relation_batch_size": 4,
+  "effective_optimizer_batch_size": 8,
+  "gradient_gate": {
+    "records": 161,
+    "fixed_audit_steps_expected": [
+      1,
+      4000,
+      20000,
+      40000,
+      60000,
+      80000
+    ],
+    "fixed_audit_steps_observed": [
+      1,
+      4000,
+      20000,
+      40000,
+      60000,
+      80000
+    ],
+    "target_ratio_range": [
+      0.05,
+      0.2
+    ],
+    "relation_to_feature_effective_ratio_min": 0.032478995269357436,
+    "relation_to_feature_effective_ratio_max": 0.1086111462437647,
+    "passed_target_at_any_record": true,
+    "relation_to_ce_effective_ratio_max": 0.10246444606731608,
+    "three_consecutive_relation_gt_2x_ce": false
+  }
+}

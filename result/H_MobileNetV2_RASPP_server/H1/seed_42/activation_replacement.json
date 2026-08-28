@@ -1,0 +1,334 @@
+{
+  "name": "Hardswish",
+  "implementation": "torch.nn.Hardswish(inplace=True)",
+  "formula": "h-swish(x)=x*ReLU6(x+3)/6",
+  "placement_scope": "all inverted-residual expansion/depthwise activations in backbone blocks 1..17",
+  "eligible_blocks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "eligible_paths": [
+    {
+      "path": "backbone.1.conv.0.2",
+      "block_index": 1,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.2.conv.0.2",
+      "block_index": 2,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.2.conv.1.2",
+      "block_index": 2,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.3.conv.0.2",
+      "block_index": 3,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.3.conv.1.2",
+      "block_index": 3,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.4.conv.0.2",
+      "block_index": 4,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.4.conv.1.2",
+      "block_index": 4,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.5.conv.0.2",
+      "block_index": 5,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.5.conv.1.2",
+      "block_index": 5,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.6.conv.0.2",
+      "block_index": 6,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.6.conv.1.2",
+      "block_index": 6,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.7.conv.0.2",
+      "block_index": 7,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.7.conv.1.2",
+      "block_index": 7,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.8.conv.0.2",
+      "block_index": 8,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.8.conv.1.2",
+      "block_index": 8,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.9.conv.0.2",
+      "block_index": 9,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.9.conv.1.2",
+      "block_index": 9,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.10.conv.0.2",
+      "block_index": 10,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.10.conv.1.2",
+      "block_index": 10,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.11.conv.0.2",
+      "block_index": 11,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.11.conv.1.2",
+      "block_index": 11,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.12.conv.0.2",
+      "block_index": 12,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.12.conv.1.2",
+      "block_index": 12,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.13.conv.0.2",
+      "block_index": 13,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.13.conv.1.2",
+      "block_index": 13,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.14.conv.0.2",
+      "block_index": 14,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.14.conv.1.2",
+      "block_index": 14,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.15.conv.0.2",
+      "block_index": 15,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.15.conv.1.2",
+      "block_index": 15,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.16.conv.0.2",
+      "block_index": 16,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.16.conv.1.2",
+      "block_index": 16,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.17.conv.0.2",
+      "block_index": 17,
+      "path_type": "expansion",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    },
+    {
+      "path": "backbone.17.conv.1.2",
+      "block_index": 17,
+      "path_type": "depthwise",
+      "exists_when_built": true,
+      "original_activation": "ReLU6",
+      "activation": "Hardswish"
+    }
+  ],
+  "replaced_module_paths": [
+    "backbone.1.conv.0.2",
+    "backbone.2.conv.0.2",
+    "backbone.2.conv.1.2",
+    "backbone.3.conv.0.2",
+    "backbone.3.conv.1.2",
+    "backbone.4.conv.0.2",
+    "backbone.4.conv.1.2",
+    "backbone.5.conv.0.2",
+    "backbone.5.conv.1.2",
+    "backbone.6.conv.0.2",
+    "backbone.6.conv.1.2",
+    "backbone.7.conv.0.2",
+    "backbone.7.conv.1.2",
+    "backbone.8.conv.0.2",
+    "backbone.8.conv.1.2",
+    "backbone.9.conv.0.2",
+    "backbone.9.conv.1.2",
+    "backbone.10.conv.0.2",
+    "backbone.10.conv.1.2",
+    "backbone.11.conv.0.2",
+    "backbone.11.conv.1.2",
+    "backbone.12.conv.0.2",
+    "backbone.12.conv.1.2",
+    "backbone.13.conv.0.2",
+    "backbone.13.conv.1.2",
+    "backbone.14.conv.0.2",
+    "backbone.14.conv.1.2",
+    "backbone.15.conv.0.2",
+    "backbone.15.conv.1.2",
+    "backbone.16.conv.0.2",
+    "backbone.16.conv.1.2",
+    "backbone.17.conv.0.2",
+    "backbone.17.conv.1.2"
+  ],
+  "replacement_count": 33,
+  "stem_path": "backbone.0.2",
+  "final_path": "backbone.18.2",
+  "head_path": "head.project.2",
+  "linear_bottleneck_activation": false,
+  "experiment": "H1",
+  "artifact_type": "activation_replacement_audit",
+  "activation_spec_sha256": "4f72924afb7c366adee01dd2df3d40ddcdb26a36fd43c0c4f090858527bbb5bd"
+}

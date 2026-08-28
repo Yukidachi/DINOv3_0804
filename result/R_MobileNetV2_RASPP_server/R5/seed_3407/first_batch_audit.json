@@ -1,0 +1,482 @@
+{
+  "experiment": "R5",
+  "seed": 3407,
+  "student_init_state_sha256": "49f314ec99f5496ea5664c0b27e87fd34054234f4eb53277140ab3eed9d74d43",
+  "world_size": 2,
+  "per_rank": [
+    {
+      "rank": 0,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/ulm/ulm_000005_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/bremen/bremen_000130_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "5abe3d1482cd8769376406e135229091a64c78e6d0e7e7d2629a4b4b390c2d93",
+      "target_tensor_sha256": "a5d95cdbbd1e69bdefb872686cd0efc09500d869b8aa41484b8a927220f5d33c",
+      "valid_pixels": 939880,
+      "student_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "teacher_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "student_feature_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "teacher_feature_shapes": {
+        "os4": [
+          2,
+          96,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          192,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          768,
+          32,
+          64
+        ]
+      },
+      "projected_teacher_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "feature_loss_by_layer": {
+        "os4": 4.204701900482178,
+        "os8": 5.401092529296875,
+        "os16": 3.385960817337036
+      },
+      "relation_r2_loss_by_layer": {
+        "os4": 0.8984631299972534,
+        "os8": 0.9965901970863342,
+        "os16": 0.1672152280807495
+      },
+      "ce_loss": 2.930938243865967,
+      "feature_loss": 4.330585479736328,
+      "relation_r2_loss": 0.6874229311943054,
+      "logit_loss": 20.886842727661133,
+      "total_loss": 2.934683322906494,
+      "relation": {
+        "physical_batch_size": 4,
+        "per_rank_batch_sizes": [
+          2,
+          2
+        ],
+        "valid_token_count": 502,
+        "valid_pair_count": 62934,
+        "valid_token_count_by_layer": {
+          "os4": 503,
+          "os8": 501,
+          "os16": 501
+        },
+        "valid_pair_count_by_layer": {
+          "os4": 63265,
+          "os8": 62769,
+          "os16": 62769
+        },
+        "layers": {
+          "os4": {
+            "student_token_shape": [
+              2,
+              128,
+              24
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              96
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 249,
+            "teacher_valid_token_count_local": 249,
+            "valid_token_count_global": 503,
+            "valid_pair_count_local": 31005,
+            "valid_pair_count_global": 63265,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.8984631299972534
+          },
+          "os8": {
+            "student_token_shape": [
+              2,
+              128,
+              32
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              192
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 247,
+            "teacher_valid_token_count_local": 247,
+            "valid_token_count_global": 501,
+            "valid_pair_count_local": 30509,
+            "valid_pair_count_global": 62769,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.9965901970863342
+          },
+          "os16": {
+            "student_token_shape": [
+              2,
+              128,
+              320
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              768
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 247,
+            "teacher_valid_token_count_local": 247,
+            "valid_token_count_global": 501,
+            "valid_pair_count_local": 30509,
+            "valid_pair_count_global": 62769,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.1672152280807495
+          }
+        }
+      },
+      "temperature": 4.0,
+      "lambda_feat": 1.0,
+      "lambda_r2": 0.3,
+      "lambda_logit": 0.5,
+      "warmup_weight": 0.00025,
+      "teacher_backbone_forward_count": 1,
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "pca_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "projection_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "k1_feature_contract_source_sha256": "9b9d836bfe8befebfdbe2197d52e9c5864917a8a6ada0c72dcb506504bc9bff5",
+      "k2_masked_kl_source_sha256": "555cd0073d1baa71c4a690e1b1ee57b2625632a3eee4f88ff4ccc9be9f4e7b87",
+      "r2_relation_source_sha256": "3fb44f34c24e5e6a499005085d40de7719bd9b6cf8c67be3ecdc07c2f3f306c5",
+      "r5_training_script_sha256": "f53d4ba48393a347bf5a05332a0f6db832804af44400647aac2ffcca83cf080b",
+      "relation_spec_sha256": "a6f6f7202f0e8b4fa1f754f91e1e72e13340440e2e8d9e286483f2858ce9714d",
+      "r5_controlled_first_batch_equivalence": {
+        "passed": true,
+        "comparison": "R5 CE/feature/logit versus K3 and CE/feature/R2 versus R2 on the same matched-seed first micro-batch",
+        "absolute_tolerance": 1e-06,
+        "mismatches": []
+      }
+    },
+    {
+      "rank": 1,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/dusseldorf/dusseldorf_000057_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/tubingen/tubingen_000032_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "179d81336cd3caa0bf44af3c16c5c017945ece8d3770be854b4072bc5ae1d0dc",
+      "target_tensor_sha256": "eed0e3643902ec4fa0d121d91c467310b4b4b381358e37eaf3eca8429279de9a",
+      "valid_pixels": 1018275,
+      "student_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "teacher_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "student_feature_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "teacher_feature_shapes": {
+        "os4": [
+          2,
+          96,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          192,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          768,
+          32,
+          64
+        ]
+      },
+      "projected_teacher_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "feature_loss_by_layer": {
+        "os4": 4.001710414886475,
+        "os8": 5.224839210510254,
+        "os16": 3.3748695850372314
+      },
+      "relation_r2_loss_by_layer": {
+        "os4": 0.8984631299972534,
+        "os8": 0.9965901970863342,
+        "os16": 0.1672152280807495
+      },
+      "ce_loss": 2.9293923377990723,
+      "feature_loss": 4.200472831726074,
+      "relation_r2_loss": 0.6874229311943054,
+      "logit_loss": 19.79953384399414,
+      "total_loss": 2.932968854904175,
+      "relation": {
+        "physical_batch_size": 4,
+        "per_rank_batch_sizes": [
+          2,
+          2
+        ],
+        "valid_token_count": 502,
+        "valid_pair_count": 62934,
+        "valid_token_count_by_layer": {
+          "os4": 503,
+          "os8": 501,
+          "os16": 501
+        },
+        "valid_pair_count_by_layer": {
+          "os4": 63265,
+          "os8": 62769,
+          "os16": 62769
+        },
+        "layers": {
+          "os4": {
+            "student_token_shape": [
+              2,
+              128,
+              24
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              96
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 254,
+            "teacher_valid_token_count_local": 254,
+            "valid_token_count_global": 503,
+            "valid_pair_count_local": 32260,
+            "valid_pair_count_global": 63265,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.8984631299972534
+          },
+          "os8": {
+            "student_token_shape": [
+              2,
+              128,
+              32
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              192
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 254,
+            "teacher_valid_token_count_local": 254,
+            "valid_token_count_global": 501,
+            "valid_pair_count_local": 32260,
+            "valid_pair_count_global": 62769,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.9965901970863342
+          },
+          "os16": {
+            "student_token_shape": [
+              2,
+              128,
+              320
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              768
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 254,
+            "teacher_valid_token_count_local": 254,
+            "valid_token_count_global": 501,
+            "valid_pair_count_local": 32260,
+            "valid_pair_count_global": 62769,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.1672152280807495
+          }
+        }
+      },
+      "temperature": 4.0,
+      "lambda_feat": 1.0,
+      "lambda_r2": 0.3,
+      "lambda_logit": 0.5,
+      "warmup_weight": 0.00025,
+      "teacher_backbone_forward_count": 1,
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "pca_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "projection_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "k1_feature_contract_source_sha256": "9b9d836bfe8befebfdbe2197d52e9c5864917a8a6ada0c72dcb506504bc9bff5",
+      "k2_masked_kl_source_sha256": "555cd0073d1baa71c4a690e1b1ee57b2625632a3eee4f88ff4ccc9be9f4e7b87",
+      "r2_relation_source_sha256": "3fb44f34c24e5e6a499005085d40de7719bd9b6cf8c67be3ecdc07c2f3f306c5",
+      "r5_training_script_sha256": "f53d4ba48393a347bf5a05332a0f6db832804af44400647aac2ffcca83cf080b",
+      "relation_spec_sha256": "a6f6f7202f0e8b4fa1f754f91e1e72e13340440e2e8d9e286483f2858ce9714d",
+      "r5_controlled_first_batch_equivalence": {
+        "passed": true,
+        "comparison": "R5 CE/feature/logit versus K3 and CE/feature/R2 versus R2 on the same matched-seed first micro-batch",
+        "absolute_tolerance": 1e-06,
+        "mismatches": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,600 @@
+{
+  "experiment": "R2",
+  "seed": 3407,
+  "student_init_state_sha256": "49f314ec99f5496ea5664c0b27e87fd34054234f4eb53277140ab3eed9d74d43",
+  "world_size": 2,
+  "per_rank": [
+    {
+      "rank": 0,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/ulm/ulm_000005_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/bremen/bremen_000130_000019_leftImg8bit.png"
+      ],
+      "relation_global_path_order_by_rank": [
+        [
+          "leftImg8bit/train_local/ulm/ulm_000005_000019_leftImg8bit.png",
+          "leftImg8bit/train_local/bremen/bremen_000130_000019_leftImg8bit.png"
+        ],
+        [
+          "leftImg8bit/train_local/dusseldorf/dusseldorf_000057_000019_leftImg8bit.png",
+          "leftImg8bit/train_local/tubingen/tubingen_000032_000019_leftImg8bit.png"
+        ]
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "5abe3d1482cd8769376406e135229091a64c78e6d0e7e7d2629a4b4b390c2d93",
+      "target_tensor_sha256": "a5d95cdbbd1e69bdefb872686cd0efc09500d869b8aa41484b8a927220f5d33c",
+      "valid_pixels": 939880,
+      "student_feature_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "teacher_feature_shapes": {
+        "os4": [
+          2,
+          96,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          192,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          768,
+          32,
+          64
+        ]
+      },
+      "projected_teacher_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "feature_loss_by_layer": {
+        "os4": 4.204701900482178,
+        "os8": 5.401092529296875,
+        "os16": 3.385960817337036
+      },
+      "feature_loss": 4.330585479736328,
+      "ce_loss": 2.930938482284546,
+      "relation_loss_weighted": 5.1556722610257566e-05,
+      "relation": {
+        "physical_batch_size": 4,
+        "per_rank_batch_sizes": [
+          2,
+          2
+        ],
+        "valid_token_count": 502,
+        "valid_pair_count": 62934,
+        "valid_token_count_by_layer": {
+          "os4": 503,
+          "os8": 501,
+          "os16": 501
+        },
+        "valid_pair_count_by_layer": {
+          "os4": 63265,
+          "os8": 62769,
+          "os16": 62769
+        },
+        "layers": {
+          "os4": {
+            "student_token_shape": [
+              2,
+              128,
+              24
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              96
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 249,
+            "teacher_valid_token_count_local": 249,
+            "valid_token_count_global": 503,
+            "valid_pair_count_local": 31005,
+            "valid_pair_count_global": 63265,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.8984631299972534
+          },
+          "os8": {
+            "student_token_shape": [
+              2,
+              128,
+              32
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              192
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 247,
+            "teacher_valid_token_count_local": 247,
+            "valid_token_count_global": 501,
+            "valid_pair_count_local": 30509,
+            "valid_pair_count_global": 62769,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.9965901970863342
+          },
+          "os16": {
+            "student_token_shape": [
+              2,
+              128,
+              320
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              768
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 247,
+            "teacher_valid_token_count_local": 247,
+            "valid_token_count_global": 501,
+            "valid_pair_count_local": 30509,
+            "valid_pair_count_global": 62769,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.1672152280807495
+          }
+        }
+      },
+      "warmup_weight": 0.00025,
+      "total_loss": 2.932072639465332,
+      "relation_spec_sha256": "e690f10f5225a4b5902b5d4a808e1c42e94442b2c4ddec8001a00bda0bf2bc3b",
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "pca_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "projection_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "lambda_r2": 0.3,
+      "relation_r2_loss": 0.6874229311943054,
+      "relation_r2_loss_by_layer": {
+        "os4": 0.8984631299972534,
+        "os8": 0.9965901970863342,
+        "os16": 0.1672152280807495
+      },
+      "r2_base_k1_equivalence": {
+        "rank": 0,
+        "passed": true,
+        "comparison": "R2 independent first-batch invariant fields versus locked K1; seed-specific data and loss fields are informational",
+        "reference": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K1/seed_42/first_batch_audit.json",
+        "invariant_mismatches": {},
+        "ignored_seed_specific_mismatches": {
+          "paths": {
+            "actual": [
+              "leftImg8bit/train_local/ulm/ulm_000005_000019_leftImg8bit.png",
+              "leftImg8bit/train_local/bremen/bremen_000130_000019_leftImg8bit.png"
+            ],
+            "reference_seed_42": [
+              "leftImg8bit/train_local/erfurt/erfurt_000087_000019_leftImg8bit.png",
+              "leftImg8bit/train_local/stuttgart/stuttgart_000140_000019_leftImg8bit.png"
+            ]
+          },
+          "image_tensor_sha256": {
+            "actual": "5abe3d1482cd8769376406e135229091a64c78e6d0e7e7d2629a4b4b390c2d93",
+            "reference_seed_42": "80eb55d796d598920f31e0354b5be1790e85e49784d2be8691cbcdbc7b1e864c"
+          },
+          "target_tensor_sha256": {
+            "actual": "a5d95cdbbd1e69bdefb872686cd0efc09500d869b8aa41484b8a927220f5d33c",
+            "reference_seed_42": "ac0a7e33a6753973c5f52a09755f04bc3efb0880326ef5837e61431da0d415ae"
+          },
+          "valid_pixels": {
+            "actual": 939880,
+            "reference_seed_42": 981546
+          },
+          "feature_loss_by_layer": {
+            "actual": {
+              "os4": 4.204701900482178,
+              "os8": 5.401092529296875,
+              "os16": 3.385960817337036
+            },
+            "reference_seed_42": {
+              "os4": 4.128093242645264,
+              "os8": 5.570873260498047,
+              "os16": 3.517019271850586
+            }
+          },
+          "feature_loss": {
+            "actual": 4.330585479736328,
+            "reference_seed_42": 4.405328750610352
+          },
+          "ce_loss": {
+            "actual": 2.930938482284546,
+            "reference_seed_42": 2.966360330581665
+          }
+        },
+        "ignored_seed_specific_fields": [
+          "paths",
+          "image_tensor_sha256",
+          "target_tensor_sha256",
+          "valid_pixels",
+          "feature_loss_by_layer",
+          "feature_loss",
+          "ce_loss"
+        ],
+        "checked_invariant_fields": [
+          "image_tensor_shape",
+          "target_tensor_shape",
+          "student_feature_shapes",
+          "teacher_feature_shapes",
+          "projected_teacher_shapes",
+          "teacher_checkpoint_sha256",
+          "k0_shared_training_runner_sha256",
+          "pca_parameter_record_sha256",
+          "pca_parameter_sha256",
+          "projection_parameter_sha256",
+          "pca_sampling_manifest_sha256",
+          "warmup_weight"
+        ]
+      },
+      "relation_type": "R2_within_image_spatial"
+    },
+    {
+      "rank": 1,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/dusseldorf/dusseldorf_000057_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/tubingen/tubingen_000032_000019_leftImg8bit.png"
+      ],
+      "relation_global_path_order_by_rank": [
+        [
+          "leftImg8bit/train_local/ulm/ulm_000005_000019_leftImg8bit.png",
+          "leftImg8bit/train_local/bremen/bremen_000130_000019_leftImg8bit.png"
+        ],
+        [
+          "leftImg8bit/train_local/dusseldorf/dusseldorf_000057_000019_leftImg8bit.png",
+          "leftImg8bit/train_local/tubingen/tubingen_000032_000019_leftImg8bit.png"
+        ]
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "179d81336cd3caa0bf44af3c16c5c017945ece8d3770be854b4072bc5ae1d0dc",
+      "target_tensor_sha256": "eed0e3643902ec4fa0d121d91c467310b4b4b381358e37eaf3eca8429279de9a",
+      "valid_pixels": 1018275,
+      "student_feature_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "teacher_feature_shapes": {
+        "os4": [
+          2,
+          96,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          192,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          768,
+          32,
+          64
+        ]
+      },
+      "projected_teacher_shapes": {
+        "os4": [
+          2,
+          24,
+          128,
+          256
+        ],
+        "os8": [
+          2,
+          32,
+          64,
+          128
+        ],
+        "os16": [
+          2,
+          320,
+          32,
+          64
+        ]
+      },
+      "feature_loss_by_layer": {
+        "os4": 4.001710414886475,
+        "os8": 5.224839210510254,
+        "os16": 3.3748695850372314
+      },
+      "feature_loss": 4.200472831726074,
+      "ce_loss": 2.9293923377990723,
+      "relation_loss_weighted": 5.1556722610257566e-05,
+      "relation": {
+        "physical_batch_size": 4,
+        "per_rank_batch_sizes": [
+          2,
+          2
+        ],
+        "valid_token_count": 502,
+        "valid_pair_count": 62934,
+        "valid_token_count_by_layer": {
+          "os4": 503,
+          "os8": 501,
+          "os16": 501
+        },
+        "valid_pair_count_by_layer": {
+          "os4": 63265,
+          "os8": 62769,
+          "os16": 62769
+        },
+        "layers": {
+          "os4": {
+            "student_token_shape": [
+              2,
+              128,
+              24
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              96
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 254,
+            "teacher_valid_token_count_local": 254,
+            "valid_token_count_global": 503,
+            "valid_pair_count_local": 32260,
+            "valid_pair_count_global": 63265,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.8984631299972534
+          },
+          "os8": {
+            "student_token_shape": [
+              2,
+              128,
+              32
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              192
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 254,
+            "teacher_valid_token_count_local": 254,
+            "valid_token_count_global": 501,
+            "valid_pair_count_local": 32260,
+            "valid_pair_count_global": 62769,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.9965901970863342
+          },
+          "os16": {
+            "student_token_shape": [
+              2,
+              128,
+              320
+            ],
+            "teacher_token_shape": [
+              2,
+              128,
+              768
+            ],
+            "matrix_shape": [
+              2,
+              128,
+              128
+            ],
+            "student_valid_token_count_local": 254,
+            "teacher_valid_token_count_local": 254,
+            "valid_token_count_global": 501,
+            "valid_pair_count_local": 32260,
+            "valid_pair_count_global": 62769,
+            "valid_fraction_min": 0.0,
+            "valid_fraction_max": 1.0,
+            "loss": 0.1672152280807495
+          }
+        }
+      },
+      "warmup_weight": 0.00025,
+      "total_loss": 2.9304940700531006,
+      "relation_spec_sha256": "e690f10f5225a4b5902b5d4a808e1c42e94442b2c4ddec8001a00bda0bf2bc3b",
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_record_sha256": "990a3e0645a522055f024d4fd7d22cad2624f057bff0ab88dd377d7d49fa345c",
+      "pca_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "projection_parameter_sha256": {
+        "os4": "6791d42f648a4a44a420a85c8eddde1f26e5ecade3754dd9fd0b5bd471be5e19",
+        "os8": "413c5044c74605d50132c02c5ba489e1005f8796fc9fb1763426f5607a4ad712",
+        "os16": "f5b156e181d3250dccdd750a49dec5d2262c71058b26eedd7693df0a376b8840"
+      },
+      "pca_sampling_manifest_sha256": "adb72af079de7e1e172cca631761cd233eccfc31249831dc347aedbb3c234e6a",
+      "lambda_r2": 0.3,
+      "relation_r2_loss": 0.6874229311943054,
+      "relation_r2_loss_by_layer": {
+        "os4": 0.8984631299972534,
+        "os8": 0.9965901970863342,
+        "os16": 0.1672152280807495
+      },
+      "r2_base_k1_equivalence": {
+        "rank": 1,
+        "passed": true,
+        "comparison": "R2 independent first-batch invariant fields versus locked K1; seed-specific data and loss fields are informational",
+        "reference": "/home/ubuntu/work/DINOv3_0804/result/K_MobileNetV2_RASPP_server/K1/seed_42/first_batch_audit.json",
+        "invariant_mismatches": {},
+        "ignored_seed_specific_mismatches": {
+          "paths": {
+            "actual": [
+              "leftImg8bit/train_local/dusseldorf/dusseldorf_000057_000019_leftImg8bit.png",
+              "leftImg8bit/train_local/tubingen/tubingen_000032_000019_leftImg8bit.png"
+            ],
+            "reference_seed_42": [
+              "leftImg8bit/train_local/zurich/zurich_000053_000019_leftImg8bit.png",
+              "leftImg8bit/train_local/bremen/bremen_000011_000019_leftImg8bit.png"
+            ]
+          },
+          "image_tensor_sha256": {
+            "actual": "179d81336cd3caa0bf44af3c16c5c017945ece8d3770be854b4072bc5ae1d0dc",
+            "reference_seed_42": "4aadafc213958b214bbeaeebc29d3c1172ad33c9ce1f65eafc09c2ea86f8d253"
+          },
+          "target_tensor_sha256": {
+            "actual": "eed0e3643902ec4fa0d121d91c467310b4b4b381358e37eaf3eca8429279de9a",
+            "reference_seed_42": "cc2c68b70c0f200c98c5e6dc71aaaf6b79ec23cc90c9ea260d1b2cd7518b874d"
+          },
+          "valid_pixels": {
+            "actual": 1018275,
+            "reference_seed_42": 977105
+          },
+          "feature_loss_by_layer": {
+            "actual": {
+              "os4": 4.001710414886475,
+              "os8": 5.224839210510254,
+              "os16": 3.3748695850372314
+            },
+            "reference_seed_42": {
+              "os4": 4.0785627365112305,
+              "os8": 5.419608116149902,
+              "os16": 3.936023473739624
+            }
+          },
+          "feature_loss": {
+            "actual": 4.200472831726074,
+            "reference_seed_42": 4.478065013885498
+          },
+          "ce_loss": {
+            "actual": 2.9293923377990723,
+            "reference_seed_42": 2.9630680084228516
+          }
+        },
+        "ignored_seed_specific_fields": [
+          "paths",
+          "image_tensor_sha256",
+          "target_tensor_sha256",
+          "valid_pixels",
+          "feature_loss_by_layer",
+          "feature_loss",
+          "ce_loss"
+        ],
+        "checked_invariant_fields": [
+          "image_tensor_shape",
+          "target_tensor_shape",
+          "student_feature_shapes",
+          "teacher_feature_shapes",
+          "projected_teacher_shapes",
+          "teacher_checkpoint_sha256",
+          "k0_shared_training_runner_sha256",
+          "pca_parameter_record_sha256",
+          "pca_parameter_sha256",
+          "projection_parameter_sha256",
+          "pca_sampling_manifest_sha256",
+          "warmup_weight"
+        ]
+      },
+      "relation_type": "R2_within_image_spatial"
+    }
+  ]
+}

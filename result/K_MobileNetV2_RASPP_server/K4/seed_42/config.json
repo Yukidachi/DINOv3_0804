@@ -1,0 +1,113 @@
+{
+  "experiment": "K4",
+  "experiment_group": "K_MobileNetV2_RASPP_server",
+  "server_entry_point": "/home/ubuntu/work/DINOv3_0804/dino_k4_server.py",
+  "seed": 42,
+  "formal_seeds": [
+    42,
+    3407,
+    260805
+  ],
+  "world_size": 2,
+  "batch_size_per_gpu": 2,
+  "global_batch_size": 8,
+  "accumulation_steps_per_gpu": 2,
+  "max_optimizer_steps": 80000,
+  "eval_batch_size": 1,
+  "num_workers_per_gpu": 8,
+  "multiprocessing_context": "spawn",
+  "pin_memory": false,
+  "persistent_workers": true,
+  "prefetch_factor": 2,
+  "optimizer": "SGD",
+  "learning_rate": 0.01,
+  "momentum": 0.9,
+  "weight_decay": 0.0001,
+  "scheduler": "polynomial",
+  "poly_power": 0.9,
+  "min_lr_ratio": 0.01,
+  "eval_every_steps": 5000,
+  "eval_policy": "first epoch boundary at or after each target step",
+  "amp": true,
+  "deterministic": true,
+  "crop_size": [
+    512,
+    1024
+  ],
+  "random_scale": [
+    0.5,
+    2.0
+  ],
+  "horizontal_flip_probability": 0.5,
+  "eval_resolution": [
+    1024,
+    2048
+  ],
+  "head_channels": 256,
+  "dropout": 0.1,
+  "num_classes": 19,
+  "ignore_index": 255,
+  "output_stride": 16,
+  "initialization": "same-seed locked A0 best probe checkpoint (backbone+head)",
+  "backbone_frozen": false,
+  "loss": {
+    "hard_label_ce": true,
+    "feature_kd": false,
+    "logit_kd": true,
+    "logit_mechanism": "full-resolution masked pixel KL",
+    "logit_reduction": "mean over valid pixels after sum over 19 classes",
+    "lambda_feat": null,
+    "lambda_logit": 0.5,
+    "temperature": 4.0,
+    "auxiliary_warmup_steps": 4000,
+    "auxiliary_warmup_ratio": 0.05,
+    "warmup_step_unit": "optimizer_step",
+    "ignore_index_masked": true,
+    "teacher_logits_detached": true,
+    "temperature_squared_factor": true
+  },
+  "teacher": {
+    "enabled": true,
+    "type": "T1 DINOv3 ConvNeXt-T + R-ASPP, full-resolution logits",
+    "checkpoint": "/home/ubuntu/work/DINOv3_0804/result/T1_DINOv3_RASPP/seed_3407/t1_dinov3_raspp_teacher.pth",
+    "checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+    "frozen": true,
+    "wrapped_in_ddp": false,
+    "features_used_for_loss": [],
+    "logits_used": true,
+    "logits_resolution": "full input resolution"
+  },
+  "pca": {
+    "enabled_in_current_training": false,
+    "feature_kd": false,
+    "initialization_provenance": "A0 fixed StandardScaler+PCA pretraining",
+    "online_projection": null,
+    "trainable": false
+  },
+  "test_local_evaluated": false,
+  "benchmark": false,
+  "benchmark_resolution": [
+    1024,
+    2048
+  ],
+  "distributed_backend": "nccl",
+  "screening_seed": 42,
+  "rank_seed_policy": "A0-FT compatible: global seed = seed + rank",
+  "source_probe": {
+    "source_experiment": "A0",
+    "source_probe_seed": 42,
+    "source_probe_checkpoint": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/A0/seed_42/a0_probe_mobilenetv2_raspp_best.pth",
+    "source_probe_checkpoint_sha256": "9abb4fcb422cfb7f31811caa433aa62de66806ae055d107b9adc3b08aad0e95c",
+    "source_probe_model_state_sha256": "f7d306ee5420b6c6fd6f445402a4c642c2e1d279d7c53567a7ca97aae9635756",
+    "source_probe_backbone_state_sha256": "0a37b21577e34246a40804842a7cb4582c2681574288072d198821f467a1fe74",
+    "source_probe_artifact_type": "a0_probe_mobilenetv2_raspp_fixed_pca"
+  },
+  "knowledge_distillation": true,
+  "registered_analysis": {
+    "requires_all_three_seeds": true,
+    "delta_s": "K4_s - A0-FT_s",
+    "interaction_s": "(K4_s - A0-FT_s) - (K2_s - K0_s)",
+    "measurable_interaction_rule": "all three interaction_s values have the same sign and abs(mean(interaction_s)) > 0.00425",
+    "reference_k_group_seed_std": 0.00425
+  }
+}

@@ -1,6 +1,6 @@
 # Cityscapes 知识蒸馏实验详单
 
-版本：2026-08-15
+版本：2026-08-24
 
 本表是执行清单；实验依据与结果解释见根目录 `知识蒸馏实验分析与后续实验方向.md`。
 
@@ -62,15 +62,17 @@
 | 关系 | R2 | 空间关系 | R0+池化至 8×16 后的 `128×128` token 关系 | seed 42；重点报告边界/小目标和显存 |
 | 关系 | R3 | 两种关系 | R0+R1+R2；各自 `lambda_rel=0.03` 起步并 warm-up | seed 42；关系梯度为 feature 梯度的 5%–20% |
 | 关系 | R4 | relation-only | CE+关系项，移除逐点 feature MSE | 1 seed，仅诊断欠约束，不作主候选 |
+| 关系 | R5 | feature+relation+logits | 在 R2（`lambda_r2=0.3`）基础上加入 K 组已锁定的 pixel-logit KD（`T=4`、`lambda_logit=0.5`、前 4000 step warm-up）；保留 `lambda_feat=1.0`，不加入 R1 | 首轮 seed 42；比较 R5-R2 的 logits 增量和 R5-K3 的空间关系增量；先通过 mIoU、paired-bootstrap 和梯度门后再扩 3 seed |
 | 分布 | D0 | K1 复现 | 无新增分布项 | seed 42；分布实验锚点 |
 | 分布 | D1 | CORAL | K1+共同瓶颈均值/协方差对齐 | seed 42；有效才扩 3 seed |
+| 分布评估 | D1-PB | D1 paired-bootstrap | 不训练模型；对 D1 与同 seed K1 的 445 张逐图 confusion matrix 做配对重采样，评估 mIoU 差值不确定性 | 使用 `seed=42/3407/260805`；每个 seed 100,000 次重采样；输出差值分布、95% CI 和汇总 JSON |
 | 分布 | D2 | MMD/SWD | K1+MMD 或 SWD，首轮只选一种 | seed 42；记录带宽或投影数 |
 | 分布 | D3 | 对抗辅助 | K1+池化瓶颈小判别器，必须保留 feature MSE | 3 seed；若方差增大或判别器饱和则停止 |
 | 分布 | D4 | adversarial-only | CE+对抗项，移除 feature MSE | 1 seed，仅诊断，不作主候选 |
-| 激活 | H0 | V2 ReLU6 | 在最佳 K/R 协议上保留原激活 | seed 42；mIoU 与 FP32/INT8 延迟 |
-| 激活 | H1 | V2 Hardswish | 相对 H0 只换 inverted residual 内激活 | seed 42；mIoU 与 FP32/INT8 延迟 |
-| 激活 | H2 | V2 SiLU | 相对 H0 只换激活；linear bottleneck 仍无激活 | seed 42；mIoU 与 FP32/INT8 延迟 |
-| 激活 | H3 | V2 h-GELU | 相对 H0 只换激活；保存公式与部署算子图 | seed 42；精度、延迟及算子可融合性 |
+| 激活 | H0 | V2 ReLU6 anchor | R5-compatible 协议；stem、inverted residual、final 1×1 和 R-ASPP 均保持原始 ReLU6 | seed 42；mIoU、paired bootstrap、FP32/INT8 延迟 |
+| 激活 | H1 | V2 Hardswish 全 in-block | 只替换 `backbone.1..17` inverted residual 内所有 eligible `conv.0.2/conv.1.2`；stem/final/R-ASPP/linear bottleneck 不变 | seed 42；精度、梯度、延迟、导出和融合状态 |
+| 激活 | H2 | V2 Hardswish 后段 | 只替换 `backbone.14..17` 内 expansion+depthwise 激活；固定 OS=16 后段主假设 | seed 42；与 H0/H1 做位置消融和效率比较 |
+| 激活 | H3 | V2 Hardswish 后段 depthwise-only | 只替换 `backbone.14..17` 的 `conv.1.2` depthwise 激活；expansion 保持 ReLU6 | seed 42；区分 depthwise placement 与 expansion placement |
 | V3复验 | M3-A0 | V3 固定 PCA | 按 V3 通道重新拟合 A0，禁止复用 V2 PCA | 3 seed；无标签 probe mIoU |
 | V3复验 | M3-Abest | V3 最佳投影 | 迁移 V2 的投影机制，但所有维度/PCA 按 V3 重建 | 3 seed；检验跨学生可迁移性 |
 | V3复验 | M3-K0 | V3 CE-only | 受控重跑 S3-0 | 3 seed；V3 2×2 基线 |
@@ -78,13 +80,13 @@
 | V3复验 | M3-K2 | V3 logits KD | CE+同一冻结教师 pixel-logit KD | 3 seed；报告相对 M3-K0 增益 |
 | V3复验 | M3-K3 | V3 feature+logits | 合并 M3-K1/K2，权重不变 | 3 seed；同时报告 R-ASPP/LR-ASPP 与效率差异 |
 
-A0、A5、A6 和 seed 42 的另一领先 A 组需扩展到 3 seed，并补做统一端到端 fine-tune。A0-FT/A1-FT/A5-FT 是 A 组的端到端微调对照：它们从对应的最优 probe checkpoint 出发（A5 在 probe 前已移除训练期 adapter），解冻整个 backbone，用与 S2-0 完全一致的 80k step、SGD(lr=0.01, momentum=0.9, weight_decay=1e-4)、poly(power=0.9) 和相同增强做端到端 pixel CE，不加任何 KD 损失。它们回答 A 组的核心问题：无标签特征预训练得到的 backbone，经监督微调后能否超过 S2-0 scratch 基线。首轮只做 seed=42，若明显优于或劣于 S2-0，再随 A0/A5 的三 seed 一并扩展。FT 阶段的 checkpoint 只按 dev mIoU 选择，效率指标沿用 probe 阶段口径。K3-G 只增加梯度夹角日志，不改变 K3 的科学定义；K4 使用 A0 probe 初始化并只加入 logits KD，用于分离“分阶段特征预训练初始化”和“在线响应蒸馏”的贡献。K2/K3 稳定有效后，才可单变量搜索 `T={2,8}` 或 `lambda_logit={0.25,1.0}`。D1/D2 无法改善时才做 D3；KPCA、自定义学生和复杂几何损失不进入第一轮。
+A0、A5、A6 和 seed 42 的另一领先 A 组需扩展到 3 seed，并补做统一端到端 fine-tune。A0-FT/A1-FT/A5-FT 是 A 组的端到端微调对照：它们从对应的最优 probe checkpoint 出发（A5 在 probe 前已移除训练期 adapter），解冻整个 backbone，用与 S2-0 完全一致的 80k step、SGD(lr=0.01, momentum=0.9, weight_decay=1e-4)、poly(power=0.9) 和相同增强做端到端 pixel CE，不加任何 KD 损失。它们回答 A 组的核心问题：无标签特征预训练得到的 backbone，经监督微调后能否超过 S2-0 scratch 基线。首轮只做 seed=42，若明显优于或劣于 S2-0，再随 A0/A5 的三 seed 一并扩展。FT 阶段的 checkpoint 只按 dev mIoU 选择，效率指标沿用 probe 阶段口径。K3-G 只增加梯度夹角日志，不改变 K3 的科学定义；K4 使用 A0 probe 初始化并只加入 logits KD，用于分离“分阶段特征预训练初始化”和“在线响应蒸馏”的贡献。K2/K3 稳定有效后，才可单变量搜索 `T={2,8}` 或 `lambda_logit={0.25,1.0}`。D1/D2 无法改善时才做 D3；H0-H3 首轮固定 Hardswish 只消融激活位置，SiLU/GELU/h-GELU 另行登记为后续 H4-H6；KPCA、自定义学生和复杂几何损失不进入第一轮。
 
 ## 3. 执行与解锁顺序
 
 推荐顺序：
 
-`P0 -> T0/T1 -> S2-F/S2-0/S3-0 -> A0-A6 -> K0-K3 -> K3-G -> K4 -> R1/R2 -> M3复验 -> H/D -> test_local`
+`P0 -> T0/T1 -> S2-F/S2-0/S3-0 -> A0-A6 -> K0-K3 -> K3-G -> K4 -> R1/R2 -> R5 -> H0-H3 -> M3复验 -> D1-PB -> test_local`
 
 `test_local` 是锁定的最终留出集（官方 val 的 500 张图），不是开发集。训练、checkpoint 选择、教师选择、PCA/层位/损失/温度/激活筛选只能使用 `dev_local`。只有在数据、代码、协议和候选名单全部冻结后，才允许进行一次最终 test 评估；查看 test 后不得再据此调整任何实验设置。
 
@@ -102,3 +104,5 @@ S2-0 和 S2-P 若已完成 3 个 seed，建议对 3 个 seed 都在同一 `test_
 ## 4. 每次运行记录
 
 每次必须保存：实验编号、配置和命令；数据清单/模型/PCA/Scaler/adapter 哈希；seed、初始化、global batch、optimizer、LR 和总 step；具体 taps/OS/通道；各 loss 与梯度范数；最佳 dev step；19 类 IoU 与逐图 confusion matrix；移除 adapter 后的参数量、MACs、显存和目标设备延迟；scratch/pretrained、single/multi-scale、dev/test/official-test 口径。
+
+D1-PB 还必须保存：D1/K1 的逐图文件路径和文件哈希；按 image name 对齐后的配对检查结果；bootstrap 随机种子 `260820`；重采样次数 `100000`；每个 seed 的 bootstrap delta 分布摘要、均值差值、2.5%/97.5% 分位数、95% CI；三 seed 的训练差值与 CI 汇总；以及 `test_local_evaluated=false`。D1-PB 不重新训练模型，不改变 checkpoint、权重、候选名单或 `test_local` 状态。

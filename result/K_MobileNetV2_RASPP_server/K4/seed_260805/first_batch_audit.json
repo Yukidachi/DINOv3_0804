@@ -1,0 +1,118 @@
+{
+  "experiment": "K4",
+  "seed": 260805,
+  "student_init_state_sha256": "f8ac767621c406777b213a03ab4672f478b941d71936f9790ed431d2e8831df5",
+  "world_size": 2,
+  "per_rank": [
+    {
+      "rank": 0,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/stuttgart/stuttgart_000153_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/bremen/bremen_000242_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "45a1d7418dc7c6aa9c915aa6d7ee4dcf36b513f5e4a484967f304a79a597566f",
+      "target_tensor_sha256": "55cb0898f11890692e91c8937551b85ee40c9067cd26a84a0f67eedf6e719e42",
+      "valid_pixels": 1004942,
+      "student_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "teacher_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "ce_loss": 1.0087049007415771,
+      "logit_loss": 6.4143829345703125,
+      "total_loss": 1.0095067024230957,
+      "temperature": 4.0,
+      "lambda_logit": 0.5,
+      "warmup_weight": 0.00025,
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_sha256": null,
+      "pca_parameter_record_sha256": null,
+      "source_experiment": "A0",
+      "source_probe_seed": 260805,
+      "source_probe_checkpoint": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/A0/seed_260805/a0_probe_mobilenetv2_raspp_best.pth",
+      "source_probe_checkpoint_sha256": "0620ec82a8d48264c5e2f4b70fe3a3d2cedca4c23e64c900f23e39e7c90056ff",
+      "source_probe_model_state_sha256": "f8ac767621c406777b213a03ab4672f478b941d71936f9790ed431d2e8831df5",
+      "source_probe_backbone_state_sha256": "40494798ea9adc404f22e0c103eae95437c9f5ec0e2fe247311fe83eac869fb7",
+      "source_probe_artifact_type": "a0_probe_mobilenetv2_raspp_fixed_pca",
+      "online_pca_parameter_sha256": null,
+      "experiment": "K4",
+      "initialization": "same-seed A0 best probe backbone+head"
+    },
+    {
+      "rank": 1,
+      "epoch": 1,
+      "micro_batch_index": 0,
+      "paths": [
+        "leftImg8bit/train_local/cologne/cologne_000038_000019_leftImg8bit.png",
+        "leftImg8bit/train_local/aachen/aachen_000126_000019_leftImg8bit.png"
+      ],
+      "image_tensor_shape": [
+        2,
+        3,
+        512,
+        1024
+      ],
+      "target_tensor_shape": [
+        2,
+        512,
+        1024
+      ],
+      "image_tensor_sha256": "59583d0c494409e9d5d7ef4371414d7a2fe7e3e2e2cf7d98eb858c374c9019e3",
+      "target_tensor_sha256": "af3d81ace8e88eb87a4b291abb6d0f8dc16d0b1a53d3be6acf21c32f5983d8bc",
+      "valid_pixels": 980659,
+      "student_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "teacher_logit_shape": [
+        2,
+        19,
+        512,
+        1024
+      ],
+      "ce_loss": 0.25522351264953613,
+      "logit_loss": 7.224545001983643,
+      "total_loss": 0.2561265826225281,
+      "temperature": 4.0,
+      "lambda_logit": 0.5,
+      "warmup_weight": 0.00025,
+      "teacher_checkpoint_sha256": "73cb1d3161c746d1b4ea30918ec6a1f0de5e3a4952c000cf85ddf95f3ccaddeb",
+      "k0_shared_training_runner_sha256": "a2780e0ce96179c19341cc5531efe722daea926d853db09a157edfb7b4d5e1cc",
+      "pca_parameter_sha256": null,
+      "pca_parameter_record_sha256": null,
+      "source_experiment": "A0",
+      "source_probe_seed": 260805,
+      "source_probe_checkpoint": "/home/ubuntu/work/DINOv3_0804/result/A_MobileNetV2_RASPP_server/A0/seed_260805/a0_probe_mobilenetv2_raspp_best.pth",
+      "source_probe_checkpoint_sha256": "0620ec82a8d48264c5e2f4b70fe3a3d2cedca4c23e64c900f23e39e7c90056ff",
+      "source_probe_model_state_sha256": "f8ac767621c406777b213a03ab4672f478b941d71936f9790ed431d2e8831df5",
+      "source_probe_backbone_state_sha256": "40494798ea9adc404f22e0c103eae95437c9f5ec0e2fe247311fe83eac869fb7",
+      "source_probe_artifact_type": "a0_probe_mobilenetv2_raspp_fixed_pca",
+      "online_pca_parameter_sha256": null,
+      "experiment": "K4",
+      "initialization": "same-seed A0 best probe backbone+head"
+    }
+  ]
+}

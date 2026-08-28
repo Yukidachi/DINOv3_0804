@@ -1,0 +1,961 @@
+{
+  "comparisons": {
+    "H1-H0": {
+      "bootstrap_ci_by_seed": {
+        "42": [
+          -0.05751476525886193,
+          -0.03569056633687432
+        ]
+      },
+      "combined_bootstrap": {
+        "computed": false,
+        "reason": "training-seed uncertainty and image-resampling uncertainty remain separate; training seeds are not mixed"
+      },
+      "matched_seed_delta": {
+        "all_negative": true,
+        "all_positive": false,
+        "mean": -0.047002171925059844,
+        "num_seeds": 1,
+        "same_nonzero_direction": true,
+        "sample_std": null,
+        "std_ddof": 1,
+        "values_by_seed": {
+          "42": -0.047002171925059844
+        }
+      },
+      "per_seed_json": {
+        "42": "H1-H0\\seed_42.json"
+      }
+    },
+    "H2-H0": {
+      "bootstrap_ci_by_seed": {
+        "42": [
+          -0.04982564792409863,
+          -0.029048442384095048
+        ]
+      },
+      "combined_bootstrap": {
+        "computed": false,
+        "reason": "training-seed uncertainty and image-resampling uncertainty remain separate; training seeds are not mixed"
+      },
+      "matched_seed_delta": {
+        "all_negative": true,
+        "all_positive": false,
+        "mean": -0.03939662421926737,
+        "num_seeds": 1,
+        "same_nonzero_direction": true,
+        "sample_std": null,
+        "std_ddof": 1,
+        "values_by_seed": {
+          "42": -0.03939662421926737
+        }
+      },
+      "per_seed_json": {
+        "42": "H2-H0\\seed_42.json"
+      }
+    },
+    "H2-H1": {
+      "bootstrap_ci_by_seed": {
+        "42": [
+          -0.003525490196978645,
+          0.01735409218793073
+        ]
+      },
+      "combined_bootstrap": {
+        "computed": false,
+        "reason": "training-seed uncertainty and image-resampling uncertainty remain separate; training seeds are not mixed"
+      },
+      "matched_seed_delta": {
+        "all_negative": false,
+        "all_positive": true,
+        "mean": 0.00760554770579247,
+        "num_seeds": 1,
+        "same_nonzero_direction": true,
+        "sample_std": null,
+        "std_ddof": 1,
+        "values_by_seed": {
+          "42": 0.00760554770579247
+        }
+      },
+      "per_seed_json": {
+        "42": "H2-H1\\seed_42.json"
+      }
+    },
+    "H3-H0": {
+      "bootstrap_ci_by_seed": {
+        "42": [
+          -0.05351590313173518,
+          -0.028708462735618803
+        ]
+      },
+      "combined_bootstrap": {
+        "computed": false,
+        "reason": "training-seed uncertainty and image-resampling uncertainty remain separate; training seeds are not mixed"
+      },
+      "matched_seed_delta": {
+        "all_negative": true,
+        "all_positive": false,
+        "mean": -0.040358330322519675,
+        "num_seeds": 1,
+        "same_nonzero_direction": true,
+        "sample_std": null,
+        "std_ddof": 1,
+        "values_by_seed": {
+          "42": -0.040358330322519675
+        }
+      },
+      "per_seed_json": {
+        "42": "H3-H0\\seed_42.json"
+      }
+    },
+    "H3-H2": {
+      "bootstrap_ci_by_seed": {
+        "42": [
+          -0.010746348235047817,
+          0.00829897198506998
+        ]
+      },
+      "combined_bootstrap": {
+        "computed": false,
+        "reason": "training-seed uncertainty and image-resampling uncertainty remain separate; training seeds are not mixed"
+      },
+      "matched_seed_delta": {
+        "all_negative": true,
+        "all_positive": false,
+        "mean": -0.0009617061032523022,
+        "num_seeds": 1,
+        "same_nonzero_direction": true,
+        "sample_std": null,
+        "std_ddof": 1,
+        "values_by_seed": {
+          "42": -0.0009617061032523022
+        }
+      },
+      "per_seed_json": {
+        "42": "H3-H2\\seed_42.json"
+      }
+    }
+  },
+  "experiment": "H-PB",
+  "output_directory": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H-PB",
+  "per_seed": {
+    "42": {
+      "H1-H0": {
+        "alignment": {
+          "class_count": 19,
+          "image_count": 445,
+          "image_name_sha256": "0794b7b949aa447937a1a7983893504583756c1f43fdbcb0cd513b63d706f459",
+          "image_set_equal": true,
+          "left_experiment": "H1",
+          "order_equal": true,
+          "paired": true,
+          "right_experiment": "H0",
+          "seed": 42,
+          "valid_pixels_equal": true
+        },
+        "bootstrap_batch_size": 4096,
+        "bootstrap_ci_95": [
+          -0.05751476525886193,
+          -0.03569056633687432
+        ],
+        "bootstrap_ci_excludes_zero": true,
+        "bootstrap_ci_supports_negative": true,
+        "bootstrap_ci_supports_positive": false,
+        "bootstrap_delta_distribution": "H1-H0\\seed_42_bootstrap_deltas.npy",
+        "bootstrap_delta_max": -0.018753561626695836,
+        "bootstrap_delta_mean": -0.04648809839073514,
+        "bootstrap_delta_min": -0.07153040016339507,
+        "bootstrap_delta_percentile_2_5": -0.05751476525886193,
+        "bootstrap_delta_percentile_97_5": -0.03569056633687432,
+        "bootstrap_delta_std": 0.005551970359959373,
+        "bootstrap_probability_delta_gt_zero": 0.0,
+        "bootstrap_probability_delta_lt_zero": 1.0,
+        "bootstrap_random_seed": 260820,
+        "bootstrap_repetitions": 100000,
+        "checkpoint_miou_delta": -0.047002171925059844,
+        "comparison": "H1-H0",
+        "delta_definition": "mIoU(H1) - mIoU(H0)",
+        "elapsed_seconds_for_seed_all_comparisons": 25.898122000013245,
+        "experiment": "H-PB",
+        "left_experiment": "H1",
+        "left_input": {
+          "metrics_exists": true,
+          "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H1\\seed_42\\metrics.json",
+          "metrics_sha256": "12c9f64be3b42d33d76016924e420ada589cd1f0a4fe66ec43088571c5f45537",
+          "per_image_confusion_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H1\\seed_42\\dev_per_image_confusion.jsonl",
+          "per_image_confusion_sha256": "5139e9a01e0a8cd32772c854c5831f77b88db064a7ffb145fb99a0f3dd408cb5",
+          "per_image_confusion_size_bytes": 624193,
+          "test_local_evaluated": false
+        },
+        "left_metrics": {
+          "boundary_f1": 0.41697609466848556,
+          "mAcc": 0.5922052901739686,
+          "mIoU": 0.5160909831550248,
+          "per_class_iou": {
+            "bicycle": 0.39923995576442517,
+            "building": 0.8218095248999622,
+            "bus": 0.29802738927738925,
+            "car": 0.8791218106942695,
+            "fence": 0.256038041700079,
+            "motorcycle": 0.20414950596515652,
+            "person": 0.653809535688336,
+            "pole": 0.3717231475924333,
+            "rider": 0.35165380423061454,
+            "road": 0.9286458414101613,
+            "sidewalk": 0.7414540657288187,
+            "sky": 0.8869720063393723,
+            "terrain": 0.3767210634622476,
+            "traffic light": 0.4069890808476988,
+            "traffic sign": 0.5533208215422449,
+            "train": 0.31139964330573694,
+            "truck": 0.16035247793229968,
+            "vegetation": 0.860205334687766,
+            "wall": 0.34409562887646045
+          },
+          "per_image_aggregate_mIoU": 0.5160909831550249,
+          "pixel_accuracy": 0.9094673755988525,
+          "small_object_mIoU": 0.4072192653572785
+        },
+        "method": "paired image-level bootstrap of aggregated 19x19 confusion matrices",
+        "num_classes": 19,
+        "num_images": 445,
+        "reported_metric_deltas": {
+          "boundary_f1": -0.031807449289091405,
+          "mAcc": -0.04569711426578649,
+          "mIoU": -0.047002171925059955,
+          "per_class_iou": {
+            "bicycle": -0.13318331267601413,
+            "building": -0.045890924061515515,
+            "bus": -0.04566511396806372,
+            "car": -0.019256997771523343,
+            "fence": -0.17073077758926936,
+            "motorcycle": -0.025511194062133036,
+            "person": -0.03956715848404779,
+            "pole": -0.004928954147829845,
+            "rider": -0.013005446128268705,
+            "road": -0.027627347740950214,
+            "sidewalk": -0.024753728325784152,
+            "sky": -0.009677159674429836,
+            "terrain": -0.07899230518284422,
+            "traffic light": 0.017842765181075915,
+            "traffic sign": -0.0028333158742058773,
+            "train": -0.16009685706336618,
+            "truck": -0.03165651118051044,
+            "vegetation": -0.013552624033370986,
+            "wall": -0.06395430379308542
+          },
+          "pixel_accuracy": -0.018668722713297337,
+          "small_object_mIoU": -0.05849282391674093
+        },
+        "right_experiment": "H0",
+        "right_input": {
+          "metrics_exists": true,
+          "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H0\\seed_42\\metrics.json",
+          "metrics_sha256": "255bb21d02ec729b064dc655a90257b86d5994f19e6986c0babad1cb21408480",
+          "per_image_confusion_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H0\\seed_42\\dev_per_image_confusion.jsonl",
+          "per_image_confusion_sha256": "c86d529adce2a58e3a2d248446fc9b0d71504439ddbee2e1ccfc4ab6e1f5d2e6",
+          "per_image_confusion_size_bytes": 623742,
+          "test_local_evaluated": false
+        },
+        "right_metrics": {
+          "boundary_f1": 0.44878354395757697,
+          "mAcc": 0.6379024044397551,
+          "mIoU": 0.5630931550800847,
+          "per_class_iou": {
+            "bicycle": 0.5324232684404393,
+            "building": 0.8677004489614777,
+            "bus": 0.343692503245453,
+            "car": 0.8983788084657929,
+            "fence": 0.42676881928934834,
+            "motorcycle": 0.22966070002728955,
+            "person": 0.6933766941723838,
+            "pole": 0.37665210174026315,
+            "rider": 0.36465925035888325,
+            "road": 0.9562731891511115,
+            "sidewalk": 0.7662077940546028,
+            "sky": 0.8966491660138022,
+            "terrain": 0.4557133686450918,
+            "traffic light": 0.3891463156666229,
+            "traffic sign": 0.5561541374164508,
+            "train": 0.4714965003691031,
+            "truck": 0.1920089891128101,
+            "vegetation": 0.873757958721137,
+            "wall": 0.40804993266954587
+          },
+          "per_image_aggregate_mIoU": 0.5630931550800847,
+          "pixel_accuracy": 0.9281360983121498,
+          "small_object_mIoU": 0.4657120892740194
+        },
+        "rng": "numpy.default_rng(PCG64).integers; identical image-index draws shared by all H models and comparisons within this seed",
+        "screening_reference": {
+          "applies": true,
+          "name": "K1 three-seed sample standard deviation",
+          "positive_delta_exceeds_threshold": false,
+          "threshold": 0.002194
+        },
+        "seed": 42,
+        "test_local_evaluated": false
+      },
+      "H2-H0": {
+        "alignment": {
+          "class_count": 19,
+          "image_count": 445,
+          "image_name_sha256": "0794b7b949aa447937a1a7983893504583756c1f43fdbcb0cd513b63d706f459",
+          "image_set_equal": true,
+          "left_experiment": "H2",
+          "order_equal": true,
+          "paired": true,
+          "right_experiment": "H0",
+          "seed": 42,
+          "valid_pixels_equal": true
+        },
+        "bootstrap_batch_size": 4096,
+        "bootstrap_ci_95": [
+          -0.04982564792409863,
+          -0.029048442384095048
+        ],
+        "bootstrap_ci_excludes_zero": true,
+        "bootstrap_ci_supports_negative": true,
+        "bootstrap_ci_supports_positive": false,
+        "bootstrap_delta_distribution": "H2-H0\\seed_42_bootstrap_deltas.npy",
+        "bootstrap_delta_max": -0.008442352255836338,
+        "bootstrap_delta_mean": -0.03929007388703742,
+        "bootstrap_delta_min": -0.06331834737250541,
+        "bootstrap_delta_percentile_2_5": -0.04982564792409863,
+        "bootstrap_delta_percentile_97_5": -0.029048442384095048,
+        "bootstrap_delta_std": 0.00528376620603423,
+        "bootstrap_probability_delta_gt_zero": 0.0,
+        "bootstrap_probability_delta_lt_zero": 1.0,
+        "bootstrap_random_seed": 260820,
+        "bootstrap_repetitions": 100000,
+        "checkpoint_miou_delta": -0.03939662421926737,
+        "comparison": "H2-H0",
+        "delta_definition": "mIoU(H2) - mIoU(H0)",
+        "elapsed_seconds_for_seed_all_comparisons": 25.906517900002655,
+        "experiment": "H-PB",
+        "left_experiment": "H2",
+        "left_input": {
+          "metrics_exists": true,
+          "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H2\\seed_42\\metrics.json",
+          "metrics_sha256": "9aca108c225ab56dd72c0fb770de765fdc1717b35288d2852cc70812c187327a",
+          "per_image_confusion_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H2\\seed_42\\dev_per_image_confusion.jsonl",
+          "per_image_confusion_sha256": "cde9e7c639cf519e638cd480306dc455eb75fcf563870b59b0dfbdf8a470648b",
+          "per_image_confusion_size_bytes": 623854,
+          "test_local_evaluated": false
+        },
+        "left_metrics": {
+          "boundary_f1": 0.44622739787513777,
+          "mAcc": 0.5877761657728315,
+          "mIoU": 0.5236965308608174,
+          "per_class_iou": {
+            "bicycle": 0.5591157317951447,
+            "building": 0.8572760973043483,
+            "bus": 0.0556515941540577,
+            "car": 0.8965744120109991,
+            "fence": 0.4058959128396341,
+            "motorcycle": 0.1934842810901454,
+            "person": 0.7042110410770697,
+            "pole": 0.3833815851832669,
+            "rider": 0.4185762649409272,
+            "road": 0.951249479186959,
+            "sidewalk": 0.7456086290944341,
+            "sky": 0.9041123968179876,
+            "terrain": 0.42533690071599345,
+            "traffic light": 0.41188196961080487,
+            "traffic sign": 0.5707746902923212,
+            "train": 5.488825178253594e-05,
+            "truck": 0.1915396293486877,
+            "vegetation": 0.8748923532160162,
+            "wall": 0.40061622942494995
+          },
+          "per_image_aggregate_mIoU": 0.5236965308608174,
+          "pixel_accuracy": 0.9242522394771586,
+          "small_object_mIoU": 0.3774009803336017
+        },
+        "method": "paired image-level bootstrap of aggregated 19x19 confusion matrices",
+        "num_classes": 19,
+        "num_images": 445,
+        "reported_metric_deltas": {
+          "boundary_f1": -0.0025561460824392035,
+          "mAcc": -0.05012623866692356,
+          "mIoU": -0.03939662421926737,
+          "per_class_iou": {
+            "bicycle": 0.02669246335470543,
+            "building": -0.010424351657129405,
+            "bus": -0.2880409090913953,
+            "car": -0.0018043964547937996,
+            "fence": -0.020872906449714235,
+            "motorcycle": -0.036176418937144156,
+            "person": 0.010834346904685876,
+            "pole": 0.006729483443003781,
+            "rider": 0.053917014582043954,
+            "road": -0.005023709964152467,
+            "sidewalk": -0.02059916496016867,
+            "sky": 0.007463230804185428,
+            "terrain": -0.030376467929098372,
+            "traffic light": 0.022735653944181977,
+            "traffic sign": 0.014620552875870385,
+            "train": -0.4714416121173206,
+            "truck": -0.00046935976412240676,
+            "vegetation": 0.0011343944948791762,
+            "wall": -0.007433703244595913
+          },
+          "pixel_accuracy": -0.003883858834991205,
+          "small_object_mIoU": -0.08831110894041772
+        },
+        "right_experiment": "H0",
+        "right_input": {
+          "metrics_exists": true,
+          "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H0\\seed_42\\metrics.json",
+          "metrics_sha256": "255bb21d02ec729b064dc655a90257b86d5994f19e6986c0babad1cb21408480",
+          "per_image_confusion_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H0\\seed_42\\dev_per_image_confusion.jsonl",
+          "per_image_confusion_sha256": "c86d529adce2a58e3a2d248446fc9b0d71504439ddbee2e1ccfc4ab6e1f5d2e6",
+          "per_image_confusion_size_bytes": 623742,
+          "test_local_evaluated": false
+        },
+        "right_metrics": {
+          "boundary_f1": 0.44878354395757697,
+          "mAcc": 0.6379024044397551,
+          "mIoU": 0.5630931550800847,
+          "per_class_iou": {
+            "bicycle": 0.5324232684404393,
+            "building": 0.8677004489614777,
+            "bus": 0.343692503245453,
+            "car": 0.8983788084657929,
+            "fence": 0.42676881928934834,
+            "motorcycle": 0.22966070002728955,
+            "person": 0.6933766941723838,
+            "pole": 0.37665210174026315,
+            "rider": 0.36465925035888325,
+            "road": 0.9562731891511115,
+            "sidewalk": 0.7662077940546028,
+            "sky": 0.8966491660138022,
+            "terrain": 0.4557133686450918,
+            "traffic light": 0.3891463156666229,
+            "traffic sign": 0.5561541374164508,
+            "train": 0.4714965003691031,
+            "truck": 0.1920089891128101,
+            "vegetation": 0.873757958721137,
+            "wall": 0.40804993266954587
+          },
+          "per_image_aggregate_mIoU": 0.5630931550800847,
+          "pixel_accuracy": 0.9281360983121498,
+          "small_object_mIoU": 0.4657120892740194
+        },
+        "rng": "numpy.default_rng(PCG64).integers; identical image-index draws shared by all H models and comparisons within this seed",
+        "screening_reference": {
+          "applies": true,
+          "name": "K1 three-seed sample standard deviation",
+          "positive_delta_exceeds_threshold": false,
+          "threshold": 0.002194
+        },
+        "seed": 42,
+        "test_local_evaluated": false
+      },
+      "H2-H1": {
+        "alignment": {
+          "class_count": 19,
+          "image_count": 445,
+          "image_name_sha256": "0794b7b949aa447937a1a7983893504583756c1f43fdbcb0cd513b63d706f459",
+          "image_set_equal": true,
+          "left_experiment": "H2",
+          "order_equal": true,
+          "paired": true,
+          "right_experiment": "H1",
+          "seed": 42,
+          "valid_pixels_equal": true
+        },
+        "bootstrap_batch_size": 4096,
+        "bootstrap_ci_95": [
+          -0.003525490196978645,
+          0.01735409218793073
+        ],
+        "bootstrap_ci_excludes_zero": false,
+        "bootstrap_ci_supports_negative": false,
+        "bootstrap_ci_supports_positive": false,
+        "bootstrap_delta_distribution": "H2-H1\\seed_42_bootstrap_deltas.npy",
+        "bootstrap_delta_max": 0.030164540477240376,
+        "bootstrap_delta_mean": 0.007198024503697719,
+        "bootstrap_delta_min": -0.019746182207998286,
+        "bootstrap_delta_percentile_2_5": -0.003525490196978645,
+        "bootstrap_delta_percentile_97_5": 0.01735409218793073,
+        "bootstrap_delta_std": 0.0053149491459170365,
+        "bootstrap_probability_delta_gt_zero": 0.91133,
+        "bootstrap_probability_delta_lt_zero": 0.08867,
+        "bootstrap_random_seed": 260820,
+        "bootstrap_repetitions": 100000,
+        "checkpoint_miou_delta": 0.00760554770579247,
+        "comparison": "H2-H1",
+        "delta_definition": "mIoU(H2) - mIoU(H1)",
+        "elapsed_seconds_for_seed_all_comparisons": 25.92321370000718,
+        "experiment": "H-PB",
+        "left_experiment": "H2",
+        "left_input": {
+          "metrics_exists": true,
+          "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H2\\seed_42\\metrics.json",
+          "metrics_sha256": "9aca108c225ab56dd72c0fb770de765fdc1717b35288d2852cc70812c187327a",
+          "per_image_confusion_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H2\\seed_42\\dev_per_image_confusion.jsonl",
+          "per_image_confusion_sha256": "cde9e7c639cf519e638cd480306dc455eb75fcf563870b59b0dfbdf8a470648b",
+          "per_image_confusion_size_bytes": 623854,
+          "test_local_evaluated": false
+        },
+        "left_metrics": {
+          "boundary_f1": 0.44622739787513777,
+          "mAcc": 0.5877761657728315,
+          "mIoU": 0.5236965308608174,
+          "per_class_iou": {
+            "bicycle": 0.5591157317951447,
+            "building": 0.8572760973043483,
+            "bus": 0.0556515941540577,
+            "car": 0.8965744120109991,
+            "fence": 0.4058959128396341,
+            "motorcycle": 0.1934842810901454,
+            "person": 0.7042110410770697,
+            "pole": 0.3833815851832669,
+            "rider": 0.4185762649409272,
+            "road": 0.951249479186959,
+            "sidewalk": 0.7456086290944341,
+            "sky": 0.9041123968179876,
+            "terrain": 0.42533690071599345,
+            "traffic light": 0.41188196961080487,
+            "traffic sign": 0.5707746902923212,
+            "train": 5.488825178253594e-05,
+            "truck": 0.1915396293486877,
+            "vegetation": 0.8748923532160162,
+            "wall": 0.40061622942494995
+          },
+          "per_image_aggregate_mIoU": 0.5236965308608174,
+          "pixel_accuracy": 0.9242522394771586,
+          "small_object_mIoU": 0.3774009803336017
+        },
+        "method": "paired image-level bootstrap of aggregated 19x19 confusion matrices",
+        "num_classes": 19,
+        "num_images": 445,
+        "reported_metric_deltas": {
+          "boundary_f1": 0.0292513032066522,
+          "mAcc": -0.0044291244011370745,
+          "mIoU": 0.007605547705792581,
+          "per_class_iou": {
+            "bicycle": 0.15987577603071956,
+            "building": 0.03546657240438611,
+            "bus": -0.24237579512333154,
+            "car": 0.017452601316729544,
+            "fence": 0.14985787113955512,
+            "motorcycle": -0.01066522487501112,
+            "person": 0.05040150538873367,
+            "pole": 0.011658437590833626,
+            "rider": 0.06692246071031266,
+            "road": 0.022603637776797747,
+            "sidewalk": 0.004154563365615482,
+            "sky": 0.017140390478615264,
+            "terrain": 0.04861583725374585,
+            "traffic light": 0.0048928887631060625,
+            "traffic sign": 0.017453868750076262,
+            "train": -0.3113447550539544,
+            "truck": 0.03118715141638803,
+            "vegetation": 0.014687018528250162,
+            "wall": 0.05652060054848951
+          },
+          "pixel_accuracy": 0.014784863878306131,
+          "small_object_mIoU": -0.029818285023676783
+        },
+        "right_experiment": "H1",
+        "right_input": {
+          "metrics_exists": true,
+          "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H1\\seed_42\\metrics.json",
+          "metrics_sha256": "12c9f64be3b42d33d76016924e420ada589cd1f0a4fe66ec43088571c5f45537",
+          "per_image_confusion_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H1\\seed_42\\dev_per_image_confusion.jsonl",
+          "per_image_confusion_sha256": "5139e9a01e0a8cd32772c854c5831f77b88db064a7ffb145fb99a0f3dd408cb5",
+          "per_image_confusion_size_bytes": 624193,
+          "test_local_evaluated": false
+        },
+        "right_metrics": {
+          "boundary_f1": 0.41697609466848556,
+          "mAcc": 0.5922052901739686,
+          "mIoU": 0.5160909831550248,
+          "per_class_iou": {
+            "bicycle": 0.39923995576442517,
+            "building": 0.8218095248999622,
+            "bus": 0.29802738927738925,
+            "car": 0.8791218106942695,
+            "fence": 0.256038041700079,
+            "motorcycle": 0.20414950596515652,
+            "person": 0.653809535688336,
+            "pole": 0.3717231475924333,
+            "rider": 0.35165380423061454,
+            "road": 0.9286458414101613,
+            "sidewalk": 0.7414540657288187,
+            "sky": 0.8869720063393723,
+            "terrain": 0.3767210634622476,
+            "traffic light": 0.4069890808476988,
+            "traffic sign": 0.5533208215422449,
+            "train": 0.31139964330573694,
+            "truck": 0.16035247793229968,
+            "vegetation": 0.860205334687766,
+            "wall": 0.34409562887646045
+          },
+          "per_image_aggregate_mIoU": 0.5160909831550249,
+          "pixel_accuracy": 0.9094673755988525,
+          "small_object_mIoU": 0.4072192653572785
+        },
+        "rng": "numpy.default_rng(PCG64).integers; identical image-index draws shared by all H models and comparisons within this seed",
+        "screening_reference": {
+          "applies": false,
+          "name": "K1 three-seed sample standard deviation",
+          "positive_delta_exceeds_threshold": null,
+          "threshold": 0.002194
+        },
+        "seed": 42,
+        "test_local_evaluated": false
+      },
+      "H3-H0": {
+        "alignment": {
+          "class_count": 19,
+          "image_count": 445,
+          "image_name_sha256": "0794b7b949aa447937a1a7983893504583756c1f43fdbcb0cd513b63d706f459",
+          "image_set_equal": true,
+          "left_experiment": "H3",
+          "order_equal": true,
+          "paired": true,
+          "right_experiment": "H0",
+          "seed": 42,
+          "valid_pixels_equal": true
+        },
+        "bootstrap_batch_size": 4096,
+        "bootstrap_ci_95": [
+          -0.05351590313173518,
+          -0.028708462735618803
+        ],
+        "bootstrap_ci_excludes_zero": true,
+        "bootstrap_ci_supports_negative": true,
+        "bootstrap_ci_supports_positive": false,
+        "bootstrap_delta_distribution": "H3-H0\\seed_42_bootstrap_deltas.npy",
+        "bootstrap_delta_max": -0.00396652224199634,
+        "bootstrap_delta_mean": -0.040424024836766284,
+        "bootstrap_delta_min": -0.07386038195976441,
+        "bootstrap_delta_percentile_2_5": -0.05351590313173518,
+        "bootstrap_delta_percentile_97_5": -0.028708462735618803,
+        "bootstrap_delta_std": 0.006332831957975743,
+        "bootstrap_probability_delta_gt_zero": 0.0,
+        "bootstrap_probability_delta_lt_zero": 1.0,
+        "bootstrap_random_seed": 260820,
+        "bootstrap_repetitions": 100000,
+        "checkpoint_miou_delta": -0.040358330322519675,
+        "comparison": "H3-H0",
+        "delta_definition": "mIoU(H3) - mIoU(H0)",
+        "elapsed_seconds_for_seed_all_comparisons": 25.915150600019842,
+        "experiment": "H-PB",
+        "left_experiment": "H3",
+        "left_input": {
+          "metrics_exists": true,
+          "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H3\\seed_42\\metrics.json",
+          "metrics_sha256": "b7fac25699d4de5b711b8f90280c4b587c7989867bf261b75e516d828d89230b",
+          "per_image_confusion_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H3\\seed_42\\dev_per_image_confusion.jsonl",
+          "per_image_confusion_sha256": "8492c4eb1008fe670fe4193310d55a61fa59ff1113562952c508686048e881e9",
+          "per_image_confusion_size_bytes": 622783,
+          "test_local_evaluated": false
+        },
+        "left_metrics": {
+          "boundary_f1": 0.4236842284496103,
+          "mAcc": 0.5850358735029989,
+          "mIoU": 0.5227348247575649,
+          "per_class_iou": {
+            "bicycle": 0.47050312846970416,
+            "building": 0.8549553931833193,
+            "bus": 0.18385231287168186,
+            "car": 0.8874695296098063,
+            "fence": 0.3823747112465107,
+            "motorcycle": 0.19375089226115375,
+            "person": 0.6396191965585434,
+            "pole": 0.35633005280777913,
+            "rider": 0.3746412036201056,
+            "road": 0.9555412133571181,
+            "sidewalk": 0.765129666547706,
+            "sky": 0.8999450511976611,
+            "terrain": 0.41180881235907124,
+            "traffic light": 0.3488691224435123,
+            "traffic sign": 0.5426358738414783,
+            "train": 0.2895745973608092,
+            "truck": 0.12611916555311076,
+            "vegetation": 0.8681227213712897,
+            "wall": 0.3807190257333742
+          },
+          "per_image_aggregate_mIoU": 0.522734824757565,
+          "pixel_accuracy": 0.9234804763628891,
+          "small_object_mIoU": 0.3956912532881144
+        },
+        "method": "paired image-level bootstrap of aggregated 19x19 confusion matrices",
+        "num_classes": 19,
+        "num_images": 445,
+        "reported_metric_deltas": {
+          "boundary_f1": -0.02509931550796668,
+          "mAcc": -0.052866530936756195,
+          "mIoU": -0.040358330322519786,
+          "per_class_iou": {
+            "bicycle": -0.061920139970735144,
+            "building": -0.012745055778158432,
+            "bus": -0.15984019037377112,
+            "car": -0.010909278855986582,
+            "fence": -0.044394108042837666,
+            "motorcycle": -0.03590980776613581,
+            "person": -0.05375749761384041,
+            "pole": -0.020322048932484016,
+            "rider": 0.009981953261222365,
+            "road": -0.0007319757939934224,
+            "sidewalk": -0.0010781275068968421,
+            "sky": 0.0032958851838589265,
+            "terrain": -0.04390455628602058,
+            "traffic light": -0.040277193223110574,
+            "traffic sign": -0.013518263574972544,
+            "train": -0.18192190300829392,
+            "truck": -0.06588982355969936,
+            "vegetation": -0.0056352373498473884,
+            "wall": -0.027330906936171684
+          },
+          "pixel_accuracy": -0.004655621949260724,
+          "small_object_mIoU": -0.07002083598590503
+        },
+        "right_experiment": "H0",
+        "right_input": {
+          "metrics_exists": true,
+          "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H0\\seed_42\\metrics.json",
+          "metrics_sha256": "255bb21d02ec729b064dc655a90257b86d5994f19e6986c0babad1cb21408480",
+          "per_image_confusion_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H0\\seed_42\\dev_per_image_confusion.jsonl",
+          "per_image_confusion_sha256": "c86d529adce2a58e3a2d248446fc9b0d71504439ddbee2e1ccfc4ab6e1f5d2e6",
+          "per_image_confusion_size_bytes": 623742,
+          "test_local_evaluated": false
+        },
+        "right_metrics": {
+          "boundary_f1": 0.44878354395757697,
+          "mAcc": 0.6379024044397551,
+          "mIoU": 0.5630931550800847,
+          "per_class_iou": {
+            "bicycle": 0.5324232684404393,
+            "building": 0.8677004489614777,
+            "bus": 0.343692503245453,
+            "car": 0.8983788084657929,
+            "fence": 0.42676881928934834,
+            "motorcycle": 0.22966070002728955,
+            "person": 0.6933766941723838,
+            "pole": 0.37665210174026315,
+            "rider": 0.36465925035888325,
+            "road": 0.9562731891511115,
+            "sidewalk": 0.7662077940546028,
+            "sky": 0.8966491660138022,
+            "terrain": 0.4557133686450918,
+            "traffic light": 0.3891463156666229,
+            "traffic sign": 0.5561541374164508,
+            "train": 0.4714965003691031,
+            "truck": 0.1920089891128101,
+            "vegetation": 0.873757958721137,
+            "wall": 0.40804993266954587
+          },
+          "per_image_aggregate_mIoU": 0.5630931550800847,
+          "pixel_accuracy": 0.9281360983121498,
+          "small_object_mIoU": 0.4657120892740194
+        },
+        "rng": "numpy.default_rng(PCG64).integers; identical image-index draws shared by all H models and comparisons within this seed",
+        "screening_reference": {
+          "applies": true,
+          "name": "K1 three-seed sample standard deviation",
+          "positive_delta_exceeds_threshold": false,
+          "threshold": 0.002194
+        },
+        "seed": 42,
+        "test_local_evaluated": false
+      },
+      "H3-H2": {
+        "alignment": {
+          "class_count": 19,
+          "image_count": 445,
+          "image_name_sha256": "0794b7b949aa447937a1a7983893504583756c1f43fdbcb0cd513b63d706f459",
+          "image_set_equal": true,
+          "left_experiment": "H3",
+          "order_equal": true,
+          "paired": true,
+          "right_experiment": "H2",
+          "seed": 42,
+          "valid_pixels_equal": true
+        },
+        "bootstrap_batch_size": 4096,
+        "bootstrap_ci_95": [
+          -0.010746348235047817,
+          0.00829897198506998
+        ],
+        "bootstrap_ci_excludes_zero": false,
+        "bootstrap_ci_supports_negative": false,
+        "bootstrap_ci_supports_positive": false,
+        "bootstrap_delta_distribution": "H3-H2\\seed_42_bootstrap_deltas.npy",
+        "bootstrap_delta_max": 0.025292435005281222,
+        "bootstrap_delta_mean": -0.0011339509497288666,
+        "bootstrap_delta_min": -0.027216040957453225,
+        "bootstrap_delta_percentile_2_5": -0.010746348235047817,
+        "bootstrap_delta_percentile_97_5": 0.00829897198506998,
+        "bootstrap_delta_std": 0.004837107603434229,
+        "bootstrap_probability_delta_gt_zero": 0.40743,
+        "bootstrap_probability_delta_lt_zero": 0.59257,
+        "bootstrap_random_seed": 260820,
+        "bootstrap_repetitions": 100000,
+        "checkpoint_miou_delta": -0.0009617061032523022,
+        "comparison": "H3-H2",
+        "delta_definition": "mIoU(H3) - mIoU(H2)",
+        "elapsed_seconds_for_seed_all_comparisons": 25.931595100002596,
+        "experiment": "H-PB",
+        "left_experiment": "H3",
+        "left_input": {
+          "metrics_exists": true,
+          "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H3\\seed_42\\metrics.json",
+          "metrics_sha256": "b7fac25699d4de5b711b8f90280c4b587c7989867bf261b75e516d828d89230b",
+          "per_image_confusion_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H3\\seed_42\\dev_per_image_confusion.jsonl",
+          "per_image_confusion_sha256": "8492c4eb1008fe670fe4193310d55a61fa59ff1113562952c508686048e881e9",
+          "per_image_confusion_size_bytes": 622783,
+          "test_local_evaluated": false
+        },
+        "left_metrics": {
+          "boundary_f1": 0.4236842284496103,
+          "mAcc": 0.5850358735029989,
+          "mIoU": 0.5227348247575649,
+          "per_class_iou": {
+            "bicycle": 0.47050312846970416,
+            "building": 0.8549553931833193,
+            "bus": 0.18385231287168186,
+            "car": 0.8874695296098063,
+            "fence": 0.3823747112465107,
+            "motorcycle": 0.19375089226115375,
+            "person": 0.6396191965585434,
+            "pole": 0.35633005280777913,
+            "rider": 0.3746412036201056,
+            "road": 0.9555412133571181,
+            "sidewalk": 0.765129666547706,
+            "sky": 0.8999450511976611,
+            "terrain": 0.41180881235907124,
+            "traffic light": 0.3488691224435123,
+            "traffic sign": 0.5426358738414783,
+            "train": 0.2895745973608092,
+            "truck": 0.12611916555311076,
+            "vegetation": 0.8681227213712897,
+            "wall": 0.3807190257333742
+          },
+          "per_image_aggregate_mIoU": 0.522734824757565,
+          "pixel_accuracy": 0.9234804763628891,
+          "small_object_mIoU": 0.3956912532881144
+        },
+        "method": "paired image-level bootstrap of aggregated 19x19 confusion matrices",
+        "num_classes": 19,
+        "num_images": 445,
+        "reported_metric_deltas": {
+          "boundary_f1": -0.022543169425527476,
+          "mAcc": -0.0027402922698326337,
+          "mIoU": -0.0009617061032524132,
+          "per_class_iou": {
+            "bicycle": -0.08861260332544058,
+            "building": -0.002320704121029027,
+            "bus": 0.12820071871762415,
+            "car": -0.009104882401192782,
+            "fence": -0.02352120159312343,
+            "motorcycle": 0.0002666111710083463,
+            "person": -0.06459184451852629,
+            "pole": -0.027051532375487797,
+            "rider": -0.04393506132082159,
+            "road": 0.004291734170159045,
+            "sidewalk": 0.019521037453271828,
+            "sky": -0.004167345620326501,
+            "terrain": -0.013528088356922208,
+            "traffic light": -0.06301284716729255,
+            "traffic sign": -0.02813881645084293,
+            "train": 0.2895197091090267,
+            "truck": -0.06542046379557695,
+            "vegetation": -0.006769631844726565,
+            "wall": -0.01989720369157577
+          },
+          "pixel_accuracy": -0.0007717631142695192,
+          "small_object_mIoU": 0.018290272954512687
+        },
+        "right_experiment": "H2",
+        "right_input": {
+          "metrics_exists": true,
+          "metrics_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H2\\seed_42\\metrics.json",
+          "metrics_sha256": "9aca108c225ab56dd72c0fb770de765fdc1717b35288d2852cc70812c187327a",
+          "per_image_confusion_path": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server\\H2\\seed_42\\dev_per_image_confusion.jsonl",
+          "per_image_confusion_sha256": "cde9e7c639cf519e638cd480306dc455eb75fcf563870b59b0dfbdf8a470648b",
+          "per_image_confusion_size_bytes": 623854,
+          "test_local_evaluated": false
+        },
+        "right_metrics": {
+          "boundary_f1": 0.44622739787513777,
+          "mAcc": 0.5877761657728315,
+          "mIoU": 0.5236965308608174,
+          "per_class_iou": {
+            "bicycle": 0.5591157317951447,
+            "building": 0.8572760973043483,
+            "bus": 0.0556515941540577,
+            "car": 0.8965744120109991,
+            "fence": 0.4058959128396341,
+            "motorcycle": 0.1934842810901454,
+            "person": 0.7042110410770697,
+            "pole": 0.3833815851832669,
+            "rider": 0.4185762649409272,
+            "road": 0.951249479186959,
+            "sidewalk": 0.7456086290944341,
+            "sky": 0.9041123968179876,
+            "terrain": 0.42533690071599345,
+            "traffic light": 0.41188196961080487,
+            "traffic sign": 0.5707746902923212,
+            "train": 5.488825178253594e-05,
+            "truck": 0.1915396293486877,
+            "vegetation": 0.8748923532160162,
+            "wall": 0.40061622942494995
+          },
+          "per_image_aggregate_mIoU": 0.5236965308608174,
+          "pixel_accuracy": 0.9242522394771586,
+          "small_object_mIoU": 0.3774009803336017
+        },
+        "rng": "numpy.default_rng(PCG64).integers; identical image-index draws shared by all H models and comparisons within this seed",
+        "screening_reference": {
+          "applies": false,
+          "name": "K1 three-seed sample standard deviation",
+          "positive_delta_exceeds_threshold": null,
+          "threshold": 0.002194
+        },
+        "seed": 42,
+        "test_local_evaluated": false
+      }
+    }
+  },
+  "protocol": {
+    "aggregation": "sum 19x19 confusion matrices, then nanmean of 19 class IoUs",
+    "bootstrap_batch_size": 4096,
+    "bootstrap_random_seed": 260820,
+    "bootstrap_repetitions": 100000,
+    "bootstrap_unit": "image; identical paired indices within a seed",
+    "comparisons": [
+      "H1-H0",
+      "H2-H0",
+      "H3-H0",
+      "H2-H1",
+      "H3-H2"
+    ],
+    "delta_orientation": "left experiment minus right experiment",
+    "description": "H0-H3 same-seed paired bootstrap on frozen dev_local per-image confusion matrices",
+    "different_training_seeds_mixed": false,
+    "expected_images": 445,
+    "formal_seeds": [
+      42,
+      3407,
+      260805
+    ],
+    "h_root": "D:\\ProjectVision\\DINOv3_0804\\result\\H_MobileNetV2_RASPP_server",
+    "screening_seed": 42,
+    "seeds": [
+      42
+    ],
+    "test_local_evaluated": false,
+    "training_performed": false
+  },
+  "screening_reference": {
+    "name": "K1 three-seed sample standard deviation",
+    "scope": "candidate-H0 screening comparisons",
+    "value": 0.002194
+  },
+  "test_local_evaluated": false
+}

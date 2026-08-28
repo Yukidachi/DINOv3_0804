@@ -6,5 +6,6 @@
 !/datasets/cityscapes/local_splits.sha256
 !/datasets/cityscapes/test_local.txt
 !/datasets/cityscapes/train_local.txt
+!/datasets/cityscapes/dev_local.txt
 
 /mobilenet论文/
